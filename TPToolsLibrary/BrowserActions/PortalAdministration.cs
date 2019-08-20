@@ -90,7 +90,6 @@ namespace TPToolsLibrary
 
 
             // 3. Customize Portal
-
             browser.Url = "https://www.trainingportal.no/mintra/474/admin/portals?maxResults=20&page=1&criteria%5Bquery%5D.value=" + portalName;
             browser.FindElementByLinkText(portalName).Click();
 
@@ -125,16 +124,29 @@ namespace TPToolsLibrary
 
 
             // 4. Templates
-
             browser.Url = "https://www.trainingportal.no/mintra/" + portalId + "/admin/content";
 
             if (portalType == PortalType.Basic)
             {
-               
-                browser.FindElementByXPath("//*[@id='libraryNewMail']").Click();
-
-
-
+                    
+                foreach(var template in PortalSettings.basicEmailTemplates)
+                {
+                    AddTemplate(portalId, template);
+                }
+            }
+            else if(portalType == PortalType.Standard)
+            {
+                foreach (var template in PortalSettings.standardEmailTemplates)
+                {
+                    AddTemplate(portalId, template);
+                }
+            }
+            else if(portalType == PortalType.Advanced)
+            {
+                foreach (var template in PortalSettings.advancedEmailTemplates)
+                {
+                    AddTemplate(portalId, template);
+                }
             }
 
         }
@@ -150,6 +162,22 @@ namespace TPToolsLibrary
             {
                 element.Click();
             }
+        }
+
+        public static void AddTemplate(string portalId, IEmailTemplate template)
+        {
+            var browser = WebBrowser.Driver;
+
+            browser.Url = "https://www.trainingportal.no/mintra/" + portalId + "/admin/content";
+
+            browser.FindElementByXPath("//*[@id='libraryNewMail']").Click();
+            browser.FindElementByXPath("//*[@id='contentDocumentFormTitle']").SendKeys(template.TitleEn);
+            browser.FindElementByXPath("//*[@id='subject_en']").SendKeys(template.SubjectEn);
+            browser.FindElementByXPath("//*[@id='mceu_28 - open']").Click();
+            browser.FindElementByXPath("//*[@id='mceu_47 - text']").Click();
+            browser.FindElementByXPath("//*[@id='mceu_50']").SendKeys(template.ContentEn);
+            browser.FindElementByXPath("//*[@id='mceu_52']/button").Click();
+            browser.FindElementByName("_eventId_complete").Click();
         }
 
         

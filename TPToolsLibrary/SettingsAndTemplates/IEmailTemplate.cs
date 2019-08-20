@@ -4,7 +4,7 @@ using System.Text;
 
 namespace TPToolsLibrary.SettingsAndTemplates
 {
-    public interface ITemplate
+    public interface IEmailTemplate
     {
         string TitleEn { get; }
         string SubjectEn { get; }

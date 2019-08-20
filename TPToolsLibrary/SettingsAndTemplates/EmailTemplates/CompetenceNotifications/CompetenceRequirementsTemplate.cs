@@ -4,7 +4,7 @@ using System.Text;
 
 namespace TPToolsLibrary.SettingsAndTemplates
 {
-    public class CompetenceNotificationTemplate : ITemplate
+    public class CompetenceRequirementsTemplate : IEmailTemplate
     {
         public string TitleEn =>
             "Competence requirements must be completed";

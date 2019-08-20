@@ -4,7 +4,7 @@ using System.Text;
 
 namespace TPToolsLibrary.SettingsAndTemplates
 {
-    public class CourseNotifcationTemplate : ITemplate
+    public class EnrolmentToCourseTemplate : IEmailTemplate
     {
         public string TitleEn => 
             "Enrolment to e-learning course";

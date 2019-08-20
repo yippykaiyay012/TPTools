@@ -10,4 +10,8 @@
     <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="76.0.3809.6801" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="SettingsAndTemplates\CertificateTemplates\" />
+  </ItemGroup>
+
 </Project>

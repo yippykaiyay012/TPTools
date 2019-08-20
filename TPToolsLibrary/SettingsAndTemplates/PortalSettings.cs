@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using TPToolsLibrary.SettingsAndTemplates;
 
 namespace TPToolsLibrary.BrowserActions
 {
@@ -46,7 +47,48 @@ namespace TPToolsLibrary.BrowserActions
             "portalBooleanProperties[HIDE_STATISTICS_ON_COMPETENCE_HOMEPAGE]",
             "portalBooleanProperties[CAN_SEE_PUBLISHER_TAB]",
             "portalBooleanProperties[HAS_PUBLISHER_LICENSE]",
-            "portalBooleanProperties[USE_ASSESSMENTS]"
+            "portalBooleanProperties[USE_ASSESSMENTS]",
+            "portalBooleanProperties[ALLOW_AICC_ACCESS_TO_COURSES]",
+            "portalBooleanProperties[COURSE_ALLOW_SCORM_CLOUD]",
+            "portalBooleanProperties[COURSE_ALLOW_APP_ACCESS_TO_OWN_COURSES]",
+            "portalBooleanProperties[ALLOW_COURSE_ENROLLMENT_WITH_COURSCLASS_INFORMATION]",
+            "portalBooleanProperties[COURSE_ALLOW_INVITATION_STUDENTS_TO_COURSE_CLASS]",
+            "portalBooleanProperties[ALLOW_MANAGER_COURSE_APPROVAL]",
+            "portalBooleanProperties[ALLOW_XAPI_ACCESS_TO_COURSES]",
+            "portalBooleanProperties[PREVENT_CREATE_COURSE]",
+            "portalBooleanProperties[DENY_MANAGER_FROM_ENROLLING_TO_COURSES]",
+            "portalBooleanProperties[USE_CHECKLISTS_ON_COURSES]",
+            "portalBooleanProperties[USE_INSTRUCTORS_ON_COURSES]",
+            "portalBooleanProperties[COURSE_USE_ORGANIZATION_UNIT_SPECIFIC_REFRESHER_INTERVALS]",
+            "portalBooleanProperties[ALLOW_DELETION_OF_ENROLLMENTS_WITH_COURSE_REGISTRATION_ON_ECOMMERCE_COURSES]",
+            "portalBooleanProperties[ALWAYS_SHOW_INVOICE_INFORMATION]",
+            "portalBooleanProperties[PAYMENTINFORMATION_FOR_ECOMMERCE_ENROLLMENTS_REQUIRED]",
+            "portalBooleanProperties[SEARCH_FOR_BUYABLE_COURSES_BY_DEFAULT_FOR_STUDENT]",
+            "portalBooleanProperties[USES_OCS_INTEGRATION]",
+            "portalBooleanProperties[LL_ACCESS_FROM_TRAININGPORTAL]",
+            "portalBooleanProperties[DO_NOT_SHOW_ENROLLMENTS_FROM_OTHER_PORTALS_IN_THE_COURSE_STATUS_REPORT]",
+            "portalBooleanProperties[SHOW_REPORT_COURSE_STATUS_FOR_COURSE_PROVIDERS]",
+            "portalBooleanProperties[SHOW_MEDIUM_PRIORITY_CAPTION_IN_REPORTS]",
+            "portalBooleanProperties[SSO_USER_DENY_CREATE_NEW]",
+            "portalBooleanProperties[SSO_ENABLED]",
+            "portalBooleanProperties[SSO_USE_SAML_BASED]",
+            "portalBooleanProperties[SPIDER_SYNC_USERS]",
+            "portalBooleanProperties[USE_TMS_MODULE]",
+            "portalBooleanProperties[ALLOW_STUDENTS_TO_REENROLL_TO_ECOMMERCE_COURSES]",
+            "portalBooleanProperties[REMOTE_SITES_USES_ALL_COURSES_AVAILABLE_ON_PORTAL]",
+            "portalBooleanProperties[USE_CHECKLISTS_ON_TRAININGPORTAL_OFFLINE]",
+            "portalBooleanProperties[USE_REMOTE_SITES]",
+            "portalBooleanProperties[USE_COMPETENCE_LEVEL_ON_TPO]",
+            "portalBooleanProperties[ALLOW_LOGIN_TO_USERS_REGISTERED_IN_PORTAL_OWNER_COMPANY]",
+            "portalBooleanProperties[ALLOW_SELF_REGISTRATION]",
+            "portalBooleanProperties[DELETE_USER_WHEN_APPROVAL_IS_DENIED]",
+            "portalBooleanProperties[MERGE_USER_ACCOUNTS_DISABLED]",
+            "portalBooleanProperties[DENY_MANAGER_FROM_CHANGING_USER_MASS]",
+            "portalBooleanProperties[PROFILE_VERIFICATION_ALLOW_BYPASS]",
+            "portalBooleanProperties[PROFILE_VERIFICATION_REQUIRED_FIELDS]",
+            "portalBooleanProperties[SHOW_LICENSE_AGREEMENT]",
+            "portalBooleanProperties[USE_PORTAL_SPECIFIC_LICENSE_AGREEMENT]"
+
 
         };
 
@@ -56,6 +98,29 @@ namespace TPToolsLibrary.BrowserActions
 
         };
         public static readonly List<string> advancedPortalSettings = new List<string>()
+        {
+
+        };
+
+
+
+
+
+
+
+        // email templates for each type of portal
+        public static readonly List<IEmailTemplate> basicEmailTemplates = new List<IEmailTemplate>()
+        {
+            new EnrolmentToCourseTemplate(),
+            new CompetenceRequirementsTemplate()
+        };
+
+        public static readonly List<IEmailTemplate> standardEmailTemplates = new List<IEmailTemplate>()
+        {
+
+        };
+
+        public static readonly List<IEmailTemplate> advancedEmailTemplates = new List<IEmailTemplate>()
         {
 
         };
