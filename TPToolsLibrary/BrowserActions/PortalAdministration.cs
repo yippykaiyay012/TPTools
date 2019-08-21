@@ -17,7 +17,7 @@ namespace TPToolsLibrary
     {
 
         private static ChromeDriver browser = WebBrowser.Driver;
-        private static string portalId = "662";
+        private static string portalId = "663";
 
         private static WebDriverWait wait = new WebDriverWait(browser, TimeSpan.FromSeconds(30));
 
@@ -28,24 +28,24 @@ namespace TPToolsLibrary
         {
 
             // 1. create company
-                  CreateCompany(customerName);
+        //          CreateCompany(customerName);
 
 
             // 2. create portal
-                   CreatePortal(customerName, isUK);
+        //           CreatePortal(customerName, isUK);
 
 
             // 3. Customize Portal
-                    Thread.Sleep(10000); // need to wait for indexing to complete before searching
-                    CustomizePortal(customerName, portalType);
+       //             Thread.Sleep(10000); // need to wait for indexing to complete before searching
+       //             CustomizePortal(customerName, portalType);
 
 
             // 4. Templates
-                  EmailTemplates(portalType);
+      //            EmailTemplates(portalType);
 
 
             // 5. Certificate Template
-                   AddCertificateTemplate(portalId, new StandardCertificate());
+      //             AddCertificateTemplate(portalId, new StandardCertificate());
 
 
             // 6. Org units
@@ -312,7 +312,30 @@ namespace TPToolsLibrary
                     browser.FindElementByName("_eventId_complete").Click();
                 }
 
+                Thread.Sleep(1000);
 
+                // add sub units
+                // Sub department
+                var btnDepartment = wait.Until(driver => driver.FindElement(By.XPath("//span[@id='dijit__TreeNode_3_label']")));
+                btnDepartment.Click();
+                var btnCreateNewDep = wait.Until(driver => driver.FindElement(By.Id("orgUnitCreate")));
+                btnCreateNewDep.Click();
+                var txtTitleDep = wait.Until(driver => driver.FindElement(By.Name("OrganizationUnitDTO.name")));
+                txtTitleDep.Click();
+                txtTitleDep.SendKeys("Sub Department");
+                browser.FindElementByName("_eventId_complete").Click();
+
+                Thread.Sleep(1000);
+
+                // Sub Location
+                var btnLocation = wait.Until(driver => driver.FindElement(By.XPath("//span[@id='dijit__TreeNode_6_label']")));
+                btnLocation.Click();
+                var btnCreateNewLoc = wait.Until(driver => driver.FindElement(By.Id("orgUnitCreate")));
+                btnCreateNewLoc.Click();
+                var txtTitleLoc = wait.Until(driver => driver.FindElement(By.Name("OrganizationUnitDTO.name")));
+                txtTitleLoc.Click();
+                txtTitleLoc.SendKeys("Sub Location");
+                browser.FindElementByName("_eventId_complete").Click();
 
 
 
