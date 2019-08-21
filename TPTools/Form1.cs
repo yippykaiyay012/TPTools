@@ -49,8 +49,12 @@ namespace TPTools
 
 
         private void BtnAddCourses_Click(object sender, EventArgs e)
-        {
-            Login.LogIn(txtUsernameAdmin.Text, txtPasswordAdmin.Text);
+        {        
+            if (!Login.IsLoggedIn())
+            {
+                MessageBox.Show("Log In First");
+                return;
+            }
 
             var courseCodes = txtCourseCodes.Text;
             var courseCodeList = courseCodes.Split(',').ToList();
@@ -62,7 +66,11 @@ namespace TPTools
 
         private void BtnDownloadConnectors_Click(object sender, EventArgs e)
         {
-            Login.LogIn(txtUsernameAdmin.Text, txtPasswordAdmin.Text);
+            if (!Login.IsLoggedIn())
+            {
+                MessageBox.Show("Log In First");
+                return;
+            }
 
             if (string.IsNullOrEmpty(txtPortalID.Text))
             {
@@ -80,7 +88,11 @@ namespace TPTools
 
         private void BtnUpdateComp_Click(object sender, EventArgs e)
         {
-            Login.LogIn(txtUsernameAdmin.Text, txtPasswordAdmin.Text);
+            if (!Login.IsLoggedIn())
+            {
+                MessageBox.Show("Log In First");
+                return;
+            }
 
             if (string.IsNullOrEmpty(txtPortalIDComp.Text))
             {
@@ -108,7 +120,11 @@ namespace TPTools
 
         private void BtnAddAttributes_Click(object sender, EventArgs e)
         {
-            Login.LogIn(txtUsernameAdmin.Text, txtPasswordAdmin.Text);
+            if (!Login.IsLoggedIn())
+            {
+                MessageBox.Show("Log In First");
+                return;
+            }
 
             var attributes = txtAttributes.Text;
             var attributeList = attributes.Split(',').ToList();
@@ -121,7 +137,11 @@ namespace TPTools
 
         private void BtnStartEnrolRules_Click(object sender, EventArgs e)
         {
-            Login.LogIn(txtUsernameAdmin.Text, txtPasswordAdmin.Text);
+            if (!Login.IsLoggedIn())
+            {
+                MessageBox.Show("Log In First");
+                return;
+            }
 
             if (string.IsNullOrEmpty(txtPortalIdEnrolRules.Text))
             {
@@ -144,7 +164,11 @@ namespace TPTools
 
         private void BtnCreatePortal_Click(object sender, EventArgs e)
         {
-            
+            if (!Login.IsLoggedIn())
+            {
+                MessageBox.Show("Log In First");
+                return;
+            }
 
             if (string.IsNullOrWhiteSpace(txtCompanyName.Text))
             {
@@ -166,13 +190,10 @@ namespace TPTools
             else
             {
 
-                Login.LogIn(txtUsernameAdmin.Text, txtPasswordAdmin.Text);
-
                 //Thread thread = new Thread(() =>
                 //    PortalAdministration.CreateDemoPortal()
-               
-                //thread.Start();
 
+                //thread.Start();
 
             }
             
@@ -180,14 +201,17 @@ namespace TPTools
 
         private void BtnShareCourses_Click(object sender, EventArgs e)
         {
-            Login.LogIn(txtUsernameAdmin.Text, txtPasswordAdmin.Text);
+            if (!Login.IsLoggedIn())
+            {
+                MessageBox.Show("Log In First");
+                return;
+            }
 
             if (string.IsNullOrEmpty(txtPortalIdCompanyShare.Text))
             {
                 MessageBox.Show("Enter Portal ID to Share From");
                 return;
             }
-
 
             var courseCodes = txtCourseIdShare.Text;
             var courseCodeList = courseCodes.Split(',').ToList();
@@ -201,7 +225,11 @@ namespace TPTools
 
         private void BtnSetExpiry_Click(object sender, EventArgs e)
         {
-            Login.LogIn(txtUsernameAdmin.Text, txtPasswordAdmin.Text);
+            if (!Login.IsLoggedIn())
+            {
+                MessageBox.Show("Log In First");
+                return;
+            }
 
             if (string.IsNullOrEmpty(txtPortalIDExpiry.Text))
             {
@@ -226,6 +254,12 @@ namespace TPTools
 
         private void BtnCreateDemoPortal_Click(object sender, EventArgs e)
         {
+            if (!Login.IsLoggedIn())
+            {
+                MessageBox.Show("Log In First");
+                return;
+            }
+
             if (string.IsNullOrWhiteSpace(txtDemoCompanyName.Text))
             {
                 MessageBox.Show("Enter Company Name");
@@ -246,13 +280,10 @@ namespace TPTools
 
 
 
-                Login.LogIn(txtUsernameAdmin.Text, txtPasswordAdmin.Text);
-
                 Thread thread = new Thread(() =>
                     PortalAdministration.CreateDemoPortal(txtDemoCompanyName.Text, rdioUK.Checked, portalType));
 
                 thread.Start();
-
 
             }
         }
