@@ -5,6 +5,7 @@
     <SignAssembly>false</SignAssembly>
     <ApplicationIcon></ApplicationIcon>
     <Win32Resource />
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup>

@@ -44,8 +44,6 @@ namespace TPTools
         {
             Thread thread = new Thread(() => Login.LogIn(txtUsernameAdmin.Text, txtPasswordAdmin.Text));
             thread.Start();
-            
-            
         }
 
 
