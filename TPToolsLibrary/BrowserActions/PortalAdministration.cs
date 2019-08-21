@@ -17,7 +17,7 @@ namespace TPToolsLibrary
     {
 
         private static ChromeDriver browser = WebBrowser.Driver;
-        private static string portalId = "663";
+        private static string portalId = null;
 
         private static WebDriverWait wait = new WebDriverWait(browser, TimeSpan.FromSeconds(30));
 
@@ -431,7 +431,7 @@ namespace TPToolsLibrary
                     lastName = "PortalAdmin" + i;
                     email = firstName + lastName + "@MintraDemo.com";
                     username = email;
-                    orgUnit = PortalSettings.orgUnits[i-2];
+                    orgUnit = PortalSettings.orgUnits[i];
                     userRole = UserRole.Portal_Administrator;
                     sendEmail = false;
                     AddUser(portalId, firstName, lastName, email, username, password, orgUnit, userRole, sendEmail);
