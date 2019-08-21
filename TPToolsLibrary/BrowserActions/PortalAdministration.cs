@@ -179,7 +179,13 @@ namespace TPToolsLibrary
                 }
             }
 
-            //     browser.FindElementByName("_eventId_complete").Click();
+            var contractType = wait.Until(driver => driver.FindElement(By.XPath("//*[@id='CONTRACT_TYPE']/tbody/tr/td[2]/input")));
+            contractType.Click();
+            contractType.SendKeys("DEMO");
+            contractType.SendKeys(Keys.Tab);
+            
+
+            browser.FindElementByName("_eventId_complete").Click();
         }
 
 
