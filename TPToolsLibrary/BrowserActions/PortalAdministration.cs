@@ -395,8 +395,7 @@ namespace TPToolsLibrary
                 UserRole userRole;
                 bool sendEmail;
 
-
-                var addedUserCounter = 0;
+               
                 // add 3 managers
                 for (int i = 1; i <= 3; i++)
                 {
@@ -408,11 +407,10 @@ namespace TPToolsLibrary
                     userRole = UserRole.Manager;
                     sendEmail = false;
                     AddUser(portalId, firstName, lastName, email, username, password, orgUnit, userRole,sendEmail);
-                    addedUserCounter++;
                 }
 
                 // add 2 portal Admins
-                for (int i = 4; i <= 5; i++)
+                for (int i = 1; i <= 2; i++)
                 {
                     firstName = companyName;
                     lastName = "PortalAdmin" + i;
@@ -422,11 +420,10 @@ namespace TPToolsLibrary
                     userRole = UserRole.Portal_Administrator;
                     sendEmail = false;
                     AddUser(portalId, firstName, lastName, email, username, password, orgUnit, userRole, sendEmail);
-                    addedUserCounter++;
                 }
 
                 // add 10 Students
-                for (int i = 4; i <= 5; i++)
+                for (int i = 1; i <= 10; i++)
                 {
                     var rnd = new Random();
 
