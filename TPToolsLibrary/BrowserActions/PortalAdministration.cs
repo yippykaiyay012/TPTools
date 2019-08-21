@@ -435,7 +435,6 @@ namespace TPToolsLibrary
                     userRole = UserRole.Student;
                     sendEmail = false;
                     AddUser(portalId, firstName, lastName, email, username, password, orgUnit, userRole, sendEmail);
-                    addedUserCounter++;
                 }
 
 
