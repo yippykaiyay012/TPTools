@@ -13,12 +13,6 @@ using TPToolsLibrary.SettingsAndTemplates.CertificateTemplates;
 
 namespace TPToolsLibrary
 {
-    public enum PortalType
-    {
-        Basic,
-        Advanced
-    }
-
     public class PortalAdministration
     {
 

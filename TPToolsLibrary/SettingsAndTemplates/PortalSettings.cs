@@ -5,6 +5,12 @@ using TPToolsLibrary.SettingsAndTemplates;
 
 namespace TPToolsLibrary.BrowserActions
 {
+    public enum PortalType
+    {
+        Basic,
+        Advanced
+    }
+
     public static class PortalSettings
     {
         public static readonly List<string> basicPortalSettings = new List<string>()
