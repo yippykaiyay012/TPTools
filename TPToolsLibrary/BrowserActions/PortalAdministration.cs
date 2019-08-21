@@ -28,24 +28,26 @@ namespace TPToolsLibrary
         {
 
             // 1. create company
-                  CreateCompany(customerName);
-
+            if (!CreateCompany(customerName))
+            {             
+                return;
+            }
 
             // 2. create portal
-                   CreatePortal(customerName, isUK);
+            CreatePortal(customerName, isUK);
 
 
             // 3. Customize Portal
-                    Thread.Sleep(10000); // need to wait for indexing to complete before searching
-                    CustomizePortal(customerName, portalType);
+            Thread.Sleep(10000); // need to wait for indexing to complete before searching
+            CustomizePortal(customerName, portalType);
 
 
             // 4. Templates
-                  EmailTemplates(portalType);
+            EmailTemplates(portalType);
 
 
             // 5. Certificate Template
-                   AddCertificateTemplate(portalId, new StandardCertificate());
+            AddCertificateTemplate(portalId, new StandardCertificate());
 
 
             // 6. Org units
@@ -53,18 +55,20 @@ namespace TPToolsLibrary
 
             // 7. Add Demo Users
             AddDemoUsers(portalId, customerName);
-
         
 
         }
 
 
 
-        private static void CreateCompany(string customerName)
+        private static bool CreateCompany(string customerName)
         {
             browser.Url = @"https://www.trainingportal.no/mintra/474/admin/companies";
             var createNewButton = wait.Until(driver => driver.FindElement(By.Id("generalCreate")));
             createNewButton.Click();
+
+            var createPageURL = browser.Url;
+
             var txtCompanyName = wait.Until(driver => driver.FindElement(By.Name("companyName")));
             txtCompanyName.SendKeys(customerName);
             var txtCostCenterName = wait.Until(driver => driver.FindElement(By.Name("costCenterName")));
@@ -74,11 +78,16 @@ namespace TPToolsLibrary
             var txtCustomerNumber = wait.Until(driver => driver.FindElement(By.Name("customerNumber")));
             txtCustomerNumber.SendKeys("xxx");
             browser.FindElementByName("_eventId_complete").Click();
+
+            if(browser.Url == createPageURL)
+            {
+                return false;
+            }
+            return true;
         }
 
         private static void CreatePortal(string customerName, bool isUK)
         {
-
             browser.Url = @"https://www.trainingportal.no/mintra/474/admin/portals";
             var btnCreatePortal = wait.Until(driver => driver.FindElement(By.Id("generalCreate")));
             btnCreatePortal.Click();
