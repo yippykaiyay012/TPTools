@@ -28,11 +28,11 @@ namespace TPToolsLibrary
         {
            
             // 1. create company
-       //     CreateCompany(customerName);
+            CreateCompany(customerName);
 
 
             // 2. create portal
-     //       CreatePortal(customerName, isUK);
+            CreatePortal(customerName, isUK);
 
 
             // 3. Customize Portal
@@ -41,11 +41,11 @@ namespace TPToolsLibrary
 
 
             // 4. Templates
-     //       EmailTemplates(portalType);
+            EmailTemplates(portalType);
 
 
             // 5. Certificate Template
-     //       AddCertificateTemplate(portalId, new StandardCertificate());
+            AddCertificateTemplate(portalId, new StandardCertificate());
 
         }
 
