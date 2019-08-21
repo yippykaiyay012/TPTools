@@ -28,28 +28,31 @@ namespace TPToolsLibrary
         {
 
             // 1. create company
-        //          CreateCompany(customerName);
+                  CreateCompany(customerName);
 
 
             // 2. create portal
-        //           CreatePortal(customerName, isUK);
+                   CreatePortal(customerName, isUK);
 
 
             // 3. Customize Portal
-       //             Thread.Sleep(10000); // need to wait for indexing to complete before searching
-       //             CustomizePortal(customerName, portalType);
+                    Thread.Sleep(10000); // need to wait for indexing to complete before searching
+                    CustomizePortal(customerName, portalType);
 
 
             // 4. Templates
-      //            EmailTemplates(portalType);
+                  EmailTemplates(portalType);
 
 
             // 5. Certificate Template
-      //             AddCertificateTemplate(portalId, new StandardCertificate());
+                   AddCertificateTemplate(portalId, new StandardCertificate());
 
 
             // 6. Org units
             CreateDemoOrgUnits(portalId);
+
+            // 7. Add Demo Users
+            AddDemoUsers(portalId, customerName);
 
         
 
@@ -155,7 +158,7 @@ namespace TPToolsLibrary
             {
                 foreach (var element in PortalSettings.basicPortalSettings)
                 {
-                    CheckAndSelect(element);
+                    CheckAndSelectElementName(element);
                 }
 
             }
@@ -163,7 +166,7 @@ namespace TPToolsLibrary
             {
                 foreach (var element in PortalSettings.advancedPortalSettings)
                 {
-                    CheckAndSelect(element);
+                    CheckAndSelectElementName(element);
                 }
             }
 
@@ -204,12 +207,43 @@ namespace TPToolsLibrary
 
 
         // if not already checked, check
-        private static void CheckAndSelect(string elementName)
+        private static void CheckAndSelectElementName(string elementName)
         {
 
             var element = wait.Until(driver => driver.FindElement(By.Name(elementName)));
 
             if (!element.Selected)
+            {
+                element.Click();
+            }
+        }
+        private static void CheckAndSelectElementId(string elementId)
+        {
+
+            var element = wait.Until(driver => driver.FindElement(By.Id(elementId)));
+
+            if (!element.Selected)
+            {
+                element.Click();
+            }
+        }
+
+        private static void CheckAndUnSelectElementName(string elementName)
+        {
+
+            var element = wait.Until(driver => driver.FindElement(By.Name(elementName)));
+
+            if (element.Selected)
+            {
+                element.Click();
+            }
+        }
+        private static void CheckAndUnSelectElementId(string elementId)
+        {
+
+            var element = wait.Until(driver => driver.FindElement(By.Id(elementId)));
+
+            if (element.Selected)
             {
                 element.Click();
             }
@@ -282,11 +316,6 @@ namespace TPToolsLibrary
 
         private static void CreateDemoOrgUnits(string portalId)
         {
-            var orgUnits = new List<string>()
-            {
-                "Location 1", "Location 2", "Department 1", "Department 2"
-            };
-
             if (portalId == null)
             {
                 return;
@@ -296,7 +325,7 @@ namespace TPToolsLibrary
                 browser.Url = "https://www.trainingportal.no/mintra/" + portalId + "/admin/users/organizationUnitAdmin/show";
 
                 // add main units
-                foreach (var unit in orgUnits)
+                foreach (var unit in PortalSettings.orgUnits)
                 {
                     Thread.Sleep(1000);
                     var rootOrg = wait.Until(driver => driver.FindElement(By.XPath("//span[@id='dijit__TreeNode_1_label']")));
@@ -340,6 +369,147 @@ namespace TPToolsLibrary
 
 
             }
+        }
+
+        public static void AddDemoUsers(string portalId, string companyName)
+        {
+
+            // 15 users   ->  3 managers + 2 portal admin + 10 normal
+            if (portalId == null)
+            {
+                return;
+            }
+            else
+            {
+                browser.Url = "https://www.trainingportal.no/mintra/" + portalId + "/admin/users";
+
+
+
+                // user details
+                string firstName;
+                string lastName;
+                string email;
+                string username;
+                string password = "Welcome1";
+                string orgUnit;
+                UserRole userRole;
+                bool sendEmail;
+
+
+                var addedUserCounter = 0;
+                // add 3 managers
+                for (int i = 1; i <= 3; i++)
+                {
+                    firstName = companyName;
+                    lastName = "Manager" + i;
+                    email = firstName + lastName + "@MintraDemo.com";
+                    username = email;
+                    orgUnit = PortalSettings.orgUnits[i-1];
+                    userRole = UserRole.Manager;
+                    sendEmail = false;
+                    AddUser(portalId, firstName, lastName, email, username, password, orgUnit, userRole,sendEmail);
+                    addedUserCounter++;
+                }
+
+                // add 2 portal Admins
+                for (int i = 4; i <= 5; i++)
+                {
+                    firstName = companyName;
+                    lastName = "PortalAdmin" + i;
+                    email = firstName + lastName + "@MintraDemo.com";
+                    username = email;
+                    orgUnit = PortalSettings.orgUnits[i-2];
+                    userRole = UserRole.Portal_Administrator;
+                    sendEmail = false;
+                    AddUser(portalId, firstName, lastName, email, username, password, orgUnit, userRole, sendEmail);
+                    addedUserCounter++;
+                }
+
+                // add 10 Students
+                for (int i = 4; i <= 5; i++)
+                {
+                    var rnd = new Random();
+
+                    firstName = companyName;
+                    lastName = "Student" + i;
+                    email = firstName + lastName + "@MintraDemo.com";
+                    username = email;
+                    orgUnit = PortalSettings.orgUnits[rnd.Next(0, PortalSettings.orgUnits.Count)];
+                    userRole = UserRole.Student;
+                    sendEmail = false;
+                    AddUser(portalId, firstName, lastName, email, username, password, orgUnit, userRole, sendEmail);
+                    addedUserCounter++;
+                }
+
+
+
+            }
+        }
+
+        public static void AddUser(string portalId, string firstName, string lastName, 
+            string email, string username, string password, string orgUnit, UserRole userRole, bool sendEmail)
+        {
+            if (portalId == null)
+            {
+                return;
+            }
+            else
+            {
+                browser.Url = "https://www.trainingportal.no/mintra/" + portalId + "/admin/users";
+                var btnCreateNewUser = wait.Until(driver => driver.FindElement(By.Id("usersCreate")));
+                btnCreateNewUser.Click();
+
+                var txtFirstName = wait.Until(driver => driver.FindElement(By.Id("firstName")));
+                txtFirstName.Click();
+                txtFirstName.SendKeys(firstName);
+                var txtLatName = wait.Until(driver => driver.FindElement(By.Id("lastName")));
+                txtLatName.Click();
+                txtLatName.SendKeys(lastName);
+
+                var txtEmail = wait.Until(driver => driver.FindElement(By.Name("user.emailAddress")));
+                txtEmail.Click();
+                txtEmail.SendKeys(email);
+
+                var txtUsername = wait.Until(driver => driver.FindElement(By.Name("user.username")));
+                txtUsername.Click();
+                txtUsername.SendKeys(username);
+
+                var txtPassword = wait.Until(driver => driver.FindElement(By.Name("password")));
+                txtPassword.Click();
+                txtPassword.SendKeys(password);
+
+                var btnShowOrgUnits = wait.Until(driver => driver.FindElement(By.Id("clickMeyay")));
+                btnShowOrgUnits.Click();
+                Thread.Sleep(1000);
+
+                var btnExpandOrgUnits = wait.Until(driver => driver.FindElement(By.XPath("//*[@id='dijit__TreeNode_1']/div[1]/span[1]")));
+                btnExpandOrgUnits.Click();
+                Thread.Sleep(1000);
+
+
+                var orgUnitChoice = wait.Until(driver => driver.FindElement(By.XPath("//span[contains(@class,'dijitTreeLabel') and contains(text(), '" + orgUnit + "')]")));
+                orgUnitChoice.Click();
+
+                var userRoleChoice = wait.Until(driver => driver.FindElement(By.XPath("//table[@id='userCreateModel.roleLogicalId']//input[@class='dijitReset dijitInputField dijitArrowButtonInner']")));
+                userRoleChoice.Click();
+                userRoleChoice.SendKeys(userRole.ToString().Replace('_', ' '));
+                userRoleChoice.SendKeys(Keys.Tab);
+
+                if (sendEmail)
+                {
+                    CheckAndSelectElementId("userCreateSendSendLoginInfoOnMail");
+                }
+                else
+                {
+                    CheckAndUnSelectElementId("userCreateSendSendLoginInfoOnMail");
+                }
+
+                browser.FindElementByName("_eventId_complete").Click();
+
+            }
+
+
+
         }
 
 

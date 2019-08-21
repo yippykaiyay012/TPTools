@@ -10,6 +10,23 @@ namespace TPToolsLibrary.BrowserActions
         Basic,
         Advanced
     }
+    public enum UserRole
+    {
+        Student,
+        User_Administrator,
+        Support_Agent,
+        Manager,
+        Manager_ReadOnly,
+        Company_Administrator,
+        TMS_Agent,
+        System_Administrator,
+        Content_Administrator,
+        TMS_Administrator,
+        Regional_Support_Agent,
+        Portal_Administrator,
+        Course_Administrator,
+        Course_Provider
+    }
 
     public static class PortalSettings
     {
@@ -137,6 +154,15 @@ namespace TPToolsLibrary.BrowserActions
             new RepetitionCompetenceTemplate(),
             new RepetitionRequirementsForAdminTemplate()
         };
+
+
+        public static readonly List<string> orgUnits = new List<string>()
+        {
+            "Location 1", "Location 2", "Department 1", "Department 2"
+        };
+
+
+
 
     }
 }
