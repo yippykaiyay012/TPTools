@@ -21,43 +21,46 @@ namespace TPToolsLibrary
 
         private static WebDriverWait wait = new WebDriverWait(browser, TimeSpan.FromSeconds(30));
 
-        
-      
 
-        public static void CreateDemoPortal(string customerName, bool isUK , PortalType portalType)
+
+
+        public static void CreateDemoPortal(string customerName, bool isUK, PortalType portalType)
         {
-           
+
             // 1. create company
-            CreateCompany(customerName);
+                  CreateCompany(customerName);
 
 
             // 2. create portal
-            CreatePortal(customerName, isUK);
+                   CreatePortal(customerName, isUK);
 
 
             // 3. Customize Portal
-            Thread.Sleep(10000); // need to wait for indexing to complete before searching
-            CustomizePortal(customerName, portalType);
+                    Thread.Sleep(10000); // need to wait for indexing to complete before searching
+                    CustomizePortal(customerName, portalType);
 
 
             // 4. Templates
-            EmailTemplates(portalType);
+                  EmailTemplates(portalType);
 
 
             // 5. Certificate Template
-            AddCertificateTemplate(portalId, new StandardCertificate());
+                   AddCertificateTemplate(portalId, new StandardCertificate());
+
+
+            // 6. Org units
+            CreateDemoOrgUnits(portalId);
+
+        
 
         }
-
-
-
 
 
 
         private static void CreateCompany(string customerName)
         {
             browser.Url = @"https://www.trainingportal.no/mintra/474/admin/companies";
-            var createNewButton =  wait.Until(driver => driver.FindElement(By.Id("generalCreate")));
+            var createNewButton = wait.Until(driver => driver.FindElement(By.Id("generalCreate")));
             createNewButton.Click();
             var txtCompanyName = wait.Until(driver => driver.FindElement(By.Name("companyName")));
             txtCompanyName.SendKeys(customerName);
@@ -70,7 +73,8 @@ namespace TPToolsLibrary
             browser.FindElementByName("_eventId_complete").Click();
         }
 
-        private static void CreatePortal(string customerName, bool isUK) {
+        private static void CreatePortal(string customerName, bool isUK)
+        {
 
             browser.Url = @"https://www.trainingportal.no/mintra/474/admin/portals";
             var btnCreatePortal = wait.Until(driver => driver.FindElement(By.Id("generalCreate")));
@@ -145,7 +149,7 @@ namespace TPToolsLibrary
 
             var btnEditPortal = wait.Until(driver => driver.FindElement(By.Id("editPortal")));
             btnEditPortal.Click();
-           
+
 
             if (portalType == PortalType.Basic)
             {
@@ -163,13 +167,13 @@ namespace TPToolsLibrary
                 }
             }
 
-       //     browser.FindElementByName("_eventId_complete").Click();
+            //     browser.FindElementByName("_eventId_complete").Click();
         }
 
 
         private static void EmailTemplates(PortalType portalType)
         {
-            if(portalId == null)
+            if (portalId == null)
             {
                 return;
             }
@@ -195,7 +199,7 @@ namespace TPToolsLibrary
 
 
             }
-            
+
         }
 
 
@@ -273,7 +277,48 @@ namespace TPToolsLibrary
             }
 
         }
-        
+
+
+
+        private static void CreateDemoOrgUnits(string portalId)
+        {
+            var orgUnits = new List<string>()
+            {
+                "Location 1", "Location 2", "Department 1", "Department 2"
+            };
+
+            if (portalId == null)
+            {
+                return;
+            }
+            else
+            {
+                browser.Url = "https://www.trainingportal.no/mintra/" + portalId + "/admin/users/organizationUnitAdmin/show";
+
+                // add main units
+                foreach (var unit in orgUnits)
+                {
+                    Thread.Sleep(1000);
+                    var rootOrg = wait.Until(driver => driver.FindElement(By.XPath("//span[@id='dijit__TreeNode_1_label']")));
+                    rootOrg.Click();
+
+                    var btnCreateNew = wait.Until(driver => driver.FindElement(By.Id("orgUnitCreate")));
+                    btnCreateNew.Click();
+
+                    var txtTitle = wait.Until(driver => driver.FindElement(By.Name("OrganizationUnitDTO.name")));
+                    txtTitle.Click();
+                    txtTitle.SendKeys(unit);
+
+                    browser.FindElementByName("_eventId_complete").Click();
+                }
+
+
+
+
+
+            }
+        }
+
 
     }
 }
