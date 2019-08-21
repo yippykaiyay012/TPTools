@@ -9,14 +9,13 @@ using System.Threading;
 using System.Threading.Tasks;
 using TPToolsLibrary.BrowserActions;
 using TPToolsLibrary.SettingsAndTemplates;
-
+using TPToolsLibrary.SettingsAndTemplates.CertificateTemplates;
 
 namespace TPToolsLibrary
 {
     public enum PortalType
     {
         Basic,
-        Standard,
         Advanced
     }
 
@@ -24,7 +23,7 @@ namespace TPToolsLibrary
     {
 
         private static ChromeDriver browser = WebBrowser.Driver;
-        private static string portalId;
+        private static string portalId = "662";
 
         private static WebDriverWait wait = new WebDriverWait(browser, TimeSpan.FromSeconds(30));
 
@@ -35,11 +34,11 @@ namespace TPToolsLibrary
         {
            
             // 1. create company
-            CreateCompany(customerName);
+       //     CreateCompany(customerName);
 
 
             // 2. create portal
-            CreatePortal(customerName, isUK);
+     //       CreatePortal(customerName, isUK);
 
 
             // 3. Customize Portal
@@ -47,9 +46,12 @@ namespace TPToolsLibrary
             CustomizePortal(customerName, portalType);
 
 
-
             // 4. Templates
-            EmailTemplates(portalType);
+     //       EmailTemplates(portalType);
+
+
+            // 5. Certificate Template
+     //       AddCertificateTemplate(portalId, new StandardCertificate());
 
         }
 
@@ -159,13 +161,6 @@ namespace TPToolsLibrary
                 }
 
             }
-            else if (portalType == PortalType.Standard)
-            {
-                foreach (var element in PortalSettings.standardPortalSettings)
-                {
-                    CheckAndSelect(element);
-                }
-            }
             else if (portalType == PortalType.Advanced)
             {
                 foreach (var element in PortalSettings.advancedPortalSettings)
@@ -174,7 +169,7 @@ namespace TPToolsLibrary
                 }
             }
 
-            browser.FindElementByName("_eventId_complete").Click();
+       //     browser.FindElementByName("_eventId_complete").Click();
         }
 
 
@@ -196,13 +191,6 @@ namespace TPToolsLibrary
                         AddEmailTemplate(portalId, template);
                     }
                 }
-                else if (portalType == PortalType.Standard)
-                {
-                    foreach (var template in PortalSettings.standardEmailTemplates)
-                    {
-                        AddEmailTemplate(portalId, template);
-                    }
-                }
                 else if (portalType == PortalType.Advanced)
                 {
                     foreach (var template in PortalSettings.advancedEmailTemplates)
@@ -215,7 +203,6 @@ namespace TPToolsLibrary
             }
             
         }
-
 
 
         // if not already checked, check
@@ -255,6 +242,43 @@ namespace TPToolsLibrary
             browser.FindElementByName("_eventId_complete").Click();
         }
 
+
+
+        public static void AddCertificateTemplate(string portalId, ICertificateTemplate template)
+        {
+
+            if (portalId == null)
+            {
+                return;
+            }
+            else
+            {
+
+                browser.Url = "https://www.trainingportal.no/mintra/" + portalId + "/admin/content";
+
+                var btnNewCert = wait.Until(driver => driver.FindElement(By.Id("libraryNewCourseCertificate")));
+                btnNewCert.Click();
+
+                var txtTitle = wait.Until(driver => driver.FindElement(By.Name("contentDocument.title")));
+                txtTitle.SendKeys(template.TitleEn);
+
+                var btnTools = wait.Until(driver => driver.FindElement(By.XPath("//span[contains(text(),'Tools')]")));
+                btnTools.Click();
+                Thread.Sleep(500);
+                var btnSourceCode = wait.Until(driver => driver.FindElement(By.XPath("//span[contains(text(),'Source code')]")));
+                btnSourceCode.Click();
+                var txtSourceCode = wait.Until(driver => driver.FindElement(By.XPath("//textarea[@class='mce-textbox mce-multiline mce-abs-layout-item mce-first mce-last']")));
+                txtSourceCode.Click();
+                txtSourceCode.SendKeys(template.ContentEn);
+
+                var btnOK = wait.Until(driver => driver.FindElement(By.XPath("//span[contains(text(),'Ok')]")));
+                btnOK.Click();
+
+                browser.FindElementByName("_eventId_complete").Click();
+
+            }
+
+        }
         
 
     }

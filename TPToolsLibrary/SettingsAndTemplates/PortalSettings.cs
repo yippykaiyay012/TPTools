@@ -93,10 +93,7 @@ namespace TPToolsLibrary.BrowserActions
         };
 
 
-        public static readonly List<string> standardPortalSettings = new List<string>()
-        {
 
-        };
         public static readonly List<string> advancedPortalSettings = new List<string>()
         {
 
@@ -105,24 +102,35 @@ namespace TPToolsLibrary.BrowserActions
 
 
 
-
-
-
         // email templates for each type of portal
         public static readonly List<IEmailTemplate> basicEmailTemplates = new List<IEmailTemplate>()
         {
+            new CourseCompletionWithCertTemplate(),
+            new EnrolmentToBlendedCourseTemplate(),
+            new EnrolmentToClassroomCourseTemplate(),
             new EnrolmentToCourseTemplate(),
-            new CompetenceRequirementsTemplate()
+            new EnrolmentToElearningCourseWithDirectLink(),
+            new ReminderToCompleteElearningCourseTemplate(),
+            new RepetitionRequirementCourseTemplate()
+
+           
         };
 
-        public static readonly List<IEmailTemplate> standardEmailTemplates = new List<IEmailTemplate>()
-        {
-
-        };
 
         public static readonly List<IEmailTemplate> advancedEmailTemplates = new List<IEmailTemplate>()
         {
+            new CourseCompletionWithCertTemplate(),
+            new EnrolmentToBlendedCourseTemplate(),
+            new EnrolmentToClassroomCourseTemplate(),
+            new EnrolmentToCourseTemplate(),
+            new EnrolmentToElearningCourseWithDirectLink(),
+            new ReminderToCompleteElearningCourseTemplate(),
+            new RepetitionRequirementCourseTemplate(),
 
+            new CompetenceRequirementsTemplate(),
+            new RepetitionCompetenceTemplate(),
+            new RepetitionRequirementsForAdminTemplate()
         };
+
     }
 }
