@@ -168,11 +168,10 @@ namespace TPTools
 
                 Login.LogIn(txtUsernameAdmin.Text, txtPasswordAdmin.Text);
 
-                Thread thread = new Thread(() =>
-                    PortalAdministration.CreateFullPortal(txtCompanyName.Text, txtPortalName.Text, txtLogicalId.Text,
-                        txtURL.Text));
+                //Thread thread = new Thread(() =>
+                //    PortalAdministration.CreateDemoPortal()
                
-                thread.Start();
+                //thread.Start();
 
 
             }
@@ -223,6 +222,39 @@ namespace TPTools
             Thread thread = new Thread(() => CourseExpiry.SetCourseExpiry(courseCodeList, months, txtPortalIDExpiry.Text));
 
             thread.Start();
+        }
+
+        private void BtnCreateDemoPortal_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtDemoCompanyName.Text))
+            {
+                MessageBox.Show("Enter Company Name");
+                return;
+            }
+            else
+            {
+                PortalType portalType = PortalType.Basic;
+
+                if (rdioDemoBasic.Checked)
+                {
+                    portalType = PortalType.Basic;
+                }
+                else if (rdioDemoAdvanced.Checked)
+                {
+                    portalType = PortalType.Advanced;
+                }
+
+
+
+                Login.LogIn(txtUsernameAdmin.Text, txtPasswordAdmin.Text);
+
+                Thread thread = new Thread(() =>
+                    PortalAdministration.CreateDemoPortal(txtDemoCompanyName.Text, rdioUK.Checked, portalType));
+
+                thread.Start();
+
+
+            }
         }
     }
 }

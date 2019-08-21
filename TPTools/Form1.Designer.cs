@@ -100,8 +100,9 @@
             this.comboIndustry = new System.Windows.Forms.ComboBox();
             this.button2 = new System.Windows.Forms.Button();
             this.btnCreatePortal = new System.Windows.Forms.Button();
-            this.btnLogIn = new System.Windows.Forms.Button();
             this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.label23 = new System.Windows.Forms.Label();
+            this.txtCompanyShare = new System.Windows.Forms.RichTextBox();
             this.label21 = new System.Windows.Forms.Label();
             this.txtCourseIdShare = new System.Windows.Forms.RichTextBox();
             this.button3 = new System.Windows.Forms.Button();
@@ -109,9 +110,9 @@
             this.label22 = new System.Windows.Forms.Label();
             this.txtPortalIdCompanyShare = new System.Windows.Forms.TextBox();
             this.btnShareCourses = new System.Windows.Forms.Button();
-            this.label23 = new System.Windows.Forms.Label();
-            this.txtCompanyShare = new System.Windows.Forms.RichTextBox();
             this.tabPage8 = new System.Windows.Forms.TabPage();
+            this.Expiry = new System.Windows.Forms.Label();
+            this.txtExpiryMonths = new System.Windows.Forms.TextBox();
             this.button4 = new System.Windows.Forms.Button();
             this.progressBar2 = new System.Windows.Forms.ProgressBar();
             this.label24 = new System.Windows.Forms.Label();
@@ -119,8 +120,19 @@
             this.txtCourseCodesExpiry = new System.Windows.Forms.RichTextBox();
             this.label25 = new System.Windows.Forms.Label();
             this.btnSetExpiry = new System.Windows.Forms.Button();
-            this.Expiry = new System.Windows.Forms.Label();
-            this.txtExpiryMonths = new System.Windows.Forms.TextBox();
+            this.DemoPortal = new System.Windows.Forms.TabPage();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.rdioNotUk = new System.Windows.Forms.RadioButton();
+            this.rdioUK = new System.Windows.Forms.RadioButton();
+            this.label26 = new System.Windows.Forms.Label();
+            this.txtDemoCompanyName = new System.Windows.Forms.TextBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.rdioDemoAdvanced = new System.Windows.Forms.RadioButton();
+            this.rdioDemoBasic = new System.Windows.Forms.RadioButton();
+            this.button5 = new System.Windows.Forms.Button();
+            this.btnCreateDemoPortal = new System.Windows.Forms.Button();
+            this.btnLogIn = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -133,6 +145,10 @@
             this.groupBox1.SuspendLayout();
             this.tabPage7.SuspendLayout();
             this.tabPage8.SuspendLayout();
+            this.DemoPortal.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            this.groupBox5.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtUsernameAdmin
@@ -217,6 +233,7 @@
             this.tabControl1.Controls.Add(this.tabPage6);
             this.tabControl1.Controls.Add(this.tabPage7);
             this.tabControl1.Controls.Add(this.tabPage8);
+            this.tabControl1.Controls.Add(this.DemoPortal);
             this.tabControl1.Location = new System.Drawing.Point(306, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -854,16 +871,6 @@
             this.btnCreatePortal.UseVisualStyleBackColor = true;
             this.btnCreatePortal.Click += new System.EventHandler(this.BtnCreatePortal_Click);
             // 
-            // btnLogIn
-            // 
-            this.btnLogIn.Location = new System.Drawing.Point(205, 131);
-            this.btnLogIn.Name = "btnLogIn";
-            this.btnLogIn.Size = new System.Drawing.Size(75, 23);
-            this.btnLogIn.TabIndex = 9;
-            this.btnLogIn.Text = "Log In";
-            this.btnLogIn.UseVisualStyleBackColor = true;
-            this.btnLogIn.Click += new System.EventHandler(this.BtnLogIn_Click);
-            // 
             // tabPage7
             // 
             this.tabPage7.Controls.Add(this.label23);
@@ -882,6 +889,24 @@
             this.tabPage7.TabIndex = 6;
             this.tabPage7.Text = "CompanyShare";
             this.tabPage7.UseVisualStyleBackColor = true;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(313, 65);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(146, 13);
+            this.label23.TabIndex = 45;
+            this.label23.Text = "Companies (comma delimited)";
+            // 
+            // txtCompanyShare
+            // 
+            this.txtCompanyShare.Location = new System.Drawing.Point(316, 81);
+            this.txtCompanyShare.Name = "txtCompanyShare";
+            this.txtCompanyShare.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedVertical;
+            this.txtCompanyShare.Size = new System.Drawing.Size(251, 407);
+            this.txtCompanyShare.TabIndex = 44;
+            this.txtCompanyShare.Text = "";
             // 
             // label21
             // 
@@ -943,24 +968,6 @@
             this.btnShareCourses.UseVisualStyleBackColor = true;
             this.btnShareCourses.Click += new System.EventHandler(this.BtnShareCourses_Click);
             // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(313, 65);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(146, 13);
-            this.label23.TabIndex = 45;
-            this.label23.Text = "Companies (comma delimited)";
-            // 
-            // txtCompanyShare
-            // 
-            this.txtCompanyShare.Location = new System.Drawing.Point(316, 81);
-            this.txtCompanyShare.Name = "txtCompanyShare";
-            this.txtCompanyShare.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedVertical;
-            this.txtCompanyShare.Size = new System.Drawing.Size(251, 407);
-            this.txtCompanyShare.TabIndex = 44;
-            this.txtCompanyShare.Text = "";
-            // 
             // tabPage8
             // 
             this.tabPage8.Controls.Add(this.Expiry);
@@ -979,6 +986,22 @@
             this.tabPage8.TabIndex = 7;
             this.tabPage8.Text = "CourseExpiry";
             this.tabPage8.UseVisualStyleBackColor = true;
+            // 
+            // Expiry
+            // 
+            this.Expiry.AutoSize = true;
+            this.Expiry.Location = new System.Drawing.Point(154, 27);
+            this.Expiry.Name = "Expiry";
+            this.Expiry.Size = new System.Drawing.Size(79, 13);
+            this.Expiry.TabIndex = 36;
+            this.Expiry.Text = "Expiry Months: ";
+            // 
+            // txtExpiryMonths
+            // 
+            this.txtExpiryMonths.Location = new System.Drawing.Point(239, 24);
+            this.txtExpiryMonths.Name = "txtExpiryMonths";
+            this.txtExpiryMonths.Size = new System.Drawing.Size(69, 20);
+            this.txtExpiryMonths.TabIndex = 35;
             // 
             // button4
             // 
@@ -1040,21 +1063,144 @@
             this.btnSetExpiry.UseVisualStyleBackColor = true;
             this.btnSetExpiry.Click += new System.EventHandler(this.BtnSetExpiry_Click);
             // 
-            // Expiry
+            // DemoPortal
             // 
-            this.Expiry.AutoSize = true;
-            this.Expiry.Location = new System.Drawing.Point(154, 27);
-            this.Expiry.Name = "Expiry";
-            this.Expiry.Size = new System.Drawing.Size(79, 13);
-            this.Expiry.TabIndex = 36;
-            this.Expiry.Text = "Expiry Months: ";
+            this.DemoPortal.Controls.Add(this.groupBox4);
+            this.DemoPortal.Controls.Add(this.groupBox3);
+            this.DemoPortal.Controls.Add(this.button5);
+            this.DemoPortal.Controls.Add(this.btnCreateDemoPortal);
+            this.DemoPortal.Location = new System.Drawing.Point(4, 22);
+            this.DemoPortal.Name = "DemoPortal";
+            this.DemoPortal.Padding = new System.Windows.Forms.Padding(3);
+            this.DemoPortal.Size = new System.Drawing.Size(726, 556);
+            this.DemoPortal.TabIndex = 8;
+            this.DemoPortal.Text = "CreateDemoPortal";
+            this.DemoPortal.UseVisualStyleBackColor = true;
             // 
-            // txtExpiryMonths
+            // groupBox4
             // 
-            this.txtExpiryMonths.Location = new System.Drawing.Point(239, 24);
-            this.txtExpiryMonths.Name = "txtExpiryMonths";
-            this.txtExpiryMonths.Size = new System.Drawing.Size(69, 20);
-            this.txtExpiryMonths.TabIndex = 35;
+            this.groupBox4.Controls.Add(this.groupBox5);
+            this.groupBox4.Controls.Add(this.label26);
+            this.groupBox4.Controls.Add(this.txtDemoCompanyName);
+            this.groupBox4.Location = new System.Drawing.Point(18, 30);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(295, 395);
+            this.groupBox4.TabIndex = 40;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Portal Details";
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.rdioNotUk);
+            this.groupBox5.Controls.Add(this.rdioUK);
+            this.groupBox5.Location = new System.Drawing.Point(9, 165);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(134, 105);
+            this.groupBox5.TabIndex = 41;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Is UK?";
+            // 
+            // rdioNotUk
+            // 
+            this.rdioNotUk.AutoSize = true;
+            this.rdioNotUk.Location = new System.Drawing.Point(6, 66);
+            this.rdioNotUk.Name = "rdioNotUk";
+            this.rdioNotUk.Size = new System.Drawing.Size(39, 17);
+            this.rdioNotUk.TabIndex = 1;
+            this.rdioNotUk.TabStop = true;
+            this.rdioNotUk.Text = "No";
+            this.rdioNotUk.UseVisualStyleBackColor = true;
+            // 
+            // rdioUK
+            // 
+            this.rdioUK.AutoSize = true;
+            this.rdioUK.Checked = true;
+            this.rdioUK.Location = new System.Drawing.Point(6, 34);
+            this.rdioUK.Name = "rdioUK";
+            this.rdioUK.Size = new System.Drawing.Size(43, 17);
+            this.rdioUK.TabIndex = 0;
+            this.rdioUK.TabStop = true;
+            this.rdioUK.Text = "Yes";
+            this.rdioUK.UseVisualStyleBackColor = true;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(6, 65);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(79, 13);
+            this.label26.TabIndex = 6;
+            this.label26.Text = "CompanyName";
+            // 
+            // txtDemoCompanyName
+            // 
+            this.txtDemoCompanyName.Location = new System.Drawing.Point(6, 81);
+            this.txtDemoCompanyName.Name = "txtDemoCompanyName";
+            this.txtDemoCompanyName.Size = new System.Drawing.Size(265, 20);
+            this.txtDemoCompanyName.TabIndex = 1;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.rdioDemoAdvanced);
+            this.groupBox3.Controls.Add(this.rdioDemoBasic);
+            this.groupBox3.Location = new System.Drawing.Point(422, 16);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(295, 105);
+            this.groupBox3.TabIndex = 39;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Settings";
+            // 
+            // rdioDemoAdvanced
+            // 
+            this.rdioDemoAdvanced.AutoSize = true;
+            this.rdioDemoAdvanced.Location = new System.Drawing.Point(6, 66);
+            this.rdioDemoAdvanced.Name = "rdioDemoAdvanced";
+            this.rdioDemoAdvanced.Size = new System.Drawing.Size(74, 17);
+            this.rdioDemoAdvanced.TabIndex = 1;
+            this.rdioDemoAdvanced.TabStop = true;
+            this.rdioDemoAdvanced.Text = "Advanced";
+            this.rdioDemoAdvanced.UseVisualStyleBackColor = true;
+            // 
+            // rdioDemoBasic
+            // 
+            this.rdioDemoBasic.AutoSize = true;
+            this.rdioDemoBasic.Checked = true;
+            this.rdioDemoBasic.Location = new System.Drawing.Point(6, 34);
+            this.rdioDemoBasic.Name = "rdioDemoBasic";
+            this.rdioDemoBasic.Size = new System.Drawing.Size(51, 17);
+            this.rdioDemoBasic.TabIndex = 0;
+            this.rdioDemoBasic.TabStop = true;
+            this.rdioDemoBasic.Text = "Basic";
+            this.rdioDemoBasic.UseVisualStyleBackColor = true;
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(594, 507);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(123, 46);
+            this.button5.TabIndex = 38;
+            this.button5.Text = "Cancel";
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // btnCreateDemoPortal
+            // 
+            this.btnCreateDemoPortal.Location = new System.Drawing.Point(594, 449);
+            this.btnCreateDemoPortal.Name = "btnCreateDemoPortal";
+            this.btnCreateDemoPortal.Size = new System.Drawing.Size(123, 46);
+            this.btnCreateDemoPortal.TabIndex = 37;
+            this.btnCreateDemoPortal.Text = "Create";
+            this.btnCreateDemoPortal.UseVisualStyleBackColor = true;
+            this.btnCreateDemoPortal.Click += new System.EventHandler(this.BtnCreateDemoPortal_Click);
+            // 
+            // btnLogIn
+            // 
+            this.btnLogIn.Location = new System.Drawing.Point(205, 131);
+            this.btnLogIn.Name = "btnLogIn";
+            this.btnLogIn.Size = new System.Drawing.Size(75, 23);
+            this.btnLogIn.TabIndex = 9;
+            this.btnLogIn.Text = "Log In";
+            this.btnLogIn.UseVisualStyleBackColor = true;
+            this.btnLogIn.Click += new System.EventHandler(this.BtnLogIn_Click);
             // 
             // Form1
             // 
@@ -1092,6 +1238,13 @@
             this.tabPage7.PerformLayout();
             this.tabPage8.ResumeLayout(false);
             this.tabPage8.PerformLayout();
+            this.DemoPortal.ResumeLayout(false);
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1192,6 +1345,18 @@
         private System.Windows.Forms.RichTextBox txtCourseCodesExpiry;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Button btnSetExpiry;
+        private System.Windows.Forms.TabPage DemoPortal;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.RadioButton rdioDemoAdvanced;
+        private System.Windows.Forms.RadioButton rdioDemoBasic;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btnCreateDemoPortal;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.RadioButton rdioNotUk;
+        private System.Windows.Forms.RadioButton rdioUK;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.TextBox txtDemoCompanyName;
     }
 }
 

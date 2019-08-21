@@ -10,6 +10,5 @@ namespace TPToolsLibrary
     public static class WebBrowser
     {
         public static ChromeDriver Driver = new ChromeDriver();
-
     }
 }
