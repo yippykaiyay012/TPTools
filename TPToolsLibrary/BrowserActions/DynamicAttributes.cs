@@ -1,4 +1,7 @@
-﻿using System;
+﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Support.UI;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,15 +11,18 @@ namespace TPToolsLibrary
 {
     public class DynamicAttributes
     {
+        private static ChromeDriver browser = WebBrowser.Driver;
+        private static WebDriverWait wait = WebBrowser.wait;
+
         public static void AddAttributes(List<string> attributeList, string txtPortalId)
         {
-            var browser = WebBrowser.Driver;
+
             if (!browser.Url.Contains("/admin/portals/portal/" + txtPortalId + "/dynamicattribute/list"))
             {
                 browser.Url = @"https://www.trainingportal.no/mintra/" + txtPortalId + "/admin/portals/portal/" + txtPortalId + "/dynamicattribute/list";
             }
 
-            browser.FindElementByXPath("(//a[@name='Edit'])[2]").Click();
+            wait.Until(driver => driver.FindElement(By.XPath("(//a[@name='Edit'])[2]"))).Click();
 
          //   progDynam.Value = 0;
          //   progDynam.Maximum = attributeList.Length;
@@ -24,8 +30,8 @@ namespace TPToolsLibrary
 
             foreach (var attribute in attributeList)
             {
-                var txtAttributeEntry = browser.FindElementById("dynamicAttributeValueOption");
-                var btnAddToList = browser.FindElementByName("_eventId_addNewSelectableValueToDynamicAttribute");
+                var txtAttributeEntry = wait.Until(driver => driver.FindElement(By.Id("dynamicAttributeValueOption")));
+                var btnAddToList = wait.Until(driver => driver.FindElement(By.Name("_eventId_addNewSelectableValueToDynamicAttribute")));
 
                 txtAttributeEntry.Clear();
                 txtAttributeEntry.SendKeys(attribute.Trim());

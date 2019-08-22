@@ -1,4 +1,7 @@
-﻿using System;
+﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Support.UI;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,11 +12,11 @@ namespace TPToolsLibrary
 {
     public class CourseExpiry
     {
+        private static ChromeDriver browser = WebBrowser.Driver;
+        private static WebDriverWait wait = WebBrowser.wait;
 
         public static void SetCourseExpiry(List<string> courseCodeList, string months, string portalId)
         {
-            var browser = WebBrowser.Driver;
-
 
             foreach(var course in courseCodeList)
             {
@@ -22,15 +25,15 @@ namespace TPToolsLibrary
                        @"https://www.trainingportal.no/mintra/" + portalId + "/admin/courses/course/" + course + "/dashboard/about";
 
 
-                browser.FindElementById("courseBasicPropertiesEditMiniIcon").Click();
+                wait.Until(driver => driver.FindElement(By.Id("courseBasicPropertiesEditMiniIcon"))).Click();
 
-                browser.FindElementById("repetitionIntervalEdit__setIntervalRadioWrapper").Click();
+                wait.Until(driver => driver.FindElement(By.Id("repetitionIntervalEdit__setIntervalRadioWrapper"))).Click();
                
                 Thread.Sleep(500);
 
-                browser.FindElementById("repetitionIntervalEdit__intervalSelector").Clear();
+                wait.Until(driver => driver.FindElement(By.Id("repetitionIntervalEdit__intervalSelector"))).Clear();
 
-                browser.FindElementById("repetitionIntervalEdit__intervalSelector").SendKeys(months);
+                wait.Until(driver => driver.FindElement(By.Id("repetitionIntervalEdit__intervalSelector"))).SendKeys(months);
 
                 browser.FindElementByName("_eventId_complete").Click();
 

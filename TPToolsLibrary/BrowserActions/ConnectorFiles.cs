@@ -1,4 +1,7 @@
-﻿using System;
+﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Support.UI;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -9,10 +12,11 @@ namespace TPToolsLibrary
 {
     public class ConnectorFiles
     {
+        private static ChromeDriver browser = WebBrowser.Driver;
+        private static WebDriverWait wait = WebBrowser.wait;
+
         public static void Download(List<string> courseCodeList, string portalId)
         {
-            var browser = WebBrowser.Driver;
-
             //   progConnector.Value = 0;
             //   progConnector.Maximum = courseCodeList.Length;
 
@@ -24,7 +28,7 @@ namespace TPToolsLibrary
                    @"https://www.trainingportal.no/mintra/" + portalId + "/admin/courses/course/" + course + "/dashboard/courseContent";
 
                     browser.Url = courseUrl;
-                    browser.FindElementById("courseContent__downloadForCloud_button").Click();
+                    wait.Until(driver => driver.FindElement(By.Id("courseContent__downloadForCloud_button"))).Click();
 
                     //  progConnector.Increment(1);
                 }

@@ -12,13 +12,29 @@ namespace TPToolsLibrary
 
         public static void LogError(string error)
         {
-            File.AppendAllText(_fileLocation, "Error: " + DateTime.Now.ToString() + " : " + error);
+            try
+            {
+                File.AppendAllText(_fileLocation, "Error: " + DateTime.Now.ToString() + " : " + error);
+            }
+            catch
+            {
+
+            }
+            
         }
 
 
         public static void LogInfo(string info)
         {
-            File.AppendAllText(_fileLocation, "Info: " + DateTime.Now.ToString() + " : " + info);
+            try
+            {
+                File.AppendAllText(_fileLocation, "Info: " + DateTime.Now.ToString() + " : " + info);
+            }
+            catch
+            {
+
+            }
+            
         }
     }
 }

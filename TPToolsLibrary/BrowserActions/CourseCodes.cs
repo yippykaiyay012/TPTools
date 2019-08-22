@@ -1,4 +1,7 @@
-﻿using System;
+﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Support.UI;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,25 +12,24 @@ namespace TPToolsLibrary
     public class CourseCodes
     {
 
-
+        private static ChromeDriver browser = WebBrowser.Driver;
+        private static WebDriverWait wait = WebBrowser.wait;
 
 
         public static void AddCourseCodes(List<string> courseCodeList)
         {
-            var browser = WebBrowser.Driver;
-            //Login.LogIn();
 
             if (!browser.Url.Contains("/support/purchase/create"))
             {
                 browser.Url = @"https://www.trainingportal.no/mintra/474/admin/ecommerce/support/customeraccounts";
-                browser.FindElementById("createPurchaseButton").Click();
+                wait.Until(driver => driver.FindElement(By.Id("createPurchaseButton"))).Click();
                 
             }
 
 
 
-            var txtCourseCode = browser.FindElementById("addCourseCodesInput");
-            var btnAddCourse = browser.FindElementById("addCourseCodesButton");
+            var txtCourseCode = wait.Until(driver => driver.FindElement(By.Id("addCourseCodesInput")));
+            var btnAddCourse = wait.Until(driver => driver.FindElement(By.Id("addCourseCodesButton")));
 
 
             //   progCourseCodes.Value = 0;

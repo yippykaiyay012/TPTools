@@ -1,4 +1,6 @@
 ﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,9 +12,11 @@ namespace TPToolsLibrary
 {
     public class CompanyShare
     {
+        private static ChromeDriver browser = WebBrowser.Driver;
+        private static WebDriverWait wait = WebBrowser.wait;
+
         public static void ShareCourses(List<string> courseCodeList, List<string> companyList, string portalId)
         {
-            var browser = WebBrowser.Driver;
 
             foreach (var course in courseCodeList)
             {
@@ -23,13 +27,13 @@ namespace TPToolsLibrary
 
                 foreach(var company in companyList)
                 {
-                    browser.FindElementByXPath("//*[@id='section']/div/div[1]/div/div/span").Click();
+                    wait.Until(driver => driver.FindElement(By.XPath("//*[@id='section']/div/div[1]/div/div/span"))).Click();
 
-                    browser.FindElementByXPath("//*[@id='companyRadioButton']").Click();
+                    wait.Until(driver => driver.FindElement(By.XPath("//*[@id='companyRadioButton']"))).Click();
 
-                    browser.FindElementByXPath("//*[@id='company']").SendKeys(company);
+                    wait.Until(driver => driver.FindElement(By.XPath("//*[@id='company']"))).SendKeys(company);
                     Thread.Sleep(2000);
-                    browser.FindElementByXPath("//*[@id='company']").SendKeys(Keys.Tab);
+                    wait.Until(driver => driver.FindElement(By.XPath("//*[@id='company']"))).SendKeys(Keys.Tab);
                     Thread.Sleep(1000);
                     browser.FindElementByName("_eventId_complete").Click();
 

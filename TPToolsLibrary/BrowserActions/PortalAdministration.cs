@@ -17,11 +17,9 @@ namespace TPToolsLibrary
     {
 
         private static ChromeDriver browser = WebBrowser.Driver;
+        private static WebDriverWait wait = WebBrowser.wait;
+
         private static string portalId = null;
-
-        private static WebDriverWait wait = new WebDriverWait(browser, TimeSpan.FromSeconds(30));
-
-
 
 
         public static void CreateDemoPortal(string customerName, bool isUK, PortalType portalType)
@@ -64,7 +62,7 @@ namespace TPToolsLibrary
         private static bool CreateCompany(string customerName)
         {
             browser.Url = @"https://www.trainingportal.no/mintra/474/admin/companies";
-            var createNewButton = wait.Until(driver => driver.FindElement(By.Id("generalCreate")));
+            var createNewButton = WebBrowser.wait.Until(driver => driver.FindElement(By.Id("generalCreate")));
             createNewButton.Click();
 
             var createPageURL = browser.Url;

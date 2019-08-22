@@ -1,4 +1,7 @@
-﻿using System;
+﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Support.UI;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,9 +12,11 @@ namespace TPToolsLibrary
 {
     public class EnrolmentRules
     {
+        private static ChromeDriver browser = WebBrowser.Driver;
+        private static WebDriverWait wait = WebBrowser.wait;
+
         public static void AddEnrolmentRule(List<string> courseCodeList, string emailAddress, string orgUnit,  string portalId)
         {
-            var browser = WebBrowser.Driver;
             //   progEnrolRules.Value = 0;
             //  progEnrolRules.Maximum = courseCodeList.Length;
 
@@ -20,31 +25,31 @@ namespace TPToolsLibrary
                 browser.Url =
                     @"https://www.trainingportal.no/mintra/" + portalId + "/admin/courses/course/" + course + "/dashboard/enrollmentrules/list";
 
-                browser.FindElementByClassName("buttonText").Click();
+                wait.Until(driver => driver.FindElement(By.ClassName("buttonText"))).Click();
 
-                browser.FindElementById("targetGroupEditOrgUnitAnchor").Click();
+                wait.Until(driver => driver.FindElement(By.Id("targetGroupEditOrgUnitAnchor"))).Click();
 
-                browser.FindElementById("singleOrgUnitsSelectedRadioGroup").Click();
+                wait.Until(driver => driver.FindElement(By.Id("singleOrgUnitsSelectedRadioGroup"))).Click();
 
-                browser.FindElementById("clickMeyay").Click();
-
-                Thread.Sleep(500);
-
-                browser.FindElementByXPath("//*[@id='dijit__TreeNode_1']/div[1]/span[1]").Click();
+                wait.Until(driver => driver.FindElement(By.Id("clickMeyay"))).Click();
 
                 Thread.Sleep(500);
 
-                browser.FindElementByXPath("//span[contains(@class,'dijitTreeLabel') and contains(text(), '" + orgUnit + "')]").Click();
+                wait.Until(driver => driver.FindElement(By.XPath("//*[@id='dijit__TreeNode_1']/div[1]/span[1]"))).Click();
 
                 Thread.Sleep(500);
 
-                browser.FindElementById("targetGroup__submitOrgUnit_button").Click();
+                wait.Until(driver => driver.FindElement(By.XPath("//span[contains(@class,'dijitTreeLabel') and contains(text(), '" + orgUnit + "')]"))).Click();
 
-                browser.FindElementById("APPROVAL_NEEDED").Click();
+                Thread.Sleep(500);
 
-                browser.FindElementById("OTHER_APPROVAL").Click();
+                wait.Until(driver => driver.FindElement(By.Id("targetGroup__submitOrgUnit_button"))).Click();
 
-                browser.FindElementById("emailAddress").SendKeys(emailAddress);
+                wait.Until(driver => driver.FindElement(By.Id("APPROVAL_NEEDED"))).Click();
+
+                wait.Until(driver => driver.FindElement(By.Id("OTHER_APPROVAL"))).Click();
+
+                wait.Until(driver => driver.FindElement(By.Id("emailAddress"))).SendKeys(emailAddress);
 
                 browser.FindElementByName("_eventId_complete").Click();
 

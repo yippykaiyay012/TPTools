@@ -1,4 +1,7 @@
-﻿using System;
+﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Support.UI;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,10 +11,11 @@ namespace TPToolsLibrary
 {
     public class CompetencyAssessment
     {
+        private static ChromeDriver browser = WebBrowser.Driver;
+        private static WebDriverWait wait = WebBrowser.wait;
+
         public static void UpdateCompetencyStatus(List<string> compCodeList, bool applyAssessment, string portalID)
         {
-            var browser = WebBrowser.Driver;
-
             // progComp.Value = 0;
             //  progComp.Maximum = compCodeList.Length;
 
@@ -22,20 +26,20 @@ namespace TPToolsLibrary
                browser.Url = compUrl;
 
                 //var downloadButton = Driver.FindElementById("courseContent__downloadForCloud_button");
-               browser.FindElementByXPath("(//a[@title='Edit'])[3]").Click();
+               wait.Until(driver => driver.FindElement(By.XPath("(//a[@title='Edit'])[3]"))).Click();
 
                 var saveButton =browser.FindElementByName("_eventId_editApplicationApprovalSubmit");
 
                 if (applyAssessment)
                 {
-                   browser.FindElementById("enableStudentApprovalApplicationBtn").Click();
+                   wait.Until(driver => driver.FindElement(By.Id("enableStudentApprovalApplicationBtn"))).Click();
 
                     saveButton.Click();
                 }
 
                 if (!applyAssessment)
                 {
-                   browser.FindElementById("disableStudentApprovalApplicationBtn").Click();
+                   wait.Until(driver => driver.FindElement(By.Id("disableStudentApprovalApplicationBtn"))).Click();
 
                     saveButton.Click();
                 }
