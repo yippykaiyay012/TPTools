@@ -48,8 +48,10 @@
             this.label26 = new System.Windows.Forms.Label();
             this.txtDemoCompanyName = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.rdioDemoAdvanced = new System.Windows.Forms.RadioButton();
+            this.chkAddDemoUsers = new System.Windows.Forms.CheckBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.rdioDemoBasic = new System.Windows.Forms.RadioButton();
+            this.rdioDemoAdvanced = new System.Windows.Forms.RadioButton();
             this.button5 = new System.Windows.Forms.Button();
             this.btnCreateDemoPortal = new System.Windows.Forms.Button();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -123,13 +125,13 @@
             this.btnSetExpiry = new System.Windows.Forms.Button();
             this.btnLogIn = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.chkAddDemoUsers = new System.Windows.Forms.CheckBox();
             this.tabControl1.SuspendLayout();
             this.DemoPortal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabPage2.SuspendLayout();
@@ -243,7 +245,6 @@
             // 
             // DemoPortal
             // 
-            this.DemoPortal.Controls.Add(this.chkAddDemoUsers);
             this.DemoPortal.Controls.Add(this.pictureBox4);
             this.DemoPortal.Controls.Add(this.groupBox4);
             this.DemoPortal.Controls.Add(this.groupBox3);
@@ -334,39 +335,62 @@
             // groupBox3
             // 
             this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox3.Controls.Add(this.rdioDemoAdvanced);
-            this.groupBox3.Controls.Add(this.rdioDemoBasic);
+            this.groupBox3.Controls.Add(this.chkAddDemoUsers);
+            this.groupBox3.Controls.Add(this.groupBox1);
             this.groupBox3.Location = new System.Drawing.Point(422, 52);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(295, 105);
+            this.groupBox3.Size = new System.Drawing.Size(295, 203);
             this.groupBox3.TabIndex = 39;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Settings";
             // 
-            // rdioDemoAdvanced
+            // chkAddDemoUsers
             // 
-            this.rdioDemoAdvanced.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.rdioDemoAdvanced.AutoSize = true;
-            this.rdioDemoAdvanced.Location = new System.Drawing.Point(6, 66);
-            this.rdioDemoAdvanced.Name = "rdioDemoAdvanced";
-            this.rdioDemoAdvanced.Size = new System.Drawing.Size(74, 17);
-            this.rdioDemoAdvanced.TabIndex = 1;
-            this.rdioDemoAdvanced.TabStop = true;
-            this.rdioDemoAdvanced.Text = "Advanced";
-            this.rdioDemoAdvanced.UseVisualStyleBackColor = true;
+            this.chkAddDemoUsers.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.chkAddDemoUsers.AutoSize = true;
+            this.chkAddDemoUsers.Location = new System.Drawing.Point(12, 155);
+            this.chkAddDemoUsers.Name = "chkAddDemoUsers";
+            this.chkAddDemoUsers.Size = new System.Drawing.Size(106, 17);
+            this.chkAddDemoUsers.TabIndex = 42;
+            this.chkAddDemoUsers.Text = "Add Demo Users";
+            this.chkAddDemoUsers.UseVisualStyleBackColor = true;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.rdioDemoBasic);
+            this.groupBox1.Controls.Add(this.rdioDemoAdvanced);
+            this.groupBox1.Location = new System.Drawing.Point(6, 36);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(124, 100);
+            this.groupBox1.TabIndex = 43;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Type";
             // 
             // rdioDemoBasic
             // 
             this.rdioDemoBasic.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.rdioDemoBasic.AutoSize = true;
             this.rdioDemoBasic.Checked = true;
-            this.rdioDemoBasic.Location = new System.Drawing.Point(6, 34);
+            this.rdioDemoBasic.Location = new System.Drawing.Point(6, 31);
             this.rdioDemoBasic.Name = "rdioDemoBasic";
             this.rdioDemoBasic.Size = new System.Drawing.Size(51, 17);
             this.rdioDemoBasic.TabIndex = 0;
             this.rdioDemoBasic.TabStop = true;
             this.rdioDemoBasic.Text = "Basic";
             this.rdioDemoBasic.UseVisualStyleBackColor = true;
+            // 
+            // rdioDemoAdvanced
+            // 
+            this.rdioDemoAdvanced.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.rdioDemoAdvanced.AutoSize = true;
+            this.rdioDemoAdvanced.Location = new System.Drawing.Point(6, 63);
+            this.rdioDemoAdvanced.Name = "rdioDemoAdvanced";
+            this.rdioDemoAdvanced.Size = new System.Drawing.Size(74, 17);
+            this.rdioDemoAdvanced.TabIndex = 1;
+            this.rdioDemoAdvanced.TabStop = true;
+            this.rdioDemoAdvanced.Text = "Advanced";
+            this.rdioDemoAdvanced.UseVisualStyleBackColor = true;
             // 
             // button5
             // 
@@ -1136,16 +1160,6 @@
             this.btnLogIn.UseVisualStyleBackColor = true;
             this.btnLogIn.Click += new System.EventHandler(this.BtnLogIn_Click);
             // 
-            // chkAddDemoUsers
-            // 
-            this.chkAddDemoUsers.AutoSize = true;
-            this.chkAddDemoUsers.Location = new System.Drawing.Point(428, 172);
-            this.chkAddDemoUsers.Name = "chkAddDemoUsers";
-            this.chkAddDemoUsers.Size = new System.Drawing.Size(106, 17);
-            this.chkAddDemoUsers.TabIndex = 42;
-            this.chkAddDemoUsers.Text = "Add Demo Users";
-            this.chkAddDemoUsers.UseVisualStyleBackColor = true;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1164,7 +1178,6 @@
             this.Text = "TPTools";
             this.tabControl1.ResumeLayout(false);
             this.DemoPortal.ResumeLayout(false);
-            this.DemoPortal.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
@@ -1172,6 +1185,8 @@
             this.groupBox5.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -1296,6 +1311,7 @@
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.CheckBox chkAddDemoUsers;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }
 

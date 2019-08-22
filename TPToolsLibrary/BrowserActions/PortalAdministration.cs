@@ -159,7 +159,7 @@ namespace TPToolsLibrary
             browser.Url = "https://www.trainingportal.no/mintra/474/admin/portals?maxResults=20&page=1&criteria%5Bquery%5D.value=" + portalName;
             browser.FindElementByLinkText(portalName).Click();
 
-            portalId = browser.Url.Substring(browser.Url.Length - 3);
+            portalId = browser.Url.Substring(browser.Url.LastIndexOf('/') + 1);
 
             var btnEditPortal = wait.Until(driver => driver.FindElement(By.Id("editPortal")));
             btnEditPortal.Click();
