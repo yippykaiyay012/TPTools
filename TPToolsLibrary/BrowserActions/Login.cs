@@ -42,6 +42,10 @@ namespace TPToolsLibrary
                     }
 
                 }
+                else
+                {
+                    MessageBox.Show("Already Logged In m8");
+                }
             }
             catch (Exception e)
             {
