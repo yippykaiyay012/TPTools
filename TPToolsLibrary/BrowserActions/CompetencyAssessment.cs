@@ -21,32 +21,40 @@ namespace TPToolsLibrary
 
             foreach (var comp in compCodeList)
             {
-                var compUrl = @"https://www.trainingportal.no/mintra/" + portalID + "/admin/competences/competence/dashboard/about/" + comp;
-
-               browser.Url = compUrl;
-
-                //var downloadButton = Driver.FindElementById("courseContent__downloadForCloud_button");
-               wait.Until(driver => driver.FindElement(By.XPath("(//a[@title='Edit'])[3]"))).Click();
-
-                var saveButton =browser.FindElementByName("_eventId_editApplicationApprovalSubmit");
-
-                if (applyAssessment)
+                try
                 {
-                   wait.Until(driver => driver.FindElement(By.Id("enableStudentApprovalApplicationBtn"))).Click();
+                    var compUrl = @"https://www.trainingportal.no/mintra/" + portalID + "/admin/competences/competence/dashboard/about/" + comp;
 
-                    saveButton.Click();
+                    browser.Url = compUrl;
+
+                    //var downloadButton = Driver.FindElementById("courseContent__downloadForCloud_button");
+                    wait.Until(driver => driver.FindElement(By.XPath("(//a[@title='Edit'])[3]"))).Click();
+
+                    var saveButton = browser.FindElementByName("_eventId_editApplicationApprovalSubmit");
+
+                    if (applyAssessment)
+                    {
+                        wait.Until(driver => driver.FindElement(By.Id("enableStudentApprovalApplicationBtn"))).Click();
+
+                        saveButton.Click();
+                    }
+
+                    if (!applyAssessment)
+                    {
+                        wait.Until(driver => driver.FindElement(By.Id("disableStudentApprovalApplicationBtn"))).Click();
+
+                        saveButton.Click();
+                    }
+
+
+                    //progComp.Increment(1);
+
                 }
-
-                if (!applyAssessment)
+                catch (Exception e)
                 {
-                   wait.Until(driver => driver.FindElement(By.Id("disableStudentApprovalApplicationBtn"))).Click();
-
-                    saveButton.Click();
+                    Logger.LogError(e.ToString());
                 }
-
-
-                //progComp.Increment(1);
-
+             
             }
         }
     }

@@ -32,7 +32,10 @@ namespace TPToolsLibrary
             }
 
             // 2. create portal
-            CreatePortal(customerName, isUK);
+            if (!CreatePortal(customerName, isUK))
+            {
+                return;
+            }
 
 
             // 3. Customize Portal
@@ -65,90 +68,117 @@ namespace TPToolsLibrary
 
         private static bool CreateCompany(string customerName)
         {
-            browser.Url = @"https://www.trainingportal.no/mintra/474/admin/companies";
-            var createNewButton = WebBrowser.wait.Until(driver => driver.FindElement(By.Id("generalCreate")));
-            createNewButton.Click();
-
-            var createPageURL = browser.Url;
-
-            var txtCompanyName = wait.Until(driver => driver.FindElement(By.Name("companyName")));
-            txtCompanyName.SendKeys(customerName);
-            var txtCostCenterName = wait.Until(driver => driver.FindElement(By.Name("costCenterName")));
-            txtCostCenterName.SendKeys("xxx");
-            var txtCustomerName = wait.Until(driver => driver.FindElement(By.Name("customerName")));
-            txtCustomerName.SendKeys(customerName);
-            var txtCustomerNumber = wait.Until(driver => driver.FindElement(By.Name("customerNumber")));
-            txtCustomerNumber.SendKeys("xxx");
-            browser.FindElementByName("_eventId_complete").Click();
-
-            if(browser.Url == createPageURL)
+            try
             {
+                browser.Url = @"https://www.trainingportal.no/mintra/474/admin/companies";
+                var createNewButton = WebBrowser.wait.Until(driver => driver.FindElement(By.Id("generalCreate")));
+                createNewButton.Click();
+
+                var createPageURL = browser.Url;
+
+                var txtCompanyName = wait.Until(driver => driver.FindElement(By.Name("companyName")));
+                txtCompanyName.SendKeys(customerName);
+                var txtCostCenterName = wait.Until(driver => driver.FindElement(By.Name("costCenterName")));
+                txtCostCenterName.SendKeys("xxx");
+                var txtCustomerName = wait.Until(driver => driver.FindElement(By.Name("customerName")));
+                txtCustomerName.SendKeys(customerName);
+                var txtCustomerNumber = wait.Until(driver => driver.FindElement(By.Name("customerNumber")));
+                txtCustomerNumber.SendKeys("xxx");
+                browser.FindElementByName("_eventId_complete").Click();
+
+                if (browser.Url == createPageURL)
+                {
+                    return false;
+                }
+                return true;
+            }
+            catch (Exception e)
+            {
+                Logger.LogError(e.ToString());
                 return false;
             }
-            return true;
+
         }
 
-        private static void CreatePortal(string customerName, bool isUK)
+        private static bool CreatePortal(string customerName, bool isUK)
         {
-            browser.Url = @"https://www.trainingportal.no/mintra/474/admin/portals";
-            var btnCreatePortal = wait.Until(driver => driver.FindElement(By.Id("generalCreate")));
-            btnCreatePortal.Click();
-
-            var portalName = customerName + " Demo Trainingportal";
-            var txtPortalName = wait.Until(driver => driver.FindElement(By.Name("portal.name")));
-            txtPortalName.SendKeys(portalName);
-
-            var txtLogicalId = wait.Until(driver => driver.FindElement(By.Name("portal.logicalId")));
-            txtLogicalId.SendKeys(portalName.Replace(" ", ""));
-
-            if (isUK)
+            try
             {
-                var txtURL = wait.Until(driver => driver.FindElement(By.Name("portal.url")));
-                txtURL.SendKeys("www.trainingportal.co.uk/mintra/p/" + portalName.Replace(" ", ""));
+                browser.Url = @"https://www.trainingportal.no/mintra/474/admin/portals";
+                var btnCreatePortal = wait.Until(driver => driver.FindElement(By.Id("generalCreate")));
+                btnCreatePortal.Click();
 
-                var txtContactCompany = wait.Until(driver => driver.FindElement(By.XPath("//*[@id='dijit_form_Select_0']/tbody/tr/td[2]/input")));
-                txtContactCompany.Click();
-                txtContactCompany.SendKeys("Mintra Trainingportal Ltd");
-                Thread.Sleep(1000);
-                txtContactCompany.SendKeys(Keys.Tab);
+                var createPageURL = browser.Url;
 
-                var txtServerDomain = wait.Until(driver => driver.FindElement(By.XPath("//*[@id='dijit_form_Select_1']/tbody/tr/td[2]/input")));
-                txtServerDomain.Click();
-                txtServerDomain.SendKeys("https://www.trainingportal.co.uk");
+                var portalName = customerName + " Demo Trainingportal";
+                var txtPortalName = wait.Until(driver => driver.FindElement(By.Name("portal.name")));
+                txtPortalName.SendKeys(portalName);
+
+                var txtLogicalId = wait.Until(driver => driver.FindElement(By.Name("portal.logicalId")));
+                txtLogicalId.SendKeys(portalName.Replace(" ", ""));
+
+                if (isUK)
+                {
+                    var txtURL = wait.Until(driver => driver.FindElement(By.Name("portal.url")));
+                    txtURL.SendKeys("www.trainingportal.co.uk/mintra/p/" + portalName.Replace(" ", ""));
+
+                    var txtContactCompany = wait.Until(driver => driver.FindElement(By.XPath("//*[@id='dijit_form_Select_0']/tbody/tr/td[2]/input")));
+                    txtContactCompany.Click();
+                    txtContactCompany.SendKeys("Mintra Trainingportal Ltd");
+                    Thread.Sleep(1000);
+                    txtContactCompany.SendKeys(Keys.Tab);
+
+                    var txtServerDomain = wait.Until(driver => driver.FindElement(By.XPath("//*[@id='dijit_form_Select_1']/tbody/tr/td[2]/input")));
+                    txtServerDomain.Click();
+                    txtServerDomain.SendKeys("https://www.trainingportal.co.uk");
+                    Thread.Sleep(1000);
+                    txtServerDomain.SendKeys(Keys.Tab);
+                }
+                else
+                {
+                    var txtURL = wait.Until(driver => driver.FindElement(By.Name("portal.url")));
+                    txtURL.SendKeys("www.trainingportal.no/mintra/p/" + portalName.Replace(" ", ""));
+
+                    var txtContactCompany = wait.Until(driver => driver.FindElement(By.XPath("//*[@id='dijit_form_Select_0']/tbody/tr/td[2]/input")));
+                    txtContactCompany.Click();
+                    txtContactCompany.SendKeys("Mintra Trainingportal AS");
+                    Thread.Sleep(1000);
+                    txtContactCompany.SendKeys(Keys.Tab);
+
+                    var txtServerDomain = wait.Until(driver => driver.FindElement(By.XPath("//*[@id='dijit_form_Select_1']/tbody/tr/td[2]/input")));
+                    txtServerDomain.Click();
+                    txtServerDomain.SendKeys("https://www.trainingportal.no");
+                    Thread.Sleep(1000);
+                    txtServerDomain.SendKeys(Keys.Tab);
+
+                }
+
+                var txtPortalOwner = wait.Until(driver => driver.FindElement(By.Name("ownerCompany")));
+                txtPortalOwner.Click();
+                txtPortalOwner.SendKeys(customerName);
                 Thread.Sleep(1000);
-                txtServerDomain.SendKeys(Keys.Tab);
+                txtPortalOwner.SendKeys(Keys.Tab);
+
+                var txtIndustry = wait.Until(driver => driver.FindElement(By.XPath("//*[@id='model.portal.industry']/tbody/tr/td[2]/input")));
+                txtIndustry.Click();
+                txtIndustry.SendKeys("DEMO");
+                txtIndustry.SendKeys(Keys.Tab);
+
+                browser.FindElementByName("_eventId_complete").Click();
+
+                if (browser.Url == createPageURL)
+                {
+                    return false;
+                }
+                return true;
+
             }
-            else
+            catch (Exception e)
             {
-                var txtURL = wait.Until(driver => driver.FindElement(By.Name("portal.url")));
-                txtURL.SendKeys("www.trainingportal.no/mintra/p/" + portalName.Replace(" ", ""));
-
-                var txtContactCompany = wait.Until(driver => driver.FindElement(By.XPath("//*[@id='dijit_form_Select_0']/tbody/tr/td[2]/input")));
-                txtContactCompany.Click();
-                txtContactCompany.SendKeys("Mintra Trainingportal AS");
-                Thread.Sleep(1000);
-                txtContactCompany.SendKeys(Keys.Tab);
-
-                var txtServerDomain = wait.Until(driver => driver.FindElement(By.XPath("//*[@id='dijit_form_Select_1']/tbody/tr/td[2]/input")));
-                txtServerDomain.Click();
-                txtServerDomain.SendKeys("https://www.trainingportal.no");
-                Thread.Sleep(1000);
-                txtServerDomain.SendKeys(Keys.Tab);
-
+                Logger.LogError(e.ToString());
+                return false;
             }
-
-            var txtPortalOwner = wait.Until(driver => driver.FindElement(By.Name("ownerCompany")));
-            txtPortalOwner.Click();
-            txtPortalOwner.SendKeys(customerName);
-            Thread.Sleep(1000);
-            txtPortalOwner.SendKeys(Keys.Tab);
-
-            var txtIndustry = wait.Until(driver => driver.FindElement(By.XPath("//*[@id='model.portal.industry']/tbody/tr/td[2]/input")));
-            txtIndustry.Click();
-            txtIndustry.SendKeys("DEMO");
-            txtIndustry.SendKeys(Keys.Tab);
-
-            browser.FindElementByName("_eventId_complete").Click();
+            
 
         }
 

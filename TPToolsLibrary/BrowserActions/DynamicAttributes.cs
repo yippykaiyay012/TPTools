@@ -16,30 +16,47 @@ namespace TPToolsLibrary
 
         public static void AddAttributes(List<string> attributeList, string txtPortalId)
         {
-
-            if (!browser.Url.Contains("/admin/portals/portal/" + txtPortalId + "/dynamicattribute/list"))
+            try
             {
-                browser.Url = @"https://www.trainingportal.no/mintra/" + txtPortalId + "/admin/portals/portal/" + txtPortalId + "/dynamicattribute/list";
+                if (!browser.Url.Contains("/admin/portals/portal/" + txtPortalId + "/dynamicattribute/list"))
+                {
+                    browser.Url = @"https://www.trainingportal.no/mintra/" + txtPortalId + "/admin/portals/portal/" + txtPortalId + "/dynamicattribute/list";
+                }
+
+                wait.Until(driver => driver.FindElement(By.XPath("(//a[@name='Edit'])[2]"))).Click();
+
+                //   progDynam.Value = 0;
+                //   progDynam.Maximum = attributeList.Length;
+
+
+                foreach (var attribute in attributeList)
+                {
+                    try
+                    {
+                        var txtAttributeEntry = wait.Until(driver => driver.FindElement(By.Id("dynamicAttributeValueOption")));
+                        var btnAddToList = wait.Until(driver => driver.FindElement(By.Name("_eventId_addNewSelectableValueToDynamicAttribute")));
+
+                        txtAttributeEntry.Clear();
+                        txtAttributeEntry.SendKeys(attribute.Trim());
+                        btnAddToList.Click();
+                        //Thread.Sleep(1000);
+
+                        //progDynam.Increment(1);
+                    }
+                    catch (Exception e)
+                    {
+                        Logger.LogError(e.ToString());
+                    }
+
+
+                }
+            }
+            catch (Exception e)
+            {
+                Logger.LogError(e.ToString());
             }
 
-            wait.Until(driver => driver.FindElement(By.XPath("(//a[@name='Edit'])[2]"))).Click();
 
-         //   progDynam.Value = 0;
-         //   progDynam.Maximum = attributeList.Length;
-
-
-            foreach (var attribute in attributeList)
-            {
-                var txtAttributeEntry = wait.Until(driver => driver.FindElement(By.Id("dynamicAttributeValueOption")));
-                var btnAddToList = wait.Until(driver => driver.FindElement(By.Name("_eventId_addNewSelectableValueToDynamicAttribute")));
-
-                txtAttributeEntry.Clear();
-                txtAttributeEntry.SendKeys(attribute.Trim());
-                btnAddToList.Click();
-                //Thread.Sleep(1000);
-
-                //progDynam.Increment(1);
-            }
 
         }
     }

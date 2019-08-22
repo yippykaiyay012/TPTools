@@ -22,38 +22,46 @@ namespace TPToolsLibrary
 
             foreach (var course in courseCodeList)
             {
-                browser.Url =
-                    @"https://www.trainingportal.no/mintra/" + portalId + "/admin/courses/course/" + course + "/dashboard/enrollmentrules/list";
+                try
+                {
+                    browser.Url =
+                   @"https://www.trainingportal.no/mintra/" + portalId + "/admin/courses/course/" + course + "/dashboard/enrollmentrules/list";
 
-                wait.Until(driver => driver.FindElement(By.ClassName("buttonText"))).Click();
+                    wait.Until(driver => driver.FindElement(By.ClassName("buttonText"))).Click();
 
-                wait.Until(driver => driver.FindElement(By.Id("targetGroupEditOrgUnitAnchor"))).Click();
+                    wait.Until(driver => driver.FindElement(By.Id("targetGroupEditOrgUnitAnchor"))).Click();
 
-                wait.Until(driver => driver.FindElement(By.Id("singleOrgUnitsSelectedRadioGroup"))).Click();
+                    wait.Until(driver => driver.FindElement(By.Id("singleOrgUnitsSelectedRadioGroup"))).Click();
 
-                wait.Until(driver => driver.FindElement(By.Id("clickMeyay"))).Click();
+                    wait.Until(driver => driver.FindElement(By.Id("clickMeyay"))).Click();
 
-                Thread.Sleep(500);
+                    Thread.Sleep(500);
 
-                wait.Until(driver => driver.FindElement(By.XPath("//*[@id='dijit__TreeNode_1']/div[1]/span[1]"))).Click();
+                    wait.Until(driver => driver.FindElement(By.XPath("//*[@id='dijit__TreeNode_1']/div[1]/span[1]"))).Click();
 
-                Thread.Sleep(500);
+                    Thread.Sleep(500);
 
-                wait.Until(driver => driver.FindElement(By.XPath("//span[contains(@class,'dijitTreeLabel') and contains(text(), '" + orgUnit + "')]"))).Click();
+                    wait.Until(driver => driver.FindElement(By.XPath("//span[contains(@class,'dijitTreeLabel') and contains(text(), '" + orgUnit + "')]"))).Click();
 
-                Thread.Sleep(500);
+                    Thread.Sleep(500);
 
-                wait.Until(driver => driver.FindElement(By.Id("targetGroup__submitOrgUnit_button"))).Click();
+                    wait.Until(driver => driver.FindElement(By.Id("targetGroup__submitOrgUnit_button"))).Click();
 
-                wait.Until(driver => driver.FindElement(By.Id("APPROVAL_NEEDED"))).Click();
+                    wait.Until(driver => driver.FindElement(By.Id("APPROVAL_NEEDED"))).Click();
 
-                wait.Until(driver => driver.FindElement(By.Id("OTHER_APPROVAL"))).Click();
+                    wait.Until(driver => driver.FindElement(By.Id("OTHER_APPROVAL"))).Click();
 
-                wait.Until(driver => driver.FindElement(By.Id("emailAddress"))).SendKeys(emailAddress);
+                    wait.Until(driver => driver.FindElement(By.Id("emailAddress"))).SendKeys(emailAddress);
 
-                browser.FindElementByName("_eventId_complete").Click();
+                    browser.FindElementByName("_eventId_complete").Click();
 
-             //   progEnrolRules.Increment(1);
+                    //   progEnrolRules.Increment(1);
+                }
+                catch (Exception e)
+                {
+                    Logger.LogError(e.ToString());
+                }
+               
             }
         }
     }

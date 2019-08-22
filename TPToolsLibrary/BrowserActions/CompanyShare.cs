@@ -20,26 +20,37 @@ namespace TPToolsLibrary
 
             foreach (var course in courseCodeList)
             {
-                browser.Url =
+                try
+                {
+                    browser.Url =
                    @"https://www.trainingportal.no/mintra/" + portalId + "/admin/courses/course/" + course + "/dashboard/coursesharing/list";
 
 
+                    foreach (var company in companyList)
+                    {
+                        try
+                        {
+                            wait.Until(driver => driver.FindElement(By.XPath("//*[@id='section']/div/div[1]/div/div/span"))).Click();
 
-                foreach(var company in companyList)
-                {
-                    wait.Until(driver => driver.FindElement(By.XPath("//*[@id='section']/div/div[1]/div/div/span"))).Click();
+                            wait.Until(driver => driver.FindElement(By.XPath("//*[@id='companyRadioButton']"))).Click();
 
-                    wait.Until(driver => driver.FindElement(By.XPath("//*[@id='companyRadioButton']"))).Click();
+                            wait.Until(driver => driver.FindElement(By.XPath("//*[@id='company']"))).SendKeys(company);
+                            Thread.Sleep(2000);
+                            wait.Until(driver => driver.FindElement(By.XPath("//*[@id='company']"))).SendKeys(Keys.Tab);
+                            Thread.Sleep(1000);
+                            browser.FindElementByName("_eventId_complete").Click();
+                        }
+                        catch (Exception e)
+                        {
+                            Logger.LogError(e.ToString());
+                        }
 
-                    wait.Until(driver => driver.FindElement(By.XPath("//*[@id='company']"))).SendKeys(company);
-                    Thread.Sleep(2000);
-                    wait.Until(driver => driver.FindElement(By.XPath("//*[@id='company']"))).SendKeys(Keys.Tab);
-                    Thread.Sleep(1000);
-                    browser.FindElementByName("_eventId_complete").Click();
-
+                    }
                 }
-
-                
+                catch (Exception e)
+                {
+                    Logger.LogError(e.ToString());
+                }
 
             }
         }

@@ -18,27 +18,37 @@ namespace TPToolsLibrary
 
         public static void LogIn(string username, string password)
         {
-            if (!IsLoggedIn()) {
-                WebBrowser.Driver.Url = @"https://www.trainingportal.no/no/olje-og-gass/hjem";
-
-    
-                var txtUsername = wait.Until(driver => driver.FindElement(By.Id("username")));
-                txtUsername.Click();
-                txtUsername.SendKeys(username);
-
-                var txtPassword = wait.Until(driver => driver.FindElement(By.Id("passwd")));
-                txtPassword.Click();
-                txtPassword.SendKeys(password);
-
-                var btnSubmit = wait.Until(driver => driver.FindElement(By.Name("Submit")));
-                btnSubmit.Click();
-
+            try
+            {
                 if (!IsLoggedIn())
                 {
-                    MessageBox.Show("Login Unsuccessful");
-                }
+                    WebBrowser.Driver.Url = @"https://www.trainingportal.no/no/olje-og-gass/hjem";
 
+
+                    var txtUsername = wait.Until(driver => driver.FindElement(By.Id("username")));
+                    txtUsername.Click();
+                    txtUsername.SendKeys(username);
+
+                    var txtPassword = wait.Until(driver => driver.FindElement(By.Id("passwd")));
+                    txtPassword.Click();
+                    txtPassword.SendKeys(password);
+
+                    var btnSubmit = wait.Until(driver => driver.FindElement(By.Name("Submit")));
+                    btnSubmit.Click();
+
+                    if (!IsLoggedIn())
+                    {
+                        MessageBox.Show("Login Unsuccessful");
+                    }
+
+                }
             }
+            catch (Exception e)
+            {
+                Logger.LogError(e.ToString());
+                MessageBox.Show("Login Unsuccessful");
+            }
+
 
         }
 

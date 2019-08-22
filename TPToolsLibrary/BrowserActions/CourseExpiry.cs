@@ -20,25 +20,30 @@ namespace TPToolsLibrary
 
             foreach(var course in courseCodeList)
             {
+                try
+                {
+                    browser.Url =
+                      @"https://www.trainingportal.no/mintra/" + portalId + "/admin/courses/course/" + course + "/dashboard/about";
 
-                browser.Url =
-                       @"https://www.trainingportal.no/mintra/" + portalId + "/admin/courses/course/" + course + "/dashboard/about";
 
+                    wait.Until(driver => driver.FindElement(By.Id("courseBasicPropertiesEditMiniIcon"))).Click();
 
-                wait.Until(driver => driver.FindElement(By.Id("courseBasicPropertiesEditMiniIcon"))).Click();
+                    wait.Until(driver => driver.FindElement(By.Id("repetitionIntervalEdit__setIntervalRadioWrapper"))).Click();
 
-                wait.Until(driver => driver.FindElement(By.Id("repetitionIntervalEdit__setIntervalRadioWrapper"))).Click();
-               
-                Thread.Sleep(500);
+                    Thread.Sleep(500);
 
-                wait.Until(driver => driver.FindElement(By.Id("repetitionIntervalEdit__intervalSelector"))).Clear();
+                    wait.Until(driver => driver.FindElement(By.Id("repetitionIntervalEdit__intervalSelector"))).Clear();
 
-                wait.Until(driver => driver.FindElement(By.Id("repetitionIntervalEdit__intervalSelector"))).SendKeys(months);
+                    wait.Until(driver => driver.FindElement(By.Id("repetitionIntervalEdit__intervalSelector"))).SendKeys(months);
 
-                browser.FindElementByName("_eventId_complete").Click();
-
+                    browser.FindElementByName("_eventId_complete").Click();
+                }
+                catch (Exception e)
+                {
+                    Logger.LogError(e.ToString());
+                }
+                
             }
-
 
         }
     }
