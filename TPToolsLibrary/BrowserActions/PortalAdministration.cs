@@ -19,7 +19,7 @@ namespace TPToolsLibrary
         private static ChromeDriver browser = WebBrowser.Driver;
         private static WebDriverWait wait = WebBrowser.wait;
 
-        private static string portalId = "669";
+        private static string portalId = null;
 
 
         public static void CreateDemoPortal(string customerName, bool isUK, PortalType portalType, bool addDemoUsers)
