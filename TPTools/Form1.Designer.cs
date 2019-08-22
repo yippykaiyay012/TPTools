@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.txtUsernameAdmin = new System.Windows.Forms.TextBox();
             this.txtPasswordAdmin = new System.Windows.Forms.TextBox();
@@ -113,6 +114,15 @@
             this.button5 = new System.Windows.Forms.Button();
             this.btnCreateDemoPortal = new System.Windows.Forms.Button();
             this.btnLogIn = new System.Windows.Forms.Button();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -126,6 +136,14 @@
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             this.SuspendLayout();
             // 
             // txtUsernameAdmin
@@ -163,6 +181,8 @@
             // 
             // txtCourseCodes
             // 
+            this.txtCourseCodes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.txtCourseCodes.Location = new System.Drawing.Point(9, 68);
             this.txtCourseCodes.Name = "txtCourseCodes";
             this.txtCourseCodes.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedVertical;
@@ -181,6 +201,7 @@
             // 
             // btnAddCourses
             // 
+            this.btnAddCourses.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAddCourses.Location = new System.Drawing.Point(597, 437);
             this.btnAddCourses.Name = "btnAddCourses";
             this.btnAddCourses.Size = new System.Drawing.Size(123, 46);
@@ -202,6 +223,10 @@
             // 
             // tabControl1
             // 
+            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tabControl1.Controls.Add(this.DemoPortal);
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
@@ -209,7 +234,6 @@
             this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Controls.Add(this.tabPage7);
             this.tabControl1.Controls.Add(this.tabPage8);
-            this.tabControl1.Controls.Add(this.DemoPortal);
             this.tabControl1.Location = new System.Drawing.Point(306, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -218,6 +242,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.pictureBox1);
             this.tabPage1.Controls.Add(this.btnCancelCourseCode);
             this.tabPage1.Controls.Add(this.progCourseCodes);
             this.tabPage1.Controls.Add(this.txtCourseCodes);
@@ -233,6 +258,7 @@
             // 
             // btnCancelCourseCode
             // 
+            this.btnCancelCourseCode.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCancelCourseCode.Location = new System.Drawing.Point(597, 494);
             this.btnCancelCourseCode.Name = "btnCancelCourseCode";
             this.btnCancelCourseCode.Size = new System.Drawing.Size(123, 46);
@@ -242,6 +268,7 @@
             // 
             // progCourseCodes
             // 
+            this.progCourseCodes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.progCourseCodes.Location = new System.Drawing.Point(9, 517);
             this.progCourseCodes.Name = "progCourseCodes";
             this.progCourseCodes.Size = new System.Drawing.Size(558, 23);
@@ -249,6 +276,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.pictureBox2);
             this.tabPage2.Controls.Add(this.btnCancelDownloads);
             this.tabPage2.Controls.Add(this.progConnector);
             this.tabPage2.Controls.Add(this.label5);
@@ -266,6 +294,7 @@
             // 
             // btnCancelDownloads
             // 
+            this.btnCancelDownloads.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCancelDownloads.Location = new System.Drawing.Point(597, 494);
             this.btnCancelDownloads.Name = "btnCancelDownloads";
             this.btnCancelDownloads.Size = new System.Drawing.Size(123, 46);
@@ -275,6 +304,7 @@
             // 
             // progConnector
             // 
+            this.progConnector.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.progConnector.Location = new System.Drawing.Point(9, 517);
             this.progConnector.Name = "progConnector";
             this.progConnector.Size = new System.Drawing.Size(558, 23);
@@ -298,6 +328,8 @@
             // 
             // txtConnectorCourseCodes
             // 
+            this.txtConnectorCourseCodes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.txtConnectorCourseCodes.Location = new System.Drawing.Point(9, 95);
             this.txtConnectorCourseCodes.Name = "txtConnectorCourseCodes";
             this.txtConnectorCourseCodes.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedVertical;
@@ -316,6 +348,7 @@
             // 
             // btnDownloadConnectors
             // 
+            this.btnDownloadConnectors.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnDownloadConnectors.Location = new System.Drawing.Point(597, 436);
             this.btnDownloadConnectors.Name = "btnDownloadConnectors";
             this.btnDownloadConnectors.Size = new System.Drawing.Size(123, 46);
@@ -326,6 +359,7 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.pictureBox3);
             this.tabPage3.Controls.Add(this.groupAssessmentStatus);
             this.tabPage3.Controls.Add(this.button1);
             this.tabPage3.Controls.Add(this.progComp);
@@ -343,6 +377,7 @@
             // 
             // groupAssessmentStatus
             // 
+            this.groupAssessmentStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.groupAssessmentStatus.Controls.Add(this.radioNo);
             this.groupAssessmentStatus.Controls.Add(this.radioYes);
             this.groupAssessmentStatus.Location = new System.Drawing.Point(575, 88);
@@ -354,6 +389,7 @@
             // 
             // radioNo
             // 
+            this.radioNo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.radioNo.AutoSize = true;
             this.radioNo.Location = new System.Drawing.Point(6, 61);
             this.radioNo.Name = "radioNo";
@@ -365,6 +401,7 @@
             // 
             // radioYes
             // 
+            this.radioYes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.radioYes.AutoSize = true;
             this.radioYes.Location = new System.Drawing.Point(6, 28);
             this.radioYes.Name = "radioYes";
@@ -376,6 +413,7 @@
             // 
             // button1
             // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.Location = new System.Drawing.Point(597, 487);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(123, 46);
@@ -385,6 +423,7 @@
             // 
             // progComp
             // 
+            this.progComp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.progComp.Location = new System.Drawing.Point(9, 510);
             this.progComp.Name = "progComp";
             this.progComp.Size = new System.Drawing.Size(558, 23);
@@ -408,6 +447,8 @@
             // 
             // txtCompetencyUnits
             // 
+            this.txtCompetencyUnits.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.txtCompetencyUnits.Location = new System.Drawing.Point(9, 88);
             this.txtCompetencyUnits.Name = "txtCompetencyUnits";
             this.txtCompetencyUnits.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedVertical;
@@ -426,6 +467,7 @@
             // 
             // btnUpdateComp
             // 
+            this.btnUpdateComp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnUpdateComp.Location = new System.Drawing.Point(597, 429);
             this.btnUpdateComp.Name = "btnUpdateComp";
             this.btnUpdateComp.Size = new System.Drawing.Size(123, 46);
@@ -436,6 +478,7 @@
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.pictureBox5);
             this.tabPage4.Controls.Add(this.btnCancelAttributes);
             this.tabPage4.Controls.Add(this.progDynam);
             this.tabPage4.Controls.Add(this.label8);
@@ -453,6 +496,7 @@
             // 
             // btnCancelAttributes
             // 
+            this.btnCancelAttributes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCancelAttributes.Location = new System.Drawing.Point(597, 487);
             this.btnCancelAttributes.Name = "btnCancelAttributes";
             this.btnCancelAttributes.Size = new System.Drawing.Size(123, 46);
@@ -462,6 +506,7 @@
             // 
             // progDynam
             // 
+            this.progDynam.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.progDynam.Location = new System.Drawing.Point(9, 510);
             this.progDynam.Name = "progDynam";
             this.progDynam.Size = new System.Drawing.Size(558, 23);
@@ -485,6 +530,8 @@
             // 
             // txtAttributes
             // 
+            this.txtAttributes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.txtAttributes.Location = new System.Drawing.Point(9, 88);
             this.txtAttributes.Name = "txtAttributes";
             this.txtAttributes.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedVertical;
@@ -503,6 +550,7 @@
             // 
             // btnAddAttributes
             // 
+            this.btnAddAttributes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAddAttributes.Location = new System.Drawing.Point(597, 429);
             this.btnAddAttributes.Name = "btnAddAttributes";
             this.btnAddAttributes.Size = new System.Drawing.Size(123, 46);
@@ -513,6 +561,7 @@
             // 
             // tabPage5
             // 
+            this.tabPage5.Controls.Add(this.pictureBox6);
             this.tabPage5.Controls.Add(this.label13);
             this.tabPage5.Controls.Add(this.txtOrgUnitEnrolRules);
             this.tabPage5.Controls.Add(this.label12);
@@ -535,7 +584,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(389, 56);
+            this.label13.Location = new System.Drawing.Point(174, 52);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(46, 13);
             this.label13.TabIndex = 38;
@@ -543,7 +592,7 @@
             // 
             // txtOrgUnitEnrolRules
             // 
-            this.txtOrgUnitEnrolRules.Location = new System.Drawing.Point(441, 53);
+            this.txtOrgUnitEnrolRules.Location = new System.Drawing.Point(226, 49);
             this.txtOrgUnitEnrolRules.Name = "txtOrgUnitEnrolRules";
             this.txtOrgUnitEnrolRules.Size = new System.Drawing.Size(265, 20);
             this.txtOrgUnitEnrolRules.TabIndex = 37;
@@ -551,7 +600,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(6, 65);
+            this.label12.Location = new System.Drawing.Point(6, 116);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(143, 13);
             this.label12.TabIndex = 36;
@@ -559,17 +608,19 @@
             // 
             // txtCourseCodesEnrolRules
             // 
-            this.txtCourseCodesEnrolRules.Location = new System.Drawing.Point(9, 81);
+            this.txtCourseCodesEnrolRules.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.txtCourseCodesEnrolRules.Location = new System.Drawing.Point(9, 132);
             this.txtCourseCodesEnrolRules.Name = "txtCourseCodesEnrolRules";
             this.txtCourseCodesEnrolRules.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedVertical;
-            this.txtCourseCodesEnrolRules.Size = new System.Drawing.Size(558, 407);
+            this.txtCourseCodesEnrolRules.Size = new System.Drawing.Size(558, 356);
             this.txtCourseCodesEnrolRules.TabIndex = 35;
             this.txtCourseCodesEnrolRules.Text = "";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(371, 31);
+            this.label11.Location = new System.Drawing.Point(156, 27);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(64, 13);
             this.label11.TabIndex = 34;
@@ -577,13 +628,14 @@
             // 
             // txtAdminEmailEnrolRules
             // 
-            this.txtAdminEmailEnrolRules.Location = new System.Drawing.Point(441, 27);
+            this.txtAdminEmailEnrolRules.Location = new System.Drawing.Point(226, 23);
             this.txtAdminEmailEnrolRules.Name = "txtAdminEmailEnrolRules";
             this.txtAdminEmailEnrolRules.Size = new System.Drawing.Size(265, 20);
             this.txtAdminEmailEnrolRules.TabIndex = 33;
             // 
             // btnCancelEnrolRules
             // 
+            this.btnCancelEnrolRules.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCancelEnrolRules.Location = new System.Drawing.Point(597, 487);
             this.btnCancelEnrolRules.Name = "btnCancelEnrolRules";
             this.btnCancelEnrolRules.Size = new System.Drawing.Size(123, 46);
@@ -593,6 +645,7 @@
             // 
             // progEnrolRules
             // 
+            this.progEnrolRules.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.progEnrolRules.Location = new System.Drawing.Point(9, 510);
             this.progEnrolRules.Name = "progEnrolRules";
             this.progEnrolRules.Size = new System.Drawing.Size(558, 23);
@@ -616,6 +669,7 @@
             // 
             // btnStartEnrolRules
             // 
+            this.btnStartEnrolRules.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnStartEnrolRules.Location = new System.Drawing.Point(597, 429);
             this.btnStartEnrolRules.Name = "btnStartEnrolRules";
             this.btnStartEnrolRules.Size = new System.Drawing.Size(123, 46);
@@ -626,6 +680,7 @@
             // 
             // tabPage7
             // 
+            this.tabPage7.Controls.Add(this.pictureBox7);
             this.tabPage7.Controls.Add(this.label23);
             this.tabPage7.Controls.Add(this.txtCompanyShare);
             this.tabPage7.Controls.Add(this.label21);
@@ -654,6 +709,8 @@
             // 
             // txtCompanyShare
             // 
+            this.txtCompanyShare.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.txtCompanyShare.Location = new System.Drawing.Point(316, 81);
             this.txtCompanyShare.Name = "txtCompanyShare";
             this.txtCompanyShare.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedVertical;
@@ -672,6 +729,8 @@
             // 
             // txtCourseIdShare
             // 
+            this.txtCourseIdShare.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.txtCourseIdShare.Location = new System.Drawing.Point(9, 81);
             this.txtCourseIdShare.Name = "txtCourseIdShare";
             this.txtCourseIdShare.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedVertical;
@@ -681,6 +740,7 @@
             // 
             // button3
             // 
+            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button3.Location = new System.Drawing.Point(597, 487);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(123, 46);
@@ -690,6 +750,7 @@
             // 
             // progressBar1
             // 
+            this.progressBar1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.progressBar1.Location = new System.Drawing.Point(9, 510);
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(558, 23);
@@ -713,6 +774,7 @@
             // 
             // btnShareCourses
             // 
+            this.btnShareCourses.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnShareCourses.Location = new System.Drawing.Point(597, 429);
             this.btnShareCourses.Name = "btnShareCourses";
             this.btnShareCourses.Size = new System.Drawing.Size(123, 46);
@@ -723,6 +785,7 @@
             // 
             // tabPage8
             // 
+            this.tabPage8.Controls.Add(this.pictureBox8);
             this.tabPage8.Controls.Add(this.Expiry);
             this.tabPage8.Controls.Add(this.txtExpiryMonths);
             this.tabPage8.Controls.Add(this.button4);
@@ -758,6 +821,7 @@
             // 
             // button4
             // 
+            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button4.Location = new System.Drawing.Point(597, 487);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(123, 46);
@@ -767,6 +831,7 @@
             // 
             // progressBar2
             // 
+            this.progressBar2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.progressBar2.Location = new System.Drawing.Point(9, 510);
             this.progressBar2.Name = "progressBar2";
             this.progressBar2.Size = new System.Drawing.Size(558, 23);
@@ -790,6 +855,8 @@
             // 
             // txtCourseCodesExpiry
             // 
+            this.txtCourseCodesExpiry.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.txtCourseCodesExpiry.Location = new System.Drawing.Point(9, 88);
             this.txtCourseCodesExpiry.Name = "txtCourseCodesExpiry";
             this.txtCourseCodesExpiry.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedVertical;
@@ -808,6 +875,7 @@
             // 
             // btnSetExpiry
             // 
+            this.btnSetExpiry.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSetExpiry.Location = new System.Drawing.Point(597, 429);
             this.btnSetExpiry.Name = "btnSetExpiry";
             this.btnSetExpiry.Size = new System.Drawing.Size(123, 46);
@@ -818,6 +886,7 @@
             // 
             // DemoPortal
             // 
+            this.DemoPortal.Controls.Add(this.pictureBox4);
             this.DemoPortal.Controls.Add(this.groupBox4);
             this.DemoPortal.Controls.Add(this.groupBox3);
             this.DemoPortal.Controls.Add(this.button5);
@@ -846,7 +915,7 @@
             // 
             this.groupBox5.Controls.Add(this.rdioNotUk);
             this.groupBox5.Controls.Add(this.rdioUK);
-            this.groupBox5.Location = new System.Drawing.Point(9, 165);
+            this.groupBox5.Location = new System.Drawing.Point(6, 142);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(134, 105);
             this.groupBox5.TabIndex = 41;
@@ -879,7 +948,7 @@
             // label26
             // 
             this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(6, 65);
+            this.label26.Location = new System.Drawing.Point(3, 42);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(79, 13);
             this.label26.TabIndex = 6;
@@ -887,16 +956,17 @@
             // 
             // txtDemoCompanyName
             // 
-            this.txtDemoCompanyName.Location = new System.Drawing.Point(6, 81);
+            this.txtDemoCompanyName.Location = new System.Drawing.Point(3, 58);
             this.txtDemoCompanyName.Name = "txtDemoCompanyName";
             this.txtDemoCompanyName.Size = new System.Drawing.Size(265, 20);
             this.txtDemoCompanyName.TabIndex = 1;
             // 
             // groupBox3
             // 
+            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox3.Controls.Add(this.rdioDemoAdvanced);
             this.groupBox3.Controls.Add(this.rdioDemoBasic);
-            this.groupBox3.Location = new System.Drawing.Point(422, 16);
+            this.groupBox3.Location = new System.Drawing.Point(422, 52);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(295, 105);
             this.groupBox3.TabIndex = 39;
@@ -905,6 +975,7 @@
             // 
             // rdioDemoAdvanced
             // 
+            this.rdioDemoAdvanced.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.rdioDemoAdvanced.AutoSize = true;
             this.rdioDemoAdvanced.Location = new System.Drawing.Point(6, 66);
             this.rdioDemoAdvanced.Name = "rdioDemoAdvanced";
@@ -916,6 +987,7 @@
             // 
             // rdioDemoBasic
             // 
+            this.rdioDemoBasic.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.rdioDemoBasic.AutoSize = true;
             this.rdioDemoBasic.Checked = true;
             this.rdioDemoBasic.Location = new System.Drawing.Point(6, 34);
@@ -928,6 +1000,7 @@
             // 
             // button5
             // 
+            this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button5.Location = new System.Drawing.Point(594, 507);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(123, 46);
@@ -937,6 +1010,7 @@
             // 
             // btnCreateDemoPortal
             // 
+            this.btnCreateDemoPortal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCreateDemoPortal.Location = new System.Drawing.Point(594, 449);
             this.btnCreateDemoPortal.Name = "btnCreateDemoPortal";
             this.btnCreateDemoPortal.Size = new System.Drawing.Size(123, 46);
@@ -954,6 +1028,111 @@
             this.btnLogIn.Text = "Log In";
             this.btnLogIn.UseVisualStyleBackColor = true;
             this.btnLogIn.Click += new System.EventHandler(this.BtnLogIn_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.Image = global::TPTools.Properties.Resources.icons8_info_64;
+            this.pictureBox1.Location = new System.Drawing.Point(679, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(44, 44);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 12;
+            this.pictureBox1.TabStop = false;
+            this.toolTip1.SetToolTip(this.pictureBox1, "Use this page for entering a list of course codes into the license\r\npage.\r\nIf you" +
+        " are readding a large bumdle of licenses you can copy this\r\nalready comma delimi" +
+        "tted from the license view page.");
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox2.Image = global::TPTools.Properties.Resources.icons8_info_64;
+            this.pictureBox2.Location = new System.Drawing.Point(682, 0);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(44, 44);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 14;
+            this.pictureBox2.TabStop = false;
+            this.toolTip1.SetToolTip(this.pictureBox2, "Use this page to download connector files for a portal.\r\nBe sure to enter portal " +
+        "ID.\r\nEnsure the functionality is already enabled to download connectors\r\nbefore " +
+        "starting.");
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox3.Image = global::TPTools.Properties.Resources.icons8_info_64;
+            this.pictureBox3.Location = new System.Drawing.Point(682, 0);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(44, 44);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 23;
+            this.pictureBox3.TabStop = false;
+            this.toolTip1.SetToolTip(this.pictureBox3, "Use this page to alter the Requires Assessment detail on competency units.\r\nBe su" +
+        "re to enter portal ID and choose yes or no.\r\nUsually best to test with just 1 to" +
+        " start.");
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox4.Image = global::TPTools.Properties.Resources.icons8_info_64;
+            this.pictureBox4.Location = new System.Drawing.Point(682, 0);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(44, 44);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 41;
+            this.pictureBox4.TabStop = false;
+            this.toolTip1.SetToolTip(this.pictureBox4, resources.GetString("pictureBox4.ToolTip"));
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox5.Image = global::TPTools.Properties.Resources.icons8_info_64;
+            this.pictureBox5.Location = new System.Drawing.Point(682, 0);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(44, 44);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox5.TabIndex = 28;
+            this.pictureBox5.TabStop = false;
+            this.toolTip1.SetToolTip(this.pictureBox5, "Enter portal Id and provide a list of Dynamic attributes you would like added");
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox6.Image = global::TPTools.Properties.Resources.icons8_info_64;
+            this.pictureBox6.Location = new System.Drawing.Point(682, -1);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(44, 44);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox6.TabIndex = 39;
+            this.pictureBox6.TabStop = false;
+            this.toolTip1.SetToolTip(this.pictureBox6, "I cant really rememberjust now.\r\nwho knows.");
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox7.Image = global::TPTools.Properties.Resources.icons8_info_64;
+            this.pictureBox7.Location = new System.Drawing.Point(682, 0);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(44, 44);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox7.TabIndex = 46;
+            this.pictureBox7.TabStop = false;
+            this.toolTip1.SetToolTip(this.pictureBox7, "This will allow you to share courses to specific companies.\r\nThis was used on Exp" +
+        "ress for AGT so only certain companies had OPITO access\r\nrather than the whole p" +
+        "ortal.");
+            // 
+            // pictureBox8
+            // 
+            this.pictureBox8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox8.Image = global::TPTools.Properties.Resources.icons8_info_64;
+            this.pictureBox8.Location = new System.Drawing.Point(682, 0);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(44, 44);
+            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox8.TabIndex = 37;
+            this.pictureBox8.TabStop = false;
+            this.toolTip1.SetToolTip(this.pictureBox8, "Use this to set the expiry in months on a list of courses.\r\nBe sure to enter port" +
+        "al ID.");
             // 
             // Form1
             // 
@@ -995,6 +1174,14 @@
             this.groupBox5.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1086,6 +1273,15 @@
         private System.Windows.Forms.RadioButton rdioUK;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.TextBox txtDemoCompanyName;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.PictureBox pictureBox7;
+        private System.Windows.Forms.PictureBox pictureBox8;
     }
 }
 

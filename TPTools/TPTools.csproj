@@ -149,6 +149,7 @@
   <ItemGroup>
     <Content Include="chromedriver.exe" />
     <Content Include="mintralogo_NRt_icon.ico" />
+    <None Include="Resources\icons8-info-64.png" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
