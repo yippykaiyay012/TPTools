@@ -245,7 +245,7 @@ namespace TPTools
 
 
                 Thread thread = new Thread(() =>
-                    PortalAdministration.CreateDemoPortal(txtDemoCompanyName.Text, rdioUK.Checked, portalType));
+                    PortalAdministration.CreateDemoPortal(txtDemoCompanyName.Text, rdioUK.Checked, portalType, chkAddDemoUsers.Checked));
 
                 thread.Start();
 

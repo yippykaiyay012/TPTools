@@ -19,40 +19,44 @@ namespace TPToolsLibrary
         private static ChromeDriver browser = WebBrowser.Driver;
         private static WebDriverWait wait = WebBrowser.wait;
 
-        private static string portalId = null;
+        private static string portalId = "669";
 
 
-        public static void CreateDemoPortal(string customerName, bool isUK, PortalType portalType)
+        public static void CreateDemoPortal(string customerName, bool isUK, PortalType portalType, bool addDemoUsers)
         {
 
-            // 1. create company
-            if (!CreateCompany(customerName))
-            {             
-                return;
-            }
+            //// 1. create company
+            //if (!CreateCompany(customerName))
+            //{             
+            //    return;
+            //}
 
-            // 2. create portal
-            CreatePortal(customerName, isUK);
-
-
-            // 3. Customize Portal
-            Thread.Sleep(10000); // need to wait for indexing to complete before searching
-            CustomizePortal(customerName, portalType);
+            //// 2. create portal
+            //CreatePortal(customerName, isUK);
 
 
-            // 4. Templates
-            EmailTemplates(portalType);
+            //// 3. Customize Portal
+            //Thread.Sleep(10000); // need to wait for indexing to complete before searching
+            //CustomizePortal(customerName, portalType);
 
 
-            // 5. Certificate Template
-            AddCertificateTemplate(portalId, new StandardCertificate());
+            //// 4. Templates
+            //EmailTemplates(portalType);
 
 
-            // 6. Org units
-            CreateDemoOrgUnits(portalId);
+            //// 5. Certificate Template
+            //AddCertificateTemplate(portalId, new StandardCertificate());
+
+
+            //// 6. Org units
+            //CreateDemoOrgUnits(portalId);
 
             // 7. Add Demo Users
-            AddDemoUsers(portalId, customerName);
+            if (addDemoUsers)
+            {
+                AddDemoUsers(portalId, customerName);
+            }
+            
         
 
         }
@@ -503,7 +507,7 @@ namespace TPToolsLibrary
                 userRoleChoice.Click();
                 userRoleChoice.SendKeys(userRole.ToString().Replace('_', ' '));
                 userRoleChoice.SendKeys(Keys.Tab);
-
+           
                 if (sendEmail)
                 {
                     CheckAndSelectElementId("userCreateSendSendLoginInfoOnMail");

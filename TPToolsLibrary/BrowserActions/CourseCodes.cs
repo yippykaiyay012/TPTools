@@ -42,6 +42,7 @@ namespace TPToolsLibrary
                 txtCourseCode.SendKeys(code.Trim());
                 btnAddCourse.Click();
 
+              //  ((IJavaScriptExecutor)browser).ExecuteScript("window.scrollBy(0,250)");
                // progCourseCodes.Increment(1);
             }
         }
