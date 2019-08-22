@@ -7,7 +7,7 @@ namespace TPToolsLibrary
 {
     public static class Logger
     {
-        private static readonly string _fileLocation = @".\Desktop\TPTools.log";
+        private static readonly string _fileLocation = @"C:\TPTools.log";
 
 
         public static void LogError(string error)
