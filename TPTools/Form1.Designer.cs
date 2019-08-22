@@ -80,27 +80,6 @@
             this.label10 = new System.Windows.Forms.Label();
             this.txtPortalIdEnrolRules = new System.Windows.Forms.TextBox();
             this.btnStartEnrolRules = new System.Windows.Forms.Button();
-            this.tabPage6 = new System.Windows.Forms.TabPage();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.radioAdvanced = new System.Windows.Forms.RadioButton();
-            this.radioBasic = new System.Windows.Forms.RadioButton();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.txtCompanyName = new System.Windows.Forms.TextBox();
-            this.txtPortalName = new System.Windows.Forms.TextBox();
-            this.label20 = new System.Windows.Forms.Label();
-            this.txtLogicalId = new System.Windows.Forms.TextBox();
-            this.comboServerDomain = new System.Windows.Forms.ComboBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.comboContractCompany = new System.Windows.Forms.ComboBox();
-            this.txtURL = new System.Windows.Forms.TextBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.comboIndustry = new System.Windows.Forms.ComboBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.btnCreatePortal = new System.Windows.Forms.Button();
             this.tabPage7 = new System.Windows.Forms.TabPage();
             this.label23 = new System.Windows.Forms.Label();
             this.txtCompanyShare = new System.Windows.Forms.RichTextBox();
@@ -141,9 +120,6 @@
             this.groupAssessmentStatus.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.tabPage5.SuspendLayout();
-            this.tabPage6.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             this.tabPage7.SuspendLayout();
             this.tabPage8.SuspendLayout();
             this.DemoPortal.SuspendLayout();
@@ -231,7 +207,6 @@
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage5);
-            this.tabControl1.Controls.Add(this.tabPage6);
             this.tabControl1.Controls.Add(this.tabPage7);
             this.tabControl1.Controls.Add(this.tabPage8);
             this.tabControl1.Controls.Add(this.DemoPortal);
@@ -649,229 +624,6 @@
             this.btnStartEnrolRules.UseVisualStyleBackColor = true;
             this.btnStartEnrolRules.Click += new System.EventHandler(this.BtnStartEnrolRules_Click);
             // 
-            // tabPage6
-            // 
-            this.tabPage6.Controls.Add(this.groupBox2);
-            this.tabPage6.Controls.Add(this.groupBox1);
-            this.tabPage6.Controls.Add(this.button2);
-            this.tabPage6.Controls.Add(this.btnCreatePortal);
-            this.tabPage6.Location = new System.Drawing.Point(4, 22);
-            this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(726, 556);
-            this.tabPage6.TabIndex = 5;
-            this.tabPage6.Text = "CreatePortal";
-            this.tabPage6.UseVisualStyleBackColor = true;
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.radioAdvanced);
-            this.groupBox2.Controls.Add(this.radioBasic);
-            this.groupBox2.Location = new System.Drawing.Point(363, 16);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(295, 105);
-            this.groupBox2.TabIndex = 36;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Settings";
-            // 
-            // radioAdvanced
-            // 
-            this.radioAdvanced.AutoSize = true;
-            this.radioAdvanced.Location = new System.Drawing.Point(6, 66);
-            this.radioAdvanced.Name = "radioAdvanced";
-            this.radioAdvanced.Size = new System.Drawing.Size(74, 17);
-            this.radioAdvanced.TabIndex = 1;
-            this.radioAdvanced.TabStop = true;
-            this.radioAdvanced.Text = "Advanced";
-            this.radioAdvanced.UseVisualStyleBackColor = true;
-            // 
-            // radioBasic
-            // 
-            this.radioBasic.AutoSize = true;
-            this.radioBasic.Location = new System.Drawing.Point(6, 34);
-            this.radioBasic.Name = "radioBasic";
-            this.radioBasic.Size = new System.Drawing.Size(51, 17);
-            this.radioBasic.TabIndex = 0;
-            this.radioBasic.TabStop = true;
-            this.radioBasic.Text = "Basic";
-            this.radioBasic.UseVisualStyleBackColor = true;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.label16);
-            this.groupBox1.Controls.Add(this.txtCompanyName);
-            this.groupBox1.Controls.Add(this.txtPortalName);
-            this.groupBox1.Controls.Add(this.label20);
-            this.groupBox1.Controls.Add(this.txtLogicalId);
-            this.groupBox1.Controls.Add(this.comboServerDomain);
-            this.groupBox1.Controls.Add(this.label14);
-            this.groupBox1.Controls.Add(this.label19);
-            this.groupBox1.Controls.Add(this.label15);
-            this.groupBox1.Controls.Add(this.comboContractCompany);
-            this.groupBox1.Controls.Add(this.txtURL);
-            this.groupBox1.Controls.Add(this.label18);
-            this.groupBox1.Controls.Add(this.label17);
-            this.groupBox1.Controls.Add(this.comboIndustry);
-            this.groupBox1.Location = new System.Drawing.Point(6, 16);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(295, 395);
-            this.groupBox1.TabIndex = 35;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Portal Details";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(6, 34);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(79, 13);
-            this.label16.TabIndex = 6;
-            this.label16.Text = "CompanyName";
-            // 
-            // txtCompanyName
-            // 
-            this.txtCompanyName.Location = new System.Drawing.Point(6, 50);
-            this.txtCompanyName.Name = "txtCompanyName";
-            this.txtCompanyName.Size = new System.Drawing.Size(265, 20);
-            this.txtCompanyName.TabIndex = 1;
-            // 
-            // txtPortalName
-            // 
-            this.txtPortalName.Location = new System.Drawing.Point(6, 96);
-            this.txtPortalName.Name = "txtPortalName";
-            this.txtPortalName.Size = new System.Drawing.Size(265, 20);
-            this.txtPortalName.TabIndex = 2;
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(6, 318);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(74, 13);
-            this.label20.TabIndex = 14;
-            this.label20.Text = "ServerDomain";
-            // 
-            // txtLogicalId
-            // 
-            this.txtLogicalId.Location = new System.Drawing.Point(6, 141);
-            this.txtLogicalId.Name = "txtLogicalId";
-            this.txtLogicalId.Size = new System.Drawing.Size(265, 20);
-            this.txtLogicalId.TabIndex = 3;
-            // 
-            // comboServerDomain
-            // 
-            this.comboServerDomain.FormattingEnabled = true;
-            this.comboServerDomain.Items.AddRange(new object[] {
-            "https://www.trainingportal.no",
-            "https://www.trainingportal.co.uk",
-            "https://www.mintratrainingportal.com"});
-            this.comboServerDomain.Location = new System.Drawing.Point(6, 334);
-            this.comboServerDomain.Name = "comboServerDomain";
-            this.comboServerDomain.Size = new System.Drawing.Size(265, 21);
-            this.comboServerDomain.TabIndex = 13;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(6, 125);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(50, 13);
-            this.label14.TabIndex = 4;
-            this.label14.Text = "LogicalId";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(6, 270);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(88, 13);
-            this.label19.TabIndex = 12;
-            this.label19.Text = "ContactCompany";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(6, 81);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(62, 13);
-            this.label15.TabIndex = 5;
-            this.label15.Text = "PortalName";
-            // 
-            // comboContractCompany
-            // 
-            this.comboContractCompany.FormattingEnabled = true;
-            this.comboContractCompany.Items.AddRange(new object[] {
-            "Mintra Trainingoirtal AS",
-            "Mintra Trainingportal Ltd"});
-            this.comboContractCompany.Location = new System.Drawing.Point(6, 286);
-            this.comboContractCompany.Name = "comboContractCompany";
-            this.comboContractCompany.Size = new System.Drawing.Size(265, 21);
-            this.comboContractCompany.TabIndex = 11;
-            // 
-            // txtURL
-            // 
-            this.txtURL.Location = new System.Drawing.Point(6, 188);
-            this.txtURL.Name = "txtURL";
-            this.txtURL.Size = new System.Drawing.Size(265, 20);
-            this.txtURL.TabIndex = 7;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(6, 223);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(44, 13);
-            this.label18.TabIndex = 10;
-            this.label18.Text = "Industry";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(6, 172);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(29, 13);
-            this.label17.TabIndex = 8;
-            this.label17.Text = "URL";
-            // 
-            // comboIndustry
-            // 
-            this.comboIndustry.FormattingEnabled = true;
-            this.comboIndustry.Items.AddRange(new object[] {
-            "-- No industry --",
-            "Oil & Gas NCS",
-            "Other",
-            "Construction",
-            "Renewables",
-            "Demo",
-            "Oil & Gas UKCS",
-            "Maritime International",
-            "Maritime UK",
-            "Oil and gas",
-            "Maritime"});
-            this.comboIndustry.Location = new System.Drawing.Point(7, 239);
-            this.comboIndustry.Name = "comboIndustry";
-            this.comboIndustry.Size = new System.Drawing.Size(264, 21);
-            this.comboIndustry.TabIndex = 9;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(597, 507);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(123, 46);
-            this.button2.TabIndex = 34;
-            this.button2.Text = "Cancel";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // btnCreatePortal
-            // 
-            this.btnCreatePortal.Location = new System.Drawing.Point(597, 449);
-            this.btnCreatePortal.Name = "btnCreatePortal";
-            this.btnCreatePortal.Size = new System.Drawing.Size(123, 46);
-            this.btnCreatePortal.TabIndex = 33;
-            this.btnCreatePortal.Text = "Create";
-            this.btnCreatePortal.UseVisualStyleBackColor = true;
-            this.btnCreatePortal.Click += new System.EventHandler(this.BtnCreatePortal_Click);
-            // 
             // tabPage7
             // 
             this.tabPage7.Controls.Add(this.label23);
@@ -1050,9 +802,9 @@
             this.label25.AutoSize = true;
             this.label25.Location = new System.Drawing.Point(6, 61);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(138, 13);
+            this.label25.Size = new System.Drawing.Size(157, 13);
             this.label25.TabIndex = 29;
-            this.label25.Text = "Attributes (comma delimited)";
+            this.label25.Text = "Course Codes(comma delimited)";
             // 
             // btnSetExpiry
             // 
@@ -1207,6 +959,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1052, 606);
             this.Controls.Add(this.btnLogIn);
             this.Controls.Add(this.tabControl1);
@@ -1231,11 +984,6 @@
             this.tabPage4.PerformLayout();
             this.tabPage5.ResumeLayout(false);
             this.tabPage5.PerformLayout();
-            this.tabPage6.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.tabPage7.ResumeLayout(false);
             this.tabPage7.PerformLayout();
             this.tabPage8.ResumeLayout(false);
@@ -1306,27 +1054,6 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtPortalIdEnrolRules;
         private System.Windows.Forms.Button btnStartEnrolRules;
-        private System.Windows.Forms.TabPage tabPage6;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TextBox txtCompanyName;
-        private System.Windows.Forms.TextBox txtPortalName;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.TextBox txtLogicalId;
-        private System.Windows.Forms.ComboBox comboServerDomain;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.ComboBox comboContractCompany;
-        private System.Windows.Forms.TextBox txtURL;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.ComboBox comboIndustry;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button btnCreatePortal;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.RadioButton radioAdvanced;
-        private System.Windows.Forms.RadioButton radioBasic;
         private System.Windows.Forms.TabPage tabPage7;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.RichTextBox txtCompanyShare;

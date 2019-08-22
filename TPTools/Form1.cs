@@ -161,42 +161,7 @@ namespace TPTools
             thread.Start();
         }
 
-        private void BtnCreatePortal_Click(object sender, EventArgs e)
-        {
-            if (!Login.IsLoggedIn())
-            {
-                MessageBox.Show("Log In First");
-                return;
-            }
-
-            if (string.IsNullOrWhiteSpace(txtCompanyName.Text))
-            {
-                MessageBox.Show("Enter Company Name");
-            }
-            else if (string.IsNullOrWhiteSpace(txtPortalName.Text))
-            {
-                MessageBox.Show("Enter Portal Name");
-            }
-            else if (string.IsNullOrWhiteSpace(txtLogicalId.Text))
-            {
-                MessageBox.Show("Enter Portal Id");
-            }
-            else if (string.IsNullOrWhiteSpace(txtURL.Text))
-            {
-                MessageBox.Show("Enter URL");
-            }
-
-            else
-            {
-
-                //Thread thread = new Thread(() =>
-                //    PortalAdministration.CreateDemoPortal()
-
-                //thread.Start();
-
-            }
-            
-        }
+       
 
         private void BtnShareCourses_Click(object sender, EventArgs e)
         {

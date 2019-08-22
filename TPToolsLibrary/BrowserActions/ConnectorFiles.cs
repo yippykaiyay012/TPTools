@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,13 +18,22 @@ namespace TPToolsLibrary
 
             foreach (var course in courseCodeList)
             {
-                var courseUrl =
-                    @"https://www.trainingportal.no/mintra/" + portalId + "/admin/courses/course/" + course + "/dashboard/courseContent";
+                try
+                {
+                    var courseUrl =
+                   @"https://www.trainingportal.no/mintra/" + portalId + "/admin/courses/course/" + course + "/dashboard/courseContent";
 
-                browser.Url = courseUrl;
-                browser.FindElementById("courseContent__downloadForCloud_button").Click();
+                    browser.Url = courseUrl;
+                    browser.FindElementById("courseContent__downloadForCloud_button").Click();
 
-              //  progConnector.Increment(1);
+                    //  progConnector.Increment(1);
+                }
+                catch (Exception e)
+                {
+                    Logger.LogError(e.ToString());
+                }
+
+
             }
         }
     }
