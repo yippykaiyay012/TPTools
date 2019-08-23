@@ -20,6 +20,8 @@ namespace TPToolsLibrary
         private static WebDriverWait wait = WebBrowser.wait;
 
         private static string portalId = null;
+        private static string portalName = null;
+        private static string portalURL = null;
 
 
         public static void CreateDemoPortal(string customerName, bool isUK, PortalType portalType, bool addDemoUsers)
@@ -40,6 +42,7 @@ namespace TPToolsLibrary
             // can get portalId after this point to use instead for URLs
             portalId = GetDemoPortalId(customerName);
 
+
             // 3. Customize Portal          
             CustomizePortal(portalId, portalType);
 
@@ -53,19 +56,17 @@ namespace TPToolsLibrary
 
 
             // 6. Org units
-            if (!CreateDemoOrgUnits(portalId))
-            {
-                return;
-            }
-            else
-            {
-
+            if (CreateDemoOrgUnits(portalId))
+            {                        
             // 7. Add Demo Users - dont add if org units failed
                 if (addDemoUsers)
                 {
                     AddDemoUsers(portalId, customerName);
                 }
             }
+
+            // 8. Register portal in Sheet
+            GSheets.CreateEntry(portalName, portalId, portalURL, DateTime.UtcNow.ToString());
 
             
                   
@@ -117,7 +118,7 @@ namespace TPToolsLibrary
 
                 var createPageURL = browser.Url;
 
-                var portalName = customerName + " Demo Trainingportal";
+                portalName = customerName + " Demo Trainingportal";
                 var txtPortalName = wait.Until(driver => driver.FindElement(By.Name("portal.name")));
                 txtPortalName.SendKeys(portalName);
 
@@ -203,6 +204,7 @@ namespace TPToolsLibrary
                 // check if valid number but still return as string to be used elsewhere.
                 if (int.TryParse(portalId, out int x))
                 {
+                    portalURL = "https://www.trainingportal.no/mintra/" + portalId + "/admin/portals/show/portal/" + portalId;
                     return portalId;
                 }
                 else

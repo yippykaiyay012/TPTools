@@ -125,6 +125,7 @@
             this.btnSetExpiry = new System.Windows.Forms.Button();
             this.btnLogIn = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.tabControl1.SuspendLayout();
             this.DemoPortal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -245,6 +246,7 @@
             // 
             // DemoPortal
             // 
+            this.DemoPortal.Controls.Add(this.linkLabel1);
             this.DemoPortal.Controls.Add(this.pictureBox4);
             this.DemoPortal.Controls.Add(this.groupBox4);
             this.DemoPortal.Controls.Add(this.groupBox3);
@@ -1160,6 +1162,18 @@
             this.btnLogIn.UseVisualStyleBackColor = true;
             this.btnLogIn.Click += new System.EventHandler(this.BtnLogIn_Click);
             // 
+            // linkLabel1
+            // 
+            this.linkLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Location = new System.Drawing.Point(431, 279);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(101, 13);
+            this.linkLabel1.TabIndex = 42;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "View Tracker Sheet";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkLabel1_LinkClicked);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1178,6 +1192,7 @@
             this.Text = "TPTools";
             this.tabControl1.ResumeLayout(false);
             this.DemoPortal.ResumeLayout(false);
+            this.DemoPortal.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
@@ -1312,6 +1327,7 @@
         private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.CheckBox chkAddDemoUsers;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.LinkLabel linkLabel1;
     }
 }
 

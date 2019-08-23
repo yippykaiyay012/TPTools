@@ -251,5 +251,10 @@ namespace TPTools
 
             }
         }
+
+        private void LinkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://docs.google.com/spreadsheets/d/1prz7bB3qG9m9h1kZR81ECLTC3BosoE_YvyRmnGli8dU/edit?usp=sharing");
+        }
     }
 }
