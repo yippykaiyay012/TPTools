@@ -45,7 +45,6 @@
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.label26 = new System.Windows.Forms.Label();
             this.txtDemoCompanyName = new System.Windows.Forms.TextBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.rdioNotUk = new System.Windows.Forms.RadioButton();
             this.rdioUK = new System.Windows.Forms.RadioButton();
@@ -130,7 +129,6 @@
             this.DemoPortal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.groupBox4.SuspendLayout();
-            this.groupBox3.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -287,9 +285,11 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.groupBox5);
             this.groupBox4.Controls.Add(this.label26);
             this.groupBox4.Controls.Add(this.txtDemoCompanyName);
-            this.groupBox4.Controls.Add(this.groupBox3);
+            this.groupBox4.Controls.Add(this.chkAddDemoUsers);
+            this.groupBox4.Controls.Add(this.groupBox1);
             this.groupBox4.Location = new System.Drawing.Point(18, 30);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(295, 520);
@@ -300,7 +300,7 @@
             // label26
             // 
             this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(6, 42);
+            this.label26.Location = new System.Drawing.Point(6, 54);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(79, 13);
             this.label26.TabIndex = 6;
@@ -308,30 +308,18 @@
             // 
             // txtDemoCompanyName
             // 
-            this.txtDemoCompanyName.Location = new System.Drawing.Point(6, 58);
+            this.txtDemoCompanyName.Location = new System.Drawing.Point(6, 70);
             this.txtDemoCompanyName.Name = "txtDemoCompanyName";
             this.txtDemoCompanyName.Size = new System.Drawing.Size(265, 20);
             this.txtDemoCompanyName.TabIndex = 1;
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.groupBox5);
-            this.groupBox3.Controls.Add(this.chkAddDemoUsers);
-            this.groupBox3.Controls.Add(this.groupBox1);
-            this.groupBox3.Location = new System.Drawing.Point(6, 118);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(265, 369);
-            this.groupBox3.TabIndex = 39;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Settings";
             // 
             // groupBox5
             // 
             this.groupBox5.Controls.Add(this.rdioNotUk);
             this.groupBox5.Controls.Add(this.rdioUK);
-            this.groupBox5.Location = new System.Drawing.Point(17, 173);
+            this.groupBox5.Location = new System.Drawing.Point(9, 286);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(134, 105);
+            this.groupBox5.Size = new System.Drawing.Size(192, 105);
             this.groupBox5.TabIndex = 41;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Is UK?";
@@ -362,7 +350,7 @@
             // chkAddDemoUsers
             // 
             this.chkAddDemoUsers.AutoSize = true;
-            this.chkAddDemoUsers.Location = new System.Drawing.Point(23, 310);
+            this.chkAddDemoUsers.Location = new System.Drawing.Point(15, 423);
             this.chkAddDemoUsers.Name = "chkAddDemoUsers";
             this.chkAddDemoUsers.Size = new System.Drawing.Size(106, 17);
             this.chkAddDemoUsers.TabIndex = 42;
@@ -373,9 +361,9 @@
             // 
             this.groupBox1.Controls.Add(this.rdioDemoBasic);
             this.groupBox1.Controls.Add(this.rdioDemoAdvanced);
-            this.groupBox1.Location = new System.Drawing.Point(17, 39);
+            this.groupBox1.Location = new System.Drawing.Point(9, 152);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(134, 100);
+            this.groupBox1.Size = new System.Drawing.Size(192, 100);
             this.groupBox1.TabIndex = 43;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Type";
@@ -385,7 +373,7 @@
             this.rdioDemoBasic.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.rdioDemoBasic.AutoSize = true;
             this.rdioDemoBasic.Checked = true;
-            this.rdioDemoBasic.Location = new System.Drawing.Point(16, 31);
+            this.rdioDemoBasic.Location = new System.Drawing.Point(6, 32);
             this.rdioDemoBasic.Name = "rdioDemoBasic";
             this.rdioDemoBasic.Size = new System.Drawing.Size(51, 17);
             this.rdioDemoBasic.TabIndex = 0;
@@ -397,7 +385,7 @@
             // 
             this.rdioDemoAdvanced.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.rdioDemoAdvanced.AutoSize = true;
-            this.rdioDemoAdvanced.Location = new System.Drawing.Point(16, 63);
+            this.rdioDemoAdvanced.Location = new System.Drawing.Point(6, 66);
             this.rdioDemoAdvanced.Name = "rdioDemoAdvanced";
             this.rdioDemoAdvanced.Size = new System.Drawing.Size(74, 17);
             this.rdioDemoAdvanced.TabIndex = 1;
@@ -1196,8 +1184,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -1305,7 +1291,6 @@
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Button btnSetExpiry;
         private System.Windows.Forms.TabPage DemoPortal;
-        private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.RadioButton rdioDemoAdvanced;
         private System.Windows.Forms.RadioButton rdioDemoBasic;
         private System.Windows.Forms.Button button5;
