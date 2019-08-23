@@ -259,7 +259,7 @@
             // 
             // linkLabel1
             // 
-            this.linkLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.linkLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel1.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
@@ -317,7 +317,7 @@
             // 
             this.groupBox5.Controls.Add(this.rdioNotUk);
             this.groupBox5.Controls.Add(this.rdioUK);
-            this.groupBox5.Location = new System.Drawing.Point(9, 286);
+            this.groupBox5.Location = new System.Drawing.Point(9, 290);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(192, 105);
             this.groupBox5.TabIndex = 41;
@@ -350,7 +350,7 @@
             // chkAddDemoUsers
             // 
             this.chkAddDemoUsers.AutoSize = true;
-            this.chkAddDemoUsers.Location = new System.Drawing.Point(15, 423);
+            this.chkAddDemoUsers.Location = new System.Drawing.Point(15, 429);
             this.chkAddDemoUsers.Name = "chkAddDemoUsers";
             this.chkAddDemoUsers.Size = new System.Drawing.Size(106, 17);
             this.chkAddDemoUsers.TabIndex = 42;
@@ -361,9 +361,9 @@
             // 
             this.groupBox1.Controls.Add(this.rdioDemoBasic);
             this.groupBox1.Controls.Add(this.rdioDemoAdvanced);
-            this.groupBox1.Location = new System.Drawing.Point(9, 152);
+            this.groupBox1.Location = new System.Drawing.Point(9, 145);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(192, 100);
+            this.groupBox1.Size = new System.Drawing.Size(192, 107);
             this.groupBox1.TabIndex = 43;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Type";
