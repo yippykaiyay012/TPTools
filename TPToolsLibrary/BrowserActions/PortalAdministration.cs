@@ -36,15 +36,16 @@ namespace TPToolsLibrary
             {
                 return;
             }
-
-
-            // 3. Customize Portal
             Thread.Sleep(10000); // need to wait for indexing to complete before searching
-            CustomizePortal(customerName, portalType);
+            // can get portalId after this point to use instead for URLs
+            portalId = GetDemoPortalId(customerName);
+
+            // 3. Customize Portal          
+            CustomizePortal(portalId, portalType);
 
 
             // 4. Templates
-            EmailTemplates(portalType);
+            EmailTemplates(portalId, portalType);
 
 
             // 5. Certificate Template
@@ -52,16 +53,22 @@ namespace TPToolsLibrary
 
 
             // 6. Org units
-            CreateDemoOrgUnits(portalId);
-
-            // 7. Add Demo Users
-            if (addDemoUsers)
+            if (!CreateDemoOrgUnits(portalId))
             {
-                AddDemoUsers(portalId, customerName);
+                return;
             }
-            
-        
+            else
+            {
 
+            // 7. Add Demo Users - dont add if org units failed
+                if (addDemoUsers)
+                {
+                    AddDemoUsers(portalId, customerName);
+                }
+            }
+
+            
+                  
         }
 
 
@@ -182,44 +189,74 @@ namespace TPToolsLibrary
 
         }
 
-
-        private static void CustomizePortal(string customerName, PortalType portalType)
+        private static string GetDemoPortalId(string customerName)
         {
             try
             {
                 var portalName = customerName + " Demo Trainingportal";
                 browser.Url = "https://www.trainingportal.no/mintra/474/admin/portals?maxResults=20&page=1&criteria%5Bquery%5D.value=" + portalName;
-                browser.FindElementByLinkText(portalName).Click();
+
+                wait.Until(driver => driver.FindElement(By.LinkText(portalName))).Click();
 
                 portalId = browser.Url.Substring(browser.Url.LastIndexOf('/') + 1);
 
-                var btnEditPortal = wait.Until(driver => driver.FindElement(By.Id("editPortal")));
-                btnEditPortal.Click();
-
-
-                if (portalType == PortalType.Basic)
+                // check if valid number but still return as string to be used elsewhere.
+                if (int.TryParse(portalId, out int x))
                 {
-                    foreach (var element in PortalSettings.basicPortalSettings)
+                    return portalId;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            catch (Exception e)
+            {
+                Logger.LogError(e.ToString());
+                return null;
+            }
+            
+        }
+
+
+        private static void CustomizePortal(string portalId, PortalType portalType)
+        {
+            try
+            {        
+                if(portalId != null)
+                {
+                    browser.Url = "https://www.trainingportal.no/mintra/474/admin/portals/show/portal/" + portalId;
+
+                    var btnEditPortal = wait.Until(driver => driver.FindElement(By.Id("editPortal")));
+                    btnEditPortal.Click();
+
+
+                    if (portalType == PortalType.Basic)
                     {
-                        CheckAndSelectElementName(element);
+                        foreach (var element in PortalSettings.basicPortalSettings)
+                        {
+                            CheckAndSelectElementName(element);
+                        }
+
+                    }
+                    else if (portalType == PortalType.Advanced)
+                    {
+                        foreach (var element in PortalSettings.advancedPortalSettings)
+                        {
+                            CheckAndSelectElementName(element);
+                        }
                     }
 
+                    var contractType = wait.Until(driver => driver.FindElement(By.XPath("//*[@id='CONTRACT_TYPE']/tbody/tr/td[2]/input")));
+                    contractType.Click();
+                    contractType.SendKeys("DEMO");
+                    contractType.SendKeys(Keys.Tab);
+
+
+                    browser.FindElementByName("_eventId_complete").Click();
                 }
-                else if (portalType == PortalType.Advanced)
-                {
-                    foreach (var element in PortalSettings.advancedPortalSettings)
-                    {
-                        CheckAndSelectElementName(element);
-                    }
-                }
 
-                var contractType = wait.Until(driver => driver.FindElement(By.XPath("//*[@id='CONTRACT_TYPE']/tbody/tr/td[2]/input")));
-                contractType.Click();
-                contractType.SendKeys("DEMO");
-                contractType.SendKeys(Keys.Tab);
-
-
-                browser.FindElementByName("_eventId_complete").Click();
+                
             }
             catch (Exception e)
             {
@@ -229,7 +266,7 @@ namespace TPToolsLibrary
         }
 
 
-        private static void EmailTemplates(PortalType portalType)
+        private static void EmailTemplates(string portalId, PortalType portalType)
         {
             if (portalId == null)
             {
@@ -368,7 +405,7 @@ namespace TPToolsLibrary
 
 
 
-        public static void AddCertificateTemplate(string portalId, ICertificateTemplate template)
+        private static void AddCertificateTemplate(string portalId, ICertificateTemplate template)
         {
 
             if (portalId == null)
@@ -415,11 +452,11 @@ namespace TPToolsLibrary
 
 
 
-        private static void CreateDemoOrgUnits(string portalId)
+        private static bool CreateDemoOrgUnits(string portalId)
         {
             if (portalId == null)
             {
-                return;
+                return false;
             }
             else
             {
@@ -482,19 +519,22 @@ namespace TPToolsLibrary
                         txtTitleLoc.Click();
                         txtTitleLoc.SendKeys("Sub Location");
                         browser.FindElementByName("_eventId_complete").Click();
+
+                        return true;
                     }
-                   
+                    return false;
 
                 }
                 catch (Exception e)
                 {
                     Logger.LogError(e.ToString());
+                    return false;
                 }             
 
             }
         }
 
-        public static void AddDemoUsers(string portalId, string companyName)
+        private static void AddDemoUsers(string portalId, string companyName)
         {
 
             // 15 users   ->  3 managers + 2 portal admin + 10 normal
@@ -561,7 +601,7 @@ namespace TPToolsLibrary
             }
         }
 
-        public static void AddUser(string portalId, string firstName, string lastName, 
+        private static void AddUser(string portalId, string firstName, string lastName, 
             string email, string username, string password, string orgUnit, UserRole userRole, bool sendEmail)
         {
             if (portalId == null)
