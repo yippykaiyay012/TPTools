@@ -13,13 +13,26 @@ namespace TPTools
         public Form1()
         {
             InitializeComponent();
+            
+        }
 
+
+        protected override void OnShown(EventArgs e)
+        {
+            StartUp();
+        }
+
+
+        private void StartUp()
+        {
             if (Properties.Settings.Default.userName != string.Empty)
             {
                 txtUsernameAdmin.Text = Properties.Settings.Default.userName;
                 txtPasswordAdmin.Text = Properties.Settings.Default.userPass;
                 chkRememberDetails.Checked = true;
             }
+
+            MessageBox.Show("Cancel Buttons No Worky, Close App To Cancel Processes.", "Info");
 
         }
 
