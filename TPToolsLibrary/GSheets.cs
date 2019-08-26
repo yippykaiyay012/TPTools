@@ -18,7 +18,7 @@ namespace TPToolsLibrary
 
         static readonly string SpreadsheetId = "1prz7bB3qG9m9h1kZR81ECLTC3BosoE_YvyRmnGli8dU";
 
-        static readonly string Sheet = "DemoPortals";
+        static readonly string DemoSheet = "DemoPortals";
 
         static SheetsService sheetsService;
 
@@ -42,7 +42,7 @@ namespace TPToolsLibrary
         public static void CreateEntry(string portalName, string portalId, string portalURL, string datecreated)
         {
             Initialize();
-            var range = $"{Sheet}!A:D";
+            var range = $"{DemoSheet}!A:D";
             var valueRange = new ValueRange();
 
             var oblist = new List<object>() { portalName, portalId, portalURL, datecreated };
@@ -56,7 +56,7 @@ namespace TPToolsLibrary
 
         static void ReadEntries()
         {
-            var range = $"{Sheet}!A:F";
+            var range = $"{DemoSheet}!A:F";
             SpreadsheetsResource.ValuesResource.GetRequest request =
                     sheetsService.Spreadsheets.Values.Get(SpreadsheetId, range);
 

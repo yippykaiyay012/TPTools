@@ -71,7 +71,7 @@ namespace TPTools
             var courseCodes = txtCourseCodes.Text;
             var courseCodeList = courseCodes.Split(',').ToList();
 
-            Thread thread = new Thread(() => CourseCodes.AddCourseCodes(courseCodeList));
+            Thread thread = new Thread(() => TPToolsLibrary.CourseCodes.AddCourseCodes(courseCodeList));
             thread.Start();
 
         }
@@ -93,7 +93,7 @@ namespace TPTools
             var courseCodeList = txtConnectorCourseCodes.Text.Split(',').ToList();
             var portalId = txtPortalID.Text;
 
-            Thread thread = new Thread(() => ConnectorFiles.Download(courseCodeList, portalId));
+            Thread thread = new Thread(() => TPToolsLibrary.ConnectorFiles.Download(courseCodeList, portalId));
             thread.Start();
 
         }
@@ -196,7 +196,7 @@ namespace TPTools
             var companies = txtCompanyShare.Text;
             var companyList = companies.Split(',').ToList();
 
-            Thread thread = new Thread(() => CompanyShare.ShareCourses(courseCodeList, companyList, txtPortalIdCompanyShare.Text));
+            Thread thread = new Thread(() => TPToolsLibrary.CompanyShare.ShareCourses(courseCodeList, companyList, txtPortalIdCompanyShare.Text));
             thread.Start();
         }
 
@@ -224,7 +224,7 @@ namespace TPTools
 
             var months = txtExpiryMonths.Text;
 
-            Thread thread = new Thread(() => CourseExpiry.SetCourseExpiry(courseCodeList, months, txtPortalIDExpiry.Text));
+            Thread thread = new Thread(() => TPToolsLibrary.CourseExpiry.SetCourseExpiry(courseCodeList, months, txtPortalIDExpiry.Text));
 
             thread.Start();
         }
@@ -258,7 +258,7 @@ namespace TPTools
 
 
                 Thread thread = new Thread(() =>
-                    PortalAdministration.CreateDemoPortal(txtDemoCompanyName.Text, rdioUK.Checked, portalType, chkAddDemoUsers.Checked));
+                    TPToolsLibrary.DemoPortal.CreateDemoPortal(txtDemoCompanyName.Text, rdioUK.Checked, portalType, chkAddDemoUsers.Checked));
 
                 thread.Start();
 
@@ -268,6 +268,19 @@ namespace TPTools
         private void LinkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             System.Diagnostics.Process.Start("https://docs.google.com/spreadsheets/d/1prz7bB3qG9m9h1kZR81ECLTC3BosoE_YvyRmnGli8dU/edit?usp=sharing");
+        }
+
+        private void TxtDemoCompanyName_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtDemoCompanyName.Text))
+            {
+                lblNewDemoPortalName.Text = "__________";
+            }
+            else
+            {
+                lblNewDemoPortalName.Text = txtDemoCompanyName.Text + " Demo Trainingportal";
+            }
+            
         }
 
 

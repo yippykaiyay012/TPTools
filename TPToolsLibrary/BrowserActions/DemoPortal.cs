@@ -13,7 +13,7 @@ using TPToolsLibrary.SettingsAndTemplates.CertificateTemplates;
 
 namespace TPToolsLibrary
 {
-    public class PortalAdministration
+    public class DemoPortal
     {
 
         private static ChromeDriver browser = WebBrowser.Driver;
@@ -249,10 +249,10 @@ namespace TPToolsLibrary
                         }
                     }
 
-                    var contractType = wait.Until(driver => driver.FindElement(By.XPath("//*[@id='CONTRACT_TYPE']/tbody/tr/td[2]/input")));
-                    contractType.Click();
-                    contractType.SendKeys("DEMO");
-                    contractType.SendKeys(Keys.Tab);
+                    var contractTypeChoice = wait.Until(driver => driver.FindElement(By.XPath("//*[@id='CONTRACT_TYPE']/tbody/tr/td[2]/input")));
+                    contractTypeChoice.Click();
+                    contractTypeChoice.SendKeys("DEMO");
+                    contractTypeChoice.SendKeys(Keys.Tab);
 
 
                     browser.FindElementByName("_eventId_complete").Click();

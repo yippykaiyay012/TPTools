@@ -117,6 +117,21 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="pictureBox9.ToolTip" xml:space="preserve">
+    <value>This will go through the following to create a new Demo portal:
+
+1. Create New Company
+2. Create Portal
+3. Customise Settings
+4. Add Email Templates
+5. Add Certificate Template
+6. Create Demo Org Units
+7. Add 15 Demo Users
+
+n.b : you will have to add the certifcate image manually just now.
+
+</value>
+  </data>
   <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
