@@ -57,9 +57,12 @@
             this.button5 = new System.Windows.Forms.Button();
             this.btnCreateDemoPortal = new System.Windows.Forms.Button();
             this.CreateNewPortal = new System.Windows.Forms.TabPage();
-            this.label15 = new System.Windows.Forms.Label();
-            this.comboContractType = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.comboIndustry = new System.Windows.Forms.ComboBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.comboContractType = new System.Windows.Forms.ComboBox();
             this.lblNewPortalName = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
@@ -71,8 +74,8 @@
             this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.radioButton4 = new System.Windows.Forms.RadioButton();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.brnCancelCreateNewPortal = new System.Windows.Forms.Button();
+            this.btnCreateNewPortal = new System.Windows.Forms.Button();
             this.CourseCodes = new System.Windows.Forms.TabPage();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnCancelCourseCode = new System.Windows.Forms.Button();
@@ -144,9 +147,6 @@
             this.btnSetExpiry = new System.Windows.Forms.Button();
             this.btnLogIn = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.label17 = new System.Windows.Forms.Label();
-            this.comboIndustry = new System.Windows.Forms.ComboBox();
-            this.label18 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.DemoPortal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -467,8 +467,8 @@
             // 
             this.CreateNewPortal.Controls.Add(this.groupBox2);
             this.CreateNewPortal.Controls.Add(this.pictureBox9);
-            this.CreateNewPortal.Controls.Add(this.button2);
-            this.CreateNewPortal.Controls.Add(this.button6);
+            this.CreateNewPortal.Controls.Add(this.brnCancelCreateNewPortal);
+            this.CreateNewPortal.Controls.Add(this.btnCreateNewPortal);
             this.CreateNewPortal.Location = new System.Drawing.Point(4, 22);
             this.CreateNewPortal.Name = "CreateNewPortal";
             this.CreateNewPortal.Padding = new System.Windows.Forms.Padding(3);
@@ -476,32 +476,6 @@
             this.CreateNewPortal.TabIndex = 9;
             this.CreateNewPortal.Text = "CreateNewPortal";
             this.CreateNewPortal.UseVisualStyleBackColor = true;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(318, 67);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(74, 13);
-            this.label15.TabIndex = 44;
-            this.label15.Text = "Contract Type";
-            // 
-            // comboContractType
-            // 
-            this.comboContractType.FormattingEnabled = true;
-            this.comboContractType.Items.AddRange(new object[] {
-            "DEMO",
-            "FIXED USER BASED",
-            "FIXED COURSEREGISTRATION BASED",
-            "PER USER",
-            "PER COURSEREGISTRATION",
-            "COURSE_BUNDLE",
-            "COURSEPROVIDER",
-            "OTHER"});
-            this.comboContractType.Location = new System.Drawing.Point(321, 84);
-            this.comboContractType.Name = "comboContractType";
-            this.comboContractType.Size = new System.Drawing.Size(154, 21);
-            this.comboContractType.TabIndex = 46;
             // 
             // groupBox2
             // 
@@ -522,6 +496,72 @@
             this.groupBox2.TabIndex = 44;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Portal Details";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(318, 135);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(44, 13);
+            this.label18.TabIndex = 48;
+            this.label18.Text = "Industry";
+            // 
+            // comboIndustry
+            // 
+            this.comboIndustry.FormattingEnabled = true;
+            this.comboIndustry.Items.AddRange(new object[] {
+            "-- No industry --",
+            "Oil & Gas NCS",
+            "Other",
+            "Construction",
+            "Renewables",
+            "Demo",
+            "Oil & Gas UKCS",
+            "Maritime Norway",
+            "Oil & Gas International",
+            "Maritime International",
+            "Maritime Uk",
+            "Oil and Gas",
+            "Maritime"});
+            this.comboIndustry.Location = new System.Drawing.Point(321, 152);
+            this.comboIndustry.Name = "comboIndustry";
+            this.comboIndustry.Size = new System.Drawing.Size(154, 21);
+            this.comboIndustry.TabIndex = 47;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(318, 67);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(74, 13);
+            this.label15.TabIndex = 44;
+            this.label15.Text = "Contract Type";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(6, 129);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(68, 13);
+            this.label17.TabIndex = 46;
+            this.label17.Text = "Portal Name:";
+            // 
+            // comboContractType
+            // 
+            this.comboContractType.FormattingEnabled = true;
+            this.comboContractType.Items.AddRange(new object[] {
+            "DEMO",
+            "FIXED USER BASED",
+            "FIXED COURSEREGISTRATION BASED",
+            "PER USER",
+            "PER COURSEREGISTRATION",
+            "COURSE_BUNDLE",
+            "COURSEPROVIDER",
+            "OTHER"});
+            this.comboContractType.Location = new System.Drawing.Point(321, 84);
+            this.comboContractType.Name = "comboContractType";
+            this.comboContractType.Size = new System.Drawing.Size(154, 21);
+            this.comboContractType.TabIndex = 46;
             // 
             // lblNewPortalName
             // 
@@ -640,25 +680,26 @@
             this.pictureBox9.TabStop = false;
             this.toolTip1.SetToolTip(this.pictureBox9, resources.GetString("pictureBox9.ToolTip"));
             // 
-            // button2
+            // brnCancelCreateNewPortal
             // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.Location = new System.Drawing.Point(715, 507);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(123, 46);
-            this.button2.TabIndex = 43;
-            this.button2.Text = "Cancel";
-            this.button2.UseVisualStyleBackColor = true;
+            this.brnCancelCreateNewPortal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.brnCancelCreateNewPortal.Location = new System.Drawing.Point(715, 507);
+            this.brnCancelCreateNewPortal.Name = "brnCancelCreateNewPortal";
+            this.brnCancelCreateNewPortal.Size = new System.Drawing.Size(123, 46);
+            this.brnCancelCreateNewPortal.TabIndex = 43;
+            this.brnCancelCreateNewPortal.Text = "Cancel";
+            this.brnCancelCreateNewPortal.UseVisualStyleBackColor = true;
             // 
-            // button6
+            // btnCreateNewPortal
             // 
-            this.button6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button6.Location = new System.Drawing.Point(715, 449);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(123, 46);
-            this.button6.TabIndex = 42;
-            this.button6.Text = "Create";
-            this.button6.UseVisualStyleBackColor = true;
+            this.btnCreateNewPortal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCreateNewPortal.Location = new System.Drawing.Point(715, 449);
+            this.btnCreateNewPortal.Name = "btnCreateNewPortal";
+            this.btnCreateNewPortal.Size = new System.Drawing.Size(123, 46);
+            this.btnCreateNewPortal.TabIndex = 42;
+            this.btnCreateNewPortal.Text = "Create";
+            this.btnCreateNewPortal.UseVisualStyleBackColor = true;
+            this.btnCreateNewPortal.Click += new System.EventHandler(this.BtnCreateNewPortal_Click);
             // 
             // CourseCodes
             // 
@@ -1407,46 +1448,6 @@
             this.btnLogIn.UseVisualStyleBackColor = true;
             this.btnLogIn.Click += new System.EventHandler(this.BtnLogIn_Click);
             // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(6, 129);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(68, 13);
-            this.label17.TabIndex = 46;
-            this.label17.Text = "Portal Name:";
-            // 
-            // comboIndustry
-            // 
-            this.comboIndustry.FormattingEnabled = true;
-            this.comboIndustry.Items.AddRange(new object[] {
-            "-- No industry --",
-            "Oil & Gas NCS",
-            "Other",
-            "Construction",
-            "Renewables",
-            "Demo",
-            "Oil & Gas UKCS",
-            "Maritime Norway",
-            "Oil & Gas International",
-            "Maritime International",
-            "Maritime Uk",
-            "Oil and Gas",
-            "Maritime"});
-            this.comboIndustry.Location = new System.Drawing.Point(321, 152);
-            this.comboIndustry.Name = "comboIndustry";
-            this.comboIndustry.Size = new System.Drawing.Size(154, 21);
-            this.comboIndustry.TabIndex = 47;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(318, 135);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(44, 13);
-            this.label18.TabIndex = 48;
-            this.label18.Text = "Industry";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1619,8 +1620,8 @@
         private System.Windows.Forms.RadioButton radioButton3;
         private System.Windows.Forms.RadioButton radioButton4;
         private System.Windows.Forms.PictureBox pictureBox9;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button brnCancelCreateNewPortal;
+        private System.Windows.Forms.Button btnCreateNewPortal;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.ComboBox comboContractType;
         private System.Windows.Forms.Label lblNewDemoPortalName;

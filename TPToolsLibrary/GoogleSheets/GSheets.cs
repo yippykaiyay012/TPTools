@@ -26,7 +26,7 @@ namespace TPToolsLibrary
         static void Initialize()
         {
             GoogleCredential credential;
-            using (var stream = new FileStream(@"client_secrets.json", FileMode.Open, FileAccess.Read))
+            using (var stream = new FileStream(@"./GoogleSheets/client_secrets_sheets.json", FileMode.Open, FileAccess.Read))
             {
                 credential = GoogleCredential.FromStream(stream).CreateScoped(Scopes);
             }

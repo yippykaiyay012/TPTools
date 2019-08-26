@@ -283,6 +283,9 @@ namespace TPTools
             
         }
 
-
+        private void BtnCreateNewPortal_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Not Ready");
+        }
     }
 }
