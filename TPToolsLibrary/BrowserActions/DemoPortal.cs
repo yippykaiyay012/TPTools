@@ -39,7 +39,7 @@ namespace TPToolsLibrary
                 return;
             }
             Thread.Sleep(10000); // need to wait for indexing to complete before searching
-            // can get portalId after this point to use instead for URLs
+                                    // can get portalId after this point to use instead for URLs
             portalId = GetDemoPortalId(customerName);
 
 
@@ -57,8 +57,8 @@ namespace TPToolsLibrary
 
             // 6. Org units
             if (CreateDemoOrgUnits(portalId))
-            {                        
-            // 7. Add Demo Users - dont add if org units failed
+            {
+                // 7. Add Demo Users - dont add if org units failed
                 if (addDemoUsers)
                 {
                     AddDemoUsers(portalId, customerName);
@@ -68,7 +68,7 @@ namespace TPToolsLibrary
             // 8. Register portal in Sheet
             GSheets.CreateEntry(portalName, portalId, portalURL, DateTime.UtcNow.ToString());
 
-            
+
                   
         }
 

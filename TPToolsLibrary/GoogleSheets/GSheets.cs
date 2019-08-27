@@ -26,7 +26,7 @@ namespace TPToolsLibrary
         static void Initialize()
         {
             GoogleCredential credential;
-            using (var stream = new FileStream(@"./GoogleSheets/client_secrets_sheets.json", FileMode.Open, FileAccess.Read))
+            using (var stream = new FileStream(@"./Resources/client_secrets_sheets.json", FileMode.Open, FileAccess.Read))
             {
                 credential = GoogleCredential.FromStream(stream).CreateScoped(Scopes);
             }
@@ -42,15 +42,23 @@ namespace TPToolsLibrary
         public static void CreateEntry(string portalName, string portalId, string portalURL, string datecreated)
         {
             Initialize();
-            var range = $"{DemoSheet}!A:D";
-            var valueRange = new ValueRange();
+            try
+            {
+                var range = $"{DemoSheet}!A:D";
+                var valueRange = new ValueRange();
 
-            var oblist = new List<object>() { portalName, portalId, portalURL, datecreated };
-            valueRange.Values = new List<IList<object>> { oblist };
+                var oblist = new List<object>() { portalName, portalId, portalURL, datecreated };
+                valueRange.Values = new List<IList<object>> { oblist };
 
-            var appendRequest = sheetsService.Spreadsheets.Values.Append(valueRange, SpreadsheetId, range);
-            appendRequest.ValueInputOption = SpreadsheetsResource.ValuesResource.AppendRequest.ValueInputOptionEnum.USERENTERED;
-            var appendReponse = appendRequest.Execute();
+                var appendRequest = sheetsService.Spreadsheets.Values.Append(valueRange, SpreadsheetId, range);
+                appendRequest.ValueInputOption = SpreadsheetsResource.ValuesResource.AppendRequest.ValueInputOptionEnum.USERENTERED;
+                var appendReponse = appendRequest.Execute();
+            }
+            catch(Exception e)
+            {
+                Logger.LogError(e.ToString());
+            }
+            
         }
 
 

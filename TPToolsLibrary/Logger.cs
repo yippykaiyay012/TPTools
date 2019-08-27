@@ -7,14 +7,14 @@ namespace TPToolsLibrary
 {
     public static class Logger
     {
-        private static readonly string _fileLocation = @"C:\TPTools.log";
+        private static readonly string _fileLocation = @"C:\Users\ryan.mitchell\Desktop\TPTools.log";
 
 
         public static void LogError(string error)
         {
             try
             {
-                File.AppendAllText(_fileLocation, "Error: " + DateTime.Now.ToString() + " : " + error);
+                File.AppendAllText(_fileLocation, "Error: " + DateTime.Now.ToString() + " : " + error + "/n");
             }
             catch
             {
@@ -28,7 +28,7 @@ namespace TPToolsLibrary
         {
             try
             {
-                File.AppendAllText(_fileLocation, "Info: " + DateTime.Now.ToString() + " : " + info);
+                File.AppendAllText(_fileLocation, "Info: " + DateTime.Now.ToString() + " : " + info + "/n");
             }
             catch
             {
