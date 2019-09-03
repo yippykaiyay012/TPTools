@@ -567,7 +567,7 @@ namespace TPToolsLibrary
                     orgUnit = PortalSettings.orgUnits[i-1];
                     userRole = UserRole.Manager;
                     sendEmail = false;
-                    AddUser(portalId, firstName, lastName, email, username, password, orgUnit, userRole,sendEmail);
+                    AddUser(portalId, firstName, lastName, email.Replace(" ", ""), username.Replace(" ", ""), password, orgUnit, userRole, sendEmail);
                 }
 
                 // add 2 portal Admins
@@ -580,7 +580,7 @@ namespace TPToolsLibrary
                     orgUnit = PortalSettings.orgUnits[i];
                     userRole = UserRole.Portal_Administrator;
                     sendEmail = false;
-                    AddUser(portalId, firstName, lastName, email, username, password, orgUnit, userRole, sendEmail);
+                    AddUser(portalId, firstName, lastName, email.Replace(" ", ""), username.Replace(" ", ""), password, orgUnit, userRole, sendEmail);
                 }
 
                 // add 10 Students
@@ -595,7 +595,7 @@ namespace TPToolsLibrary
                     orgUnit = PortalSettings.orgUnits[rnd.Next(0, PortalSettings.orgUnits.Count)];
                     userRole = UserRole.Student;
                     sendEmail = false;
-                    AddUser(portalId, firstName, lastName, email, username, password, orgUnit, userRole, sendEmail);
+                    AddUser(portalId, firstName, lastName, email.Replace(" ", ""), username.Replace(" ", ""), password, orgUnit, userRole, sendEmail);
                 }
 
 
