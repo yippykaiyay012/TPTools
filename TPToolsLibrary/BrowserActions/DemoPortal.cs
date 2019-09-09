@@ -118,7 +118,7 @@ namespace TPToolsLibrary
 
                 var createPageURL = browser.Url;
 
-                portalName = customerName + " Demo Trainingportal";
+                portalName = customerName + " Trainingportal";
                 var txtPortalName = wait.Until(driver => driver.FindElement(By.Name("portal.name")));
                 txtPortalName.SendKeys(portalName);
 
@@ -194,7 +194,7 @@ namespace TPToolsLibrary
         {
             try
             {
-                var portalName = customerName + " Demo Trainingportal";
+                var portalName = customerName + " Trainingportal";
                 browser.Url = "https://www.trainingportal.no/mintra/474/admin/portals?maxResults=20&page=1&criteria%5Bquery%5D.value=" + portalName;
 
                 wait.Until(driver => driver.FindElement(By.LinkText(portalName))).Click();
