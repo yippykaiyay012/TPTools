@@ -278,7 +278,7 @@ namespace TPTools
             }
             else
             {
-                lblNewDemoPortalName.Text = txtDemoCompanyName.Text + " Demo Trainingportal";
+                lblNewDemoPortalName.Text = txtDemoCompanyName.Text + " Trainingportal";
             }
             
         }

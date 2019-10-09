@@ -23,7 +23,7 @@ namespace TPToolsLibrary
                     browser.Url = @"https://www.trainingportal.no/mintra/" + txtPortalId + "/admin/portals/portal/" + txtPortalId + "/dynamicattribute/list";
                 }
 
-                wait.Until(driver => driver.FindElement(By.XPath("(//a[@name='Edit'])[2]"))).Click();
+                wait.Until(driver => driver.FindElement(By.XPath("//*[@id='dynamicAttrListaddNewBtn']/button"))).Click();
 
                 //   progDynam.Value = 0;
                 //   progDynam.Maximum = attributeList.Length;
@@ -33,8 +33,8 @@ namespace TPToolsLibrary
                 {
                     try
                     {
-                        var txtAttributeEntry = wait.Until(driver => driver.FindElement(By.Id("dynamicAttributeValueOption")));
-                        var btnAddToList = wait.Until(driver => driver.FindElement(By.Name("_eventId_addNewSelectableValueToDynamicAttribute")));
+                        var txtAttributeEntry = wait.Until(driver => driver.FindElement(By.Id("newDynamicAttributeValueOption")));
+                        var btnAddToList = wait.Until(driver => driver.FindElement(By.Name("_eventId_addNewSelectableValueToNewDynamicAttribute")));
 
                         txtAttributeEntry.Clear();
                         txtAttributeEntry.SendKeys(attribute.Trim());
