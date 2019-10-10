@@ -147,6 +147,18 @@
             this.btnSetExpiry = new System.Windows.Forms.Button();
             this.btnLogIn = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.CoHostPortal = new System.Windows.Forms.TabPage();
+            this.pictureBox10 = new System.Windows.Forms.PictureBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.btnCreatCohostPortal = new System.Windows.Forms.Button();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.label28 = new System.Windows.Forms.Label();
+            this.lblCoHostName = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
+            this.txtCoHostName = new System.Windows.Forms.TextBox();
+            this.CoHostClientDropDown = new System.Windows.Forms.ComboBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.chkShareCourses = new System.Windows.Forms.CheckBox();
             this.tabControl1.SuspendLayout();
             this.DemoPortal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -173,6 +185,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             this.CourseExpiry.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
+            this.CoHostPortal.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
+            this.groupBox7.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtUsernameAdmin
@@ -264,6 +279,7 @@
             this.tabControl1.Controls.Add(this.EnrolRules);
             this.tabControl1.Controls.Add(this.CompanyShare);
             this.tabControl1.Controls.Add(this.CourseExpiry);
+            this.tabControl1.Controls.Add(this.CoHostPortal);
             this.tabControl1.Location = new System.Drawing.Point(306, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -309,7 +325,6 @@
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox4.TabIndex = 41;
             this.pictureBox4.TabStop = false;
-            this.toolTip1.SetToolTip(this.pictureBox4, resources.GetString("pictureBox4.ToolTip"));
             // 
             // groupBox4
             // 
@@ -1448,6 +1463,133 @@
             this.btnLogIn.UseVisualStyleBackColor = true;
             this.btnLogIn.Click += new System.EventHandler(this.BtnLogIn_Click);
             // 
+            // CoHostPortal
+            // 
+            this.CoHostPortal.Controls.Add(this.groupBox7);
+            this.CoHostPortal.Controls.Add(this.pictureBox10);
+            this.CoHostPortal.Controls.Add(this.button2);
+            this.CoHostPortal.Controls.Add(this.btnCreatCohostPortal);
+            this.CoHostPortal.Location = new System.Drawing.Point(4, 22);
+            this.CoHostPortal.Name = "CoHostPortal";
+            this.CoHostPortal.Padding = new System.Windows.Forms.Padding(3);
+            this.CoHostPortal.Size = new System.Drawing.Size(847, 556);
+            this.CoHostPortal.TabIndex = 10;
+            this.CoHostPortal.Text = "CoHostPortal";
+            this.toolTip1.SetToolTip(this.CoHostPortal, "creates dummy portal for clients reselling content via connector files\r\n");
+            this.CoHostPortal.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox10
+            // 
+            this.pictureBox10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox10.Image = global::TPTools.Properties.Resources.icons8_info_64;
+            this.pictureBox10.Location = new System.Drawing.Point(800, 0);
+            this.pictureBox10.Name = "pictureBox10";
+            this.pictureBox10.Size = new System.Drawing.Size(44, 44);
+            this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox10.TabIndex = 52;
+            this.pictureBox10.TabStop = false;
+            this.toolTip1.SetToolTip(this.pictureBox10, "Create dummy portal for client reselling via connector files ");
+            // 
+            // button2
+            // 
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button2.Location = new System.Drawing.Point(712, 507);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(123, 46);
+            this.button2.TabIndex = 51;
+            this.button2.Text = "Cancel";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // btnCreatCohostPortal
+            // 
+            this.btnCreatCohostPortal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCreatCohostPortal.Location = new System.Drawing.Point(712, 449);
+            this.btnCreatCohostPortal.Name = "btnCreatCohostPortal";
+            this.btnCreatCohostPortal.Size = new System.Drawing.Size(123, 46);
+            this.btnCreatCohostPortal.TabIndex = 50;
+            this.btnCreatCohostPortal.Text = "Create";
+            this.btnCreatCohostPortal.UseVisualStyleBackColor = true;
+            this.btnCreatCohostPortal.Click += new System.EventHandler(this.btnCreatCohostPortal_Click);
+            // 
+            // groupBox7
+            // 
+            this.groupBox7.Controls.Add(this.chkShareCourses);
+            this.groupBox7.Controls.Add(this.label19);
+            this.groupBox7.Controls.Add(this.CoHostClientDropDown);
+            this.groupBox7.Controls.Add(this.label28);
+            this.groupBox7.Controls.Add(this.lblCoHostName);
+            this.groupBox7.Controls.Add(this.label30);
+            this.groupBox7.Controls.Add(this.txtCoHostName);
+            this.groupBox7.Location = new System.Drawing.Point(6, 16);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(295, 520);
+            this.groupBox7.TabIndex = 55;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "Portal Details";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(6, 223);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(68, 13);
+            this.label28.TabIndex = 47;
+            this.label28.Text = "Portal Name:";
+            // 
+            // lblCoHostName
+            // 
+            this.lblCoHostName.AutoSize = true;
+            this.lblCoHostName.Location = new System.Drawing.Point(6, 236);
+            this.lblCoHostName.Name = "lblCoHostName";
+            this.lblCoHostName.Size = new System.Drawing.Size(67, 13);
+            this.lblCoHostName.TabIndex = 46;
+            this.lblCoHostName.Text = "__________";
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(6, 160);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(30, 13);
+            this.label30.TabIndex = 6;
+            this.label30.Text = "Child";
+            // 
+            // txtCoHostName
+            // 
+            this.txtCoHostName.Location = new System.Drawing.Point(6, 176);
+            this.txtCoHostName.Name = "txtCoHostName";
+            this.txtCoHostName.Size = new System.Drawing.Size(265, 20);
+            this.txtCoHostName.TabIndex = 1;
+            this.txtCoHostName.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            // 
+            // CoHostClientDropDown
+            // 
+            this.CoHostClientDropDown.FormattingEnabled = true;
+            this.CoHostClientDropDown.Location = new System.Drawing.Point(9, 77);
+            this.CoHostClientDropDown.Name = "CoHostClientDropDown";
+            this.CoHostClientDropDown.Size = new System.Drawing.Size(262, 21);
+            this.CoHostClientDropDown.TabIndex = 48;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(6, 55);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(38, 13);
+            this.label19.TabIndex = 49;
+            this.label19.Text = "Parent";
+            // 
+            // chkShareCourses
+            // 
+            this.chkShareCourses.AutoSize = true;
+            this.chkShareCourses.Location = new System.Drawing.Point(9, 306);
+            this.chkShareCourses.Name = "chkShareCourses";
+            this.chkShareCourses.Size = new System.Drawing.Size(95, 17);
+            this.chkShareCourses.TabIndex = 50;
+            this.chkShareCourses.Text = "Share Courses";
+            this.chkShareCourses.TextAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.chkShareCourses.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1506,6 +1648,10 @@
             this.CourseExpiry.ResumeLayout(false);
             this.CourseExpiry.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
+            this.CoHostPortal.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox7.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1630,6 +1776,18 @@
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.ComboBox comboIndustry;
+        private System.Windows.Forms.TabPage CoHostPortal;
+        private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.ComboBox CoHostClientDropDown;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label lblCoHostName;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.TextBox txtCoHostName;
+        private System.Windows.Forms.PictureBox pictureBox10;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnCreatCohostPortal;
+        private System.Windows.Forms.CheckBox chkShareCourses;
     }
 }
 

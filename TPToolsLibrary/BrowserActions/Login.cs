@@ -22,7 +22,7 @@ namespace TPToolsLibrary
             {
                 if (!IsLoggedIn())
                 {
-                    WebBrowser.Driver.Url = @"https://www.trainingportal.no/no/olje-og-gass/hjem";
+                    WebBrowser.Driver.Url = @"https://www.trainingportal.no/en/oil-and-gas/home";
 
 
                     var txtUsername = wait.Until(driver => driver.FindElement(By.Id("username")));

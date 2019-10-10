@@ -4,6 +4,7 @@ using System.Threading;
 using System.Windows.Forms;
 using TPToolsLibrary;
 using TPToolsLibrary.BrowserActions;
+using System.Collections.Generic;
 
 namespace TPTools
 {
@@ -13,7 +14,7 @@ namespace TPTools
         public Form1()
         {
             InitializeComponent();
-            
+
         }
 
 
@@ -32,6 +33,15 @@ namespace TPTools
                 chkRememberDetails.Checked = true;
             }
 
+
+            // initialise list of CoHost Clients
+            var coHostClientList = new Dictionary<string, string>();
+            coHostClientList.Add("Control Risks", "655");
+            CoHostClientDropDown.DataSource = new BindingSource(coHostClientList, null);
+            CoHostClientDropDown.DisplayMember = "Key";
+            CoHostClientDropDown.ValueMember = "Value";
+
+
             MessageBox.Show("Cancel Buttons No Worky, Close App To Cancel Processes.", "Info");
 
         }
@@ -49,7 +59,7 @@ namespace TPTools
             {
                 Properties.Settings.Default.Reset();
             }
-            
+
         }
 
 
@@ -61,7 +71,7 @@ namespace TPTools
 
 
         private void BtnAddCourses_Click(object sender, EventArgs e)
-        {        
+        {
             if (!Login.IsLoggedIn())
             {
                 MessageBox.Show("Log In First");
@@ -144,7 +154,7 @@ namespace TPTools
             Thread thread = new Thread(() => DynamicAttributes.AddAttributes(attributeList, txtPortalIDDynamic.Text));
             thread.Start();
 
-            
+
         }
 
         private void BtnStartEnrolRules_Click(object sender, EventArgs e)
@@ -174,7 +184,7 @@ namespace TPTools
             thread.Start();
         }
 
-       
+
 
         private void BtnShareCourses_Click(object sender, EventArgs e)
         {
@@ -280,12 +290,53 @@ namespace TPTools
             {
                 lblNewDemoPortalName.Text = txtDemoCompanyName.Text + " Trainingportal";
             }
-            
+
         }
+
+
 
         private void BtnCreateNewPortal_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Not Ready");
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtCoHostName.Text))
+            {
+                lblCoHostName.Text = "__________";
+            }
+            else
+            {
+                lblCoHostName.Text = txtCoHostName.Text + " - " + ((KeyValuePair<string, string>)CoHostClientDropDown.SelectedItem).Key + " CoHost";
+            }
+
+        }
+
+        private void btnCreatCohostPortal_Click(object sender, EventArgs e)
+        {
+            if (!Login.IsLoggedIn())
+            {
+                MessageBox.Show("Log In First");
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(txtCoHostName.Text))
+            {
+                MessageBox.Show("Enter Client Name");
+                return;
+            }
+            else
+            {
+
+                var parentCompanyName = ((KeyValuePair<string, string>)CoHostClientDropDown.SelectedItem).Key;
+                var parentCompanyPortalId = ((KeyValuePair<string, string>)CoHostClientDropDown.SelectedItem).Value;
+
+                Thread thread = new Thread(() =>
+                    TPToolsLibrary.CoHostPortal.CreateCoHostPortal(parentCompanyName, parentCompanyPortalId, txtCoHostName.Text, chkShareCourses.Checked));
+
+                thread.Start();
+            }
         }
     }
 }

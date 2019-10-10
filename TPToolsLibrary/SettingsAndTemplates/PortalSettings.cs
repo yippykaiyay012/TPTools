@@ -31,6 +31,7 @@ namespace TPToolsLibrary.BrowserActions
     public static class PortalSettings
     {
 
+
         public static readonly List<string> basicPortalSettings = new List<string>()
         {
             //"portalBooleanProperties[DISABLE_CV_MODULE_EDIT_FOR_STUDENTS]",
