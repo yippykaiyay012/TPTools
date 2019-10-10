@@ -42,13 +42,15 @@ namespace TPToolsLibrary
             portalId = GetPortalId(portalName);
 
 
-            EnableConnectorFileDownloads(portalId);
+            //EnableConnectorFileDownloads(portalId);
 
 
             if (shareCourses)
             {
-                ShareCourses(parentCompanyPortalId);
+                ShareCourses(parentCompanyPortalId, portalName);
             }
+
+            EnableConnectorFileDownloads(portalId);
 
         }
 
@@ -272,10 +274,34 @@ namespace TPToolsLibrary
 
 
 
-        private static void ShareCourses(string parentPortalId)
+        private static void ShareCourses(string parentPortalId, string childPortalName)
         {
-            browser.Url = "https://www.trainingportal.no/mintra/" + parentPortalId + "/admin/courses/active";
-        }
+            if(parentPortalId == "655")
+            {
+                foreach (var course in CoHostSharingSettings.ControlRisksCourseIds)
+                {
+                    browser.Url = "https://www.trainingportal.no/mintra/" + parentPortalId + "/admin/courses/course/" + course + "/dashboard/coursesharing/list";
+
+                    var btnNewShare = wait.Until(driver => driver.FindElement(By.XPath("//*[@id='section']/div/div[1]/div/div/span/button")));
+                    btnNewShare.Click();
+
+                    var rdioPortalShare = wait.Until(driver => driver.FindElement(By.Id("portalRadioButton")));
+                    rdioPortalShare.Click();
+
+                    var txtPortalName = wait.Until(driver => driver.FindElement(By.XPath("//*[@id='portal']")));
+                    txtPortalName.Click();
+
+                    txtPortalName.SendKeys(childPortalName);
+                    Thread.Sleep(1000);
+                    txtPortalName.SendKeys(Keys.Tab);
+
+                    browser.FindElementByName("_eventId_complete").Click();
+
+                }
+
+
+            }
+           }
 
 
 

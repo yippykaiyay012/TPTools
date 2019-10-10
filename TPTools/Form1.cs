@@ -5,6 +5,7 @@ using System.Windows.Forms;
 using TPToolsLibrary;
 using TPToolsLibrary.BrowserActions;
 using System.Collections.Generic;
+using TPToolsLibrary.SettingsAndTemplates;
 
 namespace TPTools
 {
@@ -35,9 +36,7 @@ namespace TPTools
 
 
             // initialise list of CoHost Clients
-            var coHostClientList = new Dictionary<string, string>();
-            coHostClientList.Add("Control Risks", "655");
-            CoHostClientDropDown.DataSource = new BindingSource(coHostClientList, null);
+            CoHostClientDropDown.DataSource = new BindingSource(CoHostSharingSettings.ClientDetails, null);
             CoHostClientDropDown.DisplayMember = "Key";
             CoHostClientDropDown.ValueMember = "Value";
 

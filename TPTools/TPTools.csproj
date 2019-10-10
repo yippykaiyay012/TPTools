@@ -60,10 +60,10 @@
     <SignAssembly>false</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>08240377A29A2A8DE71D61943D189A48439D7E14</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>AC48ABCED17ED86213679C0C9B4A2CBFD18C63DC</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>TPTools_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>TPTools_1_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
@@ -146,6 +146,7 @@
     <Content Include="Resources\client_secrets_sheets.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="TPTools_1_TemporaryKey.pfx" />
     <None Include="TPTools_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
