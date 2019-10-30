@@ -25,7 +25,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>26</ApplicationRevision>
+    <ApplicationRevision>31</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -60,10 +60,10 @@
     <SignAssembly>false</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>AC48ABCED17ED86213679C0C9B4A2CBFD18C63DC</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>DBCEE62F825DD51CAE163C97377D6D614344E8F0</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>TPTools_1_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>TPTools_2_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
@@ -143,10 +143,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Content Include="chromedriver.exe" />
     <Content Include="Resources\client_secrets_sheets.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <None Include="TPTools_1_TemporaryKey.pfx" />
+    <None Include="TPTools_2_TemporaryKey.pfx" />
     <None Include="TPTools_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
@@ -171,7 +173,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="chromedriver.exe" />
+    <Content Include="chromedriver-old.exe" />
     <Content Include="mintralogo_NRt_icon.ico" />
     <None Include="Resources\icons8-info-64.png" />
   </ItemGroup>

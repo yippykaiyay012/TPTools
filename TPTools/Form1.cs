@@ -337,5 +337,55 @@ namespace TPTools
                 thread.Start();
             }
         }
+
+        private void btnCompTestStart_Click(object sender, EventArgs e)
+        {
+            if (!Login.IsLoggedIn())
+            {
+                MessageBox.Show("Log In First");
+                return;
+            }
+            else
+            {
+
+                var portalId = txtPortalIdCompTest.Text;
+                var compList = txtCompIds.Text.Split(',').ToList();
+
+                Thread thread = new Thread(() =>
+                    CompetenceToTest.SetToTest(portalId, compList));
+
+                thread.Start();
+            }
+        }
+
+        private void btnSetProgLog_Click(object sender, EventArgs e)
+        {
+            if (!Login.IsLoggedIn())
+            {
+                MessageBox.Show("Log In First");
+                return;
+            }
+            else
+            {
+                var portalId = txtPortalIdProgLog.Text;
+                var courseCodeList = txtCourseCodesProgLog.Text.Split(',').ToList();
+                bool desiredValue = false;
+                if (rdioProgYes.Checked)
+                {
+                    desiredValue = true;
+                }
+                else if (rdioProgNo.Checked)
+                {
+                    desiredValue = false;
+                }
+
+
+                Thread thread = new Thread(() =>
+                    AllowProgressionLog.Set(courseCodeList, portalId, desiredValue));
+
+                thread.Start();
+
+            }
+        }
     }
 }

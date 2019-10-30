@@ -28,8 +28,8 @@ namespace TPToolsLibrary.SettingsAndTemplates
         public static readonly List<string> ControlRisksCourseIds = new List<string>()
         {
             "32039",
-            "32034",
-            "32036",
+            "32612",
+            "32614",
             "32038"
         };
 
