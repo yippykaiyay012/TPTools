@@ -387,5 +387,25 @@ namespace TPTools
 
             }
         }
+
+        private void btnUpdateEcommerceValidity_Click(object sender, EventArgs e)
+        {
+            if (!Login.IsLoggedIn())
+            {
+                MessageBox.Show("Log In First");
+                return;
+            }
+            else
+            {
+                var portalId = txtPortalIdEcommerce.Text;
+                var courseCodeList = txtCourseCodesEcommerce.Text.Split(',').ToList();
+                var validity = txtExpiryMonthsEcommerce.Text;
+
+                Thread thread = new Thread(() =>
+                EcommercePurchaseValidity.SetPurchaseValidity(courseCodeList, validity, portalId));
+
+                thread.Start();
+            }
+        }
     }
 }

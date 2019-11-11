@@ -165,8 +165,6 @@
             this.txtCompIds = new System.Windows.Forms.RichTextBox();
             this.label27 = new System.Windows.Forms.Label();
             this.btnCompTestStart = new System.Windows.Forms.Button();
-            this.btnLogIn = new System.Windows.Forms.Button();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.pictureBox12 = new System.Windows.Forms.PictureBox();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
@@ -179,6 +177,18 @@
             this.label31 = new System.Windows.Forms.Label();
             this.btnSetProgLog = new System.Windows.Forms.Button();
             this.progressBar3 = new System.Windows.Forms.ProgressBar();
+            this.btnLogIn = new System.Windows.Forms.Button();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.pictureBox13 = new System.Windows.Forms.PictureBox();
+            this.txtExpiryMonthsEcommerce = new System.Windows.Forms.TextBox();
+            this.button8 = new System.Windows.Forms.Button();
+            this.label32 = new System.Windows.Forms.Label();
+            this.txtPortalIdEcommerce = new System.Windows.Forms.TextBox();
+            this.txtCourseCodesEcommerce = new System.Windows.Forms.RichTextBox();
+            this.label33 = new System.Windows.Forms.Label();
+            this.btnUpdateEcommerceValidity = new System.Windows.Forms.Button();
+            this.label34 = new System.Windows.Forms.Label();
             this.CompTest.SuspendLayout();
             this.DemoPortal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -213,6 +223,8 @@
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
             this.groupBox8.SuspendLayout();
+            this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
             this.SuspendLayout();
             // 
             // txtUsernameAdmin
@@ -307,6 +319,7 @@
             this.CompTest.Controls.Add(this.CoHostPortal);
             this.CompTest.Controls.Add(this.tabPage1);
             this.CompTest.Controls.Add(this.tabPage2);
+            this.CompTest.Controls.Add(this.tabPage3);
             this.CompTest.Location = new System.Drawing.Point(306, 12);
             this.CompTest.Name = "CompTest";
             this.CompTest.SelectedIndex = 0;
@@ -514,7 +527,7 @@
             this.CreateNewPortal.Location = new System.Drawing.Point(4, 22);
             this.CreateNewPortal.Name = "CreateNewPortal";
             this.CreateNewPortal.Padding = new System.Windows.Forms.Padding(3);
-            this.CreateNewPortal.Size = new System.Drawing.Size(912, 556);
+            this.CreateNewPortal.Size = new System.Drawing.Size(941, 556);
             this.CreateNewPortal.TabIndex = 9;
             this.CreateNewPortal.Text = "CreateNewPortal";
             this.CreateNewPortal.UseVisualStyleBackColor = true;
@@ -754,7 +767,7 @@
             this.CourseCodes.Location = new System.Drawing.Point(4, 22);
             this.CourseCodes.Name = "CourseCodes";
             this.CourseCodes.Padding = new System.Windows.Forms.Padding(3);
-            this.CourseCodes.Size = new System.Drawing.Size(912, 556);
+            this.CourseCodes.Size = new System.Drawing.Size(941, 556);
             this.CourseCodes.TabIndex = 0;
             this.CourseCodes.Text = "CourseCodes";
             this.CourseCodes.UseVisualStyleBackColor = true;
@@ -804,7 +817,7 @@
             this.ConnectorFiles.Location = new System.Drawing.Point(4, 22);
             this.ConnectorFiles.Name = "ConnectorFiles";
             this.ConnectorFiles.Padding = new System.Windows.Forms.Padding(3);
-            this.ConnectorFiles.Size = new System.Drawing.Size(912, 556);
+            this.ConnectorFiles.Size = new System.Drawing.Size(941, 556);
             this.ConnectorFiles.TabIndex = 1;
             this.ConnectorFiles.Text = "ConnectorFiles";
             this.ConnectorFiles.UseVisualStyleBackColor = true;
@@ -1694,16 +1707,6 @@
             this.btnCompTestStart.UseVisualStyleBackColor = true;
             this.btnCompTestStart.Click += new System.EventHandler(this.btnCompTestStart_Click);
             // 
-            // btnLogIn
-            // 
-            this.btnLogIn.Location = new System.Drawing.Point(205, 131);
-            this.btnLogIn.Name = "btnLogIn";
-            this.btnLogIn.Size = new System.Drawing.Size(75, 23);
-            this.btnLogIn.TabIndex = 9;
-            this.btnLogIn.Text = "Log In";
-            this.btnLogIn.UseVisualStyleBackColor = true;
-            this.btnLogIn.Click += new System.EventHandler(this.BtnLogIn_Click);
-            // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.pictureBox12);
@@ -1838,6 +1841,121 @@
             this.progressBar3.Size = new System.Drawing.Size(558, 23);
             this.progressBar3.TabIndex = 29;
             // 
+            // btnLogIn
+            // 
+            this.btnLogIn.Location = new System.Drawing.Point(205, 131);
+            this.btnLogIn.Name = "btnLogIn";
+            this.btnLogIn.Size = new System.Drawing.Size(75, 23);
+            this.btnLogIn.TabIndex = 9;
+            this.btnLogIn.Text = "Log In";
+            this.btnLogIn.UseVisualStyleBackColor = true;
+            this.btnLogIn.Click += new System.EventHandler(this.BtnLogIn_Click);
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.label34);
+            this.tabPage3.Controls.Add(this.pictureBox13);
+            this.tabPage3.Controls.Add(this.txtExpiryMonthsEcommerce);
+            this.tabPage3.Controls.Add(this.button8);
+            this.tabPage3.Controls.Add(this.label32);
+            this.tabPage3.Controls.Add(this.txtPortalIdEcommerce);
+            this.tabPage3.Controls.Add(this.txtCourseCodesEcommerce);
+            this.tabPage3.Controls.Add(this.label33);
+            this.tabPage3.Controls.Add(this.btnUpdateEcommerceValidity);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(941, 556);
+            this.tabPage3.TabIndex = 13;
+            this.tabPage3.Text = "EcommerceValidity";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox13
+            // 
+            this.pictureBox13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox13.Image = global::TPTools.Properties.Resources.icons8_info_64;
+            this.pictureBox13.Location = new System.Drawing.Point(894, 12);
+            this.pictureBox13.Name = "pictureBox13";
+            this.pictureBox13.Size = new System.Drawing.Size(44, 44);
+            this.pictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox13.TabIndex = 45;
+            this.pictureBox13.TabStop = false;
+            this.toolTip1.SetToolTip(this.pictureBox13, "Use this to set the expiry in months on a list of courses.\r\nBe sure to enter port" +
+        "al ID.");
+            // 
+            // txtExpiryMonthsEcommerce
+            // 
+            this.txtExpiryMonthsEcommerce.Location = new System.Drawing.Point(236, 36);
+            this.txtExpiryMonthsEcommerce.Name = "txtExpiryMonthsEcommerce";
+            this.txtExpiryMonthsEcommerce.Size = new System.Drawing.Size(69, 20);
+            this.txtExpiryMonthsEcommerce.TabIndex = 44;
+            // 
+            // button8
+            // 
+            this.button8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button8.Location = new System.Drawing.Point(809, 499);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(123, 46);
+            this.button8.TabIndex = 43;
+            this.button8.Text = "Cancel";
+            this.button8.UseVisualStyleBackColor = true;
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Location = new System.Drawing.Point(3, 39);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(48, 13);
+            this.label32.TabIndex = 42;
+            this.label32.Text = "Portal ID";
+            // 
+            // txtPortalIdEcommerce
+            // 
+            this.txtPortalIdEcommerce.Location = new System.Drawing.Point(57, 36);
+            this.txtPortalIdEcommerce.Name = "txtPortalIdEcommerce";
+            this.txtPortalIdEcommerce.Size = new System.Drawing.Size(69, 20);
+            this.txtPortalIdEcommerce.TabIndex = 41;
+            // 
+            // txtCourseCodesEcommerce
+            // 
+            this.txtCourseCodesEcommerce.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.txtCourseCodesEcommerce.Location = new System.Drawing.Point(3, 99);
+            this.txtCourseCodesEcommerce.Name = "txtCourseCodesEcommerce";
+            this.txtCourseCodesEcommerce.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedVertical;
+            this.txtCourseCodesEcommerce.Size = new System.Drawing.Size(558, 407);
+            this.txtCourseCodesEcommerce.TabIndex = 38;
+            this.txtCourseCodesEcommerce.Text = "";
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Location = new System.Drawing.Point(3, 73);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(157, 13);
+            this.label33.TabIndex = 39;
+            this.label33.Text = "Course Codes(comma delimited)";
+            // 
+            // btnUpdateEcommerceValidity
+            // 
+            this.btnUpdateEcommerceValidity.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnUpdateEcommerceValidity.Location = new System.Drawing.Point(809, 441);
+            this.btnUpdateEcommerceValidity.Name = "btnUpdateEcommerceValidity";
+            this.btnUpdateEcommerceValidity.Size = new System.Drawing.Size(123, 46);
+            this.btnUpdateEcommerceValidity.TabIndex = 40;
+            this.btnUpdateEcommerceValidity.Text = "Set";
+            this.btnUpdateEcommerceValidity.UseVisualStyleBackColor = true;
+            this.btnUpdateEcommerceValidity.Click += new System.EventHandler(this.btnUpdateEcommerceValidity_Click);
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(151, 39);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(79, 13);
+            this.label34.TabIndex = 46;
+            this.label34.Text = "Expiry Months: ";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1908,6 +2026,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
             this.groupBox8.ResumeLayout(false);
             this.groupBox8.PerformLayout();
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2064,6 +2185,16 @@
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.Button btnSetProgLog;
         private System.Windows.Forms.ProgressBar progressBar3;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.PictureBox pictureBox13;
+        private System.Windows.Forms.TextBox txtExpiryMonthsEcommerce;
+        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.TextBox txtPortalIdEcommerce;
+        private System.Windows.Forms.RichTextBox txtCourseCodesEcommerce;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.Button btnUpdateEcommerceValidity;
     }
 }
 
