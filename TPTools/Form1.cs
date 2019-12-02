@@ -12,6 +12,8 @@ namespace TPTools
     public partial class Form1 : Form
     {
 
+        
+
         public Form1()
         {
             InitializeComponent();
@@ -40,8 +42,16 @@ namespace TPTools
             CoHostClientDropDown.DisplayMember = "Key";
             CoHostClientDropDown.ValueMember = "Value";
 
+            // initialise list of Control Risks Courses
+            foreach(var course in PortalSettings.ControlRisksCourses)
+            {
+                chkListControlRiskCourses.Items.Add(course);
+            }
 
             MessageBox.Show("Cancel Buttons No Worky, Close App To Cancel Processes.", "Info");
+
+
+            
 
         }
 
@@ -64,8 +74,9 @@ namespace TPTools
 
         private void BtnLogIn_Click(object sender, EventArgs e)
         {
-            Thread thread = new Thread(() => Login.LogIn(txtUsernameAdmin.Text, txtPasswordAdmin.Text));
-            thread.Start();
+
+                Thread thread = new Thread(() => Login.LogIn(txtUsernameAdmin.Text, txtPasswordAdmin.Text));
+                thread.Start();
         }
 
 
@@ -403,6 +414,55 @@ namespace TPTools
 
                 Thread thread = new Thread(() =>
                 EcommercePurchaseValidity.SetPurchaseValidity(courseCodeList, validity, portalId));
+
+                thread.Start();
+            }
+        }
+
+        private void txtControlRisksPortalCompanyName_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtControlRisksPortalCompanyName.Text))
+            {
+                lblControlRisksPortalName.Text = "__________";
+                lblControlRisksCompanyName.Text = "__________";
+            }
+            else
+            {
+                lblControlRisksPortalName.Text = txtControlRisksPortalCompanyName.Text + " - Control Risks Trainingportal";
+                lblControlRisksCompanyName.Text = txtControlRisksPortalCompanyName.Text + " - Control Risks";
+            }
+        }
+
+        private void btnCreateControlRisksPortal_Click(object sender, EventArgs e)
+        {
+            if (!Login.IsLoggedIn())
+            {
+                MessageBox.Show("Log In First");
+                return;
+            }
+            else
+            {
+
+                var courses = new List<string>();
+                foreach (var item in chkListControlRiskCourses.CheckedItems)
+                {
+                    courses.Add(((KeyValuePair<string, string>)item).Value);
+                }
+
+                var companyName = txtControlRisksPortalCompanyName.Text;
+                bool selfReg = false;
+
+                if (rdioCRSelfRegOn.Checked)
+                {
+                    selfReg = true;
+                }
+                else if (rdioCRSelfRegOff.Checked)
+                {
+                    selfReg = false;
+                }
+
+                Thread thread = new Thread(() =>
+                ControlRisksPortal.CreateCRPortal(companyName, selfReg, courses));
 
                 thread.Start();
             }

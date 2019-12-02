@@ -236,9 +236,27 @@ namespace TPToolsLibrary.BrowserActions
         };
 
 
+        public static readonly List<IEmailTemplate> controlRisksEmailTemplates = new List<IEmailTemplate>()
+        {
+            new CREnrolmentToElearningCourseWithDirectLink(),
+            new CRReminderToCompleteElearningCourseTemplate()
+
+        };
+
+
         public static readonly List<string> orgUnits = new List<string>()
         {
             "Location 1", "Location 2", "Department 1", "Department 2"
+        };
+
+
+        public static readonly Dictionary<string, string> ControlRisksCourses = new Dictionary<string, string>()
+        {
+            { "Active Shooter","32039" },
+            { "Advanced Security Training","32612" },
+            { "Introduction to Kidnap","32614" },
+            { "Virtual Kidnap","32038" }
+
         };
 
 

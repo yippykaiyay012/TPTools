@@ -177,9 +177,8 @@
             this.label31 = new System.Windows.Forms.Label();
             this.btnSetProgLog = new System.Windows.Forms.Button();
             this.progressBar3 = new System.Windows.Forms.ProgressBar();
-            this.btnLogIn = new System.Windows.Forms.Button();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.label34 = new System.Windows.Forms.Label();
             this.pictureBox13 = new System.Windows.Forms.PictureBox();
             this.txtExpiryMonthsEcommerce = new System.Windows.Forms.TextBox();
             this.button8 = new System.Windows.Forms.Button();
@@ -188,7 +187,23 @@
             this.txtCourseCodesEcommerce = new System.Windows.Forms.RichTextBox();
             this.label33 = new System.Windows.Forms.Label();
             this.btnUpdateEcommerceValidity = new System.Windows.Forms.Button();
-            this.label34 = new System.Windows.Forms.Label();
+            this.btnLogIn = new System.Windows.Forms.Button();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.ControlRisksPortalPage = new System.Windows.Forms.TabPage();
+            this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.label35 = new System.Windows.Forms.Label();
+            this.lblControlRisksPortalName = new System.Windows.Forms.Label();
+            this.label37 = new System.Windows.Forms.Label();
+            this.txtControlRisksPortalCompanyName = new System.Windows.Forms.TextBox();
+            this.pictureBox14 = new System.Windows.Forms.PictureBox();
+            this.button9 = new System.Windows.Forms.Button();
+            this.btnCreateControlRisksPortal = new System.Windows.Forms.Button();
+            this.chkListControlRiskCourses = new System.Windows.Forms.CheckedListBox();
+            this.label36 = new System.Windows.Forms.Label();
+            this.lblControlRisksCompanyName = new System.Windows.Forms.Label();
+            this.rdioCRSelfRegOff = new System.Windows.Forms.RadioButton();
+            this.rdioCRSelfRegOn = new System.Windows.Forms.RadioButton();
+            this.ControlRisksSelfReg = new System.Windows.Forms.GroupBox();
             this.CompTest.SuspendLayout();
             this.DemoPortal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -225,6 +240,10 @@
             this.groupBox8.SuspendLayout();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
+            this.ControlRisksPortalPage.SuspendLayout();
+            this.groupBox9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
+            this.ControlRisksSelfReg.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtUsernameAdmin
@@ -308,7 +327,8 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.CompTest.Controls.Add(this.DemoPortal);
-            this.CompTest.Controls.Add(this.CreateNewPortal);
+            this.CompTest.Controls.Add(this.ControlRisksPortalPage);
+            this.CompTest.Controls.Add(this.CoHostPortal);
             this.CompTest.Controls.Add(this.CourseCodes);
             this.CompTest.Controls.Add(this.ConnectorFiles);
             this.CompTest.Controls.Add(this.CompAssessment);
@@ -316,10 +336,10 @@
             this.CompTest.Controls.Add(this.EnrolRules);
             this.CompTest.Controls.Add(this.CompanyShare);
             this.CompTest.Controls.Add(this.CourseExpiry);
-            this.CompTest.Controls.Add(this.CoHostPortal);
             this.CompTest.Controls.Add(this.tabPage1);
             this.CompTest.Controls.Add(this.tabPage2);
             this.CompTest.Controls.Add(this.tabPage3);
+            this.CompTest.Controls.Add(this.CreateNewPortal);
             this.CompTest.Location = new System.Drawing.Point(306, 12);
             this.CompTest.Name = "CompTest";
             this.CompTest.SelectedIndex = 0;
@@ -1841,16 +1861,6 @@
             this.progressBar3.Size = new System.Drawing.Size(558, 23);
             this.progressBar3.TabIndex = 29;
             // 
-            // btnLogIn
-            // 
-            this.btnLogIn.Location = new System.Drawing.Point(205, 131);
-            this.btnLogIn.Name = "btnLogIn";
-            this.btnLogIn.Size = new System.Drawing.Size(75, 23);
-            this.btnLogIn.TabIndex = 9;
-            this.btnLogIn.Text = "Log In";
-            this.btnLogIn.UseVisualStyleBackColor = true;
-            this.btnLogIn.Click += new System.EventHandler(this.BtnLogIn_Click);
-            // 
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.label34);
@@ -1869,6 +1879,15 @@
             this.tabPage3.TabIndex = 13;
             this.tabPage3.Text = "EcommerceValidity";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(151, 39);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(79, 13);
+            this.label34.TabIndex = 46;
+            this.label34.Text = "Expiry Months: ";
             // 
             // pictureBox13
             // 
@@ -1947,14 +1966,173 @@
             this.btnUpdateEcommerceValidity.UseVisualStyleBackColor = true;
             this.btnUpdateEcommerceValidity.Click += new System.EventHandler(this.btnUpdateEcommerceValidity_Click);
             // 
-            // label34
+            // btnLogIn
             // 
-            this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(151, 39);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(79, 13);
-            this.label34.TabIndex = 46;
-            this.label34.Text = "Expiry Months: ";
+            this.btnLogIn.Location = new System.Drawing.Point(205, 131);
+            this.btnLogIn.Name = "btnLogIn";
+            this.btnLogIn.Size = new System.Drawing.Size(75, 23);
+            this.btnLogIn.TabIndex = 9;
+            this.btnLogIn.Text = "Log In";
+            this.btnLogIn.UseVisualStyleBackColor = true;
+            this.btnLogIn.Click += new System.EventHandler(this.BtnLogIn_Click);
+            // 
+            // ControlRisksPortalPage
+            // 
+            this.ControlRisksPortalPage.Controls.Add(this.groupBox9);
+            this.ControlRisksPortalPage.Controls.Add(this.pictureBox14);
+            this.ControlRisksPortalPage.Controls.Add(this.button9);
+            this.ControlRisksPortalPage.Controls.Add(this.btnCreateControlRisksPortal);
+            this.ControlRisksPortalPage.Location = new System.Drawing.Point(4, 22);
+            this.ControlRisksPortalPage.Name = "ControlRisksPortalPage";
+            this.ControlRisksPortalPage.Padding = new System.Windows.Forms.Padding(3);
+            this.ControlRisksPortalPage.Size = new System.Drawing.Size(941, 556);
+            this.ControlRisksPortalPage.TabIndex = 14;
+            this.ControlRisksPortalPage.Text = "ControlRisksPortal";
+            this.ControlRisksPortalPage.UseVisualStyleBackColor = true;
+            // 
+            // groupBox9
+            // 
+            this.groupBox9.Controls.Add(this.ControlRisksSelfReg);
+            this.groupBox9.Controls.Add(this.label36);
+            this.groupBox9.Controls.Add(this.lblControlRisksCompanyName);
+            this.groupBox9.Controls.Add(this.chkListControlRiskCourses);
+            this.groupBox9.Controls.Add(this.label35);
+            this.groupBox9.Controls.Add(this.lblControlRisksPortalName);
+            this.groupBox9.Controls.Add(this.label37);
+            this.groupBox9.Controls.Add(this.txtControlRisksPortalCompanyName);
+            this.groupBox9.Location = new System.Drawing.Point(9, 32);
+            this.groupBox9.Name = "groupBox9";
+            this.groupBox9.Size = new System.Drawing.Size(295, 520);
+            this.groupBox9.TabIndex = 45;
+            this.groupBox9.TabStop = false;
+            this.groupBox9.Text = "Portal Details";
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(5, 171);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(68, 13);
+            this.label35.TabIndex = 47;
+            this.label35.Text = "Portal Name:";
+            // 
+            // lblControlRisksPortalName
+            // 
+            this.lblControlRisksPortalName.AutoSize = true;
+            this.lblControlRisksPortalName.Location = new System.Drawing.Point(5, 184);
+            this.lblControlRisksPortalName.Name = "lblControlRisksPortalName";
+            this.lblControlRisksPortalName.Size = new System.Drawing.Size(67, 13);
+            this.lblControlRisksPortalName.TabIndex = 46;
+            this.lblControlRisksPortalName.Text = "__________";
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Location = new System.Drawing.Point(9, 38);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(79, 13);
+            this.label37.TabIndex = 6;
+            this.label37.Text = "CompanyName";
+            // 
+            // txtControlRisksPortalCompanyName
+            // 
+            this.txtControlRisksPortalCompanyName.Location = new System.Drawing.Point(9, 54);
+            this.txtControlRisksPortalCompanyName.Name = "txtControlRisksPortalCompanyName";
+            this.txtControlRisksPortalCompanyName.Size = new System.Drawing.Size(265, 20);
+            this.txtControlRisksPortalCompanyName.TabIndex = 1;
+            this.txtControlRisksPortalCompanyName.TextChanged += new System.EventHandler(this.txtControlRisksPortalCompanyName_TextChanged);
+            // 
+            // pictureBox14
+            // 
+            this.pictureBox14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox14.Image = global::TPTools.Properties.Resources.icons8_info_64;
+            this.pictureBox14.Location = new System.Drawing.Point(897, 3);
+            this.pictureBox14.Name = "pictureBox14";
+            this.pictureBox14.Size = new System.Drawing.Size(44, 44);
+            this.pictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox14.TabIndex = 46;
+            this.pictureBox14.TabStop = false;
+            // 
+            // button9
+            // 
+            this.button9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button9.Location = new System.Drawing.Point(812, 508);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(123, 46);
+            this.button9.TabIndex = 44;
+            this.button9.Text = "Cancel";
+            this.button9.UseVisualStyleBackColor = true;
+            // 
+            // btnCreateControlRisksPortal
+            // 
+            this.btnCreateControlRisksPortal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCreateControlRisksPortal.Location = new System.Drawing.Point(812, 450);
+            this.btnCreateControlRisksPortal.Name = "btnCreateControlRisksPortal";
+            this.btnCreateControlRisksPortal.Size = new System.Drawing.Size(123, 46);
+            this.btnCreateControlRisksPortal.TabIndex = 43;
+            this.btnCreateControlRisksPortal.Text = "Create";
+            this.btnCreateControlRisksPortal.UseVisualStyleBackColor = true;
+            this.btnCreateControlRisksPortal.Click += new System.EventHandler(this.btnCreateControlRisksPortal_Click);
+            // 
+            // chkListControlRiskCourses
+            // 
+            this.chkListControlRiskCourses.FormattingEnabled = true;
+            this.chkListControlRiskCourses.Location = new System.Drawing.Point(9, 388);
+            this.chkListControlRiskCourses.Name = "chkListControlRiskCourses";
+            this.chkListControlRiskCourses.Size = new System.Drawing.Size(265, 79);
+            this.chkListControlRiskCourses.TabIndex = 48;
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Location = new System.Drawing.Point(5, 110);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(85, 13);
+            this.label36.TabIndex = 50;
+            this.label36.Text = "Company Name:";
+            // 
+            // lblControlRisksCompanyName
+            // 
+            this.lblControlRisksCompanyName.AutoSize = true;
+            this.lblControlRisksCompanyName.Location = new System.Drawing.Point(5, 123);
+            this.lblControlRisksCompanyName.Name = "lblControlRisksCompanyName";
+            this.lblControlRisksCompanyName.Size = new System.Drawing.Size(67, 13);
+            this.lblControlRisksCompanyName.TabIndex = 49;
+            this.lblControlRisksCompanyName.Text = "__________";
+            // 
+            // rdioCRSelfRegOff
+            // 
+            this.rdioCRSelfRegOff.AutoSize = true;
+            this.rdioCRSelfRegOff.Location = new System.Drawing.Point(6, 66);
+            this.rdioCRSelfRegOff.Name = "rdioCRSelfRegOff";
+            this.rdioCRSelfRegOff.Size = new System.Drawing.Size(39, 17);
+            this.rdioCRSelfRegOff.TabIndex = 1;
+            this.rdioCRSelfRegOff.TabStop = true;
+            this.rdioCRSelfRegOff.Text = "Off";
+            this.rdioCRSelfRegOff.UseVisualStyleBackColor = true;
+            // 
+            // rdioCRSelfRegOn
+            // 
+            this.rdioCRSelfRegOn.AutoSize = true;
+            this.rdioCRSelfRegOn.Checked = true;
+            this.rdioCRSelfRegOn.Location = new System.Drawing.Point(6, 34);
+            this.rdioCRSelfRegOn.Name = "rdioCRSelfRegOn";
+            this.rdioCRSelfRegOn.Size = new System.Drawing.Size(39, 17);
+            this.rdioCRSelfRegOn.TabIndex = 0;
+            this.rdioCRSelfRegOn.TabStop = true;
+            this.rdioCRSelfRegOn.Text = "On";
+            this.rdioCRSelfRegOn.UseVisualStyleBackColor = true;
+            // 
+            // ControlRisksSelfReg
+            // 
+            this.ControlRisksSelfReg.Controls.Add(this.rdioCRSelfRegOff);
+            this.ControlRisksSelfReg.Controls.Add(this.rdioCRSelfRegOn);
+            this.ControlRisksSelfReg.Location = new System.Drawing.Point(12, 224);
+            this.ControlRisksSelfReg.Name = "ControlRisksSelfReg";
+            this.ControlRisksSelfReg.Size = new System.Drawing.Size(192, 105);
+            this.ControlRisksSelfReg.TabIndex = 51;
+            this.ControlRisksSelfReg.TabStop = false;
+            this.ControlRisksSelfReg.Text = "Self Registration";
             // 
             // Form1
             // 
@@ -2029,6 +2207,12 @@
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
+            this.ControlRisksPortalPage.ResumeLayout(false);
+            this.groupBox9.ResumeLayout(false);
+            this.groupBox9.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
+            this.ControlRisksSelfReg.ResumeLayout(false);
+            this.ControlRisksSelfReg.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2195,6 +2379,21 @@
         private System.Windows.Forms.RichTextBox txtCourseCodesEcommerce;
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.Button btnUpdateEcommerceValidity;
+        private System.Windows.Forms.TabPage ControlRisksPortalPage;
+        private System.Windows.Forms.GroupBox groupBox9;
+        private System.Windows.Forms.CheckedListBox chkListControlRiskCourses;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.Label lblControlRisksPortalName;
+        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.TextBox txtControlRisksPortalCompanyName;
+        private System.Windows.Forms.PictureBox pictureBox14;
+        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button btnCreateControlRisksPortal;
+        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.Label lblControlRisksCompanyName;
+        private System.Windows.Forms.GroupBox ControlRisksSelfReg;
+        private System.Windows.Forms.RadioButton rdioCRSelfRegOff;
+        private System.Windows.Forms.RadioButton rdioCRSelfRegOn;
     }
 }
 
