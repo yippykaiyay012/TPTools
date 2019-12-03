@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading;
 using TPToolsLibrary.SettingsAndTemplates;
 using TPToolsLibrary.SettingsAndTemplates.CertificateTemplates;
+using TPToolsLibrary.SettingsAndTemplates.Documents.ControlRisks;
 
 namespace TPToolsLibrary.BrowserActions
 {
@@ -39,7 +40,7 @@ namespace TPToolsLibrary.BrowserActions
                 return;
             }
             Thread.Sleep(10000); // need to wait for indexing to complete before searching
-                                 // can get portalId after this point to use instead for URLs
+            //                     // can get portalId after this point to use instead for URLs
             portalId = GetPortalId(customerName);
 
 
@@ -47,15 +48,17 @@ namespace TPToolsLibrary.BrowserActions
             CustomizePortal(portalId, selfReg);
 
 
-            // 4. Templates
-            EmailTemplates(portalId);
+            //// 4. Templates
+            ////      EmailTemplates(portalId);
 
 
-            // 5. Certificate Template
-            AddCertificateTemplate(portalId, new ControlRisksCertificate());
+            //// 5. Certificate Template
+            ////     AddCertificateTemplate(portalId, new ControlRisksCertificate());
+
+            AddDocumentTemplate(portalId, new CRLoginDocument(customerName));
 
 
-            // 6 . Share Courses
+            //// 6 . Share Courses
             if (!ShareCourses("655", portalName, coursesToShare))
             {
                 return;
@@ -64,7 +67,7 @@ namespace TPToolsLibrary.BrowserActions
 
 
             // 7. activate Courses
-            //    ActivateCourses();
+            ActivateCourses(portalId);
 
 
 
@@ -231,7 +234,14 @@ namespace TPToolsLibrary.BrowserActions
 
 
 
+                    //untick all
+                    foreach (var element in PortalSettings.AllPortalSettings)
+                    {
+                        CheckAndUnSelectElementName(element);
+                    }
 
+
+                    // tick required
                     foreach (var element in PortalSettings.basicPortalSettings)
                     {
                         CheckAndSelectElementName(element);
@@ -390,6 +400,38 @@ namespace TPToolsLibrary.BrowserActions
 
         }
 
+        private static void AddDocumentTemplate(string portalId, CRLoginDocument template)
+        {
+            try
+            {
+                browser.Url = "https://www.trainingportal.no/mintra/" + portalId + "/admin/content";
+
+                var btnNewDocument = wait.Until(driver => driver.FindElement(By.Id("libraryNewDocument")));
+                btnNewDocument.Click();
+                var txtTitle = wait.Until(driver => driver.FindElement(By.Name("contentDocument.title")));
+                txtTitle.SendKeys(template.Title);
+    
+                var btnTools = wait.Until(driver => driver.FindElement(By.XPath("//span[contains(text(),'Tools')]")));
+                btnTools.Click();
+                Thread.Sleep(500);
+                var btnSourceCode = wait.Until(driver => driver.FindElement(By.XPath("//span[contains(text(),'Source code')]")));
+                btnSourceCode.Click();
+                var txtSourceCode = wait.Until(driver => driver.FindElement(By.XPath("//textarea[@class='mce-textbox mce-multiline mce-abs-layout-item mce-first mce-last']")));
+                txtSourceCode.Click();
+                txtSourceCode.SendKeys(template.Contents);
+
+                var btnOK = wait.Until(driver => driver.FindElement(By.XPath("//span[contains(text(),'Ok')]")));
+                btnOK.Click();
+
+                browser.FindElementByName("_eventId_complete").Click();
+
+            }
+            catch (Exception e)
+            {
+                Logger.LogError(e.ToString());
+            }
+
+        }
 
 
 
@@ -553,22 +595,46 @@ namespace TPToolsLibrary.BrowserActions
             return true;
         }
 
-        private static bool ActivateCourses(string portalId, List<string> courses)
+        private static bool ActivateCourses(string portalId)
         {
 
-            browser.Url = "https://www.trainingportal.no/mintra/" + portalId + "/admin/support/home";
-
-
-            var actAsPortalAdmin = wait.Until(driver => driver.FindElement(By.XPath("//*[@id='actAsPortalAdminButton']/button")));
-            
-
-
-            foreach (var course in courses)
+            try
             {
 
-            }
 
-            return false;
+                browser.Url = "https://www.trainingportal.no/mintra/" + portalId + "/admin/support/home";
+
+
+                var actAsPortalAdmin = wait.Until(driver => driver.FindElement(By.XPath("//*[@id='actAsPortalAdminButton']/button")));
+                actAsPortalAdmin.Click();
+
+                browser.Url = "https://www.trainingportal.no/mintra/" + portalId + "/admin/courses/all";
+
+
+
+
+                //var activateButtons = wait.Until(driver => driver.FindElements(By.XPath("//span[text()='Activate']")));
+
+                while (wait.Until(driver => driver.FindElements(By.XPath("//span[text()='Activate']"))).Count > 0)
+                {
+                    var activateButtons = wait.Until(driver => driver.FindElements(By.XPath("//span[text()='Activate']")));
+                    activateButtons[0].Click();
+
+                    var checkBox = wait.Until(driver => driver.FindElement(By.XPath("//*[@id='acceptcheckbox']")));
+                    checkBox.Click();
+
+                    browser.FindElementByName("_eventId_complete").Click();
+                    browser.Url = "https://www.trainingportal.no/mintra/" + portalId + "/admin/courses/all";
+                }
+
+            }
+            catch(Exception e)
+            {
+                return false;
+            }
+            return true;
+
+           
         }
 
 

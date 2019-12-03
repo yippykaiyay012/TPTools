@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using System.Windows.Forms;
+//using System.Windows.Forms;
 
 namespace TPToolsLibrary
 {
@@ -16,7 +16,7 @@ namespace TPToolsLibrary
         private static ChromeDriver browser = WebBrowser.Driver;
         private static WebDriverWait wait = new WebDriverWait(browser, TimeSpan.FromSeconds(30));
 
-        public static void LogIn(string username, string password)
+        public static bool LogIn(string username, string password)
         {
             try
             {
@@ -38,21 +38,24 @@ namespace TPToolsLibrary
 
                     if (!IsLoggedIn())
                     {
-                        MessageBox.Show("Login Unsuccessful");
+                        return false;
+                       // MessageBox.Show("Login Unsuccessful");
                     }
 
                 }
-                else
-                {
-                    MessageBox.Show("Already Logged In m8");
-                }
+  
+                // MessageBox.Show("Already Logged In m8");
+                return true;
+                
             }
             catch (Exception e)
             {
                 Logger.LogError(e.ToString());
-                MessageBox.Show("Login Unsuccessful");
+                return false;
+               // MessageBox.Show("Login Unsuccessful");
             }
 
+            
 
         }
 
