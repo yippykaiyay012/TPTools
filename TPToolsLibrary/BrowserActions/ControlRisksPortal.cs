@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading;
+using TPToolsLibrary.Models;
 using TPToolsLibrary.SettingsAndTemplates;
 using TPToolsLibrary.SettingsAndTemplates.CertificateTemplates;
 using TPToolsLibrary.SettingsAndTemplates.Documents.ControlRisks;
@@ -44,18 +45,34 @@ namespace TPToolsLibrary.BrowserActions
             portalId = GetPortalId(customerName);
 
 
-            // 3. Customize Portal          
+
+            // 3. Add Template
+            AddDocumentTemplate(portalId, new CRLoginDocument(customerName));
+
+            // 4. Settings
             CustomizePortal(portalId, selfReg);
 
+            // 5. Add Sample Learner Admin
+            var portalAdmin = new User()
+            {
+                Firstname = "Learner",
+                Lastname = customerName,
+                Email = $"Learner.{customerName}@ControlRisks.com",
+                Username = $"Learner.{customerName}@ControlRisks.com",
+                Password = "Welcome123!",
+                OrgUnit = "",
+                UserRole = UserRole.Portal_Administrator,
+                SendEmail = false
+
+            };
+
+            AddUser(portalAdmin);
 
             //// 4. Templates
             ////      EmailTemplates(portalId);
 
-
             //// 5. Certificate Template
             ////     AddCertificateTemplate(portalId, new ControlRisksCertificate());
-
-            AddDocumentTemplate(portalId, new CRLoginDocument(customerName));
 
 
             //// 6 . Share Courses
@@ -64,12 +81,8 @@ namespace TPToolsLibrary.BrowserActions
                 return;
             }
 
-
-
             // 7. activate Courses
             ActivateCourses(portalId);
-
-
 
 
             // to do
@@ -221,6 +234,40 @@ namespace TPToolsLibrary.BrowserActions
         }
 
 
+        private static void AddDocument(string portalId)
+        {
+            try
+            {
+                if (portalId != null)
+                {
+                    if(!browser.Url.Contains(portalId + "/admin/portals/portal/edit?"))
+                    {
+                        browser.Url = "https://www.trainingportal.no/mintra/" + portalId + "/admin/portals/show/portal/" + portalId;
+
+                        var btnEditPortal = wait.Until(driver => driver.FindElement(By.Id("editPortal")));
+                        btnEditPortal.Click();
+                    }
+                   
+
+                    wait.Until(driver => driver.FindElement(By.XPath("//*[@id='loginPageDocumentBtn']/button/span"))).Click();
+
+                    Thread.Sleep(1000);
+
+                    //*[@id="contentList"]/tbody/tr/td[1]/a
+                    var loginDoc = wait.Until(driver => driver.FindElement(By.XPath("//a[contains(text(),'Login Document')]")));
+                    loginDoc.Click();
+
+                    //browser.FindElementByName("_eventId_complete").Click();
+
+                }
+            }
+            catch(Exception e)
+            {
+                Logger.LogError(e.ToString());
+            }
+        }
+
+
         private static void CustomizePortal(string portalId, bool selfReg)
         {
             try
@@ -232,7 +279,7 @@ namespace TPToolsLibrary.BrowserActions
                     var btnEditPortal = wait.Until(driver => driver.FindElement(By.Id("editPortal")));
                     btnEditPortal.Click();
 
-
+                    AddDocument(portalId);
 
                     //untick all
                     foreach (var element in PortalSettings.AllPortalSettings)
@@ -252,7 +299,7 @@ namespace TPToolsLibrary.BrowserActions
                         CheckAndSelectElementName("portalBooleanProperties[ALLOW_SELF_REGISTRATION]");
                     }
 
-
+                    
 
 
                     var contractTypeChoice = wait.Until(driver => driver.FindElement(By.XPath("//*[@id='CONTRACT_TYPE']/tbody/tr/td[2]/input")));
@@ -482,8 +529,7 @@ namespace TPToolsLibrary.BrowserActions
         }
 
 
-        private static void AddUser(string portalId, string firstName, string lastName,
-         string email, string username, string password, string orgUnit, UserRole userRole, bool sendEmail)
+        private static void AddUser(User user)
         {
             if (portalId == null)
             {
@@ -499,22 +545,22 @@ namespace TPToolsLibrary.BrowserActions
 
                     var txtFirstName = wait.Until(driver => driver.FindElement(By.Id("firstName")));
                     txtFirstName.Click();
-                    txtFirstName.SendKeys(firstName);
+                    txtFirstName.SendKeys(user.Firstname);
                     var txtLatName = wait.Until(driver => driver.FindElement(By.Id("lastName")));
                     txtLatName.Click();
-                    txtLatName.SendKeys(lastName);
+                    txtLatName.SendKeys(user.Lastname);
 
                     var txtEmail = wait.Until(driver => driver.FindElement(By.Name("user.emailAddress")));
                     txtEmail.Click();
-                    txtEmail.SendKeys(email);
+                    txtEmail.SendKeys(user.Email);
 
                     var txtUsername = wait.Until(driver => driver.FindElement(By.Name("user.username")));
                     txtUsername.Click();
-                    txtUsername.SendKeys(username);
+                    txtUsername.SendKeys(user.Username);
 
                     var txtPassword = wait.Until(driver => driver.FindElement(By.Name("password")));
                     txtPassword.Click();
-                    txtPassword.SendKeys(password);
+                    txtPassword.SendKeys(user.Password);
 
                     var btnShowOrgUnits = wait.Until(driver => driver.FindElement(By.Id("clickMeyay")));
                     btnShowOrgUnits.Click();
@@ -525,15 +571,15 @@ namespace TPToolsLibrary.BrowserActions
                     Thread.Sleep(1000);
 
 
-                    var orgUnitChoice = wait.Until(driver => driver.FindElement(By.XPath("//span[contains(@class,'dijitTreeLabel') and contains(text(), '" + orgUnit + "')]")));
-                    orgUnitChoice.Click();
+                    //var orgUnitChoice = wait.Until(driver => driver.FindElement(By.XPath("//span[contains(@class,'dijitTreeLabel') and contains(text(), '" + user.OrgUnit + "')]")));
+                    //orgUnitChoice.Click();
 
                     var userRoleChoice = wait.Until(driver => driver.FindElement(By.XPath("//table[@id='userCreateModel.roleLogicalId']//input[@class='dijitReset dijitInputField dijitArrowButtonInner']")));
                     userRoleChoice.Click();
-                    userRoleChoice.SendKeys(userRole.ToString().Replace('_', ' '));
+                    userRoleChoice.SendKeys(user.UserRole.ToString().Replace('_', ' '));
                     userRoleChoice.SendKeys(Keys.Tab);
 
-                    if (sendEmail)
+                    if (user.SendEmail)
                     {
                         CheckAndSelectElementId("userCreateSendSendLoginInfoOnMail");
                     }

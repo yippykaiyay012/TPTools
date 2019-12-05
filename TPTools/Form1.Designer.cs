@@ -56,26 +56,33 @@
             this.rdioDemoAdvanced = new System.Windows.Forms.RadioButton();
             this.button5 = new System.Windows.Forms.Button();
             this.btnCreateDemoPortal = new System.Windows.Forms.Button();
-            this.CreateNewPortal = new System.Windows.Forms.TabPage();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.comboIndustry = new System.Windows.Forms.ComboBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.comboContractType = new System.Windows.Forms.ComboBox();
-            this.lblNewPortalName = new System.Windows.Forms.Label();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.label14 = new System.Windows.Forms.Label();
-            this.chkExistingCompany = new System.Windows.Forms.CheckBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
-            this.pictureBox9 = new System.Windows.Forms.PictureBox();
-            this.brnCancelCreateNewPortal = new System.Windows.Forms.Button();
-            this.btnCreateNewPortal = new System.Windows.Forms.Button();
+            this.ControlRisksPortalPage = new System.Windows.Forms.TabPage();
+            this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.ControlRisksSelfReg = new System.Windows.Forms.GroupBox();
+            this.rdioCRSelfRegOff = new System.Windows.Forms.RadioButton();
+            this.rdioCRSelfRegOn = new System.Windows.Forms.RadioButton();
+            this.label36 = new System.Windows.Forms.Label();
+            this.lblControlRisksCompanyName = new System.Windows.Forms.Label();
+            this.chkListControlRiskCourses = new System.Windows.Forms.CheckedListBox();
+            this.label35 = new System.Windows.Forms.Label();
+            this.lblControlRisksPortalName = new System.Windows.Forms.Label();
+            this.label37 = new System.Windows.Forms.Label();
+            this.txtControlRisksPortalCompanyName = new System.Windows.Forms.TextBox();
+            this.pictureBox14 = new System.Windows.Forms.PictureBox();
+            this.button9 = new System.Windows.Forms.Button();
+            this.btnCreateControlRisksPortal = new System.Windows.Forms.Button();
+            this.CoHostPortal = new System.Windows.Forms.TabPage();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.chkShareCourses = new System.Windows.Forms.CheckBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.CoHostClientDropDown = new System.Windows.Forms.ComboBox();
+            this.label28 = new System.Windows.Forms.Label();
+            this.lblCoHostName = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
+            this.txtCoHostName = new System.Windows.Forms.TextBox();
+            this.pictureBox10 = new System.Windows.Forms.PictureBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.btnCreatCohostPortal = new System.Windows.Forms.Button();
             this.CourseCodes = new System.Windows.Forms.TabPage();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnCancelCourseCode = new System.Windows.Forms.Button();
@@ -145,18 +152,6 @@
             this.txtCourseCodesExpiry = new System.Windows.Forms.RichTextBox();
             this.label25 = new System.Windows.Forms.Label();
             this.btnSetExpiry = new System.Windows.Forms.Button();
-            this.CoHostPortal = new System.Windows.Forms.TabPage();
-            this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.chkShareCourses = new System.Windows.Forms.CheckBox();
-            this.label19 = new System.Windows.Forms.Label();
-            this.CoHostClientDropDown = new System.Windows.Forms.ComboBox();
-            this.label28 = new System.Windows.Forms.Label();
-            this.lblCoHostName = new System.Windows.Forms.Label();
-            this.label30 = new System.Windows.Forms.Label();
-            this.txtCoHostName = new System.Windows.Forms.TextBox();
-            this.pictureBox10 = new System.Windows.Forms.PictureBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.btnCreatCohostPortal = new System.Windows.Forms.Button();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
             this.button6 = new System.Windows.Forms.Button();
@@ -187,34 +182,41 @@
             this.txtCourseCodesEcommerce = new System.Windows.Forms.RichTextBox();
             this.label33 = new System.Windows.Forms.Label();
             this.btnUpdateEcommerceValidity = new System.Windows.Forms.Button();
+            this.CreateNewPortal = new System.Windows.Forms.TabPage();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.comboIndustry = new System.Windows.Forms.ComboBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.comboContractType = new System.Windows.Forms.ComboBox();
+            this.lblNewPortalName = new System.Windows.Forms.Label();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.label14 = new System.Windows.Forms.Label();
+            this.chkExistingCompany = new System.Windows.Forms.CheckBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.radioButton4 = new System.Windows.Forms.RadioButton();
+            this.pictureBox9 = new System.Windows.Forms.PictureBox();
+            this.brnCancelCreateNewPortal = new System.Windows.Forms.Button();
+            this.btnCreateNewPortal = new System.Windows.Forms.Button();
             this.btnLogIn = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.ControlRisksPortalPage = new System.Windows.Forms.TabPage();
-            this.groupBox9 = new System.Windows.Forms.GroupBox();
-            this.label35 = new System.Windows.Forms.Label();
-            this.lblControlRisksPortalName = new System.Windows.Forms.Label();
-            this.label37 = new System.Windows.Forms.Label();
-            this.txtControlRisksPortalCompanyName = new System.Windows.Forms.TextBox();
-            this.pictureBox14 = new System.Windows.Forms.PictureBox();
-            this.button9 = new System.Windows.Forms.Button();
-            this.btnCreateControlRisksPortal = new System.Windows.Forms.Button();
-            this.chkListControlRiskCourses = new System.Windows.Forms.CheckedListBox();
-            this.label36 = new System.Windows.Forms.Label();
-            this.lblControlRisksCompanyName = new System.Windows.Forms.Label();
-            this.rdioCRSelfRegOff = new System.Windows.Forms.RadioButton();
-            this.rdioCRSelfRegOn = new System.Windows.Forms.RadioButton();
-            this.ControlRisksSelfReg = new System.Windows.Forms.GroupBox();
             this.CompTest.SuspendLayout();
             this.DemoPortal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.CreateNewPortal.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            this.groupBox6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
+            this.ControlRisksPortalPage.SuspendLayout();
+            this.groupBox9.SuspendLayout();
+            this.ControlRisksSelfReg.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
+            this.CoHostPortal.SuspendLayout();
+            this.groupBox7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             this.CourseCodes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.ConnectorFiles.SuspendLayout();
@@ -230,9 +232,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             this.CourseExpiry.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
-            this.CoHostPortal.SuspendLayout();
-            this.groupBox7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             this.tabPage2.SuspendLayout();
@@ -240,10 +239,11 @@
             this.groupBox8.SuspendLayout();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
-            this.ControlRisksPortalPage.SuspendLayout();
-            this.groupBox9.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
-            this.ControlRisksSelfReg.SuspendLayout();
+            this.CreateNewPortal.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.groupBox6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             this.SuspendLayout();
             // 
             // txtUsernameAdmin
@@ -538,243 +538,289 @@
             this.btnCreateDemoPortal.UseVisualStyleBackColor = true;
             this.btnCreateDemoPortal.Click += new System.EventHandler(this.BtnCreateDemoPortal_Click);
             // 
-            // CreateNewPortal
+            // ControlRisksPortalPage
             // 
-            this.CreateNewPortal.Controls.Add(this.groupBox2);
-            this.CreateNewPortal.Controls.Add(this.pictureBox9);
-            this.CreateNewPortal.Controls.Add(this.brnCancelCreateNewPortal);
-            this.CreateNewPortal.Controls.Add(this.btnCreateNewPortal);
-            this.CreateNewPortal.Location = new System.Drawing.Point(4, 22);
-            this.CreateNewPortal.Name = "CreateNewPortal";
-            this.CreateNewPortal.Padding = new System.Windows.Forms.Padding(3);
-            this.CreateNewPortal.Size = new System.Drawing.Size(941, 556);
-            this.CreateNewPortal.TabIndex = 9;
-            this.CreateNewPortal.Text = "CreateNewPortal";
-            this.CreateNewPortal.UseVisualStyleBackColor = true;
+            this.ControlRisksPortalPage.Controls.Add(this.groupBox9);
+            this.ControlRisksPortalPage.Controls.Add(this.pictureBox14);
+            this.ControlRisksPortalPage.Controls.Add(this.button9);
+            this.ControlRisksPortalPage.Controls.Add(this.btnCreateControlRisksPortal);
+            this.ControlRisksPortalPage.Location = new System.Drawing.Point(4, 22);
+            this.ControlRisksPortalPage.Name = "ControlRisksPortalPage";
+            this.ControlRisksPortalPage.Padding = new System.Windows.Forms.Padding(3);
+            this.ControlRisksPortalPage.Size = new System.Drawing.Size(941, 556);
+            this.ControlRisksPortalPage.TabIndex = 14;
+            this.ControlRisksPortalPage.Text = "ControlRisksPortal";
+            this.ControlRisksPortalPage.UseVisualStyleBackColor = true;
             // 
-            // groupBox2
+            // groupBox9
             // 
-            this.groupBox2.Controls.Add(this.label18);
-            this.groupBox2.Controls.Add(this.comboIndustry);
-            this.groupBox2.Controls.Add(this.label15);
-            this.groupBox2.Controls.Add(this.label17);
-            this.groupBox2.Controls.Add(this.comboContractType);
-            this.groupBox2.Controls.Add(this.lblNewPortalName);
-            this.groupBox2.Controls.Add(this.groupBox3);
-            this.groupBox2.Controls.Add(this.label14);
-            this.groupBox2.Controls.Add(this.chkExistingCompany);
-            this.groupBox2.Controls.Add(this.textBox1);
-            this.groupBox2.Controls.Add(this.groupBox6);
-            this.groupBox2.Location = new System.Drawing.Point(18, 30);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(481, 520);
-            this.groupBox2.TabIndex = 44;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Portal Details";
+            this.groupBox9.Controls.Add(this.ControlRisksSelfReg);
+            this.groupBox9.Controls.Add(this.label36);
+            this.groupBox9.Controls.Add(this.lblControlRisksCompanyName);
+            this.groupBox9.Controls.Add(this.chkListControlRiskCourses);
+            this.groupBox9.Controls.Add(this.label35);
+            this.groupBox9.Controls.Add(this.lblControlRisksPortalName);
+            this.groupBox9.Controls.Add(this.label37);
+            this.groupBox9.Controls.Add(this.txtControlRisksPortalCompanyName);
+            this.groupBox9.Location = new System.Drawing.Point(9, 32);
+            this.groupBox9.Name = "groupBox9";
+            this.groupBox9.Size = new System.Drawing.Size(295, 520);
+            this.groupBox9.TabIndex = 45;
+            this.groupBox9.TabStop = false;
+            this.groupBox9.Text = "Portal Details";
             // 
-            // label18
+            // ControlRisksSelfReg
             // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(318, 135);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(44, 13);
-            this.label18.TabIndex = 48;
-            this.label18.Text = "Industry";
+            this.ControlRisksSelfReg.Controls.Add(this.rdioCRSelfRegOff);
+            this.ControlRisksSelfReg.Controls.Add(this.rdioCRSelfRegOn);
+            this.ControlRisksSelfReg.Location = new System.Drawing.Point(12, 224);
+            this.ControlRisksSelfReg.Name = "ControlRisksSelfReg";
+            this.ControlRisksSelfReg.Size = new System.Drawing.Size(192, 105);
+            this.ControlRisksSelfReg.TabIndex = 51;
+            this.ControlRisksSelfReg.TabStop = false;
+            this.ControlRisksSelfReg.Text = "Self Registration";
             // 
-            // comboIndustry
+            // rdioCRSelfRegOff
             // 
-            this.comboIndustry.FormattingEnabled = true;
-            this.comboIndustry.Items.AddRange(new object[] {
-            "-- No industry --",
-            "Oil & Gas NCS",
-            "Other",
-            "Construction",
-            "Renewables",
-            "Demo",
-            "Oil & Gas UKCS",
-            "Maritime Norway",
-            "Oil & Gas International",
-            "Maritime International",
-            "Maritime Uk",
-            "Oil and Gas",
-            "Maritime"});
-            this.comboIndustry.Location = new System.Drawing.Point(321, 152);
-            this.comboIndustry.Name = "comboIndustry";
-            this.comboIndustry.Size = new System.Drawing.Size(154, 21);
-            this.comboIndustry.TabIndex = 47;
+            this.rdioCRSelfRegOff.AutoSize = true;
+            this.rdioCRSelfRegOff.Checked = true;
+            this.rdioCRSelfRegOff.Location = new System.Drawing.Point(6, 66);
+            this.rdioCRSelfRegOff.Name = "rdioCRSelfRegOff";
+            this.rdioCRSelfRegOff.Size = new System.Drawing.Size(39, 17);
+            this.rdioCRSelfRegOff.TabIndex = 1;
+            this.rdioCRSelfRegOff.TabStop = true;
+            this.rdioCRSelfRegOff.Text = "Off";
+            this.rdioCRSelfRegOff.UseVisualStyleBackColor = true;
             // 
-            // label15
+            // rdioCRSelfRegOn
             // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(318, 67);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(74, 13);
-            this.label15.TabIndex = 44;
-            this.label15.Text = "Contract Type";
+            this.rdioCRSelfRegOn.AutoSize = true;
+            this.rdioCRSelfRegOn.Location = new System.Drawing.Point(6, 34);
+            this.rdioCRSelfRegOn.Name = "rdioCRSelfRegOn";
+            this.rdioCRSelfRegOn.Size = new System.Drawing.Size(39, 17);
+            this.rdioCRSelfRegOn.TabIndex = 0;
+            this.rdioCRSelfRegOn.Text = "On";
+            this.rdioCRSelfRegOn.UseVisualStyleBackColor = true;
             // 
-            // label17
+            // label36
             // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(6, 129);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(68, 13);
-            this.label17.TabIndex = 46;
-            this.label17.Text = "Portal Name:";
+            this.label36.AutoSize = true;
+            this.label36.Location = new System.Drawing.Point(5, 110);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(85, 13);
+            this.label36.TabIndex = 50;
+            this.label36.Text = "Company Name:";
             // 
-            // comboContractType
+            // lblControlRisksCompanyName
             // 
-            this.comboContractType.FormattingEnabled = true;
-            this.comboContractType.Items.AddRange(new object[] {
-            "DEMO",
-            "FIXED USER BASED",
-            "FIXED COURSEREGISTRATION BASED",
-            "PER USER",
-            "PER COURSEREGISTRATION",
-            "COURSE_BUNDLE",
-            "COURSEPROVIDER",
-            "OTHER"});
-            this.comboContractType.Location = new System.Drawing.Point(321, 84);
-            this.comboContractType.Name = "comboContractType";
-            this.comboContractType.Size = new System.Drawing.Size(154, 21);
-            this.comboContractType.TabIndex = 46;
+            this.lblControlRisksCompanyName.AutoSize = true;
+            this.lblControlRisksCompanyName.Location = new System.Drawing.Point(5, 123);
+            this.lblControlRisksCompanyName.Name = "lblControlRisksCompanyName";
+            this.lblControlRisksCompanyName.Size = new System.Drawing.Size(67, 13);
+            this.lblControlRisksCompanyName.TabIndex = 49;
+            this.lblControlRisksCompanyName.Text = "__________";
             // 
-            // lblNewPortalName
+            // chkListControlRiskCourses
             // 
-            this.lblNewPortalName.AutoSize = true;
-            this.lblNewPortalName.Location = new System.Drawing.Point(6, 142);
-            this.lblNewPortalName.Name = "lblNewPortalName";
-            this.lblNewPortalName.Size = new System.Drawing.Size(67, 13);
-            this.lblNewPortalName.TabIndex = 45;
-            this.lblNewPortalName.Text = "__________";
+            this.chkListControlRiskCourses.FormattingEnabled = true;
+            this.chkListControlRiskCourses.Location = new System.Drawing.Point(9, 388);
+            this.chkListControlRiskCourses.Name = "chkListControlRiskCourses";
+            this.chkListControlRiskCourses.Size = new System.Drawing.Size(265, 79);
+            this.chkListControlRiskCourses.TabIndex = 48;
             // 
-            // groupBox3
+            // label35
             // 
-            this.groupBox3.Controls.Add(this.radioButton1);
-            this.groupBox3.Controls.Add(this.radioButton2);
-            this.groupBox3.Location = new System.Drawing.Point(9, 334);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(192, 105);
-            this.groupBox3.TabIndex = 41;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Is UK?";
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(5, 171);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(68, 13);
+            this.label35.TabIndex = 47;
+            this.label35.Text = "Portal Name:";
             // 
-            // radioButton1
+            // lblControlRisksPortalName
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(6, 66);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(39, 17);
-            this.radioButton1.TabIndex = 1;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "No";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.lblControlRisksPortalName.AutoSize = true;
+            this.lblControlRisksPortalName.Location = new System.Drawing.Point(5, 184);
+            this.lblControlRisksPortalName.Name = "lblControlRisksPortalName";
+            this.lblControlRisksPortalName.Size = new System.Drawing.Size(67, 13);
+            this.lblControlRisksPortalName.TabIndex = 46;
+            this.lblControlRisksPortalName.Text = "__________";
             // 
-            // radioButton2
+            // label37
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Checked = true;
-            this.radioButton2.Location = new System.Drawing.Point(6, 34);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(43, 17);
-            this.radioButton2.TabIndex = 0;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Yes";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.label37.AutoSize = true;
+            this.label37.Location = new System.Drawing.Point(9, 38);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(79, 13);
+            this.label37.TabIndex = 6;
+            this.label37.Text = "CompanyName";
             // 
-            // label14
+            // txtControlRisksPortalCompanyName
             // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(6, 69);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(79, 13);
-            this.label14.TabIndex = 6;
-            this.label14.Text = "CompanyName";
+            this.txtControlRisksPortalCompanyName.Location = new System.Drawing.Point(9, 54);
+            this.txtControlRisksPortalCompanyName.Name = "txtControlRisksPortalCompanyName";
+            this.txtControlRisksPortalCompanyName.Size = new System.Drawing.Size(265, 20);
+            this.txtControlRisksPortalCompanyName.TabIndex = 1;
+            this.txtControlRisksPortalCompanyName.TextChanged += new System.EventHandler(this.txtControlRisksPortalCompanyName_TextChanged);
             // 
-            // chkExistingCompany
+            // pictureBox14
             // 
-            this.chkExistingCompany.AutoSize = true;
-            this.chkExistingCompany.Location = new System.Drawing.Point(6, 34);
-            this.chkExistingCompany.Name = "chkExistingCompany";
-            this.chkExistingCompany.Size = new System.Drawing.Size(106, 17);
-            this.chkExistingCompany.TabIndex = 44;
-            this.chkExistingCompany.Text = "ExistingCompany";
-            this.chkExistingCompany.UseVisualStyleBackColor = true;
+            this.pictureBox14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox14.Image = global::TPTools.Properties.Resources.icons8_info_64;
+            this.pictureBox14.Location = new System.Drawing.Point(897, 3);
+            this.pictureBox14.Name = "pictureBox14";
+            this.pictureBox14.Size = new System.Drawing.Size(44, 44);
+            this.pictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox14.TabIndex = 46;
+            this.pictureBox14.TabStop = false;
             // 
-            // textBox1
+            // button9
             // 
-            this.textBox1.Location = new System.Drawing.Point(6, 85);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(195, 20);
-            this.textBox1.TabIndex = 1;
+            this.button9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button9.Location = new System.Drawing.Point(812, 508);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(123, 46);
+            this.button9.TabIndex = 44;
+            this.button9.Text = "Cancel";
+            this.button9.UseVisualStyleBackColor = true;
             // 
-            // groupBox6
+            // btnCreateControlRisksPortal
             // 
-            this.groupBox6.Controls.Add(this.radioButton3);
-            this.groupBox6.Controls.Add(this.radioButton4);
-            this.groupBox6.Location = new System.Drawing.Point(9, 189);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(192, 107);
-            this.groupBox6.TabIndex = 43;
-            this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "Type";
+            this.btnCreateControlRisksPortal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCreateControlRisksPortal.Location = new System.Drawing.Point(812, 450);
+            this.btnCreateControlRisksPortal.Name = "btnCreateControlRisksPortal";
+            this.btnCreateControlRisksPortal.Size = new System.Drawing.Size(123, 46);
+            this.btnCreateControlRisksPortal.TabIndex = 43;
+            this.btnCreateControlRisksPortal.Text = "Create";
+            this.btnCreateControlRisksPortal.UseVisualStyleBackColor = true;
+            this.btnCreateControlRisksPortal.Click += new System.EventHandler(this.btnCreateControlRisksPortal_Click);
             // 
-            // radioButton3
+            // CoHostPortal
             // 
-            this.radioButton3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Checked = true;
-            this.radioButton3.Location = new System.Drawing.Point(6, 32);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(51, 17);
-            this.radioButton3.TabIndex = 0;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "Basic";
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.CoHostPortal.Controls.Add(this.groupBox7);
+            this.CoHostPortal.Controls.Add(this.pictureBox10);
+            this.CoHostPortal.Controls.Add(this.button2);
+            this.CoHostPortal.Controls.Add(this.btnCreatCohostPortal);
+            this.CoHostPortal.Location = new System.Drawing.Point(4, 22);
+            this.CoHostPortal.Name = "CoHostPortal";
+            this.CoHostPortal.Padding = new System.Windows.Forms.Padding(3);
+            this.CoHostPortal.Size = new System.Drawing.Size(941, 556);
+            this.CoHostPortal.TabIndex = 10;
+            this.CoHostPortal.Text = "CoHostPortal";
+            this.toolTip1.SetToolTip(this.CoHostPortal, "creates dummy portal for clients reselling content via connector files\r\n");
+            this.CoHostPortal.UseVisualStyleBackColor = true;
             // 
-            // radioButton4
+            // groupBox7
             // 
-            this.radioButton4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radioButton4.AutoSize = true;
-            this.radioButton4.Location = new System.Drawing.Point(6, 66);
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(74, 17);
-            this.radioButton4.TabIndex = 1;
-            this.radioButton4.TabStop = true;
-            this.radioButton4.Text = "Advanced";
-            this.radioButton4.UseVisualStyleBackColor = true;
+            this.groupBox7.Controls.Add(this.chkShareCourses);
+            this.groupBox7.Controls.Add(this.label19);
+            this.groupBox7.Controls.Add(this.CoHostClientDropDown);
+            this.groupBox7.Controls.Add(this.label28);
+            this.groupBox7.Controls.Add(this.lblCoHostName);
+            this.groupBox7.Controls.Add(this.label30);
+            this.groupBox7.Controls.Add(this.txtCoHostName);
+            this.groupBox7.Location = new System.Drawing.Point(6, 16);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(295, 520);
+            this.groupBox7.TabIndex = 55;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "Portal Details";
             // 
-            // pictureBox9
+            // chkShareCourses
             // 
-            this.pictureBox9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox9.Image = global::TPTools.Properties.Resources.icons8_info_64;
-            this.pictureBox9.Location = new System.Drawing.Point(803, 0);
-            this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(44, 44);
-            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox9.TabIndex = 45;
-            this.pictureBox9.TabStop = false;
-            this.toolTip1.SetToolTip(this.pictureBox9, resources.GetString("pictureBox9.ToolTip"));
+            this.chkShareCourses.AutoSize = true;
+            this.chkShareCourses.Location = new System.Drawing.Point(9, 306);
+            this.chkShareCourses.Name = "chkShareCourses";
+            this.chkShareCourses.Size = new System.Drawing.Size(95, 17);
+            this.chkShareCourses.TabIndex = 50;
+            this.chkShareCourses.Text = "Share Courses";
+            this.chkShareCourses.TextAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.chkShareCourses.UseVisualStyleBackColor = true;
             // 
-            // brnCancelCreateNewPortal
+            // label19
             // 
-            this.brnCancelCreateNewPortal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.brnCancelCreateNewPortal.Location = new System.Drawing.Point(715, 507);
-            this.brnCancelCreateNewPortal.Name = "brnCancelCreateNewPortal";
-            this.brnCancelCreateNewPortal.Size = new System.Drawing.Size(123, 46);
-            this.brnCancelCreateNewPortal.TabIndex = 43;
-            this.brnCancelCreateNewPortal.Text = "Cancel";
-            this.brnCancelCreateNewPortal.UseVisualStyleBackColor = true;
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(6, 55);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(38, 13);
+            this.label19.TabIndex = 49;
+            this.label19.Text = "Parent";
             // 
-            // btnCreateNewPortal
+            // CoHostClientDropDown
             // 
-            this.btnCreateNewPortal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCreateNewPortal.Location = new System.Drawing.Point(715, 449);
-            this.btnCreateNewPortal.Name = "btnCreateNewPortal";
-            this.btnCreateNewPortal.Size = new System.Drawing.Size(123, 46);
-            this.btnCreateNewPortal.TabIndex = 42;
-            this.btnCreateNewPortal.Text = "Create";
-            this.btnCreateNewPortal.UseVisualStyleBackColor = true;
-            this.btnCreateNewPortal.Click += new System.EventHandler(this.BtnCreateNewPortal_Click);
+            this.CoHostClientDropDown.FormattingEnabled = true;
+            this.CoHostClientDropDown.Location = new System.Drawing.Point(9, 77);
+            this.CoHostClientDropDown.Name = "CoHostClientDropDown";
+            this.CoHostClientDropDown.Size = new System.Drawing.Size(262, 21);
+            this.CoHostClientDropDown.TabIndex = 48;
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(6, 223);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(68, 13);
+            this.label28.TabIndex = 47;
+            this.label28.Text = "Portal Name:";
+            // 
+            // lblCoHostName
+            // 
+            this.lblCoHostName.AutoSize = true;
+            this.lblCoHostName.Location = new System.Drawing.Point(6, 236);
+            this.lblCoHostName.Name = "lblCoHostName";
+            this.lblCoHostName.Size = new System.Drawing.Size(67, 13);
+            this.lblCoHostName.TabIndex = 46;
+            this.lblCoHostName.Text = "__________";
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(6, 160);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(30, 13);
+            this.label30.TabIndex = 6;
+            this.label30.Text = "Child";
+            // 
+            // txtCoHostName
+            // 
+            this.txtCoHostName.Location = new System.Drawing.Point(6, 176);
+            this.txtCoHostName.Name = "txtCoHostName";
+            this.txtCoHostName.Size = new System.Drawing.Size(265, 20);
+            this.txtCoHostName.TabIndex = 1;
+            this.txtCoHostName.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            // 
+            // pictureBox10
+            // 
+            this.pictureBox10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox10.Image = global::TPTools.Properties.Resources.icons8_info_64;
+            this.pictureBox10.Location = new System.Drawing.Point(829, 0);
+            this.pictureBox10.Name = "pictureBox10";
+            this.pictureBox10.Size = new System.Drawing.Size(44, 44);
+            this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox10.TabIndex = 52;
+            this.pictureBox10.TabStop = false;
+            this.toolTip1.SetToolTip(this.pictureBox10, "Create dummy portal for client reselling via connector files ");
+            // 
+            // button2
+            // 
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button2.Location = new System.Drawing.Point(741, 507);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(123, 46);
+            this.button2.TabIndex = 51;
+            this.button2.Text = "Cancel";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // btnCreatCohostPortal
+            // 
+            this.btnCreatCohostPortal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCreatCohostPortal.Location = new System.Drawing.Point(741, 449);
+            this.btnCreatCohostPortal.Name = "btnCreatCohostPortal";
+            this.btnCreatCohostPortal.Size = new System.Drawing.Size(123, 46);
+            this.btnCreatCohostPortal.TabIndex = 50;
+            this.btnCreatCohostPortal.Text = "Create";
+            this.btnCreatCohostPortal.UseVisualStyleBackColor = true;
+            this.btnCreatCohostPortal.Click += new System.EventHandler(this.btnCreatCohostPortal_Click);
             // 
             // CourseCodes
             // 
@@ -1513,133 +1559,6 @@
             this.btnSetExpiry.UseVisualStyleBackColor = true;
             this.btnSetExpiry.Click += new System.EventHandler(this.BtnSetExpiry_Click);
             // 
-            // CoHostPortal
-            // 
-            this.CoHostPortal.Controls.Add(this.groupBox7);
-            this.CoHostPortal.Controls.Add(this.pictureBox10);
-            this.CoHostPortal.Controls.Add(this.button2);
-            this.CoHostPortal.Controls.Add(this.btnCreatCohostPortal);
-            this.CoHostPortal.Location = new System.Drawing.Point(4, 22);
-            this.CoHostPortal.Name = "CoHostPortal";
-            this.CoHostPortal.Padding = new System.Windows.Forms.Padding(3);
-            this.CoHostPortal.Size = new System.Drawing.Size(941, 556);
-            this.CoHostPortal.TabIndex = 10;
-            this.CoHostPortal.Text = "CoHostPortal";
-            this.toolTip1.SetToolTip(this.CoHostPortal, "creates dummy portal for clients reselling content via connector files\r\n");
-            this.CoHostPortal.UseVisualStyleBackColor = true;
-            // 
-            // groupBox7
-            // 
-            this.groupBox7.Controls.Add(this.chkShareCourses);
-            this.groupBox7.Controls.Add(this.label19);
-            this.groupBox7.Controls.Add(this.CoHostClientDropDown);
-            this.groupBox7.Controls.Add(this.label28);
-            this.groupBox7.Controls.Add(this.lblCoHostName);
-            this.groupBox7.Controls.Add(this.label30);
-            this.groupBox7.Controls.Add(this.txtCoHostName);
-            this.groupBox7.Location = new System.Drawing.Point(6, 16);
-            this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(295, 520);
-            this.groupBox7.TabIndex = 55;
-            this.groupBox7.TabStop = false;
-            this.groupBox7.Text = "Portal Details";
-            // 
-            // chkShareCourses
-            // 
-            this.chkShareCourses.AutoSize = true;
-            this.chkShareCourses.Location = new System.Drawing.Point(9, 306);
-            this.chkShareCourses.Name = "chkShareCourses";
-            this.chkShareCourses.Size = new System.Drawing.Size(95, 17);
-            this.chkShareCourses.TabIndex = 50;
-            this.chkShareCourses.Text = "Share Courses";
-            this.chkShareCourses.TextAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.chkShareCourses.UseVisualStyleBackColor = true;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(6, 55);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(38, 13);
-            this.label19.TabIndex = 49;
-            this.label19.Text = "Parent";
-            // 
-            // CoHostClientDropDown
-            // 
-            this.CoHostClientDropDown.FormattingEnabled = true;
-            this.CoHostClientDropDown.Location = new System.Drawing.Point(9, 77);
-            this.CoHostClientDropDown.Name = "CoHostClientDropDown";
-            this.CoHostClientDropDown.Size = new System.Drawing.Size(262, 21);
-            this.CoHostClientDropDown.TabIndex = 48;
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(6, 223);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(68, 13);
-            this.label28.TabIndex = 47;
-            this.label28.Text = "Portal Name:";
-            // 
-            // lblCoHostName
-            // 
-            this.lblCoHostName.AutoSize = true;
-            this.lblCoHostName.Location = new System.Drawing.Point(6, 236);
-            this.lblCoHostName.Name = "lblCoHostName";
-            this.lblCoHostName.Size = new System.Drawing.Size(67, 13);
-            this.lblCoHostName.TabIndex = 46;
-            this.lblCoHostName.Text = "__________";
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(6, 160);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(30, 13);
-            this.label30.TabIndex = 6;
-            this.label30.Text = "Child";
-            // 
-            // txtCoHostName
-            // 
-            this.txtCoHostName.Location = new System.Drawing.Point(6, 176);
-            this.txtCoHostName.Name = "txtCoHostName";
-            this.txtCoHostName.Size = new System.Drawing.Size(265, 20);
-            this.txtCoHostName.TabIndex = 1;
-            this.txtCoHostName.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
-            // 
-            // pictureBox10
-            // 
-            this.pictureBox10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox10.Image = global::TPTools.Properties.Resources.icons8_info_64;
-            this.pictureBox10.Location = new System.Drawing.Point(829, 0);
-            this.pictureBox10.Name = "pictureBox10";
-            this.pictureBox10.Size = new System.Drawing.Size(44, 44);
-            this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox10.TabIndex = 52;
-            this.pictureBox10.TabStop = false;
-            this.toolTip1.SetToolTip(this.pictureBox10, "Create dummy portal for client reselling via connector files ");
-            // 
-            // button2
-            // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.Location = new System.Drawing.Point(741, 507);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(123, 46);
-            this.button2.TabIndex = 51;
-            this.button2.Text = "Cancel";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // btnCreatCohostPortal
-            // 
-            this.btnCreatCohostPortal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCreatCohostPortal.Location = new System.Drawing.Point(741, 449);
-            this.btnCreatCohostPortal.Name = "btnCreatCohostPortal";
-            this.btnCreatCohostPortal.Size = new System.Drawing.Size(123, 46);
-            this.btnCreatCohostPortal.TabIndex = 50;
-            this.btnCreatCohostPortal.Text = "Create";
-            this.btnCreatCohostPortal.UseVisualStyleBackColor = true;
-            this.btnCreatCohostPortal.Click += new System.EventHandler(this.btnCreatCohostPortal_Click);
-            // 
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.pictureBox11);
@@ -1966,6 +1885,244 @@
             this.btnUpdateEcommerceValidity.UseVisualStyleBackColor = true;
             this.btnUpdateEcommerceValidity.Click += new System.EventHandler(this.btnUpdateEcommerceValidity_Click);
             // 
+            // CreateNewPortal
+            // 
+            this.CreateNewPortal.Controls.Add(this.groupBox2);
+            this.CreateNewPortal.Controls.Add(this.pictureBox9);
+            this.CreateNewPortal.Controls.Add(this.brnCancelCreateNewPortal);
+            this.CreateNewPortal.Controls.Add(this.btnCreateNewPortal);
+            this.CreateNewPortal.Location = new System.Drawing.Point(4, 22);
+            this.CreateNewPortal.Name = "CreateNewPortal";
+            this.CreateNewPortal.Padding = new System.Windows.Forms.Padding(3);
+            this.CreateNewPortal.Size = new System.Drawing.Size(941, 556);
+            this.CreateNewPortal.TabIndex = 9;
+            this.CreateNewPortal.Text = "CreateNewPortal";
+            this.CreateNewPortal.UseVisualStyleBackColor = true;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.label18);
+            this.groupBox2.Controls.Add(this.comboIndustry);
+            this.groupBox2.Controls.Add(this.label15);
+            this.groupBox2.Controls.Add(this.label17);
+            this.groupBox2.Controls.Add(this.comboContractType);
+            this.groupBox2.Controls.Add(this.lblNewPortalName);
+            this.groupBox2.Controls.Add(this.groupBox3);
+            this.groupBox2.Controls.Add(this.label14);
+            this.groupBox2.Controls.Add(this.chkExistingCompany);
+            this.groupBox2.Controls.Add(this.textBox1);
+            this.groupBox2.Controls.Add(this.groupBox6);
+            this.groupBox2.Location = new System.Drawing.Point(18, 30);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(481, 520);
+            this.groupBox2.TabIndex = 44;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Portal Details";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(318, 135);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(44, 13);
+            this.label18.TabIndex = 48;
+            this.label18.Text = "Industry";
+            // 
+            // comboIndustry
+            // 
+            this.comboIndustry.FormattingEnabled = true;
+            this.comboIndustry.Items.AddRange(new object[] {
+            "-- No industry --",
+            "Oil & Gas NCS",
+            "Other",
+            "Construction",
+            "Renewables",
+            "Demo",
+            "Oil & Gas UKCS",
+            "Maritime Norway",
+            "Oil & Gas International",
+            "Maritime International",
+            "Maritime Uk",
+            "Oil and Gas",
+            "Maritime"});
+            this.comboIndustry.Location = new System.Drawing.Point(321, 152);
+            this.comboIndustry.Name = "comboIndustry";
+            this.comboIndustry.Size = new System.Drawing.Size(154, 21);
+            this.comboIndustry.TabIndex = 47;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(318, 67);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(74, 13);
+            this.label15.TabIndex = 44;
+            this.label15.Text = "Contract Type";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(6, 129);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(68, 13);
+            this.label17.TabIndex = 46;
+            this.label17.Text = "Portal Name:";
+            // 
+            // comboContractType
+            // 
+            this.comboContractType.FormattingEnabled = true;
+            this.comboContractType.Items.AddRange(new object[] {
+            "DEMO",
+            "FIXED USER BASED",
+            "FIXED COURSEREGISTRATION BASED",
+            "PER USER",
+            "PER COURSEREGISTRATION",
+            "COURSE_BUNDLE",
+            "COURSEPROVIDER",
+            "OTHER"});
+            this.comboContractType.Location = new System.Drawing.Point(321, 84);
+            this.comboContractType.Name = "comboContractType";
+            this.comboContractType.Size = new System.Drawing.Size(154, 21);
+            this.comboContractType.TabIndex = 46;
+            // 
+            // lblNewPortalName
+            // 
+            this.lblNewPortalName.AutoSize = true;
+            this.lblNewPortalName.Location = new System.Drawing.Point(6, 142);
+            this.lblNewPortalName.Name = "lblNewPortalName";
+            this.lblNewPortalName.Size = new System.Drawing.Size(67, 13);
+            this.lblNewPortalName.TabIndex = 45;
+            this.lblNewPortalName.Text = "__________";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.radioButton1);
+            this.groupBox3.Controls.Add(this.radioButton2);
+            this.groupBox3.Location = new System.Drawing.Point(9, 334);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(192, 105);
+            this.groupBox3.TabIndex = 41;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Is UK?";
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(6, 66);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(39, 17);
+            this.radioButton1.TabIndex = 1;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "No";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Checked = true;
+            this.radioButton2.Location = new System.Drawing.Point(6, 34);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(43, 17);
+            this.radioButton2.TabIndex = 0;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "Yes";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(6, 69);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(79, 13);
+            this.label14.TabIndex = 6;
+            this.label14.Text = "CompanyName";
+            // 
+            // chkExistingCompany
+            // 
+            this.chkExistingCompany.AutoSize = true;
+            this.chkExistingCompany.Location = new System.Drawing.Point(6, 34);
+            this.chkExistingCompany.Name = "chkExistingCompany";
+            this.chkExistingCompany.Size = new System.Drawing.Size(106, 17);
+            this.chkExistingCompany.TabIndex = 44;
+            this.chkExistingCompany.Text = "ExistingCompany";
+            this.chkExistingCompany.UseVisualStyleBackColor = true;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(6, 85);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(195, 20);
+            this.textBox1.TabIndex = 1;
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.radioButton3);
+            this.groupBox6.Controls.Add(this.radioButton4);
+            this.groupBox6.Location = new System.Drawing.Point(9, 189);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(192, 107);
+            this.groupBox6.TabIndex = 43;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Type";
+            // 
+            // radioButton3
+            // 
+            this.radioButton3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.radioButton3.AutoSize = true;
+            this.radioButton3.Checked = true;
+            this.radioButton3.Location = new System.Drawing.Point(6, 32);
+            this.radioButton3.Name = "radioButton3";
+            this.radioButton3.Size = new System.Drawing.Size(51, 17);
+            this.radioButton3.TabIndex = 0;
+            this.radioButton3.TabStop = true;
+            this.radioButton3.Text = "Basic";
+            this.radioButton3.UseVisualStyleBackColor = true;
+            // 
+            // radioButton4
+            // 
+            this.radioButton4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.radioButton4.AutoSize = true;
+            this.radioButton4.Location = new System.Drawing.Point(6, 66);
+            this.radioButton4.Name = "radioButton4";
+            this.radioButton4.Size = new System.Drawing.Size(74, 17);
+            this.radioButton4.TabIndex = 1;
+            this.radioButton4.TabStop = true;
+            this.radioButton4.Text = "Advanced";
+            this.radioButton4.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox9
+            // 
+            this.pictureBox9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox9.Image = global::TPTools.Properties.Resources.icons8_info_64;
+            this.pictureBox9.Location = new System.Drawing.Point(803, 0);
+            this.pictureBox9.Name = "pictureBox9";
+            this.pictureBox9.Size = new System.Drawing.Size(44, 44);
+            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox9.TabIndex = 45;
+            this.pictureBox9.TabStop = false;
+            this.toolTip1.SetToolTip(this.pictureBox9, resources.GetString("pictureBox9.ToolTip"));
+            // 
+            // brnCancelCreateNewPortal
+            // 
+            this.brnCancelCreateNewPortal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.brnCancelCreateNewPortal.Location = new System.Drawing.Point(715, 507);
+            this.brnCancelCreateNewPortal.Name = "brnCancelCreateNewPortal";
+            this.brnCancelCreateNewPortal.Size = new System.Drawing.Size(123, 46);
+            this.brnCancelCreateNewPortal.TabIndex = 43;
+            this.brnCancelCreateNewPortal.Text = "Cancel";
+            this.brnCancelCreateNewPortal.UseVisualStyleBackColor = true;
+            // 
+            // btnCreateNewPortal
+            // 
+            this.btnCreateNewPortal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCreateNewPortal.Location = new System.Drawing.Point(715, 449);
+            this.btnCreateNewPortal.Name = "btnCreateNewPortal";
+            this.btnCreateNewPortal.Size = new System.Drawing.Size(123, 46);
+            this.btnCreateNewPortal.TabIndex = 42;
+            this.btnCreateNewPortal.Text = "Create";
+            this.btnCreateNewPortal.UseVisualStyleBackColor = true;
+            this.btnCreateNewPortal.Click += new System.EventHandler(this.BtnCreateNewPortal_Click);
+            // 
             // btnLogIn
             // 
             this.btnLogIn.Location = new System.Drawing.Point(205, 131);
@@ -1975,164 +2132,6 @@
             this.btnLogIn.Text = "Log In";
             this.btnLogIn.UseVisualStyleBackColor = true;
             this.btnLogIn.Click += new System.EventHandler(this.BtnLogIn_Click);
-            // 
-            // ControlRisksPortalPage
-            // 
-            this.ControlRisksPortalPage.Controls.Add(this.groupBox9);
-            this.ControlRisksPortalPage.Controls.Add(this.pictureBox14);
-            this.ControlRisksPortalPage.Controls.Add(this.button9);
-            this.ControlRisksPortalPage.Controls.Add(this.btnCreateControlRisksPortal);
-            this.ControlRisksPortalPage.Location = new System.Drawing.Point(4, 22);
-            this.ControlRisksPortalPage.Name = "ControlRisksPortalPage";
-            this.ControlRisksPortalPage.Padding = new System.Windows.Forms.Padding(3);
-            this.ControlRisksPortalPage.Size = new System.Drawing.Size(941, 556);
-            this.ControlRisksPortalPage.TabIndex = 14;
-            this.ControlRisksPortalPage.Text = "ControlRisksPortal";
-            this.ControlRisksPortalPage.UseVisualStyleBackColor = true;
-            // 
-            // groupBox9
-            // 
-            this.groupBox9.Controls.Add(this.ControlRisksSelfReg);
-            this.groupBox9.Controls.Add(this.label36);
-            this.groupBox9.Controls.Add(this.lblControlRisksCompanyName);
-            this.groupBox9.Controls.Add(this.chkListControlRiskCourses);
-            this.groupBox9.Controls.Add(this.label35);
-            this.groupBox9.Controls.Add(this.lblControlRisksPortalName);
-            this.groupBox9.Controls.Add(this.label37);
-            this.groupBox9.Controls.Add(this.txtControlRisksPortalCompanyName);
-            this.groupBox9.Location = new System.Drawing.Point(9, 32);
-            this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Size = new System.Drawing.Size(295, 520);
-            this.groupBox9.TabIndex = 45;
-            this.groupBox9.TabStop = false;
-            this.groupBox9.Text = "Portal Details";
-            // 
-            // label35
-            // 
-            this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(5, 171);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(68, 13);
-            this.label35.TabIndex = 47;
-            this.label35.Text = "Portal Name:";
-            // 
-            // lblControlRisksPortalName
-            // 
-            this.lblControlRisksPortalName.AutoSize = true;
-            this.lblControlRisksPortalName.Location = new System.Drawing.Point(5, 184);
-            this.lblControlRisksPortalName.Name = "lblControlRisksPortalName";
-            this.lblControlRisksPortalName.Size = new System.Drawing.Size(67, 13);
-            this.lblControlRisksPortalName.TabIndex = 46;
-            this.lblControlRisksPortalName.Text = "__________";
-            // 
-            // label37
-            // 
-            this.label37.AutoSize = true;
-            this.label37.Location = new System.Drawing.Point(9, 38);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(79, 13);
-            this.label37.TabIndex = 6;
-            this.label37.Text = "CompanyName";
-            // 
-            // txtControlRisksPortalCompanyName
-            // 
-            this.txtControlRisksPortalCompanyName.Location = new System.Drawing.Point(9, 54);
-            this.txtControlRisksPortalCompanyName.Name = "txtControlRisksPortalCompanyName";
-            this.txtControlRisksPortalCompanyName.Size = new System.Drawing.Size(265, 20);
-            this.txtControlRisksPortalCompanyName.TabIndex = 1;
-            this.txtControlRisksPortalCompanyName.TextChanged += new System.EventHandler(this.txtControlRisksPortalCompanyName_TextChanged);
-            // 
-            // pictureBox14
-            // 
-            this.pictureBox14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox14.Image = global::TPTools.Properties.Resources.icons8_info_64;
-            this.pictureBox14.Location = new System.Drawing.Point(897, 3);
-            this.pictureBox14.Name = "pictureBox14";
-            this.pictureBox14.Size = new System.Drawing.Size(44, 44);
-            this.pictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox14.TabIndex = 46;
-            this.pictureBox14.TabStop = false;
-            // 
-            // button9
-            // 
-            this.button9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button9.Location = new System.Drawing.Point(812, 508);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(123, 46);
-            this.button9.TabIndex = 44;
-            this.button9.Text = "Cancel";
-            this.button9.UseVisualStyleBackColor = true;
-            // 
-            // btnCreateControlRisksPortal
-            // 
-            this.btnCreateControlRisksPortal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCreateControlRisksPortal.Location = new System.Drawing.Point(812, 450);
-            this.btnCreateControlRisksPortal.Name = "btnCreateControlRisksPortal";
-            this.btnCreateControlRisksPortal.Size = new System.Drawing.Size(123, 46);
-            this.btnCreateControlRisksPortal.TabIndex = 43;
-            this.btnCreateControlRisksPortal.Text = "Create";
-            this.btnCreateControlRisksPortal.UseVisualStyleBackColor = true;
-            this.btnCreateControlRisksPortal.Click += new System.EventHandler(this.btnCreateControlRisksPortal_Click);
-            // 
-            // chkListControlRiskCourses
-            // 
-            this.chkListControlRiskCourses.FormattingEnabled = true;
-            this.chkListControlRiskCourses.Location = new System.Drawing.Point(9, 388);
-            this.chkListControlRiskCourses.Name = "chkListControlRiskCourses";
-            this.chkListControlRiskCourses.Size = new System.Drawing.Size(265, 79);
-            this.chkListControlRiskCourses.TabIndex = 48;
-            // 
-            // label36
-            // 
-            this.label36.AutoSize = true;
-            this.label36.Location = new System.Drawing.Point(5, 110);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(85, 13);
-            this.label36.TabIndex = 50;
-            this.label36.Text = "Company Name:";
-            // 
-            // lblControlRisksCompanyName
-            // 
-            this.lblControlRisksCompanyName.AutoSize = true;
-            this.lblControlRisksCompanyName.Location = new System.Drawing.Point(5, 123);
-            this.lblControlRisksCompanyName.Name = "lblControlRisksCompanyName";
-            this.lblControlRisksCompanyName.Size = new System.Drawing.Size(67, 13);
-            this.lblControlRisksCompanyName.TabIndex = 49;
-            this.lblControlRisksCompanyName.Text = "__________";
-            // 
-            // rdioCRSelfRegOff
-            // 
-            this.rdioCRSelfRegOff.AutoSize = true;
-            this.rdioCRSelfRegOff.Location = new System.Drawing.Point(6, 66);
-            this.rdioCRSelfRegOff.Name = "rdioCRSelfRegOff";
-            this.rdioCRSelfRegOff.Size = new System.Drawing.Size(39, 17);
-            this.rdioCRSelfRegOff.TabIndex = 1;
-            this.rdioCRSelfRegOff.TabStop = true;
-            this.rdioCRSelfRegOff.Text = "Off";
-            this.rdioCRSelfRegOff.UseVisualStyleBackColor = true;
-            // 
-            // rdioCRSelfRegOn
-            // 
-            this.rdioCRSelfRegOn.AutoSize = true;
-            this.rdioCRSelfRegOn.Checked = true;
-            this.rdioCRSelfRegOn.Location = new System.Drawing.Point(6, 34);
-            this.rdioCRSelfRegOn.Name = "rdioCRSelfRegOn";
-            this.rdioCRSelfRegOn.Size = new System.Drawing.Size(39, 17);
-            this.rdioCRSelfRegOn.TabIndex = 0;
-            this.rdioCRSelfRegOn.TabStop = true;
-            this.rdioCRSelfRegOn.Text = "On";
-            this.rdioCRSelfRegOn.UseVisualStyleBackColor = true;
-            // 
-            // ControlRisksSelfReg
-            // 
-            this.ControlRisksSelfReg.Controls.Add(this.rdioCRSelfRegOff);
-            this.ControlRisksSelfReg.Controls.Add(this.rdioCRSelfRegOn);
-            this.ControlRisksSelfReg.Location = new System.Drawing.Point(12, 224);
-            this.ControlRisksSelfReg.Name = "ControlRisksSelfReg";
-            this.ControlRisksSelfReg.Size = new System.Drawing.Size(192, 105);
-            this.ControlRisksSelfReg.TabIndex = 51;
-            this.ControlRisksSelfReg.TabStop = false;
-            this.ControlRisksSelfReg.Text = "Self Registration";
             // 
             // Form1
             // 
@@ -2161,14 +2160,16 @@
             this.groupBox5.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.CreateNewPortal.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
-            this.groupBox6.ResumeLayout(false);
-            this.groupBox6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
+            this.ControlRisksPortalPage.ResumeLayout(false);
+            this.groupBox9.ResumeLayout(false);
+            this.groupBox9.PerformLayout();
+            this.ControlRisksSelfReg.ResumeLayout(false);
+            this.ControlRisksSelfReg.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
+            this.CoHostPortal.ResumeLayout(false);
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
             this.CourseCodes.ResumeLayout(false);
             this.CourseCodes.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -2192,10 +2193,6 @@
             this.CourseExpiry.ResumeLayout(false);
             this.CourseExpiry.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
-            this.CoHostPortal.ResumeLayout(false);
-            this.groupBox7.ResumeLayout(false);
-            this.groupBox7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
@@ -2207,12 +2204,14 @@
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
-            this.ControlRisksPortalPage.ResumeLayout(false);
-            this.groupBox9.ResumeLayout(false);
-            this.groupBox9.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
-            this.ControlRisksSelfReg.ResumeLayout(false);
-            this.ControlRisksSelfReg.PerformLayout();
+            this.CreateNewPortal.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
