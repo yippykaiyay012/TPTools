@@ -57,6 +57,8 @@
             this.button5 = new System.Windows.Forms.Button();
             this.btnCreateDemoPortal = new System.Windows.Forms.Button();
             this.ControlRisksPortalPage = new System.Windows.Forms.TabPage();
+            this.label38 = new System.Windows.Forms.Label();
+            this.txtCRPortalResult = new System.Windows.Forms.TextBox();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
             this.ControlRisksSelfReg = new System.Windows.Forms.GroupBox();
             this.rdioCRSelfRegOff = new System.Windows.Forms.RadioButton();
@@ -540,6 +542,8 @@
             // 
             // ControlRisksPortalPage
             // 
+            this.ControlRisksPortalPage.Controls.Add(this.label38);
+            this.ControlRisksPortalPage.Controls.Add(this.txtCRPortalResult);
             this.ControlRisksPortalPage.Controls.Add(this.groupBox9);
             this.ControlRisksPortalPage.Controls.Add(this.pictureBox14);
             this.ControlRisksPortalPage.Controls.Add(this.button9);
@@ -551,6 +555,26 @@
             this.ControlRisksPortalPage.TabIndex = 14;
             this.ControlRisksPortalPage.Text = "ControlRisksPortal";
             this.ControlRisksPortalPage.UseVisualStyleBackColor = true;
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Location = new System.Drawing.Point(373, 48);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(42, 13);
+            this.label38.TabIndex = 48;
+            this.label38.Text = "Results";
+            // 
+            // txtCRPortalResult
+            // 
+            this.txtCRPortalResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCRPortalResult.Location = new System.Drawing.Point(373, 67);
+            this.txtCRPortalResult.Multiline = true;
+            this.txtCRPortalResult.Name = "txtCRPortalResult";
+            this.txtCRPortalResult.ReadOnly = true;
+            this.txtCRPortalResult.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.txtCRPortalResult.Size = new System.Drawing.Size(481, 366);
+            this.txtCRPortalResult.TabIndex = 47;
             // 
             // groupBox9
             // 
@@ -605,7 +629,7 @@
             // label36
             // 
             this.label36.AutoSize = true;
-            this.label36.Location = new System.Drawing.Point(5, 110);
+            this.label36.Location = new System.Drawing.Point(6, 87);
             this.label36.Name = "label36";
             this.label36.Size = new System.Drawing.Size(85, 13);
             this.label36.TabIndex = 50;
@@ -614,7 +638,7 @@
             // lblControlRisksCompanyName
             // 
             this.lblControlRisksCompanyName.AutoSize = true;
-            this.lblControlRisksCompanyName.Location = new System.Drawing.Point(5, 123);
+            this.lblControlRisksCompanyName.Location = new System.Drawing.Point(6, 100);
             this.lblControlRisksCompanyName.Name = "lblControlRisksCompanyName";
             this.lblControlRisksCompanyName.Size = new System.Drawing.Size(67, 13);
             this.lblControlRisksCompanyName.TabIndex = 49;
@@ -631,7 +655,7 @@
             // label35
             // 
             this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(5, 171);
+            this.label35.Location = new System.Drawing.Point(6, 124);
             this.label35.Name = "label35";
             this.label35.Size = new System.Drawing.Size(68, 13);
             this.label35.TabIndex = 47;
@@ -640,7 +664,7 @@
             // lblControlRisksPortalName
             // 
             this.lblControlRisksPortalName.AutoSize = true;
-            this.lblControlRisksPortalName.Location = new System.Drawing.Point(5, 184);
+            this.lblControlRisksPortalName.Location = new System.Drawing.Point(6, 137);
             this.lblControlRisksPortalName.Name = "lblControlRisksPortalName";
             this.lblControlRisksPortalName.Size = new System.Drawing.Size(67, 13);
             this.lblControlRisksPortalName.TabIndex = 46;
@@ -2161,6 +2185,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ControlRisksPortalPage.ResumeLayout(false);
+            this.ControlRisksPortalPage.PerformLayout();
             this.groupBox9.ResumeLayout(false);
             this.groupBox9.PerformLayout();
             this.ControlRisksSelfReg.ResumeLayout(false);
@@ -2393,6 +2418,8 @@
         private System.Windows.Forms.GroupBox ControlRisksSelfReg;
         private System.Windows.Forms.RadioButton rdioCRSelfRegOff;
         private System.Windows.Forms.RadioButton rdioCRSelfRegOn;
+        private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.TextBox txtCRPortalResult;
     }
 }
 

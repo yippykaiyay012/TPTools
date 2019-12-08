@@ -6,6 +6,7 @@ using TPToolsLibrary;
 using TPToolsLibrary.BrowserActions;
 using System.Collections.Generic;
 using TPToolsLibrary.SettingsAndTemplates;
+using System.Threading.Tasks;
 
 namespace TPTools
 {
@@ -39,8 +40,8 @@ namespace TPTools
 
             // initialise list of CoHost Clients
             CoHostClientDropDown.DataSource = new BindingSource(CoHostSharingSettings.ClientDetails, null);
-            CoHostClientDropDown.DisplayMember = "Key";
-            CoHostClientDropDown.ValueMember = "Value";
+            CoHostClientDropDown.DisplayMember = "Value";
+            CoHostClientDropDown.ValueMember = "Key";
 
             // initialise list of Control Risks Courses
             foreach(var course in PortalSettings.ControlRisksCourses)
@@ -435,18 +436,18 @@ namespace TPTools
 
         private void btnCreateControlRisksPortal_Click(object sender, EventArgs e)
         {
-            if (!Login.IsLoggedIn())
-            {
-                MessageBox.Show("Log In First");
-                return;
-            }
-            else
-            {
+            //if (!Login.IsLoggedIn())
+            //{
+            //    MessageBox.Show("Log In First");
+            //    return;
+            //}
+            //else
+            //{
 
                 var courses = new List<string>();
                 foreach (var item in chkListControlRiskCourses.CheckedItems)
                 {
-                    courses.Add(((KeyValuePair<string, string>)item).Value);
+                    courses.Add(((KeyValuePair<string, string>)item).Key);
                 }
 
                 var companyName = txtControlRisksPortalCompanyName.Text;
@@ -461,11 +462,19 @@ namespace TPTools
                     selfReg = false;
                 }
 
-                Thread thread = new Thread(() =>
-                ControlRisksPortal.CreateCRPortal(companyName, selfReg, courses));
+                //Thread thread = new Thread(() =>
+                //ControlRisksPortal.CreateCRPortal(companyName, selfReg, courses));
 
-                thread.Start();
-            }
+                //thread.Start();
+
+
+
+                Task<string> task = ControlRisksPortal.CreateCRPortal(companyName, selfReg, courses);
+
+                task.Wait();
+
+                txtCRPortalResult.Text = task.Result;
+           // }
         }
     }
 }

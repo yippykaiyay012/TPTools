@@ -48,7 +48,7 @@ namespace TPToolsLibrary.BrowserActions
             //"portalBooleanProperties[SHOW_IN_PORTAL_LIST]",
             //"portalBooleanProperties[USE_SMS_MODULE]",
             //"portalBooleanProperties[USE_CUSTOM_THEME]",
-            //"portalBooleanProperties[USE_EXPIRYDATE]",
+            "portalBooleanProperties[USE_EXPIRYDATE]",
             "portalBooleanProperties[USE_NEW_STUDENT_UI]",
             "portalBooleanProperties[USE_STUDENT_DASHBOARD]",
             //"portalBooleanProperties[USE_SURVEY]",
@@ -107,12 +107,12 @@ namespace TPToolsLibrary.BrowserActions
             //"portalBooleanProperties[ALLOW_LOGIN_TO_USERS_REGISTERED_IN_PORTAL_OWNER_COMPANY]",
             //"portalBooleanProperties[ALLOW_SELF_REGISTRATION]",
             //"portalBooleanProperties[DELETE_USER_WHEN_APPROVAL_IS_DENIED]",
-            //"portalBooleanProperties[MERGE_USER_ACCOUNTS_DISABLED]",
+            "portalBooleanProperties[MERGE_USER_ACCOUNTS_DISABLED]",
             //"portalBooleanProperties[DENY_MANAGER_FROM_CHANGING_USER_MASS]",
             //"portalBooleanProperties[PROFILE_VERIFICATION_ALLOW_BYPASS]",
             //"portalBooleanProperties[PROFILE_VERIFICATION_REQUIRED_FIELDS]",
             "portalBooleanProperties[SHOW_LICENSE_AGREEMENT]",
-            //"portalBooleanProperties[USE_PORTAL_SPECIFIC_LICENSE_AGREEMENT]"
+            "portalBooleanProperties[USE_PORTAL_SPECIFIC_LICENSE_AGREEMENT]"
 
 
         };
@@ -339,10 +339,10 @@ namespace TPToolsLibrary.BrowserActions
 
         public static readonly Dictionary<string, string> ControlRisksCourses = new Dictionary<string, string>()
         {
-            { "Active Shooter","32039" },
-            { "Advanced Security Training","32612" },
-            { "Introduction to Kidnap","32614" },
-            { "Virtual Kidnap","32038" }
+            { "32039", "Active Shooter" },
+            { "32612","Advanced Security Training" },
+            { "32614","Introduction to Kidnap" },
+            { "32038", "Virtual Kidnap"}
 
         };
 
