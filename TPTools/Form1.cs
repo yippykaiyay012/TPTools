@@ -7,6 +7,7 @@ using TPToolsLibrary.BrowserActions;
 using System.Collections.Generic;
 using TPToolsLibrary.SettingsAndTemplates;
 using System.Threading.Tasks;
+using TPToolsLibrary.Models;
 
 namespace TPTools
 {
@@ -462,18 +463,47 @@ namespace TPTools
                     selfReg = false;
                 }
 
-                //Thread thread = new Thread(() =>
-                //ControlRisksPortal.CreateCRPortal(companyName, selfReg, courses));
-
-                //thread.Start();
 
 
+            var admin1 = new User();
+            var admin2 = new User();
+            //Admin 1
+            if (!string.IsNullOrWhiteSpace(txtAdmin1FirstNameCR.Text) && !string.IsNullOrWhiteSpace(txtAdmin1LastNameCR.Text) && !string.IsNullOrWhiteSpace(txtAdmin1EmailCR.Text))
+            {
+                admin1.Firstname = txtAdmin1FirstNameCR.Text;
+                admin1.Lastname = txtAdmin1LastNameCR.Text;
+                admin1.Email = txtAdmin1EmailCR.Text;
+                admin1.SendEmail = chkAdmin1SendEmail.Checked;
+                admin1.Username = txtAdmin1EmailCR.Text;
+                admin1.Password = "Welcome123!";
+                admin1.UserRole = UserRole.Portal_Administrator;
+                admin1.OrgUnit = "";
+                
+            }
+            //Admin 2
+            if (!string.IsNullOrWhiteSpace(txtAdmin2FirstNameCR.Text) && !string.IsNullOrWhiteSpace(txtAdmin2LastNameCR.Text) && !string.IsNullOrWhiteSpace(txtAdmin2EmailCR.Text))
+            {
+                admin2.Firstname = txtAdmin2FirstNameCR.Text;
+                admin2.Lastname = txtAdmin2LastNameCR.Text;
+                admin2.Email = txtAdmin2EmailCR.Text;
+                admin2.SendEmail = chkAdmin2SendEmail.Checked;
+                admin2.Username = txtAdmin2EmailCR.Text;
+                admin2.Password = "Welcome123!";
+                admin2.UserRole = UserRole.Portal_Administrator;
+                admin2.OrgUnit = "";
+            }
+            //Thread thread = new Thread(() =>
+            //ControlRisksPortal.CreateCRPortal(companyName, selfReg, courses));
 
-                Task<string> task = ControlRisksPortal.CreateCRPortal(companyName, selfReg, courses);
+            //thread.Start();
 
-                task.Wait();
 
-                txtCRPortalResult.Text = task.Result;
+
+            Task<string> task = ControlRisksPortal.CreateCRPortal(companyName, selfReg, courses, admin1, admin2);
+
+            task.Wait();
+
+            txtCRPortalResult.Text = task.Result;
            // }
         }
     }

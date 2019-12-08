@@ -25,13 +25,15 @@ namespace TPToolsLibrary.BrowserActions
         private static string portalURL = null;
 
 
-        public static async Task<string> CreateCRPortal(string customerName, bool selfReg, List<string> coursesToShare)
+        public static async Task<string> CreateCRPortal(string customerName, bool selfReg, List<string> coursesToShare, User admin1, User admin2)
         {
+
+
 
             //URLManagement.RegisterURL("");
 
             //Thread.Sleep(1000000);
-           
+
 
             //customerName += " - Control Risks";
 
@@ -78,9 +80,20 @@ namespace TPToolsLibrary.BrowserActions
 
             };
 
-            if (!AddUser(portalAdmin))
+            if (!AddUser(portalId, portalAdmin))
             {
                 return "Error Creating Default Admin";
+            }
+
+
+            //register admins
+            if (admin1.Email != null && admin1.Firstname != null && admin1.Lastname != null)
+            {
+                AddUser(portalId, admin1);
+            }
+            if (admin2.Email != null && admin2.Firstname != null && admin2.Lastname != null)
+            {
+                AddUser(portalId, admin2);
             }
 
             //// 4. Templates
@@ -569,7 +582,7 @@ namespace TPToolsLibrary.BrowserActions
         }
 
 
-        private static bool AddUser(User user)
+        private static bool AddUser(string portalId, User user)
         {
             if (portalId == null)
             {
