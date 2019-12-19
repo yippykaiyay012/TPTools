@@ -210,7 +210,7 @@ namespace TPToolsLibrary
 
             if (portalId != null)
             {
-                browser.Url = "https://www.trainingportal.no/mintra/" + portalId + "/admin/portals/show/portal/655";
+                browser.Url = "https://www.trainingportal.no/mintra/" + portalId + "/admin/portals/show/portal/" + portalId;
 
                 var btnEditPortal = wait.Until(driver => driver.FindElement(By.Id("editPortal")));
                 btnEditPortal.Click();

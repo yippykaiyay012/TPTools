@@ -29,11 +29,7 @@ namespace TPToolsLibrary.BrowserActions
         {
 
 
-
-            //URLManagement.RegisterURL("");
-
-            //Thread.Sleep(1000000);
-
+            var portalResult = new PortalResult();
 
             //customerName += " - Control Risks";
 
@@ -53,6 +49,9 @@ namespace TPToolsLibrary.BrowserActions
             portalId = GetPortalId(customerName);
 
 
+            portalResult.CompanyName = customerName;
+            portalResult.URL = customerName.Replace(" ", "");
+
 
             // 3. Add Template
             if (!AddDocumentTemplate(portalId, new CRLoginDocument(customerName)))
@@ -65,6 +64,8 @@ namespace TPToolsLibrary.BrowserActions
             {
                 return "Error Customising Portal Settings";
             }
+
+            portalResult.SelfReg = selfReg;
 
             // 5. Add Sample Learner Admin
             var portalAdmin = new User()
@@ -85,15 +86,24 @@ namespace TPToolsLibrary.BrowserActions
                 return "Error Creating Default Admin";
             }
 
+            portalResult.DefaultAdmin = portalAdmin;
 
             //register admins
             if (admin1.Email != null && admin1.Firstname != null && admin1.Lastname != null)
             {
-                AddUser(portalId, admin1);
+                if(AddUser(portalId, admin1))
+                {
+                    portalResult.Admin1 = admin1;
+                }
+                
             }
             if (admin2.Email != null && admin2.Firstname != null && admin2.Lastname != null)
             {
-                AddUser(portalId, admin2);
+                if(AddUser(portalId, admin2))
+                {
+                    portalResult.Admin2 = admin2;
+                }
+                
             }
 
             //// 4. Templates
@@ -109,6 +119,8 @@ namespace TPToolsLibrary.BrowserActions
                 return "Error Sharing Courses";
             }
 
+            portalResult.Courses = coursesToShare;
+
             // 7. activate Courses
             if(!ActivateCourses(portalId))
             {
@@ -121,7 +133,7 @@ namespace TPToolsLibrary.BrowserActions
             AddEnrolmentRules(portalId, coursesToShare);
 
 
-            var portalResult = new PortalResult(customerName, selfReg, portalAdmin.Email, portalAdmin.Password, coursesToShare);
+            
             return portalResult.ToString();
 
             

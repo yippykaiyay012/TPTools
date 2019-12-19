@@ -41,8 +41,8 @@ namespace TPTools
 
             // initialise list of CoHost Clients
             CoHostClientDropDown.DataSource = new BindingSource(CoHostSharingSettings.ClientDetails, null);
-            CoHostClientDropDown.DisplayMember = "Value";
-            CoHostClientDropDown.ValueMember = "Key";
+            CoHostClientDropDown.DisplayMember = "Key";
+            CoHostClientDropDown.ValueMember = "Value";
 
             // initialise list of Control Risks Courses
             foreach(var course in PortalSettings.ControlRisksCourses)
@@ -505,6 +505,28 @@ namespace TPTools
 
             txtCRPortalResult.Text = task.Result;
            // }
+        }
+
+        private void btnApplyNewUI_Click(object sender, EventArgs e)
+        {
+
+            if (string.IsNullOrWhiteSpace(txtNewUIPortalIds.Text))
+            {
+                MessageBox.Show("Enter Portals");
+                return;
+            }
+            if(string.IsNullOrWhiteSpace(txtPrimaryColour.Text) || string.IsNullOrWhiteSpace(label231.Text) || string.IsNullOrWhiteSpace(txtHeaderBackgrounColour.Text) || string.IsNullOrWhiteSpace(label531.Text))
+            {
+                MessageBox.Show("Missing Colour Choice");
+                return;
+            }
+
+            var portals = txtNewUIPortalIds.Text.Split(',').ToList();
+
+
+
+            ApplyNewUI.Apply(portals, txtPrimaryColour.Text, txtSecondaryColour.Text, txtHeaderBackgrounColour.Text, txtHeaderTextColour.Text, chkEnableStudentUI.Checked, chkEnableAdminUI.Checked);
+
         }
     }
 }

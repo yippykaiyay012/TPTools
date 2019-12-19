@@ -57,6 +57,22 @@
             this.button5 = new System.Windows.Forms.Button();
             this.btnCreateDemoPortal = new System.Windows.Forms.Button();
             this.ControlRisksPortalPage = new System.Windows.Forms.TabPage();
+            this.groupBox11 = new System.Windows.Forms.GroupBox();
+            this.chkAdmin2SendEmail = new System.Windows.Forms.CheckBox();
+            this.label41 = new System.Windows.Forms.Label();
+            this.label42 = new System.Windows.Forms.Label();
+            this.label44 = new System.Windows.Forms.Label();
+            this.txtAdmin2EmailCR = new System.Windows.Forms.TextBox();
+            this.txtAdmin2LastNameCR = new System.Windows.Forms.TextBox();
+            this.txtAdmin2FirstNameCR = new System.Windows.Forms.TextBox();
+            this.groupBox10 = new System.Windows.Forms.GroupBox();
+            this.chkAdmin1SendEmail = new System.Windows.Forms.CheckBox();
+            this.label43 = new System.Windows.Forms.Label();
+            this.label40 = new System.Windows.Forms.Label();
+            this.label39 = new System.Windows.Forms.Label();
+            this.txtAdmin1EmailCR = new System.Windows.Forms.TextBox();
+            this.txtAdmin1LastNameCR = new System.Windows.Forms.TextBox();
+            this.txtAdmin1FirstNameCR = new System.Windows.Forms.TextBox();
             this.label38 = new System.Windows.Forms.Label();
             this.txtCRPortalResult = new System.Windows.Forms.TextBox();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
@@ -204,24 +220,24 @@
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.brnCancelCreateNewPortal = new System.Windows.Forms.Button();
             this.btnCreateNewPortal = new System.Windows.Forms.Button();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.chkEnableAdminUI = new System.Windows.Forms.CheckBox();
+            this.chkEnableStudentUI = new System.Windows.Forms.CheckBox();
+            this.label531 = new System.Windows.Forms.Label();
+            this.label48 = new System.Windows.Forms.Label();
+            this.label231 = new System.Windows.Forms.Label();
+            this.label46 = new System.Windows.Forms.Label();
+            this.txtHeaderTextColour = new System.Windows.Forms.TextBox();
+            this.txtHeaderBackgrounColour = new System.Windows.Forms.TextBox();
+            this.txtSecondaryColour = new System.Windows.Forms.TextBox();
+            this.txtPrimaryColour = new System.Windows.Forms.TextBox();
+            this.button10 = new System.Windows.Forms.Button();
+            this.txtNewUIPortalIds = new System.Windows.Forms.RichTextBox();
+            this.label45 = new System.Windows.Forms.Label();
+            this.btnApplyNewUI = new System.Windows.Forms.Button();
             this.btnLogIn = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.txtAdmin1FirstNameCR = new System.Windows.Forms.TextBox();
-            this.groupBox10 = new System.Windows.Forms.GroupBox();
-            this.txtAdmin1LastNameCR = new System.Windows.Forms.TextBox();
-            this.txtAdmin1EmailCR = new System.Windows.Forms.TextBox();
-            this.label39 = new System.Windows.Forms.Label();
-            this.label40 = new System.Windows.Forms.Label();
-            this.label43 = new System.Windows.Forms.Label();
-            this.groupBox11 = new System.Windows.Forms.GroupBox();
-            this.label41 = new System.Windows.Forms.Label();
-            this.label42 = new System.Windows.Forms.Label();
-            this.label44 = new System.Windows.Forms.Label();
-            this.txtAdmin2EmailCR = new System.Windows.Forms.TextBox();
-            this.txtAdmin2LastNameCR = new System.Windows.Forms.TextBox();
-            this.txtAdmin2FirstNameCR = new System.Windows.Forms.TextBox();
-            this.chkAdmin1SendEmail = new System.Windows.Forms.CheckBox();
-            this.chkAdmin2SendEmail = new System.Windows.Forms.CheckBox();
+            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.CompTest.SuspendLayout();
             this.DemoPortal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -229,6 +245,8 @@
             this.groupBox5.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.ControlRisksPortalPage.SuspendLayout();
+            this.groupBox11.SuspendLayout();
+            this.groupBox10.SuspendLayout();
             this.groupBox9.SuspendLayout();
             this.ControlRisksSelfReg.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
@@ -262,8 +280,7 @@
             this.groupBox3.SuspendLayout();
             this.groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
-            this.groupBox10.SuspendLayout();
-            this.groupBox11.SuspendLayout();
+            this.tabPage4.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtUsernameAdmin
@@ -360,6 +377,7 @@
             this.CompTest.Controls.Add(this.tabPage2);
             this.CompTest.Controls.Add(this.tabPage3);
             this.CompTest.Controls.Add(this.CreateNewPortal);
+            this.CompTest.Controls.Add(this.tabPage4);
             this.CompTest.Location = new System.Drawing.Point(306, 12);
             this.CompTest.Name = "CompTest";
             this.CompTest.SelectedIndex = 0;
@@ -576,6 +594,154 @@
             this.ControlRisksPortalPage.Text = "ControlRisksPortal";
             this.ControlRisksPortalPage.UseVisualStyleBackColor = true;
             // 
+            // groupBox11
+            // 
+            this.groupBox11.Controls.Add(this.chkAdmin2SendEmail);
+            this.groupBox11.Controls.Add(this.label41);
+            this.groupBox11.Controls.Add(this.label42);
+            this.groupBox11.Controls.Add(this.label44);
+            this.groupBox11.Controls.Add(this.txtAdmin2EmailCR);
+            this.groupBox11.Controls.Add(this.txtAdmin2LastNameCR);
+            this.groupBox11.Controls.Add(this.txtAdmin2FirstNameCR);
+            this.groupBox11.Location = new System.Drawing.Point(584, 32);
+            this.groupBox11.Name = "groupBox11";
+            this.groupBox11.Size = new System.Drawing.Size(222, 121);
+            this.groupBox11.TabIndex = 56;
+            this.groupBox11.TabStop = false;
+            this.groupBox11.Text = "Admin 2";
+            // 
+            // chkAdmin2SendEmail
+            // 
+            this.chkAdmin2SendEmail.AutoSize = true;
+            this.chkAdmin2SendEmail.Location = new System.Drawing.Point(6, 98);
+            this.chkAdmin2SendEmail.Name = "chkAdmin2SendEmail";
+            this.chkAdmin2SendEmail.Size = new System.Drawing.Size(79, 17);
+            this.chkAdmin2SendEmail.TabIndex = 65;
+            this.chkAdmin2SendEmail.Text = "Send Email";
+            this.chkAdmin2SendEmail.UseVisualStyleBackColor = true;
+            // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.Location = new System.Drawing.Point(6, 57);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(32, 13);
+            this.label41.TabIndex = 63;
+            this.label41.Text = "Email";
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Location = new System.Drawing.Point(108, 20);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(55, 13);
+            this.label42.TabIndex = 60;
+            this.label42.Text = "LastName";
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.Location = new System.Drawing.Point(6, 20);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(54, 13);
+            this.label44.TabIndex = 56;
+            this.label44.Text = "FirstName";
+            // 
+            // txtAdmin2EmailCR
+            // 
+            this.txtAdmin2EmailCR.Location = new System.Drawing.Point(6, 73);
+            this.txtAdmin2EmailCR.Name = "txtAdmin2EmailCR";
+            this.txtAdmin2EmailCR.Size = new System.Drawing.Size(204, 20);
+            this.txtAdmin2EmailCR.TabIndex = 56;
+            // 
+            // txtAdmin2LastNameCR
+            // 
+            this.txtAdmin2LastNameCR.Location = new System.Drawing.Point(111, 35);
+            this.txtAdmin2LastNameCR.Name = "txtAdmin2LastNameCR";
+            this.txtAdmin2LastNameCR.Size = new System.Drawing.Size(99, 20);
+            this.txtAdmin2LastNameCR.TabIndex = 55;
+            // 
+            // txtAdmin2FirstNameCR
+            // 
+            this.txtAdmin2FirstNameCR.Location = new System.Drawing.Point(6, 35);
+            this.txtAdmin2FirstNameCR.Name = "txtAdmin2FirstNameCR";
+            this.txtAdmin2FirstNameCR.Size = new System.Drawing.Size(99, 20);
+            this.txtAdmin2FirstNameCR.TabIndex = 54;
+            // 
+            // groupBox10
+            // 
+            this.groupBox10.Controls.Add(this.chkAdmin1SendEmail);
+            this.groupBox10.Controls.Add(this.label43);
+            this.groupBox10.Controls.Add(this.label40);
+            this.groupBox10.Controls.Add(this.label39);
+            this.groupBox10.Controls.Add(this.txtAdmin1EmailCR);
+            this.groupBox10.Controls.Add(this.txtAdmin1LastNameCR);
+            this.groupBox10.Controls.Add(this.txtAdmin1FirstNameCR);
+            this.groupBox10.Location = new System.Drawing.Point(325, 32);
+            this.groupBox10.Name = "groupBox10";
+            this.groupBox10.Size = new System.Drawing.Size(222, 121);
+            this.groupBox10.TabIndex = 55;
+            this.groupBox10.TabStop = false;
+            this.groupBox10.Text = "Admin 1";
+            // 
+            // chkAdmin1SendEmail
+            // 
+            this.chkAdmin1SendEmail.AutoSize = true;
+            this.chkAdmin1SendEmail.Location = new System.Drawing.Point(6, 99);
+            this.chkAdmin1SendEmail.Name = "chkAdmin1SendEmail";
+            this.chkAdmin1SendEmail.Size = new System.Drawing.Size(79, 17);
+            this.chkAdmin1SendEmail.TabIndex = 64;
+            this.chkAdmin1SendEmail.Text = "Send Email";
+            this.chkAdmin1SendEmail.UseVisualStyleBackColor = true;
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Location = new System.Drawing.Point(6, 57);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(32, 13);
+            this.label43.TabIndex = 63;
+            this.label43.Text = "Email";
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.Location = new System.Drawing.Point(108, 20);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(55, 13);
+            this.label40.TabIndex = 60;
+            this.label40.Text = "LastName";
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Location = new System.Drawing.Point(6, 20);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(54, 13);
+            this.label39.TabIndex = 56;
+            this.label39.Text = "FirstName";
+            // 
+            // txtAdmin1EmailCR
+            // 
+            this.txtAdmin1EmailCR.Location = new System.Drawing.Point(6, 73);
+            this.txtAdmin1EmailCR.Name = "txtAdmin1EmailCR";
+            this.txtAdmin1EmailCR.Size = new System.Drawing.Size(204, 20);
+            this.txtAdmin1EmailCR.TabIndex = 56;
+            // 
+            // txtAdmin1LastNameCR
+            // 
+            this.txtAdmin1LastNameCR.Location = new System.Drawing.Point(111, 35);
+            this.txtAdmin1LastNameCR.Name = "txtAdmin1LastNameCR";
+            this.txtAdmin1LastNameCR.Size = new System.Drawing.Size(99, 20);
+            this.txtAdmin1LastNameCR.TabIndex = 55;
+            // 
+            // txtAdmin1FirstNameCR
+            // 
+            this.txtAdmin1FirstNameCR.Location = new System.Drawing.Point(6, 35);
+            this.txtAdmin1FirstNameCR.Name = "txtAdmin1FirstNameCR";
+            this.txtAdmin1FirstNameCR.Size = new System.Drawing.Size(99, 20);
+            this.txtAdmin1FirstNameCR.TabIndex = 54;
+            // 
             // label38
             // 
             this.label38.AutoSize = true;
@@ -649,7 +815,7 @@
             // label36
             // 
             this.label36.AutoSize = true;
-            this.label36.Location = new System.Drawing.Point(6, 87);
+            this.label36.Location = new System.Drawing.Point(9, 100);
             this.label36.Name = "label36";
             this.label36.Size = new System.Drawing.Size(85, 13);
             this.label36.TabIndex = 50;
@@ -658,7 +824,7 @@
             // lblControlRisksCompanyName
             // 
             this.lblControlRisksCompanyName.AutoSize = true;
-            this.lblControlRisksCompanyName.Location = new System.Drawing.Point(6, 100);
+            this.lblControlRisksCompanyName.Location = new System.Drawing.Point(9, 113);
             this.lblControlRisksCompanyName.Name = "lblControlRisksCompanyName";
             this.lblControlRisksCompanyName.Size = new System.Drawing.Size(67, 13);
             this.lblControlRisksCompanyName.TabIndex = 49;
@@ -675,7 +841,7 @@
             // label35
             // 
             this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(6, 124);
+            this.label35.Location = new System.Drawing.Point(9, 137);
             this.label35.Name = "label35";
             this.label35.Size = new System.Drawing.Size(68, 13);
             this.label35.TabIndex = 47;
@@ -684,7 +850,7 @@
             // lblControlRisksPortalName
             // 
             this.lblControlRisksPortalName.AutoSize = true;
-            this.lblControlRisksPortalName.Location = new System.Drawing.Point(6, 137);
+            this.lblControlRisksPortalName.Location = new System.Drawing.Point(9, 150);
             this.lblControlRisksPortalName.Name = "lblControlRisksPortalName";
             this.lblControlRisksPortalName.Size = new System.Drawing.Size(67, 13);
             this.lblControlRisksPortalName.TabIndex = 46;
@@ -2167,6 +2333,159 @@
             this.btnCreateNewPortal.UseVisualStyleBackColor = true;
             this.btnCreateNewPortal.Click += new System.EventHandler(this.BtnCreateNewPortal_Click);
             // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.chkEnableAdminUI);
+            this.tabPage4.Controls.Add(this.chkEnableStudentUI);
+            this.tabPage4.Controls.Add(this.label531);
+            this.tabPage4.Controls.Add(this.label48);
+            this.tabPage4.Controls.Add(this.label231);
+            this.tabPage4.Controls.Add(this.label46);
+            this.tabPage4.Controls.Add(this.txtHeaderTextColour);
+            this.tabPage4.Controls.Add(this.txtHeaderBackgrounColour);
+            this.tabPage4.Controls.Add(this.txtSecondaryColour);
+            this.tabPage4.Controls.Add(this.txtPrimaryColour);
+            this.tabPage4.Controls.Add(this.button10);
+            this.tabPage4.Controls.Add(this.txtNewUIPortalIds);
+            this.tabPage4.Controls.Add(this.label45);
+            this.tabPage4.Controls.Add(this.btnApplyNewUI);
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(941, 556);
+            this.tabPage4.TabIndex = 15;
+            this.tabPage4.Text = "ApplyUI";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // chkEnableAdminUI
+            // 
+            this.chkEnableAdminUI.AutoSize = true;
+            this.chkEnableAdminUI.Location = new System.Drawing.Point(177, 55);
+            this.chkEnableAdminUI.Name = "chkEnableAdminUI";
+            this.chkEnableAdminUI.Size = new System.Drawing.Size(130, 17);
+            this.chkEnableAdminUI.TabIndex = 44;
+            this.chkEnableAdminUI.Text = "Enable New Admin UI";
+            this.chkEnableAdminUI.UseVisualStyleBackColor = true;
+            // 
+            // chkEnableStudentUI
+            // 
+            this.chkEnableStudentUI.AutoSize = true;
+            this.chkEnableStudentUI.Location = new System.Drawing.Point(177, 32);
+            this.chkEnableStudentUI.Name = "chkEnableStudentUI";
+            this.chkEnableStudentUI.Size = new System.Drawing.Size(138, 17);
+            this.chkEnableStudentUI.TabIndex = 43;
+            this.chkEnableStudentUI.Text = "Enable New Student UI";
+            this.chkEnableStudentUI.UseVisualStyleBackColor = true;
+            // 
+            // label531
+            // 
+            this.label531.AutoSize = true;
+            this.label531.Location = new System.Drawing.Point(12, 139);
+            this.label531.Name = "label531";
+            this.label531.Size = new System.Drawing.Size(91, 13);
+            this.label531.TabIndex = 42;
+            this.label531.Text = "Header text color:";
+            // 
+            // label48
+            // 
+            this.label48.AutoSize = true;
+            this.label48.Location = new System.Drawing.Point(12, 96);
+            this.label48.Name = "label48";
+            this.label48.Size = new System.Drawing.Size(131, 13);
+            this.label48.TabIndex = 41;
+            this.label48.Text = "Header background color:";
+            // 
+            // label231
+            // 
+            this.label231.AutoSize = true;
+            this.label231.Location = new System.Drawing.Point(12, 55);
+            this.label231.Name = "label231";
+            this.label231.Size = new System.Drawing.Size(87, 13);
+            this.label231.TabIndex = 40;
+            this.label231.Text = "Secondary color:";
+            // 
+            // label46
+            // 
+            this.label46.AutoSize = true;
+            this.label46.Location = new System.Drawing.Point(12, 16);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(70, 13);
+            this.label46.TabIndex = 39;
+            this.label46.Text = "Primary color:";
+            // 
+            // txtHeaderTextColour
+            // 
+            this.txtHeaderTextColour.Location = new System.Drawing.Point(15, 155);
+            this.txtHeaderTextColour.Name = "txtHeaderTextColour";
+            this.txtHeaderTextColour.Size = new System.Drawing.Size(125, 20);
+            this.txtHeaderTextColour.TabIndex = 38;
+            this.txtHeaderTextColour.Text = "#FFFFFF";
+            // 
+            // txtHeaderBackgrounColour
+            // 
+            this.txtHeaderBackgrounColour.Location = new System.Drawing.Point(15, 112);
+            this.txtHeaderBackgrounColour.Name = "txtHeaderBackgrounColour";
+            this.txtHeaderBackgrounColour.Size = new System.Drawing.Size(125, 20);
+            this.txtHeaderBackgrounColour.TabIndex = 37;
+            this.txtHeaderBackgrounColour.Text = "#0D7B98";
+            // 
+            // txtSecondaryColour
+            // 
+            this.txtSecondaryColour.Location = new System.Drawing.Point(15, 73);
+            this.txtSecondaryColour.Name = "txtSecondaryColour";
+            this.txtSecondaryColour.Size = new System.Drawing.Size(125, 20);
+            this.txtSecondaryColour.TabIndex = 36;
+            this.txtSecondaryColour.Text = "#F7941E";
+            // 
+            // txtPrimaryColour
+            // 
+            this.txtPrimaryColour.Location = new System.Drawing.Point(15, 32);
+            this.txtPrimaryColour.Name = "txtPrimaryColour";
+            this.txtPrimaryColour.Size = new System.Drawing.Size(125, 20);
+            this.txtPrimaryColour.TabIndex = 35;
+            this.txtPrimaryColour.Text = "#F7941E";
+            // 
+            // button10
+            // 
+            this.button10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button10.Location = new System.Drawing.Point(812, 505);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(123, 46);
+            this.button10.TabIndex = 34;
+            this.button10.Text = "Cancel";
+            this.button10.UseVisualStyleBackColor = true;
+            // 
+            // txtNewUIPortalIds
+            // 
+            this.txtNewUIPortalIds.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.txtNewUIPortalIds.Location = new System.Drawing.Point(15, 209);
+            this.txtNewUIPortalIds.Name = "txtNewUIPortalIds";
+            this.txtNewUIPortalIds.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedVertical;
+            this.txtNewUIPortalIds.Size = new System.Drawing.Size(558, 341);
+            this.txtNewUIPortalIds.TabIndex = 31;
+            this.txtNewUIPortalIds.Text = "";
+            // 
+            // label45
+            // 
+            this.label45.AutoSize = true;
+            this.label45.Location = new System.Drawing.Point(12, 193);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(51, 13);
+            this.label45.TabIndex = 32;
+            this.label45.Text = "Portal Ids";
+            // 
+            // btnApplyNewUI
+            // 
+            this.btnApplyNewUI.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnApplyNewUI.Location = new System.Drawing.Point(812, 447);
+            this.btnApplyNewUI.Name = "btnApplyNewUI";
+            this.btnApplyNewUI.Size = new System.Drawing.Size(123, 46);
+            this.btnApplyNewUI.TabIndex = 33;
+            this.btnApplyNewUI.Text = "Apply";
+            this.btnApplyNewUI.UseVisualStyleBackColor = true;
+            this.btnApplyNewUI.Click += new System.EventHandler(this.btnApplyNewUI_Click);
+            // 
             // btnLogIn
             // 
             this.btnLogIn.Location = new System.Drawing.Point(205, 131);
@@ -2176,154 +2495,6 @@
             this.btnLogIn.Text = "Log In";
             this.btnLogIn.UseVisualStyleBackColor = true;
             this.btnLogIn.Click += new System.EventHandler(this.BtnLogIn_Click);
-            // 
-            // txtAdmin1FirstNameCR
-            // 
-            this.txtAdmin1FirstNameCR.Location = new System.Drawing.Point(6, 35);
-            this.txtAdmin1FirstNameCR.Name = "txtAdmin1FirstNameCR";
-            this.txtAdmin1FirstNameCR.Size = new System.Drawing.Size(99, 20);
-            this.txtAdmin1FirstNameCR.TabIndex = 54;
-            // 
-            // groupBox10
-            // 
-            this.groupBox10.Controls.Add(this.chkAdmin1SendEmail);
-            this.groupBox10.Controls.Add(this.label43);
-            this.groupBox10.Controls.Add(this.label40);
-            this.groupBox10.Controls.Add(this.label39);
-            this.groupBox10.Controls.Add(this.txtAdmin1EmailCR);
-            this.groupBox10.Controls.Add(this.txtAdmin1LastNameCR);
-            this.groupBox10.Controls.Add(this.txtAdmin1FirstNameCR);
-            this.groupBox10.Location = new System.Drawing.Point(325, 32);
-            this.groupBox10.Name = "groupBox10";
-            this.groupBox10.Size = new System.Drawing.Size(222, 121);
-            this.groupBox10.TabIndex = 55;
-            this.groupBox10.TabStop = false;
-            this.groupBox10.Text = "Admin 1";
-            // 
-            // txtAdmin1LastNameCR
-            // 
-            this.txtAdmin1LastNameCR.Location = new System.Drawing.Point(111, 35);
-            this.txtAdmin1LastNameCR.Name = "txtAdmin1LastNameCR";
-            this.txtAdmin1LastNameCR.Size = new System.Drawing.Size(99, 20);
-            this.txtAdmin1LastNameCR.TabIndex = 55;
-            // 
-            // txtAdmin1EmailCR
-            // 
-            this.txtAdmin1EmailCR.Location = new System.Drawing.Point(6, 73);
-            this.txtAdmin1EmailCR.Name = "txtAdmin1EmailCR";
-            this.txtAdmin1EmailCR.Size = new System.Drawing.Size(204, 20);
-            this.txtAdmin1EmailCR.TabIndex = 56;
-            // 
-            // label39
-            // 
-            this.label39.AutoSize = true;
-            this.label39.Location = new System.Drawing.Point(6, 20);
-            this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(54, 13);
-            this.label39.TabIndex = 56;
-            this.label39.Text = "FirstName";
-            // 
-            // label40
-            // 
-            this.label40.AutoSize = true;
-            this.label40.Location = new System.Drawing.Point(108, 20);
-            this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(55, 13);
-            this.label40.TabIndex = 60;
-            this.label40.Text = "LastName";
-            // 
-            // label43
-            // 
-            this.label43.AutoSize = true;
-            this.label43.Location = new System.Drawing.Point(6, 57);
-            this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(32, 13);
-            this.label43.TabIndex = 63;
-            this.label43.Text = "Email";
-            // 
-            // groupBox11
-            // 
-            this.groupBox11.Controls.Add(this.chkAdmin2SendEmail);
-            this.groupBox11.Controls.Add(this.label41);
-            this.groupBox11.Controls.Add(this.label42);
-            this.groupBox11.Controls.Add(this.label44);
-            this.groupBox11.Controls.Add(this.txtAdmin2EmailCR);
-            this.groupBox11.Controls.Add(this.txtAdmin2LastNameCR);
-            this.groupBox11.Controls.Add(this.txtAdmin2FirstNameCR);
-            this.groupBox11.Location = new System.Drawing.Point(584, 32);
-            this.groupBox11.Name = "groupBox11";
-            this.groupBox11.Size = new System.Drawing.Size(222, 121);
-            this.groupBox11.TabIndex = 56;
-            this.groupBox11.TabStop = false;
-            this.groupBox11.Text = "Admin 2";
-            // 
-            // label41
-            // 
-            this.label41.AutoSize = true;
-            this.label41.Location = new System.Drawing.Point(6, 57);
-            this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(32, 13);
-            this.label41.TabIndex = 63;
-            this.label41.Text = "Email";
-            // 
-            // label42
-            // 
-            this.label42.AutoSize = true;
-            this.label42.Location = new System.Drawing.Point(108, 20);
-            this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(55, 13);
-            this.label42.TabIndex = 60;
-            this.label42.Text = "LastName";
-            // 
-            // label44
-            // 
-            this.label44.AutoSize = true;
-            this.label44.Location = new System.Drawing.Point(6, 20);
-            this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(54, 13);
-            this.label44.TabIndex = 56;
-            this.label44.Text = "FirstName";
-            // 
-            // txtAdmin2EmailCR
-            // 
-            this.txtAdmin2EmailCR.Location = new System.Drawing.Point(6, 73);
-            this.txtAdmin2EmailCR.Name = "txtAdmin2EmailCR";
-            this.txtAdmin2EmailCR.Size = new System.Drawing.Size(204, 20);
-            this.txtAdmin2EmailCR.TabIndex = 56;
-            // 
-            // txtAdmin2LastNameCR
-            // 
-            this.txtAdmin2LastNameCR.Location = new System.Drawing.Point(111, 35);
-            this.txtAdmin2LastNameCR.Name = "txtAdmin2LastNameCR";
-            this.txtAdmin2LastNameCR.Size = new System.Drawing.Size(99, 20);
-            this.txtAdmin2LastNameCR.TabIndex = 55;
-            // 
-            // txtAdmin2FirstNameCR
-            // 
-            this.txtAdmin2FirstNameCR.Location = new System.Drawing.Point(6, 35);
-            this.txtAdmin2FirstNameCR.Name = "txtAdmin2FirstNameCR";
-            this.txtAdmin2FirstNameCR.Size = new System.Drawing.Size(99, 20);
-            this.txtAdmin2FirstNameCR.TabIndex = 54;
-            // 
-            // chkAdmin1SendEmail
-            // 
-            this.chkAdmin1SendEmail.AutoSize = true;
-            this.chkAdmin1SendEmail.Location = new System.Drawing.Point(6, 99);
-            this.chkAdmin1SendEmail.Name = "chkAdmin1SendEmail";
-            this.chkAdmin1SendEmail.Size = new System.Drawing.Size(79, 17);
-            this.chkAdmin1SendEmail.TabIndex = 64;
-            this.chkAdmin1SendEmail.Text = "Send Email";
-            this.chkAdmin1SendEmail.UseVisualStyleBackColor = true;
-            // 
-            // chkAdmin2SendEmail
-            // 
-            this.chkAdmin2SendEmail.AutoSize = true;
-            this.chkAdmin2SendEmail.Location = new System.Drawing.Point(6, 98);
-            this.chkAdmin2SendEmail.Name = "chkAdmin2SendEmail";
-            this.chkAdmin2SendEmail.Size = new System.Drawing.Size(79, 17);
-            this.chkAdmin2SendEmail.TabIndex = 65;
-            this.chkAdmin2SendEmail.Text = "Send Email";
-            this.chkAdmin2SendEmail.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -2354,6 +2525,10 @@
             this.groupBox1.PerformLayout();
             this.ControlRisksPortalPage.ResumeLayout(false);
             this.ControlRisksPortalPage.PerformLayout();
+            this.groupBox11.ResumeLayout(false);
+            this.groupBox11.PerformLayout();
+            this.groupBox10.ResumeLayout(false);
+            this.groupBox10.PerformLayout();
             this.groupBox9.ResumeLayout(false);
             this.groupBox9.PerformLayout();
             this.ControlRisksSelfReg.ResumeLayout(false);
@@ -2405,10 +2580,8 @@
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
-            this.groupBox10.ResumeLayout(false);
-            this.groupBox10.PerformLayout();
-            this.groupBox11.ResumeLayout(false);
-            this.groupBox11.PerformLayout();
+            this.tabPage4.ResumeLayout(false);
+            this.tabPage4.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2608,6 +2781,22 @@
         private System.Windows.Forms.TextBox txtAdmin1FirstNameCR;
         private System.Windows.Forms.CheckBox chkAdmin2SendEmail;
         private System.Windows.Forms.CheckBox chkAdmin1SendEmail;
+        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.Label label48;
+        private System.Windows.Forms.Label label231;
+        private System.Windows.Forms.Label label46;
+        private System.Windows.Forms.TextBox txtHeaderTextColour;
+        private System.Windows.Forms.TextBox txtHeaderBackgrounColour;
+        private System.Windows.Forms.TextBox txtSecondaryColour;
+        private System.Windows.Forms.TextBox txtPrimaryColour;
+        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.RichTextBox txtNewUIPortalIds;
+        private System.Windows.Forms.Label label45;
+        private System.Windows.Forms.Button btnApplyNewUI;
+        private System.Windows.Forms.Label label531;
+        private System.Windows.Forms.CheckBox chkEnableAdminUI;
+        private System.Windows.Forms.CheckBox chkEnableStudentUI;
+        private System.Windows.Forms.ColorDialog colorDialog1;
     }
 }
 
