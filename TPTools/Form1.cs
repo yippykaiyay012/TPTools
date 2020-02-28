@@ -507,25 +507,43 @@ namespace TPTools
            // }
         }
 
-        private void btnApplyNewUI_Click(object sender, EventArgs e)
+        private async void btnApplyNewUI_Click(object sender, EventArgs e)
         {
 
-            if (string.IsNullOrWhiteSpace(txtNewUIPortalIds.Text))
+            if (!Login.IsLoggedIn())
             {
-                MessageBox.Show("Enter Portals");
+                MessageBox.Show("Log In First");
                 return;
             }
-            if(string.IsNullOrWhiteSpace(txtPrimaryColour.Text) || string.IsNullOrWhiteSpace(label231.Text) || string.IsNullOrWhiteSpace(txtHeaderBackgrounColour.Text) || string.IsNullOrWhiteSpace(label531.Text))
+            else
             {
-                MessageBox.Show("Missing Colour Choice");
-                return;
+
+                if (string.IsNullOrWhiteSpace(txtNewUIPortalIds.Text))
+                {
+                    MessageBox.Show("Enter Portals");
+                    return;
+                }
+                if (string.IsNullOrWhiteSpace(txtPrimaryColour.Text) || string.IsNullOrWhiteSpace(txtSecondaryColour.Text) || string.IsNullOrWhiteSpace(txtHeaderBackgrounColour.Text) || string.IsNullOrWhiteSpace(txtHeaderTextColour.Text))
+                {
+                    MessageBox.Show("Missing Colour Choice");
+                    return;
+                }
+
+                var portals = txtNewUIPortalIds.Text.Split(',').ToList();
+
+
+
+                var newUIErrors  = await ApplyNewUI.Apply(portals, txtPrimaryColour.Text, txtSecondaryColour.Text, txtHeaderBackgrounColour.Text, txtHeaderTextColour.Text, chkEnableStudentUI.Checked, chkEnableAdminUI.Checked);
+
+                if(newUIErrors.Count == 0)
+                {
+                    txtNewUIErrors.Text = "No Errors Detected, No One Will Ever See This Message.";
+                }
+                else
+                {
+                    txtNewUIErrors.Text = string.Join(",", newUIErrors);
+                }
             }
-
-            var portals = txtNewUIPortalIds.Text.Split(',').ToList();
-
-
-
-            ApplyNewUI.Apply(portals, txtPrimaryColour.Text, txtSecondaryColour.Text, txtHeaderBackgrounColour.Text, txtHeaderTextColour.Text, chkEnableStudentUI.Checked, chkEnableAdminUI.Checked);
 
         }
     }

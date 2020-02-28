@@ -238,6 +238,8 @@
             this.btnLogIn = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
+            this.txtNewUIErrors = new System.Windows.Forms.RichTextBox();
+            this.label47 = new System.Windows.Forms.Label();
             this.CompTest.SuspendLayout();
             this.DemoPortal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -2335,6 +2337,8 @@
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.label47);
+            this.tabPage4.Controls.Add(this.txtNewUIErrors);
             this.tabPage4.Controls.Add(this.chkEnableAdminUI);
             this.tabPage4.Controls.Add(this.chkEnableStudentUI);
             this.tabPage4.Controls.Add(this.label531);
@@ -2471,9 +2475,9 @@
             this.label45.AutoSize = true;
             this.label45.Location = new System.Drawing.Point(12, 193);
             this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(51, 13);
+            this.label45.Size = new System.Drawing.Size(141, 13);
             this.label45.TabIndex = 32;
-            this.label45.Text = "Portal Ids";
+            this.label45.Text = "Portal Ids (Comma Delimited)";
             // 
             // btnApplyNewUI
             // 
@@ -2495,6 +2499,26 @@
             this.btnLogIn.Text = "Log In";
             this.btnLogIn.UseVisualStyleBackColor = true;
             this.btnLogIn.Click += new System.EventHandler(this.BtnLogIn_Click);
+            // 
+            // txtNewUIErrors
+            // 
+            this.txtNewUIErrors.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.txtNewUIErrors.Location = new System.Drawing.Point(593, 209);
+            this.txtNewUIErrors.Name = "txtNewUIErrors";
+            this.txtNewUIErrors.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedVertical;
+            this.txtNewUIErrors.Size = new System.Drawing.Size(201, 341);
+            this.txtNewUIErrors.TabIndex = 45;
+            this.txtNewUIErrors.Text = "";
+            // 
+            // label47
+            // 
+            this.label47.AutoSize = true;
+            this.label47.Location = new System.Drawing.Point(590, 193);
+            this.label47.Name = "label47";
+            this.label47.Size = new System.Drawing.Size(140, 13);
+            this.label47.TabIndex = 46;
+            this.label47.Text = "Potential Issues with portals:";
             // 
             // Form1
             // 
@@ -2797,6 +2821,8 @@
         private System.Windows.Forms.CheckBox chkEnableAdminUI;
         private System.Windows.Forms.CheckBox chkEnableStudentUI;
         private System.Windows.Forms.ColorDialog colorDialog1;
+        private System.Windows.Forms.Label label47;
+        private System.Windows.Forms.RichTextBox txtNewUIErrors;
     }
 }
 

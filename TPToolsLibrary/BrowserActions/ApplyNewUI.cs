@@ -4,6 +4,7 @@ using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace TPToolsLibrary.BrowserActions
 {
@@ -18,55 +19,66 @@ namespace TPToolsLibrary.BrowserActions
         private static string portalId = null;
 
 
-        public static void Apply(List<string> portals, string primaryColour, string secondaryColour, string headerBGColour, string headerTextColour, bool enableStudentUI, bool enableAdminUI)
+
+        public static async Task<List<string>> Apply(List<string> portals, string primaryColour, string secondaryColour, string headerBGColour, string headerTextColour, bool enableStudentUI, bool enableAdminUI)
         {
+            var issuesList = new List<string>();
 
             foreach(var portal in portals)
             {
-                browser.Url = @"https://www.trainingportal.no/mintra/" + portal + "/admin/portals/show/portal/" + portal;
+                try
+                {              
+                    browser.Url = @"https://www.trainingportal.no/mintra/" + portal + "/admin/portals/show/portal/" + portal;
 
-                wait.Until(driver => driver.FindElement(By.Id("editPortal"))).Click();
+                    wait.Until(driver => driver.FindElement(By.Id("editPortal"))).Click();
                 
 
-                if (enableAdminUI)
-                {
-                    CheckAndSelectElementName("portalBooleanProperties[USE_NEW_ADMIN_UI]");
+                    if (enableAdminUI)
+                    {
+                        CheckAndSelectElementName("portalBooleanProperties[USE_NEW_ADMIN_UI]");
+                    }
+                    else
+                    {
+                        CheckAndUnSelectElementName("portalBooleanProperties[USE_NEW_ADMIN_UI]");
+                    }
+
+
+
+                    if (enableStudentUI)
+                    {
+                        CheckAndSelectElementName("portalBooleanProperties[USE_NEW_STUDENT_UI]");
+                    }
+                    else
+                    {
+                        CheckAndUnSelectElementName("portalBooleanProperties[USE_NEW_STUDENT_UI]");
+                    }
+
+
+                    browser.FindElementByName("_eventId_complete").Click();
+
+                    browser.Url = @"https://www.trainingportal.no/mintra/" + portal + "/admin/portals/show/portal/" + portal;
+
+                    wait.Until(driver => driver.FindElement(By.XPath("//*[@id='infoContainer']/div/a[2]"))).Click();
+
+                    wait.Until(driver => driver.FindElement(By.Name("primaryColor"))).Clear();
+                    wait.Until(driver => driver.FindElement(By.Name("primaryColor"))).SendKeys(primaryColour);
+                    wait.Until(driver => driver.FindElement(By.Name("secondaryColor"))).Clear();
+                    wait.Until(driver => driver.FindElement(By.Name("secondaryColor"))).SendKeys(secondaryColour);
+                    wait.Until(driver => driver.FindElement(By.Name("headerBackgroundColor"))).Clear();
+                    wait.Until(driver => driver.FindElement(By.Name("headerBackgroundColor"))).SendKeys(headerBGColour);
+                    wait.Until(driver => driver.FindElement(By.Name("headerTextColor"))).Clear();
+                    wait.Until(driver => driver.FindElement(By.Name("headerTextColor"))).SendKeys(headerTextColour);
+
+                    wait.Until(driver => driver.FindElement(By.Id("portalNewUIThemeShow__save_button"))).Click();
+
                 }
-                else
+                catch(Exception e)
                 {
-                    CheckAndUnSelectElementName("portalBooleanProperties[USE_NEW_ADMIN_UI]");
+                    issuesList.Add(portal);
                 }
-
-
-
-                if (enableStudentUI)
-                {
-                    CheckAndSelectElementName("portalBooleanProperties[USE_NEW_STUDENT_UI]");
-                }
-                else
-                {
-                    CheckAndUnSelectElementName("portalBooleanProperties[USE_NEW_STUDENT_UI]");
-                }
-
-
-                browser.FindElementByName("_eventId_complete").Click();
-
-                browser.Url = @"https://www.trainingportal.no/mintra/" + portal + "/admin/portals/show/portal/" + portal;
-
-                wait.Until(driver => driver.FindElement(By.XPath("//*[@id='infoContainer']/div/a[2]"))).Click();
-
-                wait.Until(driver => driver.FindElement(By.Name("primaryColor"))).Clear();
-                wait.Until(driver => driver.FindElement(By.Name("primaryColor"))).SendKeys(primaryColour);
-                wait.Until(driver => driver.FindElement(By.Name("secondaryColor"))).Clear();
-                wait.Until(driver => driver.FindElement(By.Name("secondaryColor"))).SendKeys(secondaryColour);
-                wait.Until(driver => driver.FindElement(By.Name("headerBackgroundColor"))).Clear();
-                wait.Until(driver => driver.FindElement(By.Name("headerBackgroundColor"))).SendKeys(headerBGColour);
-                wait.Until(driver => driver.FindElement(By.Name("headerTextColor"))).Clear();
-                wait.Until(driver => driver.FindElement(By.Name("headerTextColor"))).SendKeys(headerTextColour);
-
-                wait.Until(driver => driver.FindElement(By.Id("portalNewUIThemeShow__save_button"))).Click();
             }
-            
+
+            return issuesList;
 
 
 
