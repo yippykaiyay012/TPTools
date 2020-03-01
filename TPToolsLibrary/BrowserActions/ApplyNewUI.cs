@@ -30,8 +30,17 @@ namespace TPToolsLibrary.BrowserActions
                 {              
                     browser.Url = @"https://www.trainingportal.no/mintra/" + portal + "/admin/portals/show/portal/" + portal;
 
-                    wait.Until(driver => driver.FindElement(By.Id("editPortal"))).Click();
-                
+                    // so we can check if going to plan or on error page, if error, try next portal
+                    // try catch does not catch this...
+                    var editPortal = browser.FindElementById("editPortal");
+                    if (editPortal == null)
+                    {
+                        continue;
+                    }
+
+                    editPortal.Click();
+
+                   //wait.Until(driver => driver.FindElement(By.Id("editPortal"))).Click();
 
                     if (enableAdminUI)
                     {
@@ -71,6 +80,10 @@ namespace TPToolsLibrary.BrowserActions
 
                     wait.Until(driver => driver.FindElement(By.Id("portalNewUIThemeShow__save_button"))).Click();
 
+                }
+                catch(NoSuchElementException e)
+                {
+                    issuesList.Add(portal);
                 }
                 catch(Exception e)
                 {
