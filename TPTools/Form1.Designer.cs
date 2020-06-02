@@ -237,9 +237,6 @@
             this.txtNewUIPortalIds = new System.Windows.Forms.RichTextBox();
             this.label45 = new System.Windows.Forms.Label();
             this.btnApplyNewUI = new System.Windows.Forms.Button();
-            this.btnLogIn = new System.Windows.Forms.Button();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.pictureBox15 = new System.Windows.Forms.PictureBox();
             this.label49 = new System.Windows.Forms.Label();
@@ -251,6 +248,15 @@
             this.label51 = new System.Windows.Forms.Label();
             this.txtPortalIdIndustryShare = new System.Windows.Forms.TextBox();
             this.btnShareToIndustry = new System.Windows.Forms.Button();
+            this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.dgAdminDeactivate = new System.Windows.Forms.DataGridView();
+            this.btnSelectFileAdminDeactivate = new System.Windows.Forms.Button();
+            this.btnLogIn = new System.Windows.Forms.Button();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
+            this.button12 = new System.Windows.Forms.Button();
+            this.btnDeactivateAdmins = new System.Windows.Forms.Button();
+            this.label52 = new System.Windows.Forms.Label();
             this.CompTest.SuspendLayout();
             this.DemoPortal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -296,6 +302,8 @@
             this.tabPage4.SuspendLayout();
             this.tabPage5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).BeginInit();
+            this.tabPage6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgAdminDeactivate)).BeginInit();
             this.SuspendLayout();
             // 
             // txtUsernameAdmin
@@ -333,7 +341,7 @@
             // 
             // txtCourseCodes
             // 
-            this.txtCourseCodes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            this.txtCourseCodes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.txtCourseCodes.Location = new System.Drawing.Point(9, 68);
             this.txtCourseCodes.Name = "txtCourseCodes";
@@ -375,8 +383,8 @@
             // 
             // CompTest
             // 
-            this.CompTest.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.CompTest.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.CompTest.Controls.Add(this.DemoPortal);
             this.CompTest.Controls.Add(this.ControlRisksPortalPage);
@@ -394,6 +402,7 @@
             this.CompTest.Controls.Add(this.CreateNewPortal);
             this.CompTest.Controls.Add(this.tabPage4);
             this.CompTest.Controls.Add(this.tabPage5);
+            this.CompTest.Controls.Add(this.tabPage6);
             this.CompTest.Location = new System.Drawing.Point(306, 12);
             this.CompTest.Name = "CompTest";
             this.CompTest.SelectedIndex = 0;
@@ -1164,7 +1173,7 @@
             // 
             // txtConnectorCourseCodes
             // 
-            this.txtConnectorCourseCodes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            this.txtConnectorCourseCodes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.txtConnectorCourseCodes.Location = new System.Drawing.Point(9, 95);
             this.txtConnectorCourseCodes.Name = "txtConnectorCourseCodes";
@@ -1297,7 +1306,7 @@
             // 
             // txtCompetencyUnits
             // 
-            this.txtCompetencyUnits.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            this.txtCompetencyUnits.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.txtCompetencyUnits.Location = new System.Drawing.Point(9, 88);
             this.txtCompetencyUnits.Name = "txtCompetencyUnits";
@@ -1392,7 +1401,7 @@
             // 
             // txtAttributes
             // 
-            this.txtAttributes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            this.txtAttributes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.txtAttributes.Location = new System.Drawing.Point(9, 88);
             this.txtAttributes.Name = "txtAttributes";
@@ -1482,7 +1491,7 @@
             // 
             // txtCourseCodesEnrolRules
             // 
-            this.txtCourseCodesEnrolRules.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            this.txtCourseCodesEnrolRules.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.txtCourseCodesEnrolRules.Location = new System.Drawing.Point(9, 132);
             this.txtCourseCodesEnrolRules.Name = "txtCourseCodesEnrolRules";
@@ -1597,7 +1606,7 @@
             // 
             // txtCompanyShare
             // 
-            this.txtCompanyShare.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            this.txtCompanyShare.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.txtCompanyShare.Location = new System.Drawing.Point(316, 81);
             this.txtCompanyShare.Name = "txtCompanyShare";
@@ -1617,7 +1626,7 @@
             // 
             // txtCourseIdShare
             // 
-            this.txtCourseIdShare.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            this.txtCourseIdShare.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.txtCourseIdShare.Location = new System.Drawing.Point(9, 81);
             this.txtCourseIdShare.Name = "txtCourseIdShare";
@@ -1756,7 +1765,7 @@
             // 
             // txtCourseCodesExpiry
             // 
-            this.txtCourseCodesExpiry.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            this.txtCourseCodesExpiry.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.txtCourseCodesExpiry.Location = new System.Drawing.Point(9, 88);
             this.txtCourseCodesExpiry.Name = "txtCourseCodesExpiry";
@@ -1843,7 +1852,7 @@
             // 
             // txtCompIds
             // 
-            this.txtCompIds.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            this.txtCompIds.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.txtCompIds.Location = new System.Drawing.Point(6, 100);
             this.txtCompIds.Name = "txtCompIds";
@@ -1969,7 +1978,7 @@
             // 
             // txtCourseCodesProgLog
             // 
-            this.txtCourseCodesProgLog.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            this.txtCourseCodesProgLog.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.txtCourseCodesProgLog.Location = new System.Drawing.Point(19, 100);
             this.txtCourseCodesProgLog.Name = "txtCourseCodesProgLog";
@@ -2082,7 +2091,7 @@
             // 
             // txtCourseCodesEcommerce
             // 
-            this.txtCourseCodesEcommerce.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            this.txtCourseCodesEcommerce.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.txtCourseCodesEcommerce.Location = new System.Drawing.Point(3, 99);
             this.txtCourseCodesEcommerce.Name = "txtCourseCodesEcommerce";
@@ -2386,7 +2395,7 @@
             // 
             // txtNewUIErrors
             // 
-            this.txtNewUIErrors.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            this.txtNewUIErrors.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.txtNewUIErrors.Location = new System.Drawing.Point(593, 209);
             this.txtNewUIErrors.Name = "txtNewUIErrors";
@@ -2495,7 +2504,7 @@
             // 
             // txtNewUIPortalIds
             // 
-            this.txtNewUIPortalIds.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            this.txtNewUIPortalIds.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.txtNewUIPortalIds.Location = new System.Drawing.Point(15, 209);
             this.txtNewUIPortalIds.Name = "txtNewUIPortalIds";
@@ -2523,16 +2532,6 @@
             this.btnApplyNewUI.Text = "Apply";
             this.btnApplyNewUI.UseVisualStyleBackColor = true;
             this.btnApplyNewUI.Click += new System.EventHandler(this.btnApplyNewUI_Click);
-            // 
-            // btnLogIn
-            // 
-            this.btnLogIn.Location = new System.Drawing.Point(205, 131);
-            this.btnLogIn.Name = "btnLogIn";
-            this.btnLogIn.Size = new System.Drawing.Size(75, 23);
-            this.btnLogIn.TabIndex = 9;
-            this.btnLogIn.Text = "Log In";
-            this.btnLogIn.UseVisualStyleBackColor = true;
-            this.btnLogIn.Click += new System.EventHandler(this.BtnLogIn_Click);
             // 
             // tabPage5
             // 
@@ -2579,7 +2578,7 @@
             // 
             // txtIndustryList
             // 
-            this.txtIndustryList.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            this.txtIndustryList.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.txtIndustryList.Location = new System.Drawing.Point(345, 93);
             this.txtIndustryList.Name = "txtIndustryList";
@@ -2599,7 +2598,7 @@
             // 
             // txtCourseIdIndustryShare
             // 
-            this.txtCourseIdIndustryShare.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            this.txtCourseIdIndustryShare.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.txtCourseIdIndustryShare.Location = new System.Drawing.Point(38, 93);
             this.txtCourseIdIndustryShare.Name = "txtCourseIdIndustryShare";
@@ -2652,6 +2651,81 @@
             this.btnShareToIndustry.Text = "Share";
             this.btnShareToIndustry.UseVisualStyleBackColor = true;
             this.btnShareToIndustry.Click += new System.EventHandler(this.btnShareToIndustry_Click);
+            // 
+            // tabPage6
+            // 
+            this.tabPage6.Controls.Add(this.label52);
+            this.tabPage6.Controls.Add(this.button12);
+            this.tabPage6.Controls.Add(this.btnDeactivateAdmins);
+            this.tabPage6.Controls.Add(this.dgAdminDeactivate);
+            this.tabPage6.Controls.Add(this.btnSelectFileAdminDeactivate);
+            this.tabPage6.Location = new System.Drawing.Point(4, 22);
+            this.tabPage6.Name = "tabPage6";
+            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage6.Size = new System.Drawing.Size(941, 556);
+            this.tabPage6.TabIndex = 17;
+            this.tabPage6.Text = "DeactivateAdmins";
+            this.tabPage6.UseVisualStyleBackColor = true;
+            // 
+            // dgAdminDeactivate
+            // 
+            this.dgAdminDeactivate.AllowUserToAddRows = false;
+            this.dgAdminDeactivate.AllowUserToDeleteRows = false;
+            this.dgAdminDeactivate.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgAdminDeactivate.Location = new System.Drawing.Point(44, 79);
+            this.dgAdminDeactivate.Name = "dgAdminDeactivate";
+            this.dgAdminDeactivate.Size = new System.Drawing.Size(551, 403);
+            this.dgAdminDeactivate.TabIndex = 1;
+            // 
+            // btnSelectFileAdminDeactivate
+            // 
+            this.btnSelectFileAdminDeactivate.Location = new System.Drawing.Point(44, 27);
+            this.btnSelectFileAdminDeactivate.Name = "btnSelectFileAdminDeactivate";
+            this.btnSelectFileAdminDeactivate.Size = new System.Drawing.Size(75, 23);
+            this.btnSelectFileAdminDeactivate.TabIndex = 0;
+            this.btnSelectFileAdminDeactivate.Text = "Select File";
+            this.btnSelectFileAdminDeactivate.UseVisualStyleBackColor = true;
+            this.btnSelectFileAdminDeactivate.Click += new System.EventHandler(this.btnSelectFileAdminDeactivate_Click);
+            // 
+            // btnLogIn
+            // 
+            this.btnLogIn.Location = new System.Drawing.Point(205, 131);
+            this.btnLogIn.Name = "btnLogIn";
+            this.btnLogIn.Size = new System.Drawing.Size(75, 23);
+            this.btnLogIn.TabIndex = 9;
+            this.btnLogIn.Text = "Log In";
+            this.btnLogIn.UseVisualStyleBackColor = true;
+            this.btnLogIn.Click += new System.EventHandler(this.BtnLogIn_Click);
+            // 
+            // button12
+            // 
+            this.button12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button12.Location = new System.Drawing.Point(790, 463);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(123, 46);
+            this.button12.TabIndex = 53;
+            this.button12.Text = "Cancel";
+            this.button12.UseVisualStyleBackColor = true;
+            // 
+            // btnDeactivateAdmins
+            // 
+            this.btnDeactivateAdmins.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDeactivateAdmins.Location = new System.Drawing.Point(790, 405);
+            this.btnDeactivateAdmins.Name = "btnDeactivateAdmins";
+            this.btnDeactivateAdmins.Size = new System.Drawing.Size(123, 46);
+            this.btnDeactivateAdmins.TabIndex = 52;
+            this.btnDeactivateAdmins.Text = "Deactivate Admins";
+            this.btnDeactivateAdmins.UseVisualStyleBackColor = true;
+            this.btnDeactivateAdmins.Click += new System.EventHandler(this.btnDeactivateAdmins_Click);
+            // 
+            // label52
+            // 
+            this.label52.AutoSize = true;
+            this.label52.Location = new System.Drawing.Point(137, 32);
+            this.label52.Name = "label52";
+            this.label52.Size = new System.Drawing.Size(276, 13);
+            this.label52.TabIndex = 54;
+            this.label52.Text = "Spreadhseet should be 2 columns: 1 - userId,  2 - portalId";
             // 
             // Form1
             // 
@@ -2742,6 +2816,9 @@
             this.tabPage5.ResumeLayout(false);
             this.tabPage5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).EndInit();
+            this.tabPage6.ResumeLayout(false);
+            this.tabPage6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgAdminDeactivate)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2970,6 +3047,12 @@
         private System.Windows.Forms.Label label51;
         private System.Windows.Forms.TextBox txtPortalIdIndustryShare;
         private System.Windows.Forms.Button btnShareToIndustry;
+        private System.Windows.Forms.TabPage tabPage6;
+        private System.Windows.Forms.Button btnSelectFileAdminDeactivate;
+        private System.Windows.Forms.DataGridView dgAdminDeactivate;
+        private System.Windows.Forms.Button button12;
+        private System.Windows.Forms.Button btnDeactivateAdmins;
+        private System.Windows.Forms.Label label52;
     }
 }
 

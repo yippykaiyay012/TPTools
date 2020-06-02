@@ -8,6 +8,10 @@ using System.Collections.Generic;
 using TPToolsLibrary.SettingsAndTemplates;
 using System.Threading.Tasks;
 using TPToolsLibrary.Models;
+using System.Data;
+using System.Drawing;
+using System.Data.OleDb;
+using System.IO;
 
 namespace TPTools
 {
@@ -569,5 +573,63 @@ namespace TPTools
             Thread thread = new Thread(() => TPToolsLibrary.IndustryShare.ShareCourses(courseCodeList, industryList, txtPortalIdIndustryShare.Text));
             thread.Start();
         }
+
+        private void btnSelectFileAdminDeactivate_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog1 = new OpenFileDialog();
+            openFileDialog1.ShowDialog();
+            var file = openFileDialog1.FileName;
+            dgAdminDeactivate.DataSource = ReadCsv(file);
+
+        }
+
+        private async void btnDeactivateAdmins_Click(object sender, EventArgs e)
+        {
+
+            if (!Login.IsLoggedIn())
+            {
+                MessageBox.Show("Log In First");
+                return;
+            }
+
+            if (dgAdminDeactivate.Rows.Count == 0)
+            {
+                MessageBox.Show("No Data");
+                return;
+            }
+            foreach(DataGridViewRow row in dgAdminDeactivate.Rows)
+            {
+                var userId = row.Cells[0].Value.ToString();
+                var portalId = row.Cells[1].Value.ToString();
+
+                if(!string.IsNullOrWhiteSpace(userId) && !string.IsNullOrWhiteSpace(portalId))
+                {
+                    await DeactivateAdmin.DeactivateAdminAccount(userId, portalId);
+                }
+            }
+                
+        }
+
+        public DataTable ReadCsv(string filePath)
+        {
+            DataTable dt = new DataTable("Data");
+            using (OleDbConnection cn = new OleDbConnection("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=\"" +
+                Path.GetDirectoryName(filePath) + "\";Extended Properties='text;HDR=yes;FMT=Delimited(,)';"))
+            {
+                
+                //Execute select query
+                using (OleDbCommand cmd = new OleDbCommand(string.Format("select *from [{0}]", new FileInfo(Path.GetFileName(filePath)).Name), cn))
+                {
+                    cn.Open();
+                    using (OleDbDataAdapter adapter = new OleDbDataAdapter(cmd))
+                    {
+                        adapter.Fill(dt);
+                    }
+                }
+            }
+            return dt;
+        }
+
+
     }
 }
