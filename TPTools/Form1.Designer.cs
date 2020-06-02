@@ -2671,10 +2671,11 @@
             // 
             this.dgAdminDeactivate.AllowUserToAddRows = false;
             this.dgAdminDeactivate.AllowUserToDeleteRows = false;
+            this.dgAdminDeactivate.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgAdminDeactivate.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgAdminDeactivate.Location = new System.Drawing.Point(44, 79);
             this.dgAdminDeactivate.Name = "dgAdminDeactivate";
-            this.dgAdminDeactivate.Size = new System.Drawing.Size(551, 403);
+            this.dgAdminDeactivate.Size = new System.Drawing.Size(568, 400);
             this.dgAdminDeactivate.TabIndex = 1;
             // 
             // btnSelectFileAdminDeactivate
