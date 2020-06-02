@@ -546,5 +546,28 @@ namespace TPTools
             }
 
         }
+        private void btnShareToIndustry_Click(object sender, EventArgs e)
+        {
+            if (!Login.IsLoggedIn())
+            {
+                MessageBox.Show("Log In First");
+                return;
+            }
+
+            if (string.IsNullOrEmpty(txtPortalIdIndustryShare.Text))
+            {
+                MessageBox.Show("Enter Portal ID to Share From");
+                return;
+            }
+
+            var courseCodes = txtCourseIdIndustryShare.Text;
+            var courseCodeList = courseCodes.Split(',').ToList();
+
+            var industries = txtIndustryList.Text;
+            var industryList = industries.Split(',').ToList();
+
+            Thread thread = new Thread(() => TPToolsLibrary.IndustryShare.ShareCourses(courseCodeList, industryList, txtPortalIdIndustryShare.Text));
+            thread.Start();
+        }
     }
 }

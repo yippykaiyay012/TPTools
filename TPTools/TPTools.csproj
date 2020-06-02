@@ -60,10 +60,10 @@
     <SignAssembly>false</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>42EE35F8CF4F9E489A2D71A7A462EBE63F37E0DF</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>66CDE005453800A49C02ABBB9CDD647588C2E5FD</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>TPTools_4_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>TPTools_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
