@@ -38,7 +38,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.btnAddCourses = new System.Windows.Forms.Button();
             this.chkRememberDetails = new System.Windows.Forms.CheckBox();
-            this.CompTest = new System.Windows.Forms.TabControl();
+            this.AddFrenchTab = new System.Windows.Forms.TabControl();
             this.DemoPortal = new System.Windows.Forms.TabPage();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
@@ -106,6 +106,14 @@
             this.btnCancelCourseCode = new System.Windows.Forms.Button();
             this.progCourseCodes = new System.Windows.Forms.ProgressBar();
             this.ConnectorFiles = new System.Windows.Forms.TabPage();
+            this.groupBox13 = new System.Windows.Forms.GroupBox();
+            this.rdioSCORM20044th = new System.Windows.Forms.RadioButton();
+            this.rdioSCORM20043rd = new System.Windows.Forms.RadioButton();
+            this.rdioSCORM12 = new System.Windows.Forms.RadioButton();
+            this.rdioSCORM20042nd = new System.Windows.Forms.RadioButton();
+            this.groupBox12 = new System.Windows.Forms.GroupBox();
+            this.rdioNewWindow = new System.Windows.Forms.RadioButton();
+            this.rdioSameWindow = new System.Windows.Forms.RadioButton();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnCancelDownloads = new System.Windows.Forms.Button();
             this.progConnector = new System.Windows.Forms.ProgressBar();
@@ -249,15 +257,82 @@
             this.txtPortalIdIndustryShare = new System.Windows.Forms.TextBox();
             this.btnShareToIndustry = new System.Windows.Forms.Button();
             this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.label52 = new System.Windows.Forms.Label();
+            this.button12 = new System.Windows.Forms.Button();
+            this.btnDeactivateAdmins = new System.Windows.Forms.Button();
             this.dgAdminDeactivate = new System.Windows.Forms.DataGridView();
             this.btnSelectFileAdminDeactivate = new System.Windows.Forms.Button();
+            this.PortalShare = new System.Windows.Forms.TabPage();
+            this.label56 = new System.Windows.Forms.Label();
+            this.txtPortalSharePayingCompany = new System.Windows.Forms.TextBox();
+            this.pictureBox16 = new System.Windows.Forms.PictureBox();
+            this.label53 = new System.Windows.Forms.Label();
+            this.txtPortalSharePortals = new System.Windows.Forms.RichTextBox();
+            this.label54 = new System.Windows.Forms.Label();
+            this.txtPortalShareCourses = new System.Windows.Forms.RichTextBox();
+            this.button13 = new System.Windows.Forms.Button();
+            this.progressBar5 = new System.Windows.Forms.ProgressBar();
+            this.label55 = new System.Windows.Forms.Label();
+            this.txtPortalSharePortalId = new System.Windows.Forms.TextBox();
+            this.btnPortalShare = new System.Windows.Forms.Button();
+            this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.label58 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label57 = new System.Windows.Forms.Label();
+            this.txtPortalNumbersIndustry = new System.Windows.Forms.RichTextBox();
+            this.button14 = new System.Windows.Forms.Button();
+            this.progressBar6 = new System.Windows.Forms.ProgressBar();
+            this.btnUpdatePortalIndustry = new System.Windows.Forms.Button();
+            this.tabPage8 = new System.Windows.Forms.TabPage();
+            this.label62 = new System.Windows.Forms.Label();
+            this.priceComponentCurrency = new System.Windows.Forms.ComboBox();
+            this.button15 = new System.Windows.Forms.Button();
+            this.btnAddPriceComponent = new System.Windows.Forms.Button();
+            this.lblprice = new System.Windows.Forms.Label();
+            this.label61 = new System.Windows.Forms.Label();
+            this.label60 = new System.Windows.Forms.Label();
+            this.txtPriceComponentPrice = new System.Windows.Forms.TextBox();
+            this.txtPriceComponentPortalName = new System.Windows.Forms.TextBox();
+            this.txtPriceComponentPortalId = new System.Windows.Forms.TextBox();
+            this.label59 = new System.Windows.Forms.Label();
+            this.txtCourseCodesPriceComponent = new System.Windows.Forms.RichTextBox();
+            this.tabPage9 = new System.Windows.Forms.TabPage();
+            this.button16 = new System.Windows.Forms.Button();
+            this.btnZeroExommerceStart = new System.Windows.Forms.Button();
+            this.label63 = new System.Windows.Forms.Label();
+            this.label64 = new System.Windows.Forms.Label();
+            this.txtZeroExommercePrefix = new System.Windows.Forms.TextBox();
+            this.txtZeroEcommercePortalId = new System.Windows.Forms.TextBox();
+            this.label65 = new System.Windows.Forms.Label();
+            this.txtZeroEcommerceCourseCodes = new System.Windows.Forms.RichTextBox();
+            this.SetEvidenceTypes = new System.Windows.Forms.TabPage();
+            this.chk_OTHER = new System.Windows.Forms.CheckBox();
+            this.chk_PD = new System.Windows.Forms.CheckBox();
+            this.chk_RPL = new System.Windows.Forms.CheckBox();
+            this.chk_WIT = new System.Windows.Forms.CheckBox();
+            this.chk_TA = new System.Windows.Forms.CheckBox();
+            this.chk_TS = new System.Windows.Forms.CheckBox();
+            this.chk_QA = new System.Windows.Forms.CheckBox();
+            this.chk_PW = new System.Windows.Forms.CheckBox();
+            this.chk_OB = new System.Windows.Forms.CheckBox();
+            this.label66 = new System.Windows.Forms.Label();
+            this.evidenceTypesCompIds = new System.Windows.Forms.RichTextBox();
+            this.button17 = new System.Windows.Forms.Button();
+            this.progressBar7 = new System.Windows.Forms.ProgressBar();
+            this.label67 = new System.Windows.Forms.Label();
+            this.evidenceTypePortalId = new System.Windows.Forms.TextBox();
+            this.btnSetEvidenceTypes = new System.Windows.Forms.Button();
             this.btnLogIn = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
-            this.button12 = new System.Windows.Forms.Button();
-            this.btnDeactivateAdmins = new System.Windows.Forms.Button();
-            this.label52 = new System.Windows.Forms.Label();
-            this.CompTest.SuspendLayout();
+            this.TabFrenchTab = new System.Windows.Forms.TabPage();
+            this.label68 = new System.Windows.Forms.Label();
+            this.txtCompIdsFrenchTab = new System.Windows.Forms.RichTextBox();
+            this.button18 = new System.Windows.Forms.Button();
+            this.label69 = new System.Windows.Forms.Label();
+            this.txtFrenchTabPortlId = new System.Windows.Forms.TextBox();
+            this.btnAddFrenchTab = new System.Windows.Forms.Button();
+            this.AddFrenchTab.SuspendLayout();
             this.DemoPortal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.groupBox4.SuspendLayout();
@@ -275,6 +350,8 @@
             this.CourseCodes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.ConnectorFiles.SuspendLayout();
+            this.groupBox13.SuspendLayout();
+            this.groupBox12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.CompAssessment.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -304,6 +381,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).BeginInit();
             this.tabPage6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgAdminDeactivate)).BeginInit();
+            this.PortalShare.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).BeginInit();
+            this.tabPage7.SuspendLayout();
+            this.tabPage8.SuspendLayout();
+            this.tabPage9.SuspendLayout();
+            this.SetEvidenceTypes.SuspendLayout();
+            this.TabFrenchTab.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtUsernameAdmin
@@ -381,33 +465,39 @@
             this.chkRememberDetails.UseVisualStyleBackColor = true;
             this.chkRememberDetails.CheckedChanged += new System.EventHandler(this.ChkRememberDetails_CheckedChanged);
             // 
-            // CompTest
+            // AddFrenchTab
             // 
-            this.CompTest.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.AddFrenchTab.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.CompTest.Controls.Add(this.DemoPortal);
-            this.CompTest.Controls.Add(this.ControlRisksPortalPage);
-            this.CompTest.Controls.Add(this.CoHostPortal);
-            this.CompTest.Controls.Add(this.CourseCodes);
-            this.CompTest.Controls.Add(this.ConnectorFiles);
-            this.CompTest.Controls.Add(this.CompAssessment);
-            this.CompTest.Controls.Add(this.DynamicAttribute);
-            this.CompTest.Controls.Add(this.EnrolRules);
-            this.CompTest.Controls.Add(this.CompanyShare);
-            this.CompTest.Controls.Add(this.CourseExpiry);
-            this.CompTest.Controls.Add(this.tabPage1);
-            this.CompTest.Controls.Add(this.tabPage2);
-            this.CompTest.Controls.Add(this.tabPage3);
-            this.CompTest.Controls.Add(this.CreateNewPortal);
-            this.CompTest.Controls.Add(this.tabPage4);
-            this.CompTest.Controls.Add(this.tabPage5);
-            this.CompTest.Controls.Add(this.tabPage6);
-            this.CompTest.Location = new System.Drawing.Point(306, 12);
-            this.CompTest.Name = "CompTest";
-            this.CompTest.SelectedIndex = 0;
-            this.CompTest.Size = new System.Drawing.Size(949, 582);
-            this.CompTest.TabIndex = 8;
+            this.AddFrenchTab.Controls.Add(this.DemoPortal);
+            this.AddFrenchTab.Controls.Add(this.ControlRisksPortalPage);
+            this.AddFrenchTab.Controls.Add(this.CoHostPortal);
+            this.AddFrenchTab.Controls.Add(this.CourseCodes);
+            this.AddFrenchTab.Controls.Add(this.ConnectorFiles);
+            this.AddFrenchTab.Controls.Add(this.CompAssessment);
+            this.AddFrenchTab.Controls.Add(this.DynamicAttribute);
+            this.AddFrenchTab.Controls.Add(this.EnrolRules);
+            this.AddFrenchTab.Controls.Add(this.CompanyShare);
+            this.AddFrenchTab.Controls.Add(this.CourseExpiry);
+            this.AddFrenchTab.Controls.Add(this.tabPage1);
+            this.AddFrenchTab.Controls.Add(this.tabPage2);
+            this.AddFrenchTab.Controls.Add(this.tabPage3);
+            this.AddFrenchTab.Controls.Add(this.CreateNewPortal);
+            this.AddFrenchTab.Controls.Add(this.tabPage4);
+            this.AddFrenchTab.Controls.Add(this.tabPage5);
+            this.AddFrenchTab.Controls.Add(this.tabPage6);
+            this.AddFrenchTab.Controls.Add(this.PortalShare);
+            this.AddFrenchTab.Controls.Add(this.tabPage7);
+            this.AddFrenchTab.Controls.Add(this.tabPage8);
+            this.AddFrenchTab.Controls.Add(this.tabPage9);
+            this.AddFrenchTab.Controls.Add(this.SetEvidenceTypes);
+            this.AddFrenchTab.Controls.Add(this.TabFrenchTab);
+            this.AddFrenchTab.Location = new System.Drawing.Point(306, 12);
+            this.AddFrenchTab.Name = "AddFrenchTab";
+            this.AddFrenchTab.SelectedIndex = 0;
+            this.AddFrenchTab.Size = new System.Drawing.Size(949, 582);
+            this.AddFrenchTab.TabIndex = 8;
             // 
             // DemoPortal
             // 
@@ -860,7 +950,7 @@
             this.chkListControlRiskCourses.FormattingEnabled = true;
             this.chkListControlRiskCourses.Location = new System.Drawing.Point(9, 388);
             this.chkListControlRiskCourses.Name = "chkListControlRiskCourses";
-            this.chkListControlRiskCourses.Size = new System.Drawing.Size(265, 79);
+            this.chkListControlRiskCourses.Size = new System.Drawing.Size(265, 64);
             this.chkListControlRiskCourses.TabIndex = 48;
             // 
             // label35
@@ -1107,6 +1197,8 @@
             // 
             // ConnectorFiles
             // 
+            this.ConnectorFiles.Controls.Add(this.groupBox13);
+            this.ConnectorFiles.Controls.Add(this.groupBox12);
             this.ConnectorFiles.Controls.Add(this.pictureBox2);
             this.ConnectorFiles.Controls.Add(this.btnCancelDownloads);
             this.ConnectorFiles.Controls.Add(this.progConnector);
@@ -1122,6 +1214,94 @@
             this.ConnectorFiles.TabIndex = 1;
             this.ConnectorFiles.Text = "ConnectorFiles";
             this.ConnectorFiles.UseVisualStyleBackColor = true;
+            // 
+            // groupBox13
+            // 
+            this.groupBox13.Controls.Add(this.rdioSCORM20044th);
+            this.groupBox13.Controls.Add(this.rdioSCORM20043rd);
+            this.groupBox13.Controls.Add(this.rdioSCORM12);
+            this.groupBox13.Controls.Add(this.rdioSCORM20042nd);
+            this.groupBox13.Location = new System.Drawing.Point(588, 17);
+            this.groupBox13.Name = "groupBox13";
+            this.groupBox13.Size = new System.Drawing.Size(141, 127);
+            this.groupBox13.TabIndex = 18;
+            this.groupBox13.TabStop = false;
+            this.groupBox13.Text = "Type";
+            // 
+            // rdioSCORM20044th
+            // 
+            this.rdioSCORM20044th.AutoSize = true;
+            this.rdioSCORM20044th.Location = new System.Drawing.Point(6, 94);
+            this.rdioSCORM20044th.Name = "rdioSCORM20044th";
+            this.rdioSCORM20044th.Size = new System.Drawing.Size(67, 17);
+            this.rdioSCORM20044th.TabIndex = 18;
+            this.rdioSCORM20044th.Text = "2004 4th";
+            this.rdioSCORM20044th.UseVisualStyleBackColor = true;
+            // 
+            // rdioSCORM20043rd
+            // 
+            this.rdioSCORM20043rd.AutoSize = true;
+            this.rdioSCORM20043rd.Location = new System.Drawing.Point(6, 71);
+            this.rdioSCORM20043rd.Name = "rdioSCORM20043rd";
+            this.rdioSCORM20043rd.Size = new System.Drawing.Size(67, 17);
+            this.rdioSCORM20043rd.TabIndex = 17;
+            this.rdioSCORM20043rd.Text = "2004 3rd";
+            this.rdioSCORM20043rd.UseVisualStyleBackColor = true;
+            // 
+            // rdioSCORM12
+            // 
+            this.rdioSCORM12.AutoSize = true;
+            this.rdioSCORM12.Checked = true;
+            this.rdioSCORM12.Location = new System.Drawing.Point(6, 25);
+            this.rdioSCORM12.Name = "rdioSCORM12";
+            this.rdioSCORM12.Size = new System.Drawing.Size(40, 17);
+            this.rdioSCORM12.TabIndex = 16;
+            this.rdioSCORM12.TabStop = true;
+            this.rdioSCORM12.Text = "1.2";
+            this.rdioSCORM12.UseVisualStyleBackColor = true;
+            // 
+            // rdioSCORM20042nd
+            // 
+            this.rdioSCORM20042nd.AutoSize = true;
+            this.rdioSCORM20042nd.Location = new System.Drawing.Point(6, 48);
+            this.rdioSCORM20042nd.Name = "rdioSCORM20042nd";
+            this.rdioSCORM20042nd.Size = new System.Drawing.Size(70, 17);
+            this.rdioSCORM20042nd.TabIndex = 15;
+            this.rdioSCORM20042nd.Text = "2004 2nd";
+            this.rdioSCORM20042nd.UseVisualStyleBackColor = true;
+            // 
+            // groupBox12
+            // 
+            this.groupBox12.Controls.Add(this.rdioNewWindow);
+            this.groupBox12.Controls.Add(this.rdioSameWindow);
+            this.groupBox12.Location = new System.Drawing.Point(426, 16);
+            this.groupBox12.Name = "groupBox12";
+            this.groupBox12.Size = new System.Drawing.Size(141, 71);
+            this.groupBox12.TabIndex = 17;
+            this.groupBox12.TabStop = false;
+            this.groupBox12.Text = "Window Type";
+            // 
+            // rdioNewWindow
+            // 
+            this.rdioNewWindow.AutoSize = true;
+            this.rdioNewWindow.Checked = true;
+            this.rdioNewWindow.Location = new System.Drawing.Point(6, 25);
+            this.rdioNewWindow.Name = "rdioNewWindow";
+            this.rdioNewWindow.Size = new System.Drawing.Size(86, 17);
+            this.rdioNewWindow.TabIndex = 16;
+            this.rdioNewWindow.TabStop = true;
+            this.rdioNewWindow.Text = "NewWindow";
+            this.rdioNewWindow.UseVisualStyleBackColor = true;
+            // 
+            // rdioSameWindow
+            // 
+            this.rdioSameWindow.AutoSize = true;
+            this.rdioSameWindow.Location = new System.Drawing.Point(6, 48);
+            this.rdioSameWindow.Name = "rdioSameWindow";
+            this.rdioSameWindow.Size = new System.Drawing.Size(91, 17);
+            this.rdioSameWindow.TabIndex = 15;
+            this.rdioSameWindow.Text = "SameWindow";
+            this.rdioSameWindow.UseVisualStyleBackColor = true;
             // 
             // pictureBox2
             // 
@@ -1374,6 +1554,7 @@
             this.btnCancelAttributes.TabIndex = 27;
             this.btnCancelAttributes.Text = "Cancel";
             this.btnCancelAttributes.UseVisualStyleBackColor = true;
+            this.btnCancelAttributes.Click += new System.EventHandler(this.btnCancelAttributes_Click);
             // 
             // progDynam
             // 
@@ -2667,36 +2848,14 @@
             this.tabPage6.Text = "DeactivateAdmins";
             this.tabPage6.UseVisualStyleBackColor = true;
             // 
-            // dgAdminDeactivate
+            // label52
             // 
-            this.dgAdminDeactivate.AllowUserToAddRows = false;
-            this.dgAdminDeactivate.AllowUserToDeleteRows = false;
-            this.dgAdminDeactivate.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgAdminDeactivate.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgAdminDeactivate.Location = new System.Drawing.Point(44, 79);
-            this.dgAdminDeactivate.Name = "dgAdminDeactivate";
-            this.dgAdminDeactivate.Size = new System.Drawing.Size(568, 400);
-            this.dgAdminDeactivate.TabIndex = 1;
-            // 
-            // btnSelectFileAdminDeactivate
-            // 
-            this.btnSelectFileAdminDeactivate.Location = new System.Drawing.Point(44, 27);
-            this.btnSelectFileAdminDeactivate.Name = "btnSelectFileAdminDeactivate";
-            this.btnSelectFileAdminDeactivate.Size = new System.Drawing.Size(75, 23);
-            this.btnSelectFileAdminDeactivate.TabIndex = 0;
-            this.btnSelectFileAdminDeactivate.Text = "Select File";
-            this.btnSelectFileAdminDeactivate.UseVisualStyleBackColor = true;
-            this.btnSelectFileAdminDeactivate.Click += new System.EventHandler(this.btnSelectFileAdminDeactivate_Click);
-            // 
-            // btnLogIn
-            // 
-            this.btnLogIn.Location = new System.Drawing.Point(205, 131);
-            this.btnLogIn.Name = "btnLogIn";
-            this.btnLogIn.Size = new System.Drawing.Size(75, 23);
-            this.btnLogIn.TabIndex = 9;
-            this.btnLogIn.Text = "Log In";
-            this.btnLogIn.UseVisualStyleBackColor = true;
-            this.btnLogIn.Click += new System.EventHandler(this.BtnLogIn_Click);
+            this.label52.AutoSize = true;
+            this.label52.Location = new System.Drawing.Point(137, 32);
+            this.label52.Name = "label52";
+            this.label52.Size = new System.Drawing.Size(276, 13);
+            this.label52.TabIndex = 54;
+            this.label52.Text = "Spreadhseet should be 2 columns: 1 - userId,  2 - portalId";
             // 
             // button12
             // 
@@ -2719,14 +2878,740 @@
             this.btnDeactivateAdmins.UseVisualStyleBackColor = true;
             this.btnDeactivateAdmins.Click += new System.EventHandler(this.btnDeactivateAdmins_Click);
             // 
-            // label52
+            // dgAdminDeactivate
             // 
-            this.label52.AutoSize = true;
-            this.label52.Location = new System.Drawing.Point(137, 32);
-            this.label52.Name = "label52";
-            this.label52.Size = new System.Drawing.Size(276, 13);
-            this.label52.TabIndex = 54;
-            this.label52.Text = "Spreadhseet should be 2 columns: 1 - userId,  2 - portalId";
+            this.dgAdminDeactivate.AllowUserToAddRows = false;
+            this.dgAdminDeactivate.AllowUserToDeleteRows = false;
+            this.dgAdminDeactivate.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgAdminDeactivate.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgAdminDeactivate.Location = new System.Drawing.Point(44, 79);
+            this.dgAdminDeactivate.Name = "dgAdminDeactivate";
+            this.dgAdminDeactivate.Size = new System.Drawing.Size(568, 400);
+            this.dgAdminDeactivate.TabIndex = 1;
+            // 
+            // btnSelectFileAdminDeactivate
+            // 
+            this.btnSelectFileAdminDeactivate.Location = new System.Drawing.Point(44, 27);
+            this.btnSelectFileAdminDeactivate.Name = "btnSelectFileAdminDeactivate";
+            this.btnSelectFileAdminDeactivate.Size = new System.Drawing.Size(75, 23);
+            this.btnSelectFileAdminDeactivate.TabIndex = 0;
+            this.btnSelectFileAdminDeactivate.Text = "Select File";
+            this.btnSelectFileAdminDeactivate.UseVisualStyleBackColor = true;
+            this.btnSelectFileAdminDeactivate.Click += new System.EventHandler(this.btnSelectFileAdminDeactivate_Click);
+            // 
+            // PortalShare
+            // 
+            this.PortalShare.Controls.Add(this.label56);
+            this.PortalShare.Controls.Add(this.txtPortalSharePayingCompany);
+            this.PortalShare.Controls.Add(this.pictureBox16);
+            this.PortalShare.Controls.Add(this.label53);
+            this.PortalShare.Controls.Add(this.txtPortalSharePortals);
+            this.PortalShare.Controls.Add(this.label54);
+            this.PortalShare.Controls.Add(this.txtPortalShareCourses);
+            this.PortalShare.Controls.Add(this.button13);
+            this.PortalShare.Controls.Add(this.progressBar5);
+            this.PortalShare.Controls.Add(this.label55);
+            this.PortalShare.Controls.Add(this.txtPortalSharePortalId);
+            this.PortalShare.Controls.Add(this.btnPortalShare);
+            this.PortalShare.Location = new System.Drawing.Point(4, 22);
+            this.PortalShare.Name = "PortalShare";
+            this.PortalShare.Padding = new System.Windows.Forms.Padding(3);
+            this.PortalShare.Size = new System.Drawing.Size(941, 556);
+            this.PortalShare.TabIndex = 18;
+            this.PortalShare.Text = "PortalShare";
+            this.PortalShare.UseVisualStyleBackColor = true;
+            // 
+            // label56
+            // 
+            this.label56.AutoSize = true;
+            this.label56.Location = new System.Drawing.Point(342, 48);
+            this.label56.Name = "label56";
+            this.label56.Size = new System.Drawing.Size(86, 13);
+            this.label56.TabIndex = 58;
+            this.label56.Text = "Paying Company";
+            // 
+            // txtPortalSharePayingCompany
+            // 
+            this.txtPortalSharePayingCompany.Location = new System.Drawing.Point(434, 45);
+            this.txtPortalSharePayingCompany.Name = "txtPortalSharePayingCompany";
+            this.txtPortalSharePayingCompany.Size = new System.Drawing.Size(162, 20);
+            this.txtPortalSharePayingCompany.TabIndex = 57;
+            // 
+            // pictureBox16
+            // 
+            this.pictureBox16.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox16.Image = global::TPTools.Properties.Resources.icons8_info_64;
+            this.pictureBox16.Location = new System.Drawing.Point(861, 12);
+            this.pictureBox16.Name = "pictureBox16";
+            this.pictureBox16.Size = new System.Drawing.Size(44, 44);
+            this.pictureBox16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox16.TabIndex = 56;
+            this.pictureBox16.TabStop = false;
+            this.toolTip1.SetToolTip(this.pictureBox16, "This will allow you to share courses to specific companies.\r\nThis was used on Exp" +
+        "ress for AGT so only certain companies had OPITO access\r\nrather than the whole p" +
+        "ortal.");
+            // 
+            // label53
+            // 
+            this.label53.AutoSize = true;
+            this.label53.Location = new System.Drawing.Point(342, 77);
+            this.label53.Name = "label53";
+            this.label53.Size = new System.Drawing.Size(126, 13);
+            this.label53.TabIndex = 55;
+            this.label53.Text = "Portals (comma delimited)";
+            // 
+            // txtPortalSharePortals
+            // 
+            this.txtPortalSharePortals.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.txtPortalSharePortals.Location = new System.Drawing.Point(345, 93);
+            this.txtPortalSharePortals.Name = "txtPortalSharePortals";
+            this.txtPortalSharePortals.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedVertical;
+            this.txtPortalSharePortals.Size = new System.Drawing.Size(251, 407);
+            this.txtPortalSharePortals.TabIndex = 54;
+            this.txtPortalSharePortals.Text = "";
+            // 
+            // label54
+            // 
+            this.label54.AutoSize = true;
+            this.label54.Location = new System.Drawing.Point(35, 77);
+            this.label54.Name = "label54";
+            this.label54.Size = new System.Drawing.Size(143, 13);
+            this.label54.TabIndex = 53;
+            this.label54.Text = "CourseId\'s (comma delimited)";
+            // 
+            // txtPortalShareCourses
+            // 
+            this.txtPortalShareCourses.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.txtPortalShareCourses.Location = new System.Drawing.Point(38, 93);
+            this.txtPortalShareCourses.Name = "txtPortalShareCourses";
+            this.txtPortalShareCourses.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedVertical;
+            this.txtPortalShareCourses.Size = new System.Drawing.Size(264, 407);
+            this.txtPortalShareCourses.TabIndex = 52;
+            this.txtPortalShareCourses.Text = "";
+            // 
+            // button13
+            // 
+            this.button13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button13.Location = new System.Drawing.Point(776, 499);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(123, 46);
+            this.button13.TabIndex = 51;
+            this.button13.Text = "Cancel";
+            this.button13.UseVisualStyleBackColor = true;
+            // 
+            // progressBar5
+            // 
+            this.progressBar5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.progressBar5.Location = new System.Drawing.Point(38, 522);
+            this.progressBar5.Name = "progressBar5";
+            this.progressBar5.Size = new System.Drawing.Size(558, 23);
+            this.progressBar5.TabIndex = 50;
+            // 
+            // label55
+            // 
+            this.label55.AutoSize = true;
+            this.label55.Location = new System.Drawing.Point(35, 39);
+            this.label55.Name = "label55";
+            this.label55.Size = new System.Drawing.Size(48, 13);
+            this.label55.TabIndex = 49;
+            this.label55.Text = "Portal ID";
+            // 
+            // txtPortalSharePortalId
+            // 
+            this.txtPortalSharePortalId.Location = new System.Drawing.Point(89, 36);
+            this.txtPortalSharePortalId.Name = "txtPortalSharePortalId";
+            this.txtPortalSharePortalId.Size = new System.Drawing.Size(69, 20);
+            this.txtPortalSharePortalId.TabIndex = 48;
+            // 
+            // btnPortalShare
+            // 
+            this.btnPortalShare.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnPortalShare.Location = new System.Drawing.Point(776, 441);
+            this.btnPortalShare.Name = "btnPortalShare";
+            this.btnPortalShare.Size = new System.Drawing.Size(123, 46);
+            this.btnPortalShare.TabIndex = 47;
+            this.btnPortalShare.Text = "Share";
+            this.btnPortalShare.UseVisualStyleBackColor = true;
+            this.btnPortalShare.Click += new System.EventHandler(this.btnPortalShare_ClickAsync);
+            // 
+            // tabPage7
+            // 
+            this.tabPage7.Controls.Add(this.label58);
+            this.tabPage7.Controls.Add(this.comboBox1);
+            this.tabPage7.Controls.Add(this.label57);
+            this.tabPage7.Controls.Add(this.txtPortalNumbersIndustry);
+            this.tabPage7.Controls.Add(this.button14);
+            this.tabPage7.Controls.Add(this.progressBar6);
+            this.tabPage7.Controls.Add(this.btnUpdatePortalIndustry);
+            this.tabPage7.Location = new System.Drawing.Point(4, 22);
+            this.tabPage7.Name = "tabPage7";
+            this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage7.Size = new System.Drawing.Size(941, 556);
+            this.tabPage7.TabIndex = 19;
+            this.tabPage7.Text = "UpdatePortalIndustry";
+            this.tabPage7.UseVisualStyleBackColor = true;
+            // 
+            // label58
+            // 
+            this.label58.AutoSize = true;
+            this.label58.Location = new System.Drawing.Point(655, 36);
+            this.label58.Name = "label58";
+            this.label58.Size = new System.Drawing.Size(44, 13);
+            this.label58.TabIndex = 59;
+            this.label58.Text = "Industry";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Marketplace"});
+            this.comboBox1.Location = new System.Drawing.Point(658, 52);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(231, 21);
+            this.comboBox1.TabIndex = 58;
+            // 
+            // label57
+            // 
+            this.label57.AutoSize = true;
+            this.label57.Location = new System.Drawing.Point(37, 36);
+            this.label57.Name = "label57";
+            this.label57.Size = new System.Drawing.Size(166, 13);
+            this.label57.TabIndex = 57;
+            this.label57.Text = "Portal Numbers (comma delimited)";
+            // 
+            // txtPortalNumbersIndustry
+            // 
+            this.txtPortalNumbersIndustry.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.txtPortalNumbersIndustry.Location = new System.Drawing.Point(40, 52);
+            this.txtPortalNumbersIndustry.Name = "txtPortalNumbersIndustry";
+            this.txtPortalNumbersIndustry.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedVertical;
+            this.txtPortalNumbersIndustry.Size = new System.Drawing.Size(558, 452);
+            this.txtPortalNumbersIndustry.TabIndex = 56;
+            this.txtPortalNumbersIndustry.Text = "";
+            // 
+            // button14
+            // 
+            this.button14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button14.Location = new System.Drawing.Point(796, 487);
+            this.button14.Name = "button14";
+            this.button14.Size = new System.Drawing.Size(123, 46);
+            this.button14.TabIndex = 55;
+            this.button14.Text = "Cancel";
+            this.button14.UseVisualStyleBackColor = true;
+            // 
+            // progressBar6
+            // 
+            this.progressBar6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.progressBar6.Location = new System.Drawing.Point(40, 510);
+            this.progressBar6.Name = "progressBar6";
+            this.progressBar6.Size = new System.Drawing.Size(558, 23);
+            this.progressBar6.TabIndex = 54;
+            // 
+            // btnUpdatePortalIndustry
+            // 
+            this.btnUpdatePortalIndustry.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnUpdatePortalIndustry.Location = new System.Drawing.Point(796, 429);
+            this.btnUpdatePortalIndustry.Name = "btnUpdatePortalIndustry";
+            this.btnUpdatePortalIndustry.Size = new System.Drawing.Size(123, 46);
+            this.btnUpdatePortalIndustry.TabIndex = 53;
+            this.btnUpdatePortalIndustry.Text = "Share";
+            this.btnUpdatePortalIndustry.UseVisualStyleBackColor = true;
+            this.btnUpdatePortalIndustry.Click += new System.EventHandler(this.btnUpdatePortalIndustry_Click);
+            // 
+            // tabPage8
+            // 
+            this.tabPage8.Controls.Add(this.label62);
+            this.tabPage8.Controls.Add(this.priceComponentCurrency);
+            this.tabPage8.Controls.Add(this.button15);
+            this.tabPage8.Controls.Add(this.btnAddPriceComponent);
+            this.tabPage8.Controls.Add(this.lblprice);
+            this.tabPage8.Controls.Add(this.label61);
+            this.tabPage8.Controls.Add(this.label60);
+            this.tabPage8.Controls.Add(this.txtPriceComponentPrice);
+            this.tabPage8.Controls.Add(this.txtPriceComponentPortalName);
+            this.tabPage8.Controls.Add(this.txtPriceComponentPortalId);
+            this.tabPage8.Controls.Add(this.label59);
+            this.tabPage8.Controls.Add(this.txtCourseCodesPriceComponent);
+            this.tabPage8.Location = new System.Drawing.Point(4, 22);
+            this.tabPage8.Margin = new System.Windows.Forms.Padding(2);
+            this.tabPage8.Name = "tabPage8";
+            this.tabPage8.Padding = new System.Windows.Forms.Padding(2);
+            this.tabPage8.Size = new System.Drawing.Size(941, 556);
+            this.tabPage8.TabIndex = 20;
+            this.tabPage8.Text = "PriceComponent";
+            this.tabPage8.UseVisualStyleBackColor = true;
+            // 
+            // label62
+            // 
+            this.label62.AutoSize = true;
+            this.label62.Location = new System.Drawing.Point(695, 211);
+            this.label62.Name = "label62";
+            this.label62.Size = new System.Drawing.Size(49, 13);
+            this.label62.TabIndex = 68;
+            this.label62.Text = "Currency";
+            this.label62.Click += new System.EventHandler(this.label62_Click);
+            // 
+            // priceComponentCurrency
+            // 
+            this.priceComponentCurrency.FormattingEnabled = true;
+            this.priceComponentCurrency.Items.AddRange(new object[] {
+            "NOK",
+            "EUR",
+            "USD",
+            "GBP",
+            "DKK"});
+            this.priceComponentCurrency.Location = new System.Drawing.Point(699, 227);
+            this.priceComponentCurrency.Name = "priceComponentCurrency";
+            this.priceComponentCurrency.Size = new System.Drawing.Size(161, 21);
+            this.priceComponentCurrency.TabIndex = 67;
+            // 
+            // button15
+            // 
+            this.button15.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button15.Location = new System.Drawing.Point(814, 501);
+            this.button15.Name = "button15";
+            this.button15.Size = new System.Drawing.Size(123, 46);
+            this.button15.TabIndex = 66;
+            this.button15.Text = "Cancel";
+            this.button15.UseVisualStyleBackColor = true;
+            // 
+            // btnAddPriceComponent
+            // 
+            this.btnAddPriceComponent.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAddPriceComponent.Location = new System.Drawing.Point(814, 444);
+            this.btnAddPriceComponent.Name = "btnAddPriceComponent";
+            this.btnAddPriceComponent.Size = new System.Drawing.Size(123, 46);
+            this.btnAddPriceComponent.TabIndex = 65;
+            this.btnAddPriceComponent.Text = "Share";
+            this.btnAddPriceComponent.UseVisualStyleBackColor = true;
+            this.btnAddPriceComponent.Click += new System.EventHandler(this.btnAddPriceComponent_ClickAsync);
+            // 
+            // lblprice
+            // 
+            this.lblprice.AutoSize = true;
+            this.lblprice.Location = new System.Drawing.Point(696, 159);
+            this.lblprice.Name = "lblprice";
+            this.lblprice.Size = new System.Drawing.Size(31, 13);
+            this.lblprice.TabIndex = 64;
+            this.lblprice.Text = "Price";
+            // 
+            // label61
+            // 
+            this.label61.AutoSize = true;
+            this.label61.Location = new System.Drawing.Point(696, 112);
+            this.label61.Name = "label61";
+            this.label61.Size = new System.Drawing.Size(61, 13);
+            this.label61.TabIndex = 63;
+            this.label61.Text = "portalName";
+            // 
+            // label60
+            // 
+            this.label60.AutoSize = true;
+            this.label60.Location = new System.Drawing.Point(15, 54);
+            this.label60.Name = "label60";
+            this.label60.Size = new System.Drawing.Size(73, 13);
+            this.label60.TabIndex = 62;
+            this.label60.Text = "Course Codes";
+            // 
+            // txtPriceComponentPrice
+            // 
+            this.txtPriceComponentPrice.Location = new System.Drawing.Point(698, 176);
+            this.txtPriceComponentPrice.Name = "txtPriceComponentPrice";
+            this.txtPriceComponentPrice.Size = new System.Drawing.Size(162, 20);
+            this.txtPriceComponentPrice.TabIndex = 61;
+            // 
+            // txtPriceComponentPortalName
+            // 
+            this.txtPriceComponentPortalName.Location = new System.Drawing.Point(698, 128);
+            this.txtPriceComponentPortalName.Name = "txtPriceComponentPortalName";
+            this.txtPriceComponentPortalName.Size = new System.Drawing.Size(162, 20);
+            this.txtPriceComponentPortalName.TabIndex = 60;
+            // 
+            // txtPriceComponentPortalId
+            // 
+            this.txtPriceComponentPortalId.Location = new System.Drawing.Point(698, 70);
+            this.txtPriceComponentPortalId.Name = "txtPriceComponentPortalId";
+            this.txtPriceComponentPortalId.Size = new System.Drawing.Size(162, 20);
+            this.txtPriceComponentPortalId.TabIndex = 59;
+            // 
+            // label59
+            // 
+            this.label59.AutoSize = true;
+            this.label59.Location = new System.Drawing.Point(696, 54);
+            this.label59.Name = "label59";
+            this.label59.Size = new System.Drawing.Size(42, 13);
+            this.label59.TabIndex = 58;
+            this.label59.Text = "portalId";
+            // 
+            // txtCourseCodesPriceComponent
+            // 
+            this.txtCourseCodesPriceComponent.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.txtCourseCodesPriceComponent.Location = new System.Drawing.Point(17, 70);
+            this.txtCourseCodesPriceComponent.Name = "txtCourseCodesPriceComponent";
+            this.txtCourseCodesPriceComponent.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedVertical;
+            this.txtCourseCodesPriceComponent.Size = new System.Drawing.Size(558, 452);
+            this.txtCourseCodesPriceComponent.TabIndex = 57;
+            this.txtCourseCodesPriceComponent.Text = "";
+            // 
+            // tabPage9
+            // 
+            this.tabPage9.Controls.Add(this.button16);
+            this.tabPage9.Controls.Add(this.btnZeroExommerceStart);
+            this.tabPage9.Controls.Add(this.label63);
+            this.tabPage9.Controls.Add(this.label64);
+            this.tabPage9.Controls.Add(this.txtZeroExommercePrefix);
+            this.tabPage9.Controls.Add(this.txtZeroEcommercePortalId);
+            this.tabPage9.Controls.Add(this.label65);
+            this.tabPage9.Controls.Add(this.txtZeroEcommerceCourseCodes);
+            this.tabPage9.Location = new System.Drawing.Point(4, 22);
+            this.tabPage9.Name = "tabPage9";
+            this.tabPage9.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage9.Size = new System.Drawing.Size(941, 556);
+            this.tabPage9.TabIndex = 21;
+            this.tabPage9.Text = "ZeroPriceEcommerce";
+            this.tabPage9.UseVisualStyleBackColor = true;
+            // 
+            // button16
+            // 
+            this.button16.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button16.Location = new System.Drawing.Point(808, 479);
+            this.button16.Name = "button16";
+            this.button16.Size = new System.Drawing.Size(123, 46);
+            this.button16.TabIndex = 76;
+            this.button16.Text = "Cancel";
+            this.button16.UseVisualStyleBackColor = true;
+            // 
+            // btnZeroExommerceStart
+            // 
+            this.btnZeroExommerceStart.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnZeroExommerceStart.Location = new System.Drawing.Point(808, 422);
+            this.btnZeroExommerceStart.Name = "btnZeroExommerceStart";
+            this.btnZeroExommerceStart.Size = new System.Drawing.Size(123, 46);
+            this.btnZeroExommerceStart.TabIndex = 75;
+            this.btnZeroExommerceStart.Text = "Share";
+            this.btnZeroExommerceStart.UseVisualStyleBackColor = true;
+            this.btnZeroExommerceStart.Click += new System.EventHandler(this.btnZeroExommerceStart_Click);
+            // 
+            // label63
+            // 
+            this.label63.AutoSize = true;
+            this.label63.Location = new System.Drawing.Point(690, 90);
+            this.label63.Name = "label63";
+            this.label63.Size = new System.Drawing.Size(91, 13);
+            this.label63.TabIndex = 73;
+            this.label63.Text = "CourseCodePrefix";
+            // 
+            // label64
+            // 
+            this.label64.AutoSize = true;
+            this.label64.Location = new System.Drawing.Point(9, 32);
+            this.label64.Name = "label64";
+            this.label64.Size = new System.Drawing.Size(73, 13);
+            this.label64.TabIndex = 72;
+            this.label64.Text = "Course Codes";
+            // 
+            // txtZeroExommercePrefix
+            // 
+            this.txtZeroExommercePrefix.Location = new System.Drawing.Point(692, 106);
+            this.txtZeroExommercePrefix.Name = "txtZeroExommercePrefix";
+            this.txtZeroExommercePrefix.Size = new System.Drawing.Size(162, 20);
+            this.txtZeroExommercePrefix.TabIndex = 70;
+            // 
+            // txtZeroEcommercePortalId
+            // 
+            this.txtZeroEcommercePortalId.Location = new System.Drawing.Point(692, 48);
+            this.txtZeroEcommercePortalId.Name = "txtZeroEcommercePortalId";
+            this.txtZeroEcommercePortalId.Size = new System.Drawing.Size(162, 20);
+            this.txtZeroEcommercePortalId.TabIndex = 69;
+            // 
+            // label65
+            // 
+            this.label65.AutoSize = true;
+            this.label65.Location = new System.Drawing.Point(690, 32);
+            this.label65.Name = "label65";
+            this.label65.Size = new System.Drawing.Size(42, 13);
+            this.label65.TabIndex = 68;
+            this.label65.Text = "portalId";
+            // 
+            // txtZeroEcommerceCourseCodes
+            // 
+            this.txtZeroEcommerceCourseCodes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.txtZeroEcommerceCourseCodes.Location = new System.Drawing.Point(11, 48);
+            this.txtZeroEcommerceCourseCodes.Name = "txtZeroEcommerceCourseCodes";
+            this.txtZeroEcommerceCourseCodes.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedVertical;
+            this.txtZeroEcommerceCourseCodes.Size = new System.Drawing.Size(558, 452);
+            this.txtZeroEcommerceCourseCodes.TabIndex = 67;
+            this.txtZeroEcommerceCourseCodes.Text = "";
+            // 
+            // SetEvidenceTypes
+            // 
+            this.SetEvidenceTypes.Controls.Add(this.chk_OTHER);
+            this.SetEvidenceTypes.Controls.Add(this.chk_PD);
+            this.SetEvidenceTypes.Controls.Add(this.chk_RPL);
+            this.SetEvidenceTypes.Controls.Add(this.chk_WIT);
+            this.SetEvidenceTypes.Controls.Add(this.chk_TA);
+            this.SetEvidenceTypes.Controls.Add(this.chk_TS);
+            this.SetEvidenceTypes.Controls.Add(this.chk_QA);
+            this.SetEvidenceTypes.Controls.Add(this.chk_PW);
+            this.SetEvidenceTypes.Controls.Add(this.chk_OB);
+            this.SetEvidenceTypes.Controls.Add(this.label66);
+            this.SetEvidenceTypes.Controls.Add(this.evidenceTypesCompIds);
+            this.SetEvidenceTypes.Controls.Add(this.button17);
+            this.SetEvidenceTypes.Controls.Add(this.progressBar7);
+            this.SetEvidenceTypes.Controls.Add(this.label67);
+            this.SetEvidenceTypes.Controls.Add(this.evidenceTypePortalId);
+            this.SetEvidenceTypes.Controls.Add(this.btnSetEvidenceTypes);
+            this.SetEvidenceTypes.Location = new System.Drawing.Point(4, 22);
+            this.SetEvidenceTypes.Name = "SetEvidenceTypes";
+            this.SetEvidenceTypes.Padding = new System.Windows.Forms.Padding(3);
+            this.SetEvidenceTypes.Size = new System.Drawing.Size(941, 556);
+            this.SetEvidenceTypes.TabIndex = 22;
+            this.SetEvidenceTypes.Text = "SetEvidenceTypes";
+            this.SetEvidenceTypes.UseVisualStyleBackColor = true;
+            // 
+            // chk_OTHER
+            // 
+            this.chk_OTHER.AutoSize = true;
+            this.chk_OTHER.Location = new System.Drawing.Point(716, 265);
+            this.chk_OTHER.Name = "chk_OTHER";
+            this.chk_OTHER.Size = new System.Drawing.Size(64, 17);
+            this.chk_OTHER.TabIndex = 69;
+            this.chk_OTHER.Text = "OTHER";
+            this.chk_OTHER.UseVisualStyleBackColor = true;
+            // 
+            // chk_PD
+            // 
+            this.chk_PD.AutoSize = true;
+            this.chk_PD.Location = new System.Drawing.Point(716, 242);
+            this.chk_PD.Name = "chk_PD";
+            this.chk_PD.Size = new System.Drawing.Size(41, 17);
+            this.chk_PD.TabIndex = 68;
+            this.chk_PD.Text = "PD";
+            this.chk_PD.UseVisualStyleBackColor = true;
+            // 
+            // chk_RPL
+            // 
+            this.chk_RPL.AutoSize = true;
+            this.chk_RPL.Location = new System.Drawing.Point(716, 219);
+            this.chk_RPL.Name = "chk_RPL";
+            this.chk_RPL.Size = new System.Drawing.Size(47, 17);
+            this.chk_RPL.TabIndex = 67;
+            this.chk_RPL.Text = "RPL";
+            this.chk_RPL.UseVisualStyleBackColor = true;
+            // 
+            // chk_WIT
+            // 
+            this.chk_WIT.AutoSize = true;
+            this.chk_WIT.Location = new System.Drawing.Point(716, 196);
+            this.chk_WIT.Name = "chk_WIT";
+            this.chk_WIT.Size = new System.Drawing.Size(47, 17);
+            this.chk_WIT.TabIndex = 66;
+            this.chk_WIT.Text = "WIT";
+            this.chk_WIT.UseVisualStyleBackColor = true;
+            // 
+            // chk_TA
+            // 
+            this.chk_TA.AutoSize = true;
+            this.chk_TA.Location = new System.Drawing.Point(716, 173);
+            this.chk_TA.Name = "chk_TA";
+            this.chk_TA.Size = new System.Drawing.Size(40, 17);
+            this.chk_TA.TabIndex = 65;
+            this.chk_TA.Text = "TA";
+            this.chk_TA.UseVisualStyleBackColor = true;
+            // 
+            // chk_TS
+            // 
+            this.chk_TS.AutoSize = true;
+            this.chk_TS.Location = new System.Drawing.Point(716, 150);
+            this.chk_TS.Name = "chk_TS";
+            this.chk_TS.Size = new System.Drawing.Size(40, 17);
+            this.chk_TS.TabIndex = 64;
+            this.chk_TS.Text = "TS";
+            this.chk_TS.UseVisualStyleBackColor = true;
+            // 
+            // chk_QA
+            // 
+            this.chk_QA.AutoSize = true;
+            this.chk_QA.Location = new System.Drawing.Point(716, 127);
+            this.chk_QA.Name = "chk_QA";
+            this.chk_QA.Size = new System.Drawing.Size(41, 17);
+            this.chk_QA.TabIndex = 63;
+            this.chk_QA.Text = "QA";
+            this.chk_QA.UseVisualStyleBackColor = true;
+            // 
+            // chk_PW
+            // 
+            this.chk_PW.AutoSize = true;
+            this.chk_PW.Location = new System.Drawing.Point(716, 104);
+            this.chk_PW.Name = "chk_PW";
+            this.chk_PW.Size = new System.Drawing.Size(44, 17);
+            this.chk_PW.TabIndex = 62;
+            this.chk_PW.Text = "PW";
+            this.chk_PW.UseVisualStyleBackColor = true;
+            // 
+            // chk_OB
+            // 
+            this.chk_OB.AutoSize = true;
+            this.chk_OB.Location = new System.Drawing.Point(716, 81);
+            this.chk_OB.Name = "chk_OB";
+            this.chk_OB.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.chk_OB.Size = new System.Drawing.Size(41, 17);
+            this.chk_OB.TabIndex = 61;
+            this.chk_OB.Text = "OB";
+            this.chk_OB.UseVisualStyleBackColor = true;
+            // 
+            // label66
+            // 
+            this.label66.AutoSize = true;
+            this.label66.Location = new System.Drawing.Point(38, 65);
+            this.label66.Name = "label66";
+            this.label66.Size = new System.Drawing.Size(51, 13);
+            this.label66.TabIndex = 60;
+            this.label66.Text = "Comp Ids";
+            // 
+            // evidenceTypesCompIds
+            // 
+            this.evidenceTypesCompIds.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.evidenceTypesCompIds.Location = new System.Drawing.Point(41, 81);
+            this.evidenceTypesCompIds.Name = "evidenceTypesCompIds";
+            this.evidenceTypesCompIds.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedVertical;
+            this.evidenceTypesCompIds.Size = new System.Drawing.Size(558, 407);
+            this.evidenceTypesCompIds.TabIndex = 59;
+            this.evidenceTypesCompIds.Text = "";
+            // 
+            // button17
+            // 
+            this.button17.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button17.Location = new System.Drawing.Point(779, 487);
+            this.button17.Name = "button17";
+            this.button17.Size = new System.Drawing.Size(123, 46);
+            this.button17.TabIndex = 58;
+            this.button17.Text = "Cancel";
+            this.button17.UseVisualStyleBackColor = true;
+            // 
+            // progressBar7
+            // 
+            this.progressBar7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.progressBar7.Location = new System.Drawing.Point(41, 510);
+            this.progressBar7.Name = "progressBar7";
+            this.progressBar7.Size = new System.Drawing.Size(558, 23);
+            this.progressBar7.TabIndex = 57;
+            // 
+            // label67
+            // 
+            this.label67.AutoSize = true;
+            this.label67.Location = new System.Drawing.Point(38, 27);
+            this.label67.Name = "label67";
+            this.label67.Size = new System.Drawing.Size(48, 13);
+            this.label67.TabIndex = 56;
+            this.label67.Text = "Portal ID";
+            // 
+            // evidenceTypePortalId
+            // 
+            this.evidenceTypePortalId.Location = new System.Drawing.Point(92, 24);
+            this.evidenceTypePortalId.Name = "evidenceTypePortalId";
+            this.evidenceTypePortalId.Size = new System.Drawing.Size(69, 20);
+            this.evidenceTypePortalId.TabIndex = 55;
+            // 
+            // btnSetEvidenceTypes
+            // 
+            this.btnSetEvidenceTypes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSetEvidenceTypes.Location = new System.Drawing.Point(779, 429);
+            this.btnSetEvidenceTypes.Name = "btnSetEvidenceTypes";
+            this.btnSetEvidenceTypes.Size = new System.Drawing.Size(123, 46);
+            this.btnSetEvidenceTypes.TabIndex = 54;
+            this.btnSetEvidenceTypes.Text = "Share";
+            this.btnSetEvidenceTypes.UseVisualStyleBackColor = true;
+            this.btnSetEvidenceTypes.Click += new System.EventHandler(this.btnSetEvidenceTypes_Click);
+            // 
+            // btnLogIn
+            // 
+            this.btnLogIn.Location = new System.Drawing.Point(205, 131);
+            this.btnLogIn.Name = "btnLogIn";
+            this.btnLogIn.Size = new System.Drawing.Size(75, 23);
+            this.btnLogIn.TabIndex = 9;
+            this.btnLogIn.Text = "Log In";
+            this.btnLogIn.UseVisualStyleBackColor = true;
+            this.btnLogIn.Click += new System.EventHandler(this.BtnLogIn_Click);
+            // 
+            // TabFrenchTab
+            // 
+            this.TabFrenchTab.Controls.Add(this.label68);
+            this.TabFrenchTab.Controls.Add(this.txtCompIdsFrenchTab);
+            this.TabFrenchTab.Controls.Add(this.button18);
+            this.TabFrenchTab.Controls.Add(this.label69);
+            this.TabFrenchTab.Controls.Add(this.txtFrenchTabPortlId);
+            this.TabFrenchTab.Controls.Add(this.btnAddFrenchTab);
+            this.TabFrenchTab.Location = new System.Drawing.Point(4, 22);
+            this.TabFrenchTab.Name = "TabFrenchTab";
+            this.TabFrenchTab.Padding = new System.Windows.Forms.Padding(3);
+            this.TabFrenchTab.Size = new System.Drawing.Size(941, 556);
+            this.TabFrenchTab.TabIndex = 23;
+            this.TabFrenchTab.Text = "AddFrenchTab";
+            this.TabFrenchTab.UseVisualStyleBackColor = true;
+            // 
+            // label68
+            // 
+            this.label68.AutoSize = true;
+            this.label68.Location = new System.Drawing.Point(38, 65);
+            this.label68.Name = "label68";
+            this.label68.Size = new System.Drawing.Size(51, 13);
+            this.label68.TabIndex = 66;
+            this.label68.Text = "Comp Ids";
+            // 
+            // txtCompIdsFrenchTab
+            // 
+            this.txtCompIdsFrenchTab.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.txtCompIdsFrenchTab.Location = new System.Drawing.Point(41, 81);
+            this.txtCompIdsFrenchTab.Name = "txtCompIdsFrenchTab";
+            this.txtCompIdsFrenchTab.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedVertical;
+            this.txtCompIdsFrenchTab.Size = new System.Drawing.Size(558, 407);
+            this.txtCompIdsFrenchTab.TabIndex = 65;
+            this.txtCompIdsFrenchTab.Text = "";
+            // 
+            // button18
+            // 
+            this.button18.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button18.Location = new System.Drawing.Point(779, 487);
+            this.button18.Name = "button18";
+            this.button18.Size = new System.Drawing.Size(123, 46);
+            this.button18.TabIndex = 64;
+            this.button18.Text = "Cancel";
+            this.button18.UseVisualStyleBackColor = true;
+            // 
+            // label69
+            // 
+            this.label69.AutoSize = true;
+            this.label69.Location = new System.Drawing.Point(38, 27);
+            this.label69.Name = "label69";
+            this.label69.Size = new System.Drawing.Size(48, 13);
+            this.label69.TabIndex = 63;
+            this.label69.Text = "Portal ID";
+            // 
+            // txtFrenchTabPortlId
+            // 
+            this.txtFrenchTabPortlId.Location = new System.Drawing.Point(92, 24);
+            this.txtFrenchTabPortlId.Name = "txtFrenchTabPortlId";
+            this.txtFrenchTabPortlId.Size = new System.Drawing.Size(69, 20);
+            this.txtFrenchTabPortlId.TabIndex = 62;
+            // 
+            // btnAddFrenchTab
+            // 
+            this.btnAddFrenchTab.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAddFrenchTab.Location = new System.Drawing.Point(779, 429);
+            this.btnAddFrenchTab.Name = "btnAddFrenchTab";
+            this.btnAddFrenchTab.Size = new System.Drawing.Size(123, 46);
+            this.btnAddFrenchTab.TabIndex = 61;
+            this.btnAddFrenchTab.Text = "Share";
+            this.btnAddFrenchTab.UseVisualStyleBackColor = true;
+            this.btnAddFrenchTab.Click += new System.EventHandler(this.btnAddFrenchTab_Click);
             // 
             // Form1
             // 
@@ -2735,7 +3620,7 @@
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1267, 606);
             this.Controls.Add(this.btnLogIn);
-            this.Controls.Add(this.CompTest);
+            this.Controls.Add(this.AddFrenchTab);
             this.Controls.Add(this.chkRememberDetails);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -2745,7 +3630,7 @@
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TPTools";
-            this.CompTest.ResumeLayout(false);
+            this.AddFrenchTab.ResumeLayout(false);
             this.DemoPortal.ResumeLayout(false);
             this.DemoPortal.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
@@ -2775,6 +3660,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ConnectorFiles.ResumeLayout(false);
             this.ConnectorFiles.PerformLayout();
+            this.groupBox13.ResumeLayout(false);
+            this.groupBox13.PerformLayout();
+            this.groupBox12.ResumeLayout(false);
+            this.groupBox12.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.CompAssessment.ResumeLayout(false);
             this.CompAssessment.PerformLayout();
@@ -2820,6 +3709,19 @@
             this.tabPage6.ResumeLayout(false);
             this.tabPage6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgAdminDeactivate)).EndInit();
+            this.PortalShare.ResumeLayout(false);
+            this.PortalShare.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).EndInit();
+            this.tabPage7.ResumeLayout(false);
+            this.tabPage7.PerformLayout();
+            this.tabPage8.ResumeLayout(false);
+            this.tabPage8.PerformLayout();
+            this.tabPage9.ResumeLayout(false);
+            this.tabPage9.PerformLayout();
+            this.SetEvidenceTypes.ResumeLayout(false);
+            this.SetEvidenceTypes.PerformLayout();
+            this.TabFrenchTab.ResumeLayout(false);
+            this.TabFrenchTab.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2835,7 +3737,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnAddCourses;
         private System.Windows.Forms.CheckBox chkRememberDetails;
-        private System.Windows.Forms.TabControl CompTest;
+        private System.Windows.Forms.TabControl AddFrenchTab;
         private System.Windows.Forms.TabPage CourseCodes;
         private System.Windows.Forms.TabPage ConnectorFiles;
         private System.Windows.Forms.Button btnLogIn;
@@ -3054,6 +3956,81 @@
         private System.Windows.Forms.Button button12;
         private System.Windows.Forms.Button btnDeactivateAdmins;
         private System.Windows.Forms.Label label52;
+        private System.Windows.Forms.TabPage PortalShare;
+        private System.Windows.Forms.PictureBox pictureBox16;
+        private System.Windows.Forms.Label label53;
+        private System.Windows.Forms.RichTextBox txtPortalSharePortals;
+        private System.Windows.Forms.Label label54;
+        private System.Windows.Forms.RichTextBox txtPortalShareCourses;
+        private System.Windows.Forms.Button button13;
+        private System.Windows.Forms.ProgressBar progressBar5;
+        private System.Windows.Forms.Label label55;
+        private System.Windows.Forms.TextBox txtPortalSharePortalId;
+        private System.Windows.Forms.Button btnPortalShare;
+        private System.Windows.Forms.Label label56;
+        private System.Windows.Forms.TextBox txtPortalSharePayingCompany;
+        private System.Windows.Forms.GroupBox groupBox12;
+        private System.Windows.Forms.RadioButton rdioNewWindow;
+        private System.Windows.Forms.RadioButton rdioSameWindow;
+        private System.Windows.Forms.GroupBox groupBox13;
+        private System.Windows.Forms.RadioButton rdioSCORM20044th;
+        private System.Windows.Forms.RadioButton rdioSCORM20043rd;
+        private System.Windows.Forms.RadioButton rdioSCORM12;
+        private System.Windows.Forms.RadioButton rdioSCORM20042nd;
+        private System.Windows.Forms.TabPage tabPage7;
+        private System.Windows.Forms.Label label58;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label57;
+        private System.Windows.Forms.RichTextBox txtPortalNumbersIndustry;
+        private System.Windows.Forms.Button button14;
+        private System.Windows.Forms.ProgressBar progressBar6;
+        private System.Windows.Forms.Button btnUpdatePortalIndustry;
+        private System.Windows.Forms.TabPage tabPage8;
+        private System.Windows.Forms.Label label59;
+        private System.Windows.Forms.RichTextBox txtCourseCodesPriceComponent;
+        private System.Windows.Forms.TextBox txtPriceComponentPrice;
+        private System.Windows.Forms.TextBox txtPriceComponentPortalName;
+        private System.Windows.Forms.TextBox txtPriceComponentPortalId;
+        private System.Windows.Forms.Label lblprice;
+        private System.Windows.Forms.Label label61;
+        private System.Windows.Forms.Label label60;
+        private System.Windows.Forms.Button button15;
+        private System.Windows.Forms.Button btnAddPriceComponent;
+        private System.Windows.Forms.TabPage tabPage9;
+        private System.Windows.Forms.Button button16;
+        private System.Windows.Forms.Button btnZeroExommerceStart;
+        private System.Windows.Forms.Label label63;
+        private System.Windows.Forms.Label label64;
+        private System.Windows.Forms.TextBox txtZeroExommercePrefix;
+        private System.Windows.Forms.TextBox txtZeroEcommercePortalId;
+        private System.Windows.Forms.Label label65;
+        private System.Windows.Forms.RichTextBox txtZeroEcommerceCourseCodes;
+        private System.Windows.Forms.ComboBox priceComponentCurrency;
+        private System.Windows.Forms.Label label62;
+        private System.Windows.Forms.TabPage SetEvidenceTypes;
+        private System.Windows.Forms.Label label66;
+        private System.Windows.Forms.RichTextBox evidenceTypesCompIds;
+        private System.Windows.Forms.Button button17;
+        private System.Windows.Forms.ProgressBar progressBar7;
+        private System.Windows.Forms.Label label67;
+        private System.Windows.Forms.TextBox evidenceTypePortalId;
+        private System.Windows.Forms.Button btnSetEvidenceTypes;
+        private System.Windows.Forms.CheckBox chk_WIT;
+        private System.Windows.Forms.CheckBox chk_TA;
+        private System.Windows.Forms.CheckBox chk_TS;
+        private System.Windows.Forms.CheckBox chk_QA;
+        private System.Windows.Forms.CheckBox chk_PW;
+        private System.Windows.Forms.CheckBox chk_OB;
+        private System.Windows.Forms.CheckBox chk_OTHER;
+        private System.Windows.Forms.CheckBox chk_PD;
+        private System.Windows.Forms.CheckBox chk_RPL;
+        private System.Windows.Forms.TabPage TabFrenchTab;
+        private System.Windows.Forms.Label label68;
+        private System.Windows.Forms.RichTextBox txtCompIdsFrenchTab;
+        private System.Windows.Forms.Button button18;
+        private System.Windows.Forms.Label label69;
+        private System.Windows.Forms.TextBox txtFrenchTabPortlId;
+        private System.Windows.Forms.Button btnAddFrenchTab;
     }
 }
 

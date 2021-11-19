@@ -343,7 +343,8 @@ namespace TPToolsLibrary.BrowserActions
             { "32612","Advanced Security Training" },
             { "32614","Introduction to Kidnap" },
             { "32038", "Virtual Kidnap"},
-            { "33371", "Social Risk and Human Rights"}
+            { "33371", "Social Risk and Human Rights"},
+            { "34845", "Prevention and Security"}
 
         };
 

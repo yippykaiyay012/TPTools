@@ -31,15 +31,15 @@ namespace TPToolsLibrary.BrowserActions
 
             var portalResult = new PortalResult();
 
-            //customerName += " - Control Risks";
+            customerName += " - Control Risks";
 
-            // 1. create company
+            ////1.create company
             if (!CreateCompany(customerName + " - Control Risks"))
             {
                 return "Error Creating Company";
             }
 
-            // 2. create portal
+            //// 2. create portal
             if (!CreatePortal(customerName))
             {
                 return "Error Creating Portal";
@@ -53,7 +53,7 @@ namespace TPToolsLibrary.BrowserActions
             portalResult.URL = customerName.Replace(" ", "");
 
 
-            // 3. Add Template
+            //// 3. Add Template
             if (!AddDocumentTemplate(portalId, new CRLoginDocument(customerName)))
             {
                 return "Error Adding Login Document";
@@ -305,7 +305,7 @@ namespace TPToolsLibrary.BrowserActions
 
                     wait.Until(driver => driver.FindElement(By.XPath("//*[@id='loginPageDocumentBtn']/button/span"))).Click();
 
-                    Thread.Sleep(1000);
+                    Thread.Sleep(5000);
 
                     //*[@id="contentList"]/tbody/tr/td[1]/a
                     var loginDoc = wait.Until(driver => driver.FindElement(By.XPath("//a[contains(text(),'Login Document')]")));

@@ -18,7 +18,10 @@ namespace TPTools
     public partial class Form1 : Form
     {
 
-        
+        CancellationTokenSource tokenSource;
+        CancellationToken token;
+
+
 
         public Form1()
         {
@@ -35,6 +38,7 @@ namespace TPTools
 
         private void StartUp()
         {
+        
             if (Properties.Settings.Default.userName != string.Empty)
             {
                 txtUsernameAdmin.Text = Properties.Settings.Default.userName;
@@ -47,6 +51,10 @@ namespace TPTools
             CoHostClientDropDown.DataSource = new BindingSource(CoHostSharingSettings.ClientDetails, null);
             CoHostClientDropDown.DisplayMember = "Key";
             CoHostClientDropDown.ValueMember = "Value";
+
+
+            //initialise evidence types
+
 
             // initialise list of Control Risks Courses
             foreach(var course in PortalSettings.ControlRisksCourses)
@@ -119,7 +127,30 @@ namespace TPTools
             var courseCodeList = txtConnectorCourseCodes.Text.Split(',').ToList();
             var portalId = txtPortalID.Text;
 
-            Thread thread = new Thread(() => TPToolsLibrary.ConnectorFiles.Download(courseCodeList, portalId));
+            var sameWindow = rdioSameWindow.Checked;
+
+
+            SCORMType scormType = SCORMType.SCORM12;
+
+            if (rdioSCORM12.Checked)
+            {
+                scormType = SCORMType.SCORM12;
+            }
+            else if (rdioSCORM20042nd.Checked)
+            {
+                scormType = SCORMType.SCORM20042nd;
+            }
+            else if (rdioSCORM20043rd.Checked)
+            {
+                scormType = SCORMType.SCORM20043rd;
+            }
+            else if (rdioSCORM20044th.Checked)
+            {
+                scormType = SCORMType.SCORM20044th;
+            }
+
+            Thread thread = new Thread(() => TPToolsLibrary.ConnectorFiles.Download(courseCodeList, portalId, sameWindow, scormType));
+
             thread.Start();
 
         }
@@ -163,14 +194,27 @@ namespace TPTools
                 MessageBox.Show("Log In First");
                 return;
             }
+            progDynam.Value = 0;
 
             var attributes = txtAttributes.Text;
             var attributeList = attributes.Split(',').ToList();
 
-            Thread thread = new Thread(() => DynamicAttributes.AddAttributes(attributeList, txtPortalIDDynamic.Text));
-            thread.Start();
+            var progress = new Progress<ProgressWrapper>(UpdateProgressDynamAtt);
+            tokenSource = new CancellationTokenSource();
+            token = tokenSource.Token;
 
+            var task = Task.Run(() =>   DynamicAttributes.AddAttributes(attributeList, txtPortalIDDynamic.Text, progress, token));
 
+        }
+        private void UpdateProgressDynamAtt(ProgressWrapper progress)
+        {
+            var progressBar = progDynam;
+            progressBar.Maximum = progress.Total;
+            progressBar.Value = progress.Current;
+        }
+        private void btnCancelAttributes_Click(object sender, EventArgs e)
+        {
+            tokenSource.Cancel();
         }
 
         private void BtnStartEnrolRules_Click(object sender, EventArgs e)
@@ -630,6 +674,163 @@ namespace TPTools
             return dt;
         }
 
+        private async void btnPortalShare_ClickAsync(object sender, EventArgs e)
+        {
+            if (!Login.IsLoggedIn())
+            {
+                MessageBox.Show("Log In First");
+                return;
+            }
 
+            if (string.IsNullOrEmpty(txtPortalSharePortalId.Text))
+            {
+                MessageBox.Show("Enter Portal ID to Share From");
+                return;
+            }
+            if (string.IsNullOrEmpty(txtPortalSharePayingCompany.Text))
+            {
+                MessageBox.Show("Enter paying company");
+                return;
+            }
+
+
+            var courseCodes = txtPortalShareCourses.Text;
+            var courseCodeList = courseCodes.Split(',').ToList();
+
+            var portals = txtPortalSharePortals.Text;
+            var portalList = portals.Split(',').ToList();
+
+            await TPToolsLibrary.PortalShare.ShareCourses(courseCodeList, portalList, txtPortalSharePortalId.Text, txtPortalSharePayingCompany.Text);
+        }
+
+        private void btnUpdatePortalIndustry_Click(object sender, EventArgs e)
+        {
+            if (!Login.IsLoggedIn())
+            {
+                MessageBox.Show("Log In First");
+                return;
+            }
+           
+
+            var portals = txtPortalNumbersIndustry.Text;
+            var portalList = portals.Split(',').ToList();
+
+            var industry = comboBox1.SelectedItem.ToString();
+
+
+
+            tokenSource = new CancellationTokenSource();
+            token = tokenSource.Token;
+
+            var task = Task.Run(() => PortalIndustryUpdate.Update(portalList, industry));
+        }
+
+        private async void btnAddPriceComponent_ClickAsync(object sender, EventArgs e)
+        {
+            if (!Login.IsLoggedIn())
+            {
+                MessageBox.Show("Log In First");
+                return;
+            }
+
+            Enum.TryParse(priceComponentCurrency.SelectedItem.ToString(), out PriceSettingComponent.Currency currency);
+            
+
+            var courses = txtCourseCodesPriceComponent.Text.Split(',').ToList();
+
+
+            await PriceSettingComponent.AddComponent(courses, txtPriceComponentPortalId.Text, txtPriceComponentPrice.Text, txtPriceComponentPortalName.Text, currency);
+        }
+
+        private async void btnZeroExommerceStart_Click(object sender, EventArgs e)
+        {
+            if (!Login.IsLoggedIn())
+            {
+                MessageBox.Show("Log In First");
+                return;
+            }
+
+            var courses = txtZeroEcommerceCourseCodes.Text.Split(',').ToList();
+
+
+            await EcommercesZeroPrice.AddZeroPriceEcommerce(courses, txtZeroEcommercePortalId.Text, txtZeroExommercePrefix.Text);
+        }
+
+        private void label62_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private async void btnSetEvidenceTypes_Click(object sender, EventArgs e)
+        {
+            if (!Login.IsLoggedIn())
+            {
+                MessageBox.Show("Log In First");
+                return;
+            }
+
+            var evidenceTypes = new List<EvidenceTypesEnum>();
+
+            if (chk_OB.Checked)
+            {
+                evidenceTypes.Add(EvidenceTypesEnum.OB);
+            }
+            if (chk_PW.Checked)
+            {
+                evidenceTypes.Add(EvidenceTypesEnum.PW);
+            }
+            if (chk_QA.Checked)
+            {
+                evidenceTypes.Add(EvidenceTypesEnum.QA);
+            }
+            if (chk_TS.Checked)
+            {
+                evidenceTypes.Add(EvidenceTypesEnum.TS);
+            }
+            if (chk_TA.Checked)
+            {
+                evidenceTypes.Add(EvidenceTypesEnum.TA);
+            }
+            if (chk_WIT.Checked)
+            {
+                evidenceTypes.Add(EvidenceTypesEnum.WIT);
+            }
+            if (chk_RPL.Checked)
+            {
+                evidenceTypes.Add(EvidenceTypesEnum.RPL);
+            }
+            if (chk_PD.Checked)
+            {
+                evidenceTypes.Add(EvidenceTypesEnum.PD);
+            }
+            if (chk_OTHER.Checked)
+            {
+                evidenceTypes.Add(EvidenceTypesEnum.OTHER);
+            }
+
+
+            var competences = evidenceTypesCompIds.Text.Split(',').ToList();
+
+
+            await SetEvidenceType.Update(competences, evidenceTypes, evidenceTypePortalId.Text);
+
+
+        }
+
+        private async void btnAddFrenchTab_Click(object sender, EventArgs e)
+        {
+            if (!Login.IsLoggedIn())
+            {
+                MessageBox.Show("Log In First");
+                return;
+            }
+
+            var competences = txtCompIdsFrenchTab.Text.Split(',').ToList();
+            var portalId = txtFrenchTabPortlId.Text;
+
+            await AddFrenchTabToCompetence.AddFrenchTab(competences, portalId);
+
+            
+        }
     }
 }

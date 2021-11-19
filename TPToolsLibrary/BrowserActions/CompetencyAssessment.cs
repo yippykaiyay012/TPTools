@@ -28,7 +28,7 @@ namespace TPToolsLibrary
                     browser.Url = compUrl;
 
                     //var downloadButton = Driver.FindElementById("courseContent__downloadForCloud_button");
-                    wait.Until(driver => driver.FindElement(By.XPath("(//a[@title='Edit'])[3]"))).Click();
+                    wait.Until(driver => driver.FindElement(By.XPath("(//a[@title='Edit'])[2]"))).Click();
 
                     var saveButton = browser.FindElementByName("_eventId_editApplicationApprovalSubmit");
 

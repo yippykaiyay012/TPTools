@@ -31,7 +31,8 @@ namespace TPToolsLibrary.SettingsAndTemplates
             "32612",
             "32614",
             "32038",
-            "33371"
+            "33371",
+            "34845"
         };
 
 
