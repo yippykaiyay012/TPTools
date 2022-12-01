@@ -43,7 +43,7 @@ namespace TPToolsLibrary
                             Thread.Sleep(1000);
                             wait.Until(driver => driver.FindElement(By.XPath("//*[@id='industry']"))).SendKeys(Keys.Tab);
                             Thread.Sleep(1000);
-                            browser.FindElementByName("_eventId_complete").Click();
+                            browser.FindElement(By.Name("_eventId_complete")).Click();
                         }
                         catch (Exception e)
                         {

@@ -322,9 +322,6 @@
             this.label67 = new System.Windows.Forms.Label();
             this.evidenceTypePortalId = new System.Windows.Forms.TextBox();
             this.btnSetEvidenceTypes = new System.Windows.Forms.Button();
-            this.btnLogIn = new System.Windows.Forms.Button();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.TabFrenchTab = new System.Windows.Forms.TabPage();
             this.label68 = new System.Windows.Forms.Label();
             this.txtCompIdsFrenchTab = new System.Windows.Forms.RichTextBox();
@@ -332,6 +329,16 @@
             this.label69 = new System.Windows.Forms.Label();
             this.txtFrenchTabPortlId = new System.Windows.Forms.TextBox();
             this.btnAddFrenchTab = new System.Windows.Forms.Button();
+            this.btnLogIn = new System.Windows.Forms.Button();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
+            this.tabPage10 = new System.Windows.Forms.TabPage();
+            this.label70 = new System.Windows.Forms.Label();
+            this.txtNewAdminUIIssues = new System.Windows.Forms.RichTextBox();
+            this.button19 = new System.Windows.Forms.Button();
+            this.txtNewAdminPortalIds = new System.Windows.Forms.RichTextBox();
+            this.label71 = new System.Windows.Forms.Label();
+            this.btnApplyNewAdminUI = new System.Windows.Forms.Button();
             this.AddFrenchTab.SuspendLayout();
             this.DemoPortal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -388,6 +395,7 @@
             this.tabPage9.SuspendLayout();
             this.SetEvidenceTypes.SuspendLayout();
             this.TabFrenchTab.SuspendLayout();
+            this.tabPage10.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtUsernameAdmin
@@ -493,6 +501,7 @@
             this.AddFrenchTab.Controls.Add(this.tabPage9);
             this.AddFrenchTab.Controls.Add(this.SetEvidenceTypes);
             this.AddFrenchTab.Controls.Add(this.TabFrenchTab);
+            this.AddFrenchTab.Controls.Add(this.tabPage10);
             this.AddFrenchTab.Location = new System.Drawing.Point(306, 12);
             this.AddFrenchTab.Name = "AddFrenchTab";
             this.AddFrenchTab.SelectedIndex = 0;
@@ -3530,16 +3539,6 @@
             this.btnSetEvidenceTypes.UseVisualStyleBackColor = true;
             this.btnSetEvidenceTypes.Click += new System.EventHandler(this.btnSetEvidenceTypes_Click);
             // 
-            // btnLogIn
-            // 
-            this.btnLogIn.Location = new System.Drawing.Point(205, 131);
-            this.btnLogIn.Name = "btnLogIn";
-            this.btnLogIn.Size = new System.Drawing.Size(75, 23);
-            this.btnLogIn.TabIndex = 9;
-            this.btnLogIn.Text = "Log In";
-            this.btnLogIn.UseVisualStyleBackColor = true;
-            this.btnLogIn.Click += new System.EventHandler(this.BtnLogIn_Click);
-            // 
             // TabFrenchTab
             // 
             this.TabFrenchTab.Controls.Add(this.label68);
@@ -3612,6 +3611,93 @@
             this.btnAddFrenchTab.Text = "Share";
             this.btnAddFrenchTab.UseVisualStyleBackColor = true;
             this.btnAddFrenchTab.Click += new System.EventHandler(this.btnAddFrenchTab_Click);
+            // 
+            // btnLogIn
+            // 
+            this.btnLogIn.Location = new System.Drawing.Point(205, 131);
+            this.btnLogIn.Name = "btnLogIn";
+            this.btnLogIn.Size = new System.Drawing.Size(75, 23);
+            this.btnLogIn.TabIndex = 9;
+            this.btnLogIn.Text = "Log In";
+            this.btnLogIn.UseVisualStyleBackColor = true;
+            this.btnLogIn.Click += new System.EventHandler(this.BtnLogIn_Click);
+            // 
+            // tabPage10
+            // 
+            this.tabPage10.Controls.Add(this.label70);
+            this.tabPage10.Controls.Add(this.txtNewAdminUIIssues);
+            this.tabPage10.Controls.Add(this.button19);
+            this.tabPage10.Controls.Add(this.txtNewAdminPortalIds);
+            this.tabPage10.Controls.Add(this.label71);
+            this.tabPage10.Controls.Add(this.btnApplyNewAdminUI);
+            this.tabPage10.Location = new System.Drawing.Point(4, 22);
+            this.tabPage10.Name = "tabPage10";
+            this.tabPage10.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage10.Size = new System.Drawing.Size(941, 556);
+            this.tabPage10.TabIndex = 24;
+            this.tabPage10.Text = "ApplyNewAdminUI";
+            this.tabPage10.UseVisualStyleBackColor = true;
+            // 
+            // label70
+            // 
+            this.label70.AutoSize = true;
+            this.label70.Location = new System.Drawing.Point(584, 192);
+            this.label70.Name = "label70";
+            this.label70.Size = new System.Drawing.Size(140, 13);
+            this.label70.TabIndex = 52;
+            this.label70.Text = "Potential Issues with portals:";
+            // 
+            // txtNewAdminUIIssues
+            // 
+            this.txtNewAdminUIIssues.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.txtNewAdminUIIssues.Location = new System.Drawing.Point(587, 208);
+            this.txtNewAdminUIIssues.Name = "txtNewAdminUIIssues";
+            this.txtNewAdminUIIssues.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedVertical;
+            this.txtNewAdminUIIssues.Size = new System.Drawing.Size(201, 341);
+            this.txtNewAdminUIIssues.TabIndex = 51;
+            this.txtNewAdminUIIssues.Text = "";
+            // 
+            // button19
+            // 
+            this.button19.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button19.Location = new System.Drawing.Point(806, 504);
+            this.button19.Name = "button19";
+            this.button19.Size = new System.Drawing.Size(123, 46);
+            this.button19.TabIndex = 50;
+            this.button19.Text = "Cancel";
+            this.button19.UseVisualStyleBackColor = true;
+            // 
+            // txtNewAdminPortalIds
+            // 
+            this.txtNewAdminPortalIds.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.txtNewAdminPortalIds.Location = new System.Drawing.Point(9, 208);
+            this.txtNewAdminPortalIds.Name = "txtNewAdminPortalIds";
+            this.txtNewAdminPortalIds.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedVertical;
+            this.txtNewAdminPortalIds.Size = new System.Drawing.Size(558, 341);
+            this.txtNewAdminPortalIds.TabIndex = 47;
+            this.txtNewAdminPortalIds.Text = "";
+            // 
+            // label71
+            // 
+            this.label71.AutoSize = true;
+            this.label71.Location = new System.Drawing.Point(6, 192);
+            this.label71.Name = "label71";
+            this.label71.Size = new System.Drawing.Size(141, 13);
+            this.label71.TabIndex = 48;
+            this.label71.Text = "Portal Ids (Comma Delimited)";
+            // 
+            // btnApplyNewAdminUI
+            // 
+            this.btnApplyNewAdminUI.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnApplyNewAdminUI.Location = new System.Drawing.Point(806, 446);
+            this.btnApplyNewAdminUI.Name = "btnApplyNewAdminUI";
+            this.btnApplyNewAdminUI.Size = new System.Drawing.Size(123, 46);
+            this.btnApplyNewAdminUI.TabIndex = 49;
+            this.btnApplyNewAdminUI.Text = "Apply";
+            this.btnApplyNewAdminUI.UseVisualStyleBackColor = true;
+            this.btnApplyNewAdminUI.Click += new System.EventHandler(this.btnApplyNewAdminUI_Click);
             // 
             // Form1
             // 
@@ -3722,6 +3808,8 @@
             this.SetEvidenceTypes.PerformLayout();
             this.TabFrenchTab.ResumeLayout(false);
             this.TabFrenchTab.PerformLayout();
+            this.tabPage10.ResumeLayout(false);
+            this.tabPage10.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -4031,6 +4119,13 @@
         private System.Windows.Forms.Label label69;
         private System.Windows.Forms.TextBox txtFrenchTabPortlId;
         private System.Windows.Forms.Button btnAddFrenchTab;
+        private System.Windows.Forms.TabPage tabPage10;
+        private System.Windows.Forms.Label label70;
+        private System.Windows.Forms.RichTextBox txtNewAdminUIIssues;
+        private System.Windows.Forms.Button button19;
+        private System.Windows.Forms.RichTextBox txtNewAdminPortalIds;
+        private System.Windows.Forms.Label label71;
+        private System.Windows.Forms.Button btnApplyNewAdminUI;
     }
 }
 

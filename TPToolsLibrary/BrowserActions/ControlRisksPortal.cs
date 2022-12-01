@@ -173,7 +173,7 @@ namespace TPToolsLibrary.BrowserActions
                 txtCustomerName.SendKeys(customerName);
                 var txtCustomerNumber = wait.Until(driver => driver.FindElement(By.Name("customerNumber")));
                 txtCustomerNumber.SendKeys("xxx");
-                browser.FindElementByName("_eventId_complete").Click();
+                browser.FindElement(By.Name("_eventId_complete")).Click();
 
                 if (browser.Url == createPageURL)
                 {
@@ -238,7 +238,7 @@ namespace TPToolsLibrary.BrowserActions
                 txtIndustry.SendKeys("-");
                 txtIndustry.SendKeys(Keys.Tab);
 
-                browser.FindElementByName("_eventId_complete").Click();
+                browser.FindElement(By.Name("_eventId_complete")).Click();
 
                 if (browser.Url == createPageURL)
                 {
@@ -365,7 +365,7 @@ namespace TPToolsLibrary.BrowserActions
                     contractTypeChoice.SendKeys(Keys.Tab);
 
 
-                    browser.FindElementByName("_eventId_complete").Click();
+                    browser.FindElement(By.Name("_eventId_complete")).Click();
 
                     return true;
                 }
@@ -498,7 +498,7 @@ namespace TPToolsLibrary.BrowserActions
                 var btnOK = wait.Until(driver => driver.FindElement(By.XPath("//span[contains(text(),'Ok')]")));
                 btnOK.Click();
 
-                browser.FindElementByName("_eventId_complete").Click();
+                browser.FindElement(By.Name("_eventId_complete")).Click();
 
             }
             catch (Exception e)
@@ -531,7 +531,7 @@ namespace TPToolsLibrary.BrowserActions
                 var btnOK = wait.Until(driver => driver.FindElement(By.XPath("//span[contains(text(),'Ok')]")));
                 btnOK.Click();
 
-                browser.FindElementByName("_eventId_complete").Click();
+                browser.FindElement(By.Name("_eventId_complete")).Click();
 
 
                 return true;
@@ -579,7 +579,7 @@ namespace TPToolsLibrary.BrowserActions
                     var btnOK = wait.Until(driver => driver.FindElement(By.XPath("//span[contains(text(),'Ok')]")));
                     btnOK.Click();
 
-                    browser.FindElementByName("_eventId_complete").Click();
+                    browser.FindElement(By.Name("_eventId_complete")).Click();
 
                 }
                 catch (Exception e)
@@ -653,7 +653,7 @@ namespace TPToolsLibrary.BrowserActions
                         CheckAndUnSelectElementId("userCreateSendSendLoginInfoOnMail");
                     }
 
-                    browser.FindElementByName("_eventId_complete").Click();
+                    browser.FindElement(By.Name("_eventId_complete")).Click();
 
                     return true;
                 }
@@ -692,7 +692,7 @@ namespace TPToolsLibrary.BrowserActions
                         Thread.Sleep(1000);
                         txtPortalName.SendKeys(Keys.Tab);
 
-                        browser.FindElementByName("_eventId_complete").Click();
+                        browser.FindElement(By.Name("_eventId_complete")).Click();
 
                     }
                     catch (Exception e)
@@ -737,7 +737,7 @@ namespace TPToolsLibrary.BrowserActions
                     var checkBox = wait.Until(driver => driver.FindElement(By.XPath("//*[@id='acceptcheckbox']")));
                     checkBox.Click();
 
-                    browser.FindElementByName("_eventId_complete").Click();
+                    browser.FindElement(By.Name("_eventId_complete")).Click();
                     browser.Url = "https://www.trainingportal.no/mintra/" + portalId + "/admin/courses/all";
                 }
 
@@ -780,7 +780,7 @@ namespace TPToolsLibrary.BrowserActions
                 
                 wait.Until(driver => driver.FindElement(By.XPath("//*[@id='OPEN_TO_STUDENTS']"))).Click();
 
-                browser.FindElementByName("_eventId_complete").Click();
+                browser.FindElement(By.Name("_eventId_complete")).Click();
             }
         }
 

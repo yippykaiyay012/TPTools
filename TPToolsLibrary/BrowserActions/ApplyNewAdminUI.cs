@@ -3,6 +3,7 @@ using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
+using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -11,16 +12,30 @@ namespace TPToolsLibrary.BrowserActions
 
 
 
-    public class ApplyNewUI
+    public class ApplyNewAdminUI
     {
         private static ChromeDriver browser = WebBrowser.Driver;
         private static WebDriverWait wait = WebBrowser.wait;
 
         private static string portalId = null;
 
+        //Common: Activate appcues  -on
+        //Common: Use new administrator UI   -on
+        //User administration: identity verification enabled -off
 
+        private static List<string> PortalSettingsOn = new List<string>()
+        {
+            "portalBooleanProperties[ACTIVATE_APPCUES]",
+            "portalBooleanProperties[USE_NEW_ADMIN_UI]",
+           
+        };
+        private static List<string> PortalSettingsOff = new List<string>()
+        {
+            "portalBooleanProperties[USER_IDENTITY_VERIFICATION_REQUIRED]"
 
-        public static async Task<List<string>> Apply(List<string> portals, string primaryColour, string secondaryColour, string headerBGColour, string headerTextColour, bool enableStudentUI, bool enableAdminUI)
+        };
+
+        public static async Task<List<string>> Apply(List<string> portals)
         {
             var issuesList = new List<string>();
 
@@ -44,45 +59,17 @@ namespace TPToolsLibrary.BrowserActions
 
                    //wait.Until(driver => driver.FindElement(By.Id("editPortal"))).Click();
 
-                    if (enableAdminUI)
+                    foreach(var enableSetting in PortalSettingsOn)
                     {
-                        CheckAndSelectElementName("portalBooleanProperties[USE_NEW_ADMIN_UI]");
+                        CheckAndSelectElementName(enableSetting);
                     }
-                    else
+                    foreach (var disableSetting in PortalSettingsOff)
                     {
-                        CheckAndUnSelectElementName("portalBooleanProperties[USE_NEW_ADMIN_UI]");
-                    }
-
-
-
-                    if (enableStudentUI)
-                    {
-                        CheckAndSelectElementName("portalBooleanProperties[USE_NEW_STUDENT_UI]");
-                    }
-                    else
-                    {
-                        CheckAndUnSelectElementName("portalBooleanProperties[USE_NEW_STUDENT_UI]");
-                    }
-
+                        CheckAndUnSelectElementName(disableSetting);
+                    }    
 
                     browser.FindElement(By.Name("_eventId_complete")).Click();
                     
-
-                    browser.Url = @"https://www.trainingportal.no/mintra/" + portal + "/admin/portals/show/portal/" + portal;
-
-                    wait.Until(driver => driver.FindElement(By.XPath("//*[@id='infoContainer']/div/a[2]"))).Click();
-
-                    wait.Until(driver => driver.FindElement(By.Name("primaryColor"))).Clear();
-                    wait.Until(driver => driver.FindElement(By.Name("primaryColor"))).SendKeys(primaryColour);
-                    wait.Until(driver => driver.FindElement(By.Name("secondaryColor"))).Clear();
-                    wait.Until(driver => driver.FindElement(By.Name("secondaryColor"))).SendKeys(secondaryColour);
-                    wait.Until(driver => driver.FindElement(By.Name("headerBackgroundColor"))).Clear();
-                    wait.Until(driver => driver.FindElement(By.Name("headerBackgroundColor"))).SendKeys(headerBGColour);
-                    wait.Until(driver => driver.FindElement(By.Name("headerTextColor"))).Clear();
-                    wait.Until(driver => driver.FindElement(By.Name("headerTextColor"))).SendKeys(headerTextColour);
-
-                    wait.Until(driver => driver.FindElement(By.Id("portalNewUIThemeShow__save_button"))).Click();
-
                 }
                 catch(NoSuchElementException e)
                 {

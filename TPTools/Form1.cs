@@ -832,5 +832,31 @@ namespace TPTools
 
             
         }
+
+        private async void btnApplyNewAdminUI_Click(object sender, EventArgs e)
+        {
+            if (!Login.IsLoggedIn())
+            {
+                MessageBox.Show("Log In First");
+                return;
+            }
+
+
+            var portals = txtNewAdminPortalIds.Text.Split(',').ToList();
+
+
+
+            var newAdminUIErrors = await ApplyNewAdminUI.Apply(portals);
+
+            if (newAdminUIErrors.Count == 0)
+            {
+                txtNewAdminUIIssues.Text = "No Errors Detected, No One Will Ever See This Message.";
+            }
+            else
+            {
+                txtNewAdminUIIssues.Text = string.Join(",", newAdminUIErrors);
+            }
+
+        }
     }
 }

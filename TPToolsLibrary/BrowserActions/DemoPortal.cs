@@ -92,7 +92,7 @@ namespace TPToolsLibrary
                 txtCustomerName.SendKeys(customerName);
                 var txtCustomerNumber = wait.Until(driver => driver.FindElement(By.Name("customerNumber")));
                 txtCustomerNumber.SendKeys("xxx");
-                browser.FindElementByName("_eventId_complete").Click();
+                browser.FindElement(By.Name("_eventId_complete")).Click();
 
                 if (browser.Url == createPageURL)
                 {
@@ -172,7 +172,7 @@ namespace TPToolsLibrary
                 txtIndustry.SendKeys("DEMO");
                 txtIndustry.SendKeys(Keys.Tab);
 
-                browser.FindElementByName("_eventId_complete").Click();
+                browser.FindElement(By.Name("_eventId_complete")).Click();
 
                 if (browser.Url == createPageURL)
                 {
@@ -255,7 +255,7 @@ namespace TPToolsLibrary
                     contractTypeChoice.SendKeys(Keys.Tab);
 
 
-                    browser.FindElementByName("_eventId_complete").Click();
+                    browser.FindElement(By.Name("_eventId_complete")).Click();
                 }
 
                 
@@ -395,7 +395,7 @@ namespace TPToolsLibrary
                 var btnOK = wait.Until(driver => driver.FindElement(By.XPath("//span[contains(text(),'Ok')]")));
                 btnOK.Click();
 
-                browser.FindElementByName("_eventId_complete").Click();
+                browser.FindElement(By.Name("_eventId_complete")).Click();
 
             }
             catch (Exception e)
@@ -438,7 +438,7 @@ namespace TPToolsLibrary
                     var btnOK = wait.Until(driver => driver.FindElement(By.XPath("//span[contains(text(),'Ok')]")));
                     btnOK.Click();
 
-                    browser.FindElementByName("_eventId_complete").Click();
+                    browser.FindElement(By.Name("_eventId_complete")).Click();
 
                 }
                 catch (Exception e)
@@ -484,7 +484,7 @@ namespace TPToolsLibrary
                             txtTitle.Click();
                             txtTitle.SendKeys(unit);
 
-                            browser.FindElementByName("_eventId_complete").Click();
+                            browser.FindElement(By.Name("_eventId_complete")).Click();
                         }
                         catch (Exception e)
                         {
@@ -508,7 +508,7 @@ namespace TPToolsLibrary
                         var txtTitleDep = wait.Until(driver => driver.FindElement(By.Name("OrganizationUnitDTO.name")));
                         txtTitleDep.Click();
                         txtTitleDep.SendKeys("Sub Department");
-                        browser.FindElementByName("_eventId_complete").Click();
+                        browser.FindElement(By.Name("_eventId_complete")).Click();
 
                         Thread.Sleep(1000);
 
@@ -520,7 +520,7 @@ namespace TPToolsLibrary
                         var txtTitleLoc = wait.Until(driver => driver.FindElement(By.Name("OrganizationUnitDTO.name")));
                         txtTitleLoc.Click();
                         txtTitleLoc.SendKeys("Sub Location");
-                        browser.FindElementByName("_eventId_complete").Click();
+                        browser.FindElement(By.Name("_eventId_complete")).Click();
 
                         return true;
                     }
@@ -663,7 +663,7 @@ namespace TPToolsLibrary
                         CheckAndUnSelectElementId("userCreateSendSendLoginInfoOnMail");
                     }
 
-                    browser.FindElementByName("_eventId_complete").Click();
+                    browser.FindElement(By.Name("_eventId_complete")).Click();
                 }
                 catch (Exception e)
                 {

@@ -43,7 +43,7 @@ namespace TPToolsLibrary.BrowserActions
 
                 wait.Until(driver => driver.FindElement(By.XPath("//*[@id='dijit_form_RadioButton_1']"))).Click();
 
-                browser.FindElementByName("_eventId_complete").Click();
+                browser.FindElement(By.Name("_eventId_complete")).Click();
 
                 successList.Add(userId);
 

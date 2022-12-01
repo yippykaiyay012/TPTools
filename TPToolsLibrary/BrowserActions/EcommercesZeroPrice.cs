@@ -47,7 +47,7 @@ namespace TPToolsLibrary.BrowserActions
                 Thread.Sleep(1000);
 
 
-                browser.FindElementByName("_eventId_complete").Click();
+                browser.FindElement(By.Name("_eventId_complete")).Click();
             }
         }
 

@@ -53,7 +53,7 @@ namespace TPToolsLibrary
 
                     wait.Until(driver => driver.FindElement(By.Id("emailAddress"))).SendKeys(emailAddress);
 
-                    browser.FindElementByName("_eventId_complete").Click();
+                    browser.FindElement(By.Name("_eventId_complete")).Click();
 
                     //   progEnrolRules.Increment(1);
                 }

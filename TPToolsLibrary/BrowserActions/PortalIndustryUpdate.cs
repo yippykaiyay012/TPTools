@@ -32,11 +32,11 @@ namespace TPToolsLibrary.BrowserActions
                     //industryField.SendKeys(industry);
                     wait.Until(driver => driver.FindElement(By.XPath("//*[@id='dijit_MenuItem_16_text']"))).Click();
                     Thread.Sleep(1000);
-                    
+
                     //industryField.SendKeys(Keys.Enter);
 
 
-                    browser.FindElementByName("_eventId_complete").Click();
+                    browser.FindElement(By.Name("_eventId_complete")).Click();
                 }           
                 catch (Exception e)
                 {

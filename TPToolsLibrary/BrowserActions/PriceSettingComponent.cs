@@ -53,7 +53,8 @@ namespace TPToolsLibrary.BrowserActions
 
 
 
-                browser.FindElementByName("_eventId_complete").Click();
+                //browser.FindElementByName("_eventId_complete").Click();
+                browser.FindElement(By.Name("_eventId_complete"));
             }
         }
 

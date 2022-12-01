@@ -36,7 +36,7 @@ namespace TPToolsLibrary
 
                     wait.Until(driver => driver.FindElement(By.Id("repetitionIntervalEdit__intervalSelector"))).SendKeys(months);
 
-                    browser.FindElementByName("_eventId_complete").Click();
+                    browser.FindElement(By.Name("_eventId_complete")).Click();
                 }
                 catch (Exception e)
                 {

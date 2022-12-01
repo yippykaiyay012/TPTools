@@ -73,7 +73,7 @@ namespace TPToolsLibrary
                 txtCustomerName.SendKeys(customerName);
                 var txtCustomerNumber = wait.Until(driver => driver.FindElement(By.Name("customerNumber")));
                 txtCustomerNumber.SendKeys("xxx");
-                browser.FindElementByName("_eventId_complete").Click();
+                browser.FindElement(By.Name("_eventId_complete")).Click();
 
                 if (browser.Url == createPageURL)
                 {
@@ -153,7 +153,7 @@ namespace TPToolsLibrary
                 txtIndustry.SendKeys("-");
                 txtIndustry.SendKeys(Keys.Tab);
 
-                browser.FindElementByName("_eventId_complete").Click();
+                browser.FindElement(By.Name("_eventId_complete")).Click();
 
                 if (browser.Url == createPageURL)
                 {
@@ -221,7 +221,7 @@ namespace TPToolsLibrary
                 }
 
 
-                browser.FindElementByName("_eventId_complete").Click();
+                browser.FindElement(By.Name("_eventId_complete")).Click();
             }
 
         }
@@ -295,7 +295,7 @@ namespace TPToolsLibrary
                     Thread.Sleep(1000);
                     txtPortalName.SendKeys(Keys.Tab);
 
-                    browser.FindElementByName("_eventId_complete").Click();
+                    browser.FindElement(By.Name("_eventId_complete")).Click();
 
                 }
 

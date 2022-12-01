@@ -160,7 +160,8 @@ namespace TPToolsLibrary.BrowserActions
 
 
 
-                    var saveButton = browser.FindElementByName("_eventId_editApplicationApprovalSubmit");
+                    //var saveButton = browser.FindElementByName("_eventId_editApplicationApprovalSubmit");
+                    var saveButton  = browser.FindElement(By.Name("_eventId_editApplicationApprovalSubmit"));
 
 
                     saveButton.Click();

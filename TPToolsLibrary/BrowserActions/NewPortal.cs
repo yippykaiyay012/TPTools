@@ -85,7 +85,7 @@ namespace TPToolsLibrary.BrowserActions
                 txtCustomerName.SendKeys(customerName);
                 var txtCustomerNumber = wait.Until(driver => driver.FindElement(By.Name("customerNumber")));
                 txtCustomerNumber.SendKeys("xxx");
-                browser.FindElementByName("_eventId_complete").Click();
+                browser.FindElement(By.Name("_eventId_complete")).Click();
 
                 if (browser.Url == createPageURL)
                 {
@@ -165,7 +165,7 @@ namespace TPToolsLibrary.BrowserActions
                 txtIndustry.SendKeys(industry);
                 txtIndustry.SendKeys(Keys.Tab);
 
-                browser.FindElementByName("_eventId_complete").Click();
+                browser.FindElement(By.Name("_eventId_complete")).Click();
 
                 if (browser.Url == createPageURL)
                 {
@@ -248,7 +248,7 @@ namespace TPToolsLibrary.BrowserActions
                     contractTypeChoice.SendKeys(Keys.Tab);
 
 
-                    browser.FindElementByName("_eventId_complete").Click();
+                    browser.FindElement(By.Name("_eventId_complete")).Click();
                 }
 
 
@@ -388,7 +388,7 @@ namespace TPToolsLibrary.BrowserActions
                 var btnOK = wait.Until(driver => driver.FindElement(By.XPath("//span[contains(text(),'Ok')]")));
                 btnOK.Click();
 
-                browser.FindElementByName("_eventId_complete").Click();
+                browser.FindElement(By.Name("_eventId_complete")).Click();
 
             }
             catch (Exception e)
@@ -431,7 +431,7 @@ namespace TPToolsLibrary.BrowserActions
                     var btnOK = wait.Until(driver => driver.FindElement(By.XPath("//span[contains(text(),'Ok')]")));
                     btnOK.Click();
 
-                    browser.FindElementByName("_eventId_complete").Click();
+                    browser.FindElement(By.Name("_eventId_complete")).Click();
 
                 }
                 catch (Exception e)
@@ -477,7 +477,7 @@ namespace TPToolsLibrary.BrowserActions
                             txtTitle.Click();
                             txtTitle.SendKeys(unit);
 
-                            browser.FindElementByName("_eventId_complete").Click();
+                            browser.FindElement(By.Name("_eventId_complete")).Click();
                         }
                         catch (Exception e)
                         {
